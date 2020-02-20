@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC5DD33123FD96D0003CC429 /* AdmiLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5DD33023FD96D0003CC429 /* AdmiLoginVC.swift */; };
+		FC5DD33323FD98C1003CC429 /* CalibrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5DD33223FD98C1003CC429 /* CalibrationVC.swift */; };
 		FCD08F8E23EF813400F4C7C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD08F8D23EF813400F4C7C8 /* AppDelegate.swift */; };
 		FCD08F9023EF813400F4C7C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD08F8F23EF813400F4C7C8 /* SceneDelegate.swift */; };
 		FCD08F9223EF813400F4C7C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD08F9123EF813400F4C7C8 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC5DD33023FD96D0003CC429 /* AdmiLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmiLoginVC.swift; sourceTree = "<group>"; };
+		FC5DD33223FD98C1003CC429 /* CalibrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationVC.swift; sourceTree = "<group>"; };
 		FCD08F8A23EF813400F4C7C8 /* At Training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "At Training.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD08F8D23EF813400F4C7C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCD08F8F23EF813400F4C7C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC5DD32D23FD881D003CC429 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FCD08F9123EF813400F4C7C8 /* ViewController.swift */,
+				FC5DD33023FD96D0003CC429 /* AdmiLoginVC.swift */,
+				FC5DD33223FD98C1003CC429 /* CalibrationVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FC5DD32E23FD8839003CC429 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCD08F9323EF813400F4C7C8 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC5DD32F23FD9493003CC429 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FCD08F8123EF813400F4C7C8 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +87,9 @@
 			children = (
 				FCD08F8D23EF813400F4C7C8 /* AppDelegate.swift */,
 				FCD08F8F23EF813400F4C7C8 /* SceneDelegate.swift */,
-				FCD08F9123EF813400F4C7C8 /* ViewController.swift */,
-				FCD08F9323EF813400F4C7C8 /* Main.storyboard */,
+				FC5DD32F23FD9493003CC429 /* Model */,
+				FC5DD32E23FD8839003CC429 /* View */,
+				FC5DD32D23FD881D003CC429 /* Controller */,
 				FCD08F9623EF813600F4C7C8 /* Assets.xcassets */,
 				FCD08F9823EF813600F4C7C8 /* LaunchScreen.storyboard */,
 				FCD08F9B23EF813600F4C7C8 /* Info.plist */,
@@ -140,6 +170,8 @@
 			files = (
 				FCD08F9223EF813400F4C7C8 /* ViewController.swift in Sources */,
 				FCD08F8E23EF813400F4C7C8 /* AppDelegate.swift in Sources */,
+				FC5DD33123FD96D0003CC429 /* AdmiLoginVC.swift in Sources */,
+				FC5DD33323FD98C1003CC429 /* CalibrationVC.swift in Sources */,
 				FCD08F9023EF813400F4C7C8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

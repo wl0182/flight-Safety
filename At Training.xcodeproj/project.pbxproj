@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC41BBDA2401957500B2F6E7 /* Manual_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41BBD92401957500B2F6E7 /* Manual_ViewController.swift */; };
+		FC41BBDC2401957E00B2F6E7 /* Random_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41BBDB2401957E00B2F6E7 /* Random_ViewController.swift */; };
+		FC41BBDE2401958A00B2F6E7 /* ProgramPoint_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41BBDD2401958A00B2F6E7 /* ProgramPoint_ViewController.swift */; };
+		FC41BBE0240195B600B2F6E7 /* AccidentScenario_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41BBDF240195B600B2F6E7 /* AccidentScenario_ViewController.swift */; };
+		FC41BBE2240195DA00B2F6E7 /* Setup_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41BBE1240195DA00B2F6E7 /* Setup_ViewController.swift */; };
+		FC41BBE4240195E600B2F6E7 /* SafetySettings_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41BBE3240195E600B2F6E7 /* SafetySettings_ViewController.swift */; };
 		FC5DD33123FD96D0003CC429 /* AdmiLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5DD33023FD96D0003CC429 /* AdmiLoginVC.swift */; };
 		FC5DD33323FD98C1003CC429 /* CalibrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5DD33223FD98C1003CC429 /* CalibrationVC.swift */; };
 		FCD08F8E23EF813400F4C7C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD08F8D23EF813400F4C7C8 /* AppDelegate.swift */; };
@@ -18,6 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC41BBD92401957500B2F6E7 /* Manual_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manual_ViewController.swift; sourceTree = "<group>"; };
+		FC41BBDB2401957E00B2F6E7 /* Random_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random_ViewController.swift; sourceTree = "<group>"; };
+		FC41BBDD2401958A00B2F6E7 /* ProgramPoint_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramPoint_ViewController.swift; sourceTree = "<group>"; };
+		FC41BBDF240195B600B2F6E7 /* AccidentScenario_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccidentScenario_ViewController.swift; sourceTree = "<group>"; };
+		FC41BBE1240195DA00B2F6E7 /* Setup_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setup_ViewController.swift; sourceTree = "<group>"; };
+		FC41BBE3240195E600B2F6E7 /* SafetySettings_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetySettings_ViewController.swift; sourceTree = "<group>"; };
 		FC5DD33023FD96D0003CC429 /* AdmiLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmiLoginVC.swift; sourceTree = "<group>"; };
 		FC5DD33223FD98C1003CC429 /* CalibrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationVC.swift; sourceTree = "<group>"; };
 		FCD08F8A23EF813400F4C7C8 /* At Training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "At Training.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +59,12 @@
 				FCD08F9123EF813400F4C7C8 /* ViewController.swift */,
 				FC5DD33023FD96D0003CC429 /* AdmiLoginVC.swift */,
 				FC5DD33223FD98C1003CC429 /* CalibrationVC.swift */,
+				FC41BBD92401957500B2F6E7 /* Manual_ViewController.swift */,
+				FC41BBDB2401957E00B2F6E7 /* Random_ViewController.swift */,
+				FC41BBDD2401958A00B2F6E7 /* ProgramPoint_ViewController.swift */,
+				FC41BBDF240195B600B2F6E7 /* AccidentScenario_ViewController.swift */,
+				FC41BBE1240195DA00B2F6E7 /* Setup_ViewController.swift */,
+				FC41BBE3240195E600B2F6E7 /* SafetySettings_ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,11 +186,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC41BBDA2401957500B2F6E7 /* Manual_ViewController.swift in Sources */,
+				FC41BBE0240195B600B2F6E7 /* AccidentScenario_ViewController.swift in Sources */,
+				FC41BBE2240195DA00B2F6E7 /* Setup_ViewController.swift in Sources */,
 				FCD08F9223EF813400F4C7C8 /* ViewController.swift in Sources */,
 				FCD08F8E23EF813400F4C7C8 /* AppDelegate.swift in Sources */,
 				FC5DD33123FD96D0003CC429 /* AdmiLoginVC.swift in Sources */,
+				FC41BBE4240195E600B2F6E7 /* SafetySettings_ViewController.swift in Sources */,
+				FC41BBDE2401958A00B2F6E7 /* ProgramPoint_ViewController.swift in Sources */,
 				FC5DD33323FD98C1003CC429 /* CalibrationVC.swift in Sources */,
 				FCD08F9023EF813400F4C7C8 /* SceneDelegate.swift in Sources */,
+				FC41BBDC2401957E00B2F6E7 /* Random_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

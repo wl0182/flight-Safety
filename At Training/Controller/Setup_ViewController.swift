@@ -16,7 +16,18 @@ class Setup_ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func dayPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func nightPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func safetySetting_dataSent(_ sender: UIButton) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 

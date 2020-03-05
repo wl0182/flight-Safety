@@ -17,6 +17,10 @@ class Manual_ViewController: UIViewController {
     }
     
 
+    @IBAction func InitiatePressed(_ sender: UIButton) {
+        
+        
+    }
     /*
     // MARK: - Navigation
 

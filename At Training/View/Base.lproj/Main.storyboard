@@ -335,10 +335,10 @@
             </objects>
             <point key="canvasLocation" x="929.6875" y="939.84374999999989"/>
         </scene>
-        <!--View Controller-->
+        <!--Safety Settings View Controller-->
         <scene sceneID="kll-Lt-b9e">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="5xA-mh-3aM" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="5xA-mh-3aM" customClass="SafetySettings_ViewController" customModule="At_Training" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UBe-QL-dkj">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -768,6 +768,9 @@
                                         <state key="normal" title="Historical ">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="wee-N1-Az6" kind="show" id="fkf-Wy-Qye"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1048,6 +1051,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0A4-og-8VF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4438" y="1010"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="r1K-b7-lSs">
+            <objects>
+                <viewController id="wee-N1-Az6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7fG-mS-qig">
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Dak-c3-Icy">
+                                <rect key="frame" x="50" y="50" width="612" height="884"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljm-2x-TXj">
+                                        <rect key="frame" x="0.0" y="0.0" width="612" height="198.5"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <state key="normal" title="(empty)">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWF-Xb-A5m">
+                                        <rect key="frame" x="0.0" y="228.5" width="612" height="198.5"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <state key="normal" title="(empty)">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uB-mk-vvX">
+                                        <rect key="frame" x="0.0" y="457" width="612" height="198.5"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <state key="normal" title="(empty)">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkb-g0-m7L">
+                                        <rect key="frame" x="0.0" y="685.5" width="612" height="198.5"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <state key="normal" title="(empty)">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HGY-sK-26A" firstAttribute="trailing" secondItem="Dak-c3-Icy" secondAttribute="trailing" constant="50" id="Bwc-1e-uV2"/>
+                            <constraint firstItem="Dak-c3-Icy" firstAttribute="top" secondItem="HGY-sK-26A" secondAttribute="top" constant="50" id="KB6-Bq-DlK"/>
+                            <constraint firstItem="Dak-c3-Icy" firstAttribute="leading" secondItem="HGY-sK-26A" secondAttribute="leading" constant="50" id="Noi-CX-SbY"/>
+                            <constraint firstItem="HGY-sK-26A" firstAttribute="bottom" secondItem="Dak-c3-Icy" secondAttribute="bottom" constant="50" id="eEp-rW-tCQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HGY-sK-26A"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="irc-bt-gQV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Z1-Ed-suI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5906" y="1010"/>
         </scene>
     </scenes>
     <resources>

@@ -10,7 +10,7 @@
 import UIKit
 
 class SafetySettings_ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

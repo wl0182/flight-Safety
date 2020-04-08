@@ -21,17 +21,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 //properties:
 //bring all the variables from main.m file here and declare them as properties.
-@property float GPS_Lat;
-@property float GPS_Long;
-@property int Ground_speed;
-@property short int GPS_VSI;
-@property int GPS_heading;
-@property int Geo_Altitude;
-@property float Firmware_version;
+@property float gps_Lat;
+@property float gps_Long;
+@property int ground_speed;
+@property short int gps_VSI;
+@property int gps_heading;
+@property int geo_Altitude;
+@property float firmware_version;
 @property int battPct;
 @property float roll;
 @property float pitch;
-@property float yaw;
+@property float yaw;//yaw = Heading
 @property int airspeedKnots;
 @property int altitudeFeet;
 @property int vsiFtPerMin;

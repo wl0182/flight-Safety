@@ -3,6 +3,6 @@
 List of contributors 
 Wassim 
 Sangita
-Muhammed 
+Muhammad 
 Manish 
 Roshan 

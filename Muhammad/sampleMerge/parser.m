@@ -13,14 +13,14 @@
 //+ for class methods, - for instance methods.
 //+(static void) packetParserMsg:uint8_t *mesg andSize:ssize_t n {.... } //OBjectiveC version of following funciton
 -(void) packetParser:(uint8_t *)mesg withSize:(ssize_t) n {
-    printf("rcvd from AstroLink:\n");
+    //printf("rcvd from AstroLink:\n");
     uint8_t cleanedMessage[n];
     int counter = 0;
     //remove Byte stuffing from GDL90 messages
     for(int y = 1; y<(n-1); y++)
     {
         //printf("%s ", &mesg[y]); //this prints a string.. but our data is binary
-        printf("%02X ", mesg[y]);
+//        printf("%02X ", mesg[y]);
         if (mesg[y] == 0x7D)
         {
             y++;
@@ -52,11 +52,11 @@
             tempInt =(cleanedMessage[5]<<16)+(cleanedMessage[6]<<8)+(cleanedMessage[7]);
             if (tempInt & 0x800000)
             {
-                self.GPS_Lat = (-1)*(float)(((tempInt^0xFFFFFF)+1)*90)/4194304;
+                self.gps_Lat = (-1)*(float)(((tempInt^0xFFFFFF)+1)*90)/4194304;
             }
             else
             {
-                self.GPS_Lat = (float)(tempInt*90)/4194304;
+                self.gps_Lat = (float)(tempInt*90)/4194304;
             }
             
             
@@ -65,27 +65,27 @@
             tempInt =(cleanedMessage[8]<<16)+(cleanedMessage[9]<<8)+(cleanedMessage[10]);
             if (tempInt & 0x800000)
             {
-                self.GPS_Long = (-1)*((float)(((tempInt^0xFFFFFF)+1)*90)/4194304);
+                self.gps_Long = (-1)*((float)(((tempInt^0xFFFFFF)+1)*90)/4194304);
             }
             else
             {
-                self.GPS_Long = ((float)(tempInt*90)/4194304);
+                self.gps_Long = ((float)(tempInt*90)/4194304);
             }
             
             
             //get ground speed
             
-            self.Ground_speed =(cleanedMessage[14]<<4)+((cleanedMessage[15] &  0xF0)>>4);
+            self.ground_speed =(cleanedMessage[14]<<4)+((cleanedMessage[15] &  0xF0)>>4);
             
             
             //get GPS vertical speed
             
-            self.GPS_VSI = (short int)(cleanedMessage[16]+((cleanedMessage[15] &  0x0F)<<8))*64;
+            self.gps_VSI = (short int)(cleanedMessage[16]+((cleanedMessage[15] &  0x0F)<<8))*64;
             
             
             //get heading
             
-            self.GPS_heading = cleanedMessage[17]*(360/256);
+            self.gps_heading = cleanedMessage[17]*(360/256);
             
             
             //get geoAltitude
@@ -93,34 +93,34 @@
             
             
             //get values
-            NSLog(@"GPS Lat: %0.3f",self.GPS_Lat);
-            NSLog(@"GPS Long: %0.3f",self.GPS_Long);
-            NSLog(@"GPS groundspeed: %d",self.Ground_speed);
-            NSLog(@"GPS Vert Speed: %d",self.GPS_VSI);
-            //NSLog(@"GPS Heading: %d",GPS_heading);//no need for this. We are probably using yaw value for heading (Ananda named yaw as Heading and it is consistent with utility app
+          //  NSLog(@"GPS Lat: %0.3f",self.gps_Lat);
+          //  NSLog(@"GPS Long: %0.3f",self.gps_Long);
+          //  NSLog(@"GPS groundspeed: %d",self.Ground_speed);
+          //  NSLog(@"GPS Vert Speed: %d",self.gps_VSI);
+            //NSLog(@"GPS Heading: %d",gps_heading);//no need for this. We are probably using yaw value for heading (Ananda named yaw as Heading and it is consistent with utility app
             //NSLog(@"GPS Altitude: %d",Geo_Altitude);// DO NOT USE THIS (as per iLevel code)
             
             break;
             
         case 0x0B: //received only once in 5000 loops
-            printf("Received GPS ALtitude message\r\n");
+        //    printf("Received GPS ALtitude message\r\n");
             //decode GPS altitude here
             
             //this is ellipsoid ALtitude (not Mean Sea Level Altitude)
-            self.Geo_Altitude  = (short int)((cleanedMessage[1]<<8)+cleanedMessage[2])*5;
-            NSLog(@"Geo Altitude: %d", self.Geo_Altitude); //NOT BEING RECEIVED even in 1000 iterations of while loop
+            self.geo_Altitude  = (short int)((cleanedMessage[1]<<8)+cleanedMessage[2])*5;
+          //  NSLog(@"Geo Altitude: %d", self.Geo_Altitude); //NOT BEING RECEIVED even in 1000 iterations of while loop
             
             break;
             
         case 0x4C: //received iLevil message
             if (cleanedMessage[2] == 0x00)
             {
-                printf("Received Levil Status message\r\n");
+              //  printf("Received Levil Status message\r\n");
                 //decode battery percent etc
-                self.Firmware_version = ((float)cleanedMessage[4])/10.0;
+                self.firmware_version = ((float)cleanedMessage[4])/10.0;
                 self.battPct = (int)cleanedMessage[5];
-                NSLog(@"Firmware Version: %0.1f",self.Firmware_version);
-                NSLog(@"Battery Percentage: %d",self.battPct);
+              //  NSLog(@"Firmware Version: %0.1f",self.Firmware_version);
+              //  NSLog(@"Battery Percentage: %d",self.battPct);
                 
                 //
                 //                            int errorCode = cleanedMessage[6]*256+cleanedMessage[6];//what is this for?
@@ -141,7 +141,7 @@
                 printf("Received Levil AHRS message\r\n");
                 self.roll = ((float)((short int)((cleanedMessage[4]*256)+cleanedMessage[5])))/10.0;
                 self.pitch = ((float)((short int)((cleanedMessage[6]*256)+cleanedMessage[7])))/10.0;
-                self.yaw = (float)((short int)((cleanedMessage[8]*256)+cleanedMessage[9]))/10.0;
+                self.yaw = (float)((short int)((cleanedMessage[8]*256)+cleanedMessage[9]))/10.0;//yaw = Heading
                 self.airspeedKnots = ((short int)(cleanedMessage[16]*256+cleanedMessage[17]));
                 self.altitudeFeet = ((short int)(cleanedMessage[18]*256+cleanedMessage[19]));
                 self.vsiFtPerMin = ((short int)(cleanedMessage[20]*256+cleanedMessage[21]));
@@ -151,7 +151,7 @@
                     self.altitudeFeet = self.altitudeFeet-5000;
                 }
                 NSLog(@"Roll: %.1f, Pitch: %.1f, Heading: %.1f\r\n",self.roll,self.pitch,self.yaw);
-                NSLog(@"Air Speed(kts): %d, Altitude(ft): %d",self.airspeedKnots, self.altitudeFeet);//Values not making sense. AirSpeed = 32767 and Altitude= -1
+                //NSLog(@"Air Speed(kts): %d, Altitude(ft): %d",self.airspeedKnots, self.altitudeFeet);//Values not making sense. AirSpeed = 32767 and Altitude= -1
             }
             break;
             
@@ -160,8 +160,10 @@
     }
 }
 
-- (void) msgReceiver {
-    
+- (void) msgReceiver
+{
+    //@autoreleasepool
+    //{
         //variables
         ssize_t n;
         socklen_t len;
@@ -177,23 +179,27 @@
         servaddr.sin_port = htons(43211);
         bind(sockfd, (struct sockaddr *) &servaddr, sizeof(servaddr));
         len = sizeof(cliaddr);
-        int i=0;
         
+      //  printf("\nabout to recvfrom\n");
+        //int i=0;
         //receive and process loop
-        while (i <1000)
+        //while (i <1000)
+        //{
+        n = recvfrom(sockfd, mesg, 1024, 0, (struct sockaddr *) &cliaddr, &len);
+      //  printf("\nrecvfrom done \n");
+        if (n>0) //if we have bytes
         {
-            n = recvfrom(sockfd, mesg, 1024, 0, (struct sockaddr *) &cliaddr, &len);
+            //create new thread here and destroy thread soon as packetParser returns
+            [self packetParser:mesg withSize:n]; //switch
             
-            if (n>0) //if we have bytes
-            {
-                //create new thread here and destroy thread soon as packetParser returns
-                [self packetParser:mesg withSize:n]; //switch
-                
-            }//if n>0
-            
-            printf("\n");
-            i++;
-        }//while
+        }//if n>0
+        
+       // printf("\n");
+        close(sockfd);
+        //    i++;
+        //}//while
+   // }
+        
 }
 
 @end

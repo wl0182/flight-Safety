@@ -50,6 +50,8 @@ class ViewController: UIViewController {
                 //do nothing
             }else{
                 print("Lat = \(swiftGPS_Lat!)")
+                //call caliberation display function
+                //call comparing function to database values
             }
             swiftGPS_Long = instanceOfparser.gps_Long
             if (swiftGPS_Long == nil || swiftGPS_Long == 0.0){

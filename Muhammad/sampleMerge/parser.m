@@ -167,12 +167,12 @@
         //variables
         ssize_t n;
         socklen_t len;
-        int sockfd;
+        int sockfd;//this socket gets created and destroyed once per each function call
         uint8_t mesg[1024];
         
         //socket
         struct sockaddr_in servaddr,cliaddr;
-        sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+        sockfd = socket(AF_INET, SOCK_DGRAM, 0);//this socket gets created and destroyed once per each function call
         bzero(&servaddr, sizeof(servaddr));
         servaddr.sin_family = AF_INET;
         servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
@@ -195,7 +195,7 @@
         }//if n>0
         
        // printf("\n");
-        close(sockfd);
+        close(sockfd);//this socket gets created and destroyed once per each function call
         //    i++;
         //}//while
    // }

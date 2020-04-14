@@ -1,0 +1,15 @@
+version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+options: "6da16bc1011ce6a103da98c9845ff843"
+build_time: [1586790923, 855119000]
+inputs:
+  "/Users/wassimlagnaoui/flight-Safety/At Training/Controller/Manual_ViewController.swift": [1586790922, 196085461]
+  "/Users/wassimlagnaoui/flight-Safety/At Training/Controller/AccidentScenario_ViewController.swift": [1586790922, 194997415]
+  "/Users/wassimlagnaoui/flight-Safety/At Training/Controller/Setup_ViewController.swift": [1586790922, 197620838]
+  "/Users/wassimlagnaoui/flight-Safety/At Training/Controller/ViewController.swift": [1586790922, 197995648]
+  "/Users/wassimlagnaoui/flight-Safety/At Training/AppDelegate.swift": [1586790922, 174437019]
+  "/Users/wassimlagnaoui/flight-Safety/At Training/Controller/AdmiLoginVC.swift": [1586790922, 195437100]
+  "/Users/wassimlagnaoui/flight-Safety/At Training/Controller/SafetySettings_ViewController.swift": [1586790922, 197207395]
+  "/Users/wassimlagnaoui/flight-Safety/At Training/Controller/ProgramPoint_ViewController.swift": [1586790922, 196400928]
+  "/Users/wassimlagnaoui/flight-Safety/At Training/Controller/CalibrationVC.swift": [1586790922, 195771060]
+  "/Users/wassimlagnaoui/flight-Safety/At Training/SceneDelegate.swift": [1586790922, 199409765]
+  "/Users/wassimlagnaoui/flight-Safety/At Training/Controller/Random_ViewController.swift": [1586790922, 196823457]

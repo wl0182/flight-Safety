@@ -15,7 +15,9 @@ provides-dynamic-lookup:
 depends-top-level:
 - !private "*"
 - !private "/"
+- !private ">"
 - "AssignmentPrecedence"
+- "Float"
 - "FloatLiteralType"
 - !private "Int"
 - "IntegerLiteralType"
@@ -32,9 +34,11 @@ depends-top-level:
 depends-member:
 - !private ["s18AdditiveArithmeticP", "init"]
 - !private ["SK", "init"]
+- !private ["SB", "init"]
 - !private ["Sz", "init"]
 - !private ["So15CALayerDelegateP", "text"]
 - !private ["So15CALayerDelegateP", "value"]
+- !private ["s7CVarArgP", "Float"]
 - !private ["s7CVarArgP", "Int"]
 - !private ["s7CVarArgP", "String"]
 - ["s7CVarArgP", ""]
@@ -51,6 +55,7 @@ depends-member:
 - !private ["s7CVarArgP", "visibilityLabel"]
 - !private ["Sl", "init"]
 - !private ["SL", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "Float"]
 - !private ["s28CustomDebugStringConvertibleP", "Int"]
 - !private ["s28CustomDebugStringConvertibleP", "String"]
 - ["s28CustomDebugStringConvertibleP", ""]
@@ -67,9 +72,12 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "visibilityLabel"]
 - !private ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "text"]
+- !private ["s23CustomStringConvertibleP", "Float"]
 - !private ["s23CustomStringConvertibleP", "Int"]
 - !private ["s23CustomStringConvertibleP", "String"]
 - ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "appendInterpolation"]
+- !private ["s23CustomStringConvertibleP", "appendLiteral"]
 - !private ["s23CustomStringConvertibleP", "ceilingLabel"]
 - !private ["s23CustomStringConvertibleP", "db"]
 - !private ["s23CustomStringConvertibleP", "init"]
@@ -83,8 +91,11 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "visibilityLabel"]
 - !private ["Se", "init"]
 - !private ["Se", "text"]
+- !private ["s26DefaultStringInterpolationV", "appendInterpolation"]
+- !private ["s26DefaultStringInterpolationV", "appendLiteral"]
 - !private ["SE", "init"]
 - !private ["SE", "text"]
+- !private ["SQ", "Float"]
 - !private ["SQ", "Int"]
 - !private ["SQ", "String"]
 - ["SQ", ""]
@@ -100,12 +111,16 @@ depends-member:
 - !private ["SQ", "viewDidLoad"]
 - !private ["SQ", "visibilityLabel"]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "init"]
 - !private ["s27ExpressibleByIntegerLiteralP", "init"]
 - !private ["s23ExpressibleByNilLiteralP", "text"]
 - !private ["s32ExpressibleByStringInterpolationP", "init"]
 - !private ["s26ExpressibleByStringLiteralP", "init"]
 - !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
 - !private ["s17FixedWidthIntegerP", "init"]
+- !private ["Sf", "init"]
+- !private ["SF", "init"]
+- !private ["SH", "Float"]
 - !private ["SH", "Int"]
 - !private ["SH", "String"]
 - ["SH", ""]
@@ -122,6 +137,7 @@ depends-member:
 - !private ["SH", "visibilityLabel"]
 - !private ["Si", "init"]
 - !private ["s25LosslessStringConvertibleP", "init"]
+- ["11At_Training21Manual_ViewControllerC", "Float"]
 - ["11At_Training21Manual_ViewControllerC", "InitiatePressed"]
 - !private ["11At_Training21Manual_ViewControllerC", "Int"]
 - !private ["11At_Training21Manual_ViewControllerC", "String"]
@@ -140,6 +156,7 @@ depends-member:
 - ["11At_Training21Manual_ViewControllerC", "visibilityLabel"]
 - ["11At_Training21Manual_ViewControllerC", "visibilitySlider"]
 - !private ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "Float"]
 - !private ["So8NSCodingP", "Int"]
 - !private ["So8NSCodingP", "String"]
 - ["So8NSCodingP", ""]
@@ -153,6 +170,7 @@ depends-member:
 - !private ["So8NSCodingP", "valueReceived"]
 - !private ["So8NSCodingP", "viewDidLoad"]
 - !private ["So8NSCodingP", "visibilityLabel"]
+- !private ["So26NSExtensionRequestHandlingP", "Float"]
 - !private ["So26NSExtensionRequestHandlingP", "Int"]
 - !private ["So26NSExtensionRequestHandlingP", "String"]
 - ["So26NSExtensionRequestHandlingP", ""]
@@ -164,6 +182,7 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "valueReceived"]
 - !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
 - !private ["So26NSExtensionRequestHandlingP", "visibilityLabel"]
+- ["So8NSObjectC", "Float"]
 - ["So8NSObjectC", "InitiatePressed"]
 - !private ["So8NSObjectC", "Int"]
 - !private ["So8NSObjectC", "String"]
@@ -183,6 +202,7 @@ depends-member:
 - ["So8NSObjectC", "viewDidLoad"]
 - ["So8NSObjectC", "visibilityLabel"]
 - ["So8NSObjectC", "visibilitySlider"]
+- !private ["So8NSObjectP", "Float"]
 - !private ["So8NSObjectP", "Int"]
 - !private ["So8NSObjectP", "String"]
 - ["So8NSObjectP", ""]
@@ -206,13 +226,18 @@ depends-member:
 - !private ["s13SignedNumericP", "init"]
 - !private ["Sx", "init"]
 - !private ["SS", "init"]
+- !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
+- !private ["s27StringInterpolationProtocolP", "appendLiteral"]
 - !private ["Sy", "init"]
+- !private ["s16TextOutputStreamP", "appendInterpolation"]
+- !private ["s16TextOutputStreamP", "appendLiteral"]
 - !private ["s16TextOutputStreamP", "init"]
 - !private ["s20TextOutputStreamableP", "init"]
 - !private ["So29UIAccessibilityIdentificationP", "text"]
 - !private ["So29UIAccessibilityIdentificationP", "value"]
 - !private ["So12UIAppearanceP", "text"]
 - !private ["So12UIAppearanceP", "value"]
+- !private ["So21UIAppearanceContainerP", "Float"]
 - !private ["So21UIAppearanceContainerP", "Int"]
 - !private ["So21UIAppearanceContainerP", "String"]
 - ["So21UIAppearanceContainerP", ""]
@@ -226,6 +251,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "valueReceived"]
 - !private ["So21UIAppearanceContainerP", "viewDidLoad"]
 - !private ["So21UIAppearanceContainerP", "visibilityLabel"]
+- !private ["So18UIContentContainerP", "Float"]
 - !private ["So18UIContentContainerP", "Int"]
 - !private ["So18UIContentContainerP", "String"]
 - ["So18UIContentContainerP", ""]
@@ -243,6 +269,7 @@ depends-member:
 - !private ["So17UICoordinateSpaceP", "value"]
 - !private ["So13UIDynamicItemP", "text"]
 - !private ["So13UIDynamicItemP", "value"]
+- !private ["So18UIFocusEnvironmentP", "Float"]
 - !private ["So18UIFocusEnvironmentP", "Int"]
 - !private ["So18UIFocusEnvironmentP", "String"]
 - ["So18UIFocusEnvironmentP", ""]
@@ -263,6 +290,7 @@ depends-member:
 - !private ["So7UILabelC", "text"]
 - !private ["So24UILargeContentViewerItemP", "text"]
 - !private ["So24UILargeContentViewerItemP", "value"]
+- !private ["So30UIPasteConfigurationSupportingP", "Float"]
 - !private ["So30UIPasteConfigurationSupportingP", "Int"]
 - !private ["So30UIPasteConfigurationSupportingP", "String"]
 - ["So30UIPasteConfigurationSupportingP", ""]
@@ -276,6 +304,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "valueReceived"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
 - !private ["So30UIPasteConfigurationSupportingP", "visibilityLabel"]
+- ["So11UIResponderC", "Float"]
 - ["So11UIResponderC", "InitiatePressed"]
 - !private ["So11UIResponderC", "Int"]
 - !private ["So11UIResponderC", "String"]
@@ -294,6 +323,7 @@ depends-member:
 - ["So11UIResponderC", "viewDidLoad"]
 - ["So11UIResponderC", "visibilityLabel"]
 - ["So11UIResponderC", "visibilitySlider"]
+- !private ["So30UIResponderStandardEditActionsP", "Float"]
 - !private ["So30UIResponderStandardEditActionsP", "Int"]
 - !private ["So30UIResponderStandardEditActionsP", "String"]
 - ["So30UIResponderStandardEditActionsP", ""]
@@ -308,6 +338,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
 - !private ["So30UIResponderStandardEditActionsP", "visibilityLabel"]
 - !private ["So8UISliderC", "value"]
+- !private ["So16UIStateRestoringP", "Float"]
 - !private ["So16UIStateRestoringP", "Int"]
 - !private ["So16UIStateRestoringP", "String"]
 - ["So16UIStateRestoringP", ""]
@@ -319,6 +350,7 @@ depends-member:
 - !private ["So16UIStateRestoringP", "valueReceived"]
 - !private ["So16UIStateRestoringP", "viewDidLoad"]
 - !private ["So16UIStateRestoringP", "visibilityLabel"]
+- !private ["So18UITraitEnvironmentP", "Float"]
 - !private ["So18UITraitEnvironmentP", "Int"]
 - !private ["So18UITraitEnvironmentP", "String"]
 - ["So18UITraitEnvironmentP", ""]
@@ -332,6 +364,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "valueReceived"]
 - !private ["So18UITraitEnvironmentP", "viewDidLoad"]
 - !private ["So18UITraitEnvironmentP", "visibilityLabel"]
+- !private ["So23UIUserActivityRestoringP", "Float"]
 - !private ["So23UIUserActivityRestoringP", "Int"]
 - !private ["So23UIUserActivityRestoringP", "String"]
 - ["So23UIUserActivityRestoringP", ""]
@@ -347,6 +380,7 @@ depends-member:
 - !private ["So23UIUserActivityRestoringP", "visibilityLabel"]
 - !private ["So6UIViewC", "text"]
 - !private ["So6UIViewC", "value"]
+- ["So16UIViewControllerC", "Float"]
 - ["So16UIViewControllerC", "InitiatePressed"]
 - !private ["So16UIViewControllerC", "Int"]
 - !private ["So16UIViewControllerC", "String"]
@@ -365,13 +399,17 @@ depends-member:
 - ["So16UIViewControllerC", "visibilityLabel"]
 - ["So16UIViewControllerC", "visibilitySlider"]
 - !private ["So14NSUserDefaultsC", "integer"]
+- !private ["s15_CVarArgAlignedP", "init"]
+- !private ["s22_CVarArgPassedAsDoubleP", "init"]
 - !private ["s30_CustomPlaygroundQuickLookableP", "init"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "init"]
 - !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
 - !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
 - !private ["s19_HasContiguousBytesP", "init"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Float"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "Int"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "String"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
@@ -386,6 +424,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "valueReceived"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "visibilityLabel"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Float"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Int"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "String"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
@@ -407,6 +446,7 @@ depends-member:
 depends-nominal:
 - !private "s18AdditiveArithmeticP"
 - !private "SK"
+- !private "SB"
 - !private "Sz"
 - !private "So15CALayerDelegateP"
 - "s7CVarArgP"
@@ -416,15 +456,19 @@ depends-nominal:
 - !private "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
 - !private "Se"
+- !private "s26DefaultStringInterpolationV"
 - !private "SE"
 - "SQ"
 - !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s25ExpressibleByFloatLiteralP"
 - !private "s27ExpressibleByIntegerLiteralP"
 - !private "s23ExpressibleByNilLiteralP"
 - !private "s32ExpressibleByStringInterpolationP"
 - !private "s26ExpressibleByStringLiteralP"
 - !private "s33ExpressibleByUnicodeScalarLiteralP"
 - !private "s17FixedWidthIntegerP"
+- !private "Sf"
+- !private "SF"
 - "SH"
 - !private "Si"
 - !private "s25LosslessStringConvertibleP"
@@ -443,6 +487,7 @@ depends-nominal:
 - !private "s13SignedNumericP"
 - !private "Sx"
 - !private "SS"
+- !private "s27StringInterpolationProtocolP"
 - !private "Sy"
 - !private "s16TextOutputStreamP"
 - !private "s20TextOutputStreamableP"
@@ -469,8 +514,11 @@ depends-nominal:
 - !private "So6UIViewC"
 - "So16UIViewControllerC"
 - !private "So14NSUserDefaultsC"
+- !private "s15_CVarArgAlignedP"
+- !private "s22_CVarArgPassedAsDoubleP"
 - !private "s30_CustomPlaygroundQuickLookableP"
 - !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s33_ExpressibleByBuiltinFloatLiteralP"
 - !private "s35_ExpressibleByBuiltinIntegerLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
 - !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
@@ -521,4 +569,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "6940cb554afc1326791fbc99681baa84"
+interface-hash: "707151b324c3b14d14c7ad795a6f78b4"

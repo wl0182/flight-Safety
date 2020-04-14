@@ -11,7 +11,7 @@ import UIKit
 class Manual_ViewController: UIViewController {
 
     // variables
-    let valueReceived = 25
+    let valueReceived: Float = 40
     
     // outlets
     
@@ -48,9 +48,18 @@ class Manual_ViewController: UIViewController {
     
    
     @IBAction func InitiatePressed(_ sender: UIButton) {
+        let temp1 = db.integer(forKey: "Max_Pitch")
+        print("Pitch Max from Safety Setting: \(temp1)")
         
-        print(db.integer(forKey: "Min_Pitch"))
-        print(valueReceived)
+        let temp2 = db.integer(forKey: "Min_Pitch")
+        print("Pitch Min from SS: \(temp2)")
+        
+        if valueReceived > Float(temp1) {
+            print("Flip the visor")
+        }
+        
+        
+     
         
     }
   

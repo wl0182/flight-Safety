@@ -15,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        print(db.integer(forKey: "Min_Pitch"))
+        print(db.integer(forKey: "Max_Pitch"))
+        print("The app is Launched")
         return true
     }
 

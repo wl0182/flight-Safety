@@ -7,189 +7,479 @@ provides-member:
 - ["11At_Training21Manual_ViewControllerC", ""]
 provides-dynamic-lookup:
 - "InitiatePressed"
+- "ceilingLabel"
+- "ceilingSlider"
 - "viewDidLoad"
+- "visibilityLabel"
+- "visibilitySlider"
 depends-top-level:
+- !private "*"
+- !private "/"
+- "AssignmentPrecedence"
 - "FloatLiteralType"
+- !private "Int"
 - "IntegerLiteralType"
 - "Manual_ViewController"
+- !private "String"
 - !private "StringLiteralType"
 - "UIButton"
+- "UILabel"
+- "UISlider"
 - "UIViewController"
 - !private "db"
 - !private "print"
+- !private "roundf"
 depends-member:
+- !private ["s18AdditiveArithmeticP", "init"]
+- !private ["SK", "init"]
+- !private ["Sz", "init"]
+- !private ["So15CALayerDelegateP", "text"]
+- !private ["So15CALayerDelegateP", "value"]
+- !private ["s7CVarArgP", "Int"]
+- !private ["s7CVarArgP", "String"]
 - ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "ceilingLabel"]
 - !private ["s7CVarArgP", "db"]
 - !private ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "integer"]
 - !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "roundf"]
+- !private ["s7CVarArgP", "text"]
+- !private ["s7CVarArgP", "value"]
 - !private ["s7CVarArgP", "valueReceived"]
 - !private ["s7CVarArgP", "viewDidLoad"]
+- !private ["s7CVarArgP", "visibilityLabel"]
+- !private ["Sl", "init"]
+- !private ["SL", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "Int"]
+- !private ["s28CustomDebugStringConvertibleP", "String"]
 - ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "ceilingLabel"]
 - !private ["s28CustomDebugStringConvertibleP", "db"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "integer"]
 - !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "roundf"]
+- !private ["s28CustomDebugStringConvertibleP", "text"]
+- !private ["s28CustomDebugStringConvertibleP", "value"]
 - !private ["s28CustomDebugStringConvertibleP", "valueReceived"]
 - !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
+- !private ["s28CustomDebugStringConvertibleP", "visibilityLabel"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "text"]
+- !private ["s23CustomStringConvertibleP", "Int"]
+- !private ["s23CustomStringConvertibleP", "String"]
 - ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "ceilingLabel"]
 - !private ["s23CustomStringConvertibleP", "db"]
 - !private ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "integer"]
 - !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "roundf"]
+- !private ["s23CustomStringConvertibleP", "text"]
+- !private ["s23CustomStringConvertibleP", "value"]
 - !private ["s23CustomStringConvertibleP", "valueReceived"]
 - !private ["s23CustomStringConvertibleP", "viewDidLoad"]
+- !private ["s23CustomStringConvertibleP", "visibilityLabel"]
+- !private ["Se", "init"]
+- !private ["Se", "text"]
+- !private ["SE", "init"]
+- !private ["SE", "text"]
+- !private ["SQ", "Int"]
+- !private ["SQ", "String"]
 - ["SQ", ""]
+- !private ["SQ", "ceilingLabel"]
 - !private ["SQ", "db"]
 - !private ["SQ", "init"]
 - !private ["SQ", "integer"]
 - !private ["SQ", "print"]
+- !private ["SQ", "roundf"]
+- !private ["SQ", "text"]
+- !private ["SQ", "value"]
 - !private ["SQ", "valueReceived"]
 - !private ["SQ", "viewDidLoad"]
+- !private ["SQ", "visibilityLabel"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s23ExpressibleByNilLiteralP", "text"]
+- !private ["s32ExpressibleByStringInterpolationP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s17FixedWidthIntegerP", "init"]
+- !private ["SH", "Int"]
+- !private ["SH", "String"]
 - ["SH", ""]
+- !private ["SH", "ceilingLabel"]
 - !private ["SH", "db"]
 - !private ["SH", "init"]
 - !private ["SH", "integer"]
 - !private ["SH", "print"]
+- !private ["SH", "roundf"]
+- !private ["SH", "text"]
+- !private ["SH", "value"]
 - !private ["SH", "valueReceived"]
 - !private ["SH", "viewDidLoad"]
+- !private ["SH", "visibilityLabel"]
+- !private ["Si", "init"]
+- !private ["s25LosslessStringConvertibleP", "init"]
 - ["11At_Training21Manual_ViewControllerC", "InitiatePressed"]
+- !private ["11At_Training21Manual_ViewControllerC", "Int"]
+- !private ["11At_Training21Manual_ViewControllerC", "String"]
 - ["11At_Training21Manual_ViewControllerC", "UIButton"]
+- ["11At_Training21Manual_ViewControllerC", "UILabel"]
+- ["11At_Training21Manual_ViewControllerC", "UISlider"]
+- ["11At_Training21Manual_ViewControllerC", "ceilingLabel"]
+- ["11At_Training21Manual_ViewControllerC", "ceilingSlider"]
 - !private ["11At_Training21Manual_ViewControllerC", "db"]
 - ["11At_Training21Manual_ViewControllerC", "deinit"]
 - ["11At_Training21Manual_ViewControllerC", "init"]
 - !private ["11At_Training21Manual_ViewControllerC", "print"]
+- !private ["11At_Training21Manual_ViewControllerC", "roundf"]
 - ["11At_Training21Manual_ViewControllerC", "valueReceived"]
 - ["11At_Training21Manual_ViewControllerC", "viewDidLoad"]
+- ["11At_Training21Manual_ViewControllerC", "visibilityLabel"]
+- ["11At_Training21Manual_ViewControllerC", "visibilitySlider"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "Int"]
+- !private ["So8NSCodingP", "String"]
 - ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "ceilingLabel"]
 - !private ["So8NSCodingP", "db"]
 - !private ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "print"]
+- !private ["So8NSCodingP", "roundf"]
+- !private ["So8NSCodingP", "text"]
+- !private ["So8NSCodingP", "value"]
 - !private ["So8NSCodingP", "valueReceived"]
 - !private ["So8NSCodingP", "viewDidLoad"]
+- !private ["So8NSCodingP", "visibilityLabel"]
+- !private ["So26NSExtensionRequestHandlingP", "Int"]
+- !private ["So26NSExtensionRequestHandlingP", "String"]
 - ["So26NSExtensionRequestHandlingP", ""]
+- !private ["So26NSExtensionRequestHandlingP", "ceilingLabel"]
 - !private ["So26NSExtensionRequestHandlingP", "db"]
 - !private ["So26NSExtensionRequestHandlingP", "init"]
 - !private ["So26NSExtensionRequestHandlingP", "print"]
+- !private ["So26NSExtensionRequestHandlingP", "roundf"]
 - !private ["So26NSExtensionRequestHandlingP", "valueReceived"]
 - !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
+- !private ["So26NSExtensionRequestHandlingP", "visibilityLabel"]
 - ["So8NSObjectC", "InitiatePressed"]
+- !private ["So8NSObjectC", "Int"]
+- !private ["So8NSObjectC", "String"]
 - ["So8NSObjectC", "UIButton"]
+- ["So8NSObjectC", "UILabel"]
+- ["So8NSObjectC", "UISlider"]
+- ["So8NSObjectC", "ceilingLabel"]
+- ["So8NSObjectC", "ceilingSlider"]
 - !private ["So8NSObjectC", "db"]
 - ["So8NSObjectC", "init"]
 - !private ["So8NSObjectC", "integer"]
 - !private ["So8NSObjectC", "print"]
+- !private ["So8NSObjectC", "roundf"]
+- !private ["So8NSObjectC", "text"]
+- !private ["So8NSObjectC", "value"]
 - ["So8NSObjectC", "valueReceived"]
 - ["So8NSObjectC", "viewDidLoad"]
+- ["So8NSObjectC", "visibilityLabel"]
+- ["So8NSObjectC", "visibilitySlider"]
+- !private ["So8NSObjectP", "Int"]
+- !private ["So8NSObjectP", "String"]
 - ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "ceilingLabel"]
 - !private ["So8NSObjectP", "db"]
 - !private ["So8NSObjectP", "init"]
 - !private ["So8NSObjectP", "integer"]
 - !private ["So8NSObjectP", "print"]
+- !private ["So8NSObjectP", "roundf"]
+- !private ["So8NSObjectP", "text"]
+- !private ["So8NSObjectP", "value"]
 - !private ["So8NSObjectP", "valueReceived"]
 - !private ["So8NSObjectP", "viewDidLoad"]
+- !private ["So8NSObjectP", "visibilityLabel"]
+- !private ["Sj", "init"]
+- !private ["Sq", "text"]
+- !private ["Sm", "init"]
+- !private ["s10SIMDScalarP", "init"]
+- !private ["ST", "init"]
+- !private ["SZ", "init"]
+- !private ["s13SignedNumericP", "init"]
+- !private ["Sx", "init"]
+- !private ["SS", "init"]
+- !private ["Sy", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["So29UIAccessibilityIdentificationP", "text"]
+- !private ["So29UIAccessibilityIdentificationP", "value"]
+- !private ["So12UIAppearanceP", "text"]
+- !private ["So12UIAppearanceP", "value"]
+- !private ["So21UIAppearanceContainerP", "Int"]
+- !private ["So21UIAppearanceContainerP", "String"]
 - ["So21UIAppearanceContainerP", ""]
+- !private ["So21UIAppearanceContainerP", "ceilingLabel"]
 - !private ["So21UIAppearanceContainerP", "db"]
 - !private ["So21UIAppearanceContainerP", "init"]
 - !private ["So21UIAppearanceContainerP", "print"]
+- !private ["So21UIAppearanceContainerP", "roundf"]
+- !private ["So21UIAppearanceContainerP", "text"]
+- !private ["So21UIAppearanceContainerP", "value"]
 - !private ["So21UIAppearanceContainerP", "valueReceived"]
 - !private ["So21UIAppearanceContainerP", "viewDidLoad"]
+- !private ["So21UIAppearanceContainerP", "visibilityLabel"]
+- !private ["So18UIContentContainerP", "Int"]
+- !private ["So18UIContentContainerP", "String"]
 - ["So18UIContentContainerP", ""]
+- !private ["So18UIContentContainerP", "ceilingLabel"]
 - !private ["So18UIContentContainerP", "db"]
 - !private ["So18UIContentContainerP", "init"]
 - !private ["So18UIContentContainerP", "print"]
+- !private ["So18UIContentContainerP", "roundf"]
 - !private ["So18UIContentContainerP", "valueReceived"]
 - !private ["So18UIContentContainerP", "viewDidLoad"]
+- !private ["So18UIContentContainerP", "visibilityLabel"]
+- !private ["So30UIContentSizeCategoryAdjustingP", "text"]
+- !private ["So9UIControlC", "value"]
+- !private ["So17UICoordinateSpaceP", "text"]
+- !private ["So17UICoordinateSpaceP", "value"]
+- !private ["So13UIDynamicItemP", "text"]
+- !private ["So13UIDynamicItemP", "value"]
+- !private ["So18UIFocusEnvironmentP", "Int"]
+- !private ["So18UIFocusEnvironmentP", "String"]
 - ["So18UIFocusEnvironmentP", ""]
+- !private ["So18UIFocusEnvironmentP", "ceilingLabel"]
 - !private ["So18UIFocusEnvironmentP", "db"]
 - !private ["So18UIFocusEnvironmentP", "init"]
 - !private ["So18UIFocusEnvironmentP", "print"]
+- !private ["So18UIFocusEnvironmentP", "roundf"]
+- !private ["So18UIFocusEnvironmentP", "text"]
+- !private ["So18UIFocusEnvironmentP", "value"]
 - !private ["So18UIFocusEnvironmentP", "valueReceived"]
 - !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
+- !private ["So18UIFocusEnvironmentP", "visibilityLabel"]
+- !private ["So11UIFocusItemP", "text"]
+- !private ["So11UIFocusItemP", "value"]
+- !private ["So20UIFocusItemContainerP", "text"]
+- !private ["So20UIFocusItemContainerP", "value"]
+- !private ["So7UILabelC", "text"]
+- !private ["So24UILargeContentViewerItemP", "text"]
+- !private ["So24UILargeContentViewerItemP", "value"]
+- !private ["So30UIPasteConfigurationSupportingP", "Int"]
+- !private ["So30UIPasteConfigurationSupportingP", "String"]
 - ["So30UIPasteConfigurationSupportingP", ""]
+- !private ["So30UIPasteConfigurationSupportingP", "ceilingLabel"]
 - !private ["So30UIPasteConfigurationSupportingP", "db"]
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
 - !private ["So30UIPasteConfigurationSupportingP", "print"]
+- !private ["So30UIPasteConfigurationSupportingP", "roundf"]
+- !private ["So30UIPasteConfigurationSupportingP", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "value"]
 - !private ["So30UIPasteConfigurationSupportingP", "valueReceived"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
+- !private ["So30UIPasteConfigurationSupportingP", "visibilityLabel"]
 - ["So11UIResponderC", "InitiatePressed"]
+- !private ["So11UIResponderC", "Int"]
+- !private ["So11UIResponderC", "String"]
 - ["So11UIResponderC", "UIButton"]
+- ["So11UIResponderC", "UILabel"]
+- ["So11UIResponderC", "UISlider"]
+- ["So11UIResponderC", "ceilingLabel"]
+- ["So11UIResponderC", "ceilingSlider"]
 - !private ["So11UIResponderC", "db"]
 - ["So11UIResponderC", "init"]
 - !private ["So11UIResponderC", "print"]
+- !private ["So11UIResponderC", "roundf"]
+- !private ["So11UIResponderC", "text"]
+- !private ["So11UIResponderC", "value"]
 - ["So11UIResponderC", "valueReceived"]
 - ["So11UIResponderC", "viewDidLoad"]
+- ["So11UIResponderC", "visibilityLabel"]
+- ["So11UIResponderC", "visibilitySlider"]
+- !private ["So30UIResponderStandardEditActionsP", "Int"]
+- !private ["So30UIResponderStandardEditActionsP", "String"]
 - ["So30UIResponderStandardEditActionsP", ""]
+- !private ["So30UIResponderStandardEditActionsP", "ceilingLabel"]
 - !private ["So30UIResponderStandardEditActionsP", "db"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
 - !private ["So30UIResponderStandardEditActionsP", "print"]
+- !private ["So30UIResponderStandardEditActionsP", "roundf"]
+- !private ["So30UIResponderStandardEditActionsP", "text"]
+- !private ["So30UIResponderStandardEditActionsP", "value"]
 - !private ["So30UIResponderStandardEditActionsP", "valueReceived"]
 - !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
+- !private ["So30UIResponderStandardEditActionsP", "visibilityLabel"]
+- !private ["So8UISliderC", "value"]
+- !private ["So16UIStateRestoringP", "Int"]
+- !private ["So16UIStateRestoringP", "String"]
 - ["So16UIStateRestoringP", ""]
+- !private ["So16UIStateRestoringP", "ceilingLabel"]
 - !private ["So16UIStateRestoringP", "db"]
 - !private ["So16UIStateRestoringP", "init"]
 - !private ["So16UIStateRestoringP", "print"]
+- !private ["So16UIStateRestoringP", "roundf"]
 - !private ["So16UIStateRestoringP", "valueReceived"]
 - !private ["So16UIStateRestoringP", "viewDidLoad"]
+- !private ["So16UIStateRestoringP", "visibilityLabel"]
+- !private ["So18UITraitEnvironmentP", "Int"]
+- !private ["So18UITraitEnvironmentP", "String"]
 - ["So18UITraitEnvironmentP", ""]
+- !private ["So18UITraitEnvironmentP", "ceilingLabel"]
 - !private ["So18UITraitEnvironmentP", "db"]
 - !private ["So18UITraitEnvironmentP", "init"]
 - !private ["So18UITraitEnvironmentP", "print"]
+- !private ["So18UITraitEnvironmentP", "roundf"]
+- !private ["So18UITraitEnvironmentP", "text"]
+- !private ["So18UITraitEnvironmentP", "value"]
 - !private ["So18UITraitEnvironmentP", "valueReceived"]
 - !private ["So18UITraitEnvironmentP", "viewDidLoad"]
+- !private ["So18UITraitEnvironmentP", "visibilityLabel"]
+- !private ["So23UIUserActivityRestoringP", "Int"]
+- !private ["So23UIUserActivityRestoringP", "String"]
 - ["So23UIUserActivityRestoringP", ""]
+- !private ["So23UIUserActivityRestoringP", "ceilingLabel"]
 - !private ["So23UIUserActivityRestoringP", "db"]
 - !private ["So23UIUserActivityRestoringP", "init"]
 - !private ["So23UIUserActivityRestoringP", "print"]
+- !private ["So23UIUserActivityRestoringP", "roundf"]
+- !private ["So23UIUserActivityRestoringP", "text"]
+- !private ["So23UIUserActivityRestoringP", "value"]
 - !private ["So23UIUserActivityRestoringP", "valueReceived"]
 - !private ["So23UIUserActivityRestoringP", "viewDidLoad"]
+- !private ["So23UIUserActivityRestoringP", "visibilityLabel"]
+- !private ["So6UIViewC", "text"]
+- !private ["So6UIViewC", "value"]
 - ["So16UIViewControllerC", "InitiatePressed"]
+- !private ["So16UIViewControllerC", "Int"]
+- !private ["So16UIViewControllerC", "String"]
 - ["So16UIViewControllerC", "UIButton"]
+- ["So16UIViewControllerC", "UILabel"]
+- ["So16UIViewControllerC", "UISlider"]
 - ["So16UIViewControllerC", ""]
+- ["So16UIViewControllerC", "ceilingLabel"]
+- ["So16UIViewControllerC", "ceilingSlider"]
 - !private ["So16UIViewControllerC", "db"]
 - ["So16UIViewControllerC", "init"]
 - !private ["So16UIViewControllerC", "print"]
+- !private ["So16UIViewControllerC", "roundf"]
 - ["So16UIViewControllerC", "valueReceived"]
 - ["So16UIViewControllerC", "viewDidLoad"]
+- ["So16UIViewControllerC", "visibilityLabel"]
+- ["So16UIViewControllerC", "visibilitySlider"]
 - !private ["So14NSUserDefaultsC", "integer"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s19_HasContiguousBytesP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Int"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "String"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "ceilingLabel"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "db"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "integer"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "roundf"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "value"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "valueReceived"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "visibilityLabel"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Int"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "String"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "ceilingLabel"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "db"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "integer"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "print"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "roundf"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "text"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "value"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "valueReceived"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "viewDidLoad"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "visibilityLabel"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "text"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "text"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "value"]
 depends-nominal:
+- !private "s18AdditiveArithmeticP"
+- !private "SK"
+- !private "Sz"
+- !private "So15CALayerDelegateP"
 - "s7CVarArgP"
+- !private "Sl"
+- !private "SL"
 - "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
+- !private "Se"
+- !private "SE"
 - "SQ"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
+- !private "s32ExpressibleByStringInterpolationP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "s17FixedWidthIntegerP"
 - "SH"
+- !private "Si"
+- !private "s25LosslessStringConvertibleP"
 - "11At_Training21Manual_ViewControllerC"
+- !private "s10MirrorPathP"
 - "So8NSCodingP"
 - "So26NSExtensionRequestHandlingP"
 - "So8NSObjectC"
 - "So8NSObjectP"
+- !private "Sj"
+- !private "Sq"
+- !private "Sm"
+- !private "s10SIMDScalarP"
+- !private "ST"
+- !private "SZ"
+- !private "s13SignedNumericP"
+- !private "Sx"
+- !private "SS"
+- !private "Sy"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "So29UIAccessibilityIdentificationP"
+- !private "So12UIAppearanceP"
 - "So21UIAppearanceContainerP"
 - "So18UIContentContainerP"
+- !private "So30UIContentSizeCategoryAdjustingP"
+- !private "So9UIControlC"
+- !private "So17UICoordinateSpaceP"
+- !private "So13UIDynamicItemP"
 - "So18UIFocusEnvironmentP"
+- !private "So11UIFocusItemP"
+- !private "So20UIFocusItemContainerP"
+- !private "So7UILabelC"
+- !private "So24UILargeContentViewerItemP"
 - "So30UIPasteConfigurationSupportingP"
 - "So11UIResponderC"
 - "So30UIResponderStandardEditActionsP"
+- !private "So8UISliderC"
 - "So16UIStateRestoringP"
 - "So18UITraitEnvironmentP"
 - "So23UIUserActivityRestoringP"
+- !private "So6UIViewC"
 - "So16UIViewControllerC"
 - !private "So14NSUserDefaultsC"
+- !private "s30_CustomPlaygroundQuickLookableP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s19_HasContiguousBytesP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
 - "10Foundation27_KeyValueCodingAndObservingP"
 - "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s38__DefaultCustomPlaygroundQuickLookableP"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/ObjectiveC.swiftmodule/x86_64.swiftinterface"
@@ -231,4 +521,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "a31e7a432a4a954c93cbc81f1dcaaf54"
+interface-hash: "6940cb554afc1326791fbc99681baa84"

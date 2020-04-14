@@ -95,6 +95,11 @@ class SafetySettings_ViewController: UIViewController , UIPickerViewDelegate , U
         
     }
     
+    @IBAction func SavePressed(_ sender: UIButton) {
+        
+        
+    }
+    
    
     
 

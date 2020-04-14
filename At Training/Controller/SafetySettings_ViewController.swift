@@ -9,6 +9,8 @@
 
 import UIKit
 
+let db = UserDefaults.standard
+
 class SafetySettings_ViewController: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource {
     
     @IBOutlet weak var picker: UIPickerView!
@@ -96,7 +98,8 @@ class SafetySettings_ViewController: UIViewController , UIPickerViewDelegate , U
     }
     
     @IBAction func SavePressed(_ sender: UIButton) {
-        
+        db.set(minPitch, forKey: "Min_Pitch")
+        print("savePressed")
         
     }
     

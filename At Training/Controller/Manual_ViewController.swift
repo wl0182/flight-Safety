@@ -10,6 +10,8 @@ import UIKit
 
 class Manual_ViewController: UIViewController {
 
+    // variables
+    let valueReceived = 25
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +21,8 @@ class Manual_ViewController: UIViewController {
 
     @IBAction func InitiatePressed(_ sender: UIButton) {
         
+        print(db.integer(forKey: "Min_Pitch"))
+        print(valueReceived)
         
     }
     /*

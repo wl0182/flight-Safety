@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //properties:s
 //bring all the variables from main.m file here and declare them as properties.
+@property int sockfd;
 @property float gps_Lat;
 @property float gps_Long;
 @property int ground_speed;
@@ -69,6 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void) scanData: (uint8_t *) RxData_1 ofLength:(uint8_t) BufferLength;
 -(unsigned short) gdl90_CRC_Compute: (uint8_t *) data ofLength: (unsigned long)length;
 -(void) emergencyMsgSender;
+-(void) closeUDPsocket;
 //-(unsigned short) gdl90_CRC_Compute: (uint8_t *) data ofLength: (unsigned long)length;
 //-(unsigned short) gdl90_CRC_Compute: (NSMutableArray *) data ofLength: (unsigned long)length;
 

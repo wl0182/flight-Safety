@@ -100,6 +100,8 @@ class SafetySettings_ViewController: UIViewController , UIPickerViewDelegate , U
     @IBAction func SavePressed(_ sender: UIButton) {
         db.set(minPitch, forKey: "Min_Pitch")
         db.set(maxPitch, forKey: "Max_Pitch")
+        db.set(minRoll, forKey: "Min_Roll")
+        db.set(maxRoll, forKey: "Max_Roll")
         
     }
     

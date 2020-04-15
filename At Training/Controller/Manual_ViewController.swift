@@ -170,25 +170,26 @@ class Manual_ViewController: UIViewController {
                                            }else
                                            {
                                                print("Roll = \(swiftRoll!)")
-                                               let tempF = swiftRoll! //is this a Float?
-                                               let tempS = Float(tempF) //if tempF is already a float, we do not need tempS
-                                               DispatchQueue.main.async
-                                               {
-                                                   self.valueReceived = tempS
+                                               let tempFR = swiftRoll! //is this a Float?
+                                               let tempSR = Float(tempFR) //if tempF is already a float, we do not need tempS
+                                              // DispatchQueue.main.async
+                                               //{
+                                                   self.valueReceived = tempSR
                                                    //the following needs to run constantly in a loop as long as Manual Training is in progress
-                                                   let temp1 = db.integer(forKey: "Max_Roll")
-                                                   print("Pitch Max from Safety Setting: \(temp1)")
+                                                   let temp1R = db.integer(forKey: "Max_Roll")
+                                                   print("Roll Max from Safety Setting: \(temp1R)")
                                                    
-                                                   let temp2 = db.integer(forKey: "Min_Roll")
-                                                   print("Pitch Min from Safety Setting: \(temp2)")
+                                                   let temp2R = db.integer(forKey: "Min_Roll")
+                                                   print("Roll Min from Safety Setting: \(temp2R)")
                                                    
-                                                   if self.valueReceived > Float(temp1)
+                                                   if self.valueReceived > Float(temp1R)
                                                    {
                                                        print("Flip the visor")
                                                        //send a string to microcontroller
-                                                       instanceOfparser.msgForMicrocontroller = 0x45
+                                                       instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
+                                                    print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
                                                        instanceOfparser.msgSender()
-                                                       
+                                                       instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
                                                        
                                                        /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
                                                        //create a dedicated emergency signal object
@@ -204,7 +205,7 @@ class Manual_ViewController: UIViewController {
                                                     print("Do not Flip the visor")
                                                 }
                                                    
-                                               }
+                                               //}
                                            }//else for Roll check
                                               
                                                
@@ -216,25 +217,25 @@ class Manual_ViewController: UIViewController {
                                                //do nothing
                                            }else{
                                             print("Pitch = \(swiftPitch!)")
-                                            let tempF = swiftPitch! //is this a Float?
-                                            let tempS = Float(tempF) //if tempF is already a float, we do not need tempS
-                                            DispatchQueue.main.async
-                                                {
-                                                    self.valueReceived = tempS
+                                            let tempFP = swiftPitch! //is this a Float?
+                                            let tempSP = Float(tempFP) //if tempF is already a float, we do not need tempS
+                                          //  DispatchQueue.main.async
+                                               // {
+                                                    self.valueReceived = tempSP
                                                     //the following needs to run constantly in a loop as long as Manual Training is in progress
-                                                    let temp1 = db.integer(forKey: "Max_Pitch")
-                                                    print("Pitch Max from Safety Setting: \(temp1)")
+                                                    let temp1P = db.integer(forKey: "Max_Pitch")
+                                                    print("Pitch Max from Safety Setting: \(temp1P)")
                                                     
-                                                    let temp2 = db.integer(forKey: "Min_Pitch")
-                                                    print("Pitch Min from Safety Setting: \(temp2)")
+                                                    let temp2P = db.integer(forKey: "Min_Pitch")
+                                                    print("Pitch Min from Safety Setting: \(temp2P)")
                                                     
-                                                    if self.valueReceived > Float(temp1)
+                                                    if self.valueReceived > Float(temp1P)
                                                     {
                                                         print("Flip the visor")
                                                         //send a string to microcontroller
                                                         instanceOfparser.msgForMicrocontroller = 0x45
                                                         instanceOfparser.msgSender()
-                                                        
+                                                        instanceOfparser.msgForMicrocontroller = 0x00//this can be done at the end of each iteration just before while loop bracket close
                                                         
                                                         /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
                                                          //create a dedicated emergency signal object
@@ -250,7 +251,7 @@ class Manual_ViewController: UIViewController {
                                                         print("Do not Flip the visor")
                                                     }
                                                     
-                                            }
+                                           // }
                                             
                                     }
                                     
@@ -309,6 +310,9 @@ class Manual_ViewController: UIViewController {
                                                 
                                             }
                                             */
+                                            //close the socket here
+                                    instanceOfparser.closeUDPsocket()
+                                    close(instanceOfparser.sockfd)
                                            noOfIterations -= 1
                                        }//while
            

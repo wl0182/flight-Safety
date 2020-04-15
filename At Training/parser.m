@@ -24,6 +24,7 @@
 uint16_t crc16Table [256];
 
 
+
 @implementation parser
 
 //+ for class methods, - for instance methods.
@@ -180,7 +181,7 @@ uint16_t crc16Table [256];
     if (self) {
         
         uint16_t i,bitctr,crc = {0};
-        
+        self.sockfd = socket(AF_INET, SOCK_DGRAM, 0);;//the only socket we will use for both receiving and sending messages
         for (i = 0; i < 256; i++) {
             crc = (i << 8);
             for (bitctr = 0; bitctr < 8; bitctr++) {
@@ -435,9 +436,9 @@ uint16_t crc16Table [256];
         //variables
         ssize_t n;
         socklen_t len;
-        int sockfd;//this socket gets created and destroyed once per each function call
+//        int sockfd;//this socket gets created and destroyed once per each function call
         uint8_t mesg[1024] = {0};
-        
+//        int sockfd;
         //socket
         struct sockaddr_in servaddr,cliaddr;
     
@@ -450,12 +451,12 @@ uint16_t crc16Table [256];
  //       socklen_t len2 = sizeof(testsvr);
         //tester code end
     
-        sockfd = socket(AF_INET, SOCK_DGRAM, 0);//this socket gets created and destroyed once per each function call
+        self.sockfd = socket(AF_INET, SOCK_DGRAM, 0);//this socket gets created and destroyed once per each function call
         bzero(&servaddr, sizeof(servaddr));
         servaddr.sin_family = AF_INET;
         servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
         servaddr.sin_port = htons(43211);
-        bind(sockfd, (struct sockaddr *) &servaddr, sizeof(servaddr));
+        bind(self.sockfd, (struct sockaddr *) &servaddr, sizeof(servaddr));
         len = sizeof(cliaddr);
         
         printf("\nabout to recvfrom\n");
@@ -464,7 +465,7 @@ uint16_t crc16Table [256];
                   //send(sockfd, "Hello from IPADmmmmmmmmmmmmmmmmmnnnnnnnnnnnnnnnnnnnnnnnnnnnn", 60, 0);
                    //sendto(sockfd, "Hello from IPADmmmmmmmmmmmmmmmmmnnnnnnnnnnnnnnnnnnnnnnnnnnnn", 60, 0, (struct sockaddr *) &testsvr, len2);
                     //tester code end
-        n = recvfrom(sockfd, mesg, 1024, 0, (struct sockaddr *) &cliaddr, &len);
+        n = recvfrom(self.sockfd, mesg, 1024, 0, (struct sockaddr *) &cliaddr, &len);
         uint8_t escaped[256] = {0};
         //printf("\nrecvfrom done \n");
         if (n>0) //if we have bytes
@@ -490,14 +491,14 @@ uint16_t crc16Table [256];
             
             
         }//if n>0
-        close(sockfd);//this socket gets created and destroyed once per each function call
+    //close(self.sockfd);//this socket gets created and destroyed once per each function call
 
 }
 - (void) msgSender
 {
     
-    char byteArrayForMicro[26] = {0};// OR we can create uint8_t mesgBeingSent[no_of_bytes_being_sent] = {0}; and use 'mesgBeingSent' for the parameter of (const void *) in sendto() function
-    int microfd = socket(AF_INET, SOCK_DGRAM, 0);
+    uint8_t byteArrayForMicro[26] = {0};// OR we can create uint8_t mesgBeingSent[no_of_bytes_being_sent] = {0}; and use 'mesgBeingSent' for the parameter of (const void *) in sendto() function
+//    int microfd = socket(AF_INET, SOCK_DGRAM, 0);
     struct sockaddr_in testsvr;
     bzero(&testsvr, sizeof(testsvr));
     testsvr.sin_family = AF_INET;
@@ -507,32 +508,33 @@ uint16_t crc16Table [256];
     socklen_t len2 = sizeof(testsvr);
     byteArrayForMicro[0] = self.msgForMicrocontroller;
     //tester code end
-    printf("\nSending the message to Microcontroller\n");
+    printf("\nInside msgSender right now.\nSending the message to Microcontroller\n");
       //tester code start
       //test for sending msg to microcontroller
     //send(microfd, "Hello from IPAD Hello from IPAD Hello from IPAD Hello from IPAD", 60, 0);
-    sendto(microfd, "Hello from IPAD Hello from IPAD Hello from IPAD Hello from IPAD", 63, 0, (struct sockaddr *) &testsvr, len2);
+    sendto(self.sockfd, "Hello from IPAD Hello from IPAD Hello from IPAD Hello from IPAD", 63, 0, (struct sockaddr *) &testsvr, len2);
+    printf("byteArrayForMicro[0] is %hhu", byteArrayForMicro[0]);
     if(byteArrayForMicro[0] == 0){
         //do nothing
-        sendto(microfd, "DO NOT FLIP THE VISOR", 21, 0, (struct sockaddr *) &testsvr, len2);
-    }else if (byteArrayForMicro[0] == 0x45){
-        sendto(microfd, "FLIP THE VISOR", 14, 0, (struct sockaddr *) &testsvr, len2);
-    sendto(microfd, byteArrayForMicro, 40, 0, (struct sockaddr *) &testsvr, len2);//third argument is the no of characters to be sent
+        sendto(self.sockfd, "DO NOT FLIP THE VISOR", 21, 0, (struct sockaddr *) &testsvr, len2);
+    }else if (byteArrayForMicro[0] == 69){
+        sendto(self.sockfd, "FLIP THE VISORmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm", 60, 0, (struct sockaddr *) &testsvr, len2);
+    sendto(self.sockfd, byteArrayForMicro, 40, 0, (struct sockaddr *) &testsvr, len2);//third argument is the no of characters to be sent
     }
     printf("MSG SENT TO MICROCONTROLLER!");
 
-    close(microfd);
+    //close(self.sockfd);
     
 }
-- (void) emergencyMsgSender
+- (void) emergencyMsgSender //use this only for sending flip up message. 
 {
    
     //char byteArrayForMicro[26] = {0};// OR we can create uint8_t mesgBeingSent[no_of_bytes_being_sent] = {0}; and use 'mesgBeingSent' for the parameter of (const void *) in sendto() function
-    int emergencyfd = socket(AF_INET, SOCK_DGRAM, 0);
+  //  int emergencyfd = socket(AF_INET, SOCK_DGRAM, 0);S
     struct sockaddr_in emergencysvr;
     bzero(&emergencysvr, sizeof(emergencysvr));
     emergencysvr.sin_family = AF_INET;
-    emergencysvr.sin_addr.s_addr = inet_addr("192.168.1.12");
+    emergencysvr.sin_addr.s_addr = inet_addr("192.168.1.12"); // SET THIS TO BE THE IP ADDRESS OF MICROCONTROLLER (192.168.1.11). DO NOT FORGET!
     emergencysvr.sin_port = htons(43211);
     socklen_t len2 = sizeof(emergencysvr);
     
@@ -542,11 +544,14 @@ uint16_t crc16Table [256];
       //tester code start
       //test for sending msg to microcontroller
     //send(microfd, "Hello from IPAD Hello from IPAD Hello from IPAD Hello from IPAD", 60, 0);
-    sendto(emergencyfd, "922922922922922922922922", 24, 0, (struct sockaddr *) &emergencysvr, len2);
-    sendto(emergencyfd, (__bridge const void *)(self.emergencyFlipUp), 3, 0, (struct sockaddr *) &emergencysvr, len2);
+    sendto(self.sockfd, "922922922922922922922922", 24, 0, (struct sockaddr *) &emergencysvr, len2);
+    sendto(self.sockfd, (__bridge const void *)(self.emergencyFlipUp), 3, 0, (struct sockaddr *) &emergencysvr, len2);
     printf("EMERGENCY MSG SENT TO MICROCONTROLLER!");
-    close(emergencyfd);
+    //close(self.sockfd);
     
+}
+-(void) closeUDPsocket{
+    close(self.sockfd);
 }
 
 @end

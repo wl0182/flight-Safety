@@ -12,6 +12,7 @@ class Manual_ViewController: UIViewController {
 
     // variables
     var valueReceived: Float = 40
+    var temp3 : Float = 0
     
     // outlets
     
@@ -25,14 +26,22 @@ class Manual_ViewController: UIViewController {
         
     }//viewdidload()
     
+    func visiblityToVoltage(v: Float) -> Float{
+        let temp = v/0.25
+        let voltage = 7.6 + temp*0.2
+        return voltage
+        
+    }
+    
     @IBAction func visibilitySlider(_ sender: UISlider) {
-        let temp = sender.value
+              let temp = sender.value
               let temp1 = temp*4
               let temp2 = roundf(temp1)
-              let temp3 = temp2/4
+              temp3 = temp2/4
               
               let tempS = String(temp3)
               visibilityLabel.text = tempS
+             db.set(temp3, forKey: K.ManualVisibility) 
         
         
     }
@@ -63,6 +72,7 @@ class Manual_ViewController: UIViewController {
         
         if title == "Initiate" {
             print("I am reading from The ILevel")
+            // readFIL()
             sender.setTitle("Abort", for: .normal)
             
         }
@@ -71,6 +81,11 @@ class Manual_ViewController: UIViewController {
             print("I stopped reading from the Ilevel")
         }
         
+       
+        let vo = visiblityToVoltage(v: temp3 )
+        
+        print("Voltage return is \(vo)")
+        print("Visiblity = \(db.float(forKey: K.ManualVisibility))")
         
         
         

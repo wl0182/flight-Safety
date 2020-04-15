@@ -209,20 +209,6 @@ SWIFT_CLASS("_TtC11At_Training31AccidentScenario_ViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITextField;
-@class UILabel;
-@class UIButton;
-
-SWIFT_CLASS("_TtC11At_Training24AdminLoginViewController")
-@interface AdminLoginViewController : UIViewController
-@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified password;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified passwordIncorrectLabel;
-- (void)viewDidLoad;
-- (IBAction)loginPressed:(UIButton * _Nonnull)sender;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class UIApplication;
 @class UISceneSession;
 @class UISceneConnectionOptions;
@@ -244,7 +230,9 @@ SWIFT_CLASS("_TtC11At_Training13CalibrationVC")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UILabel;
 @class UISlider;
+@class UIButton;
 
 SWIFT_CLASS("_TtC11At_Training21Manual_ViewController")
 @interface Manual_ViewController : UIViewController

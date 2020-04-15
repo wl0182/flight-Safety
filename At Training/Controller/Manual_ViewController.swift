@@ -52,16 +52,36 @@ class Manual_ViewController: UIViewController {
    //
     @IBAction func InitiatePressed(_ sender: UIButton) {
        
-        //the following needs to run constantly in a loop as long as Manual Training is in progress
-        let temp1 = db.integer(forKey: "Max_Pitch")
-        print("Pitch Max from Safety Setting: \(temp1)")
+//        //the following needs to run constantly in a loop as long as Manual Training is in progress
+//        let temp1 = db.integer(forKey: "Max_Pitch")
+//        print("Pitch Max from Safety Setting: \(temp1)")
+//
+//        let temp2 = db.integer(forKey: "Min_Pitch")
+//        print("Pitch Min from SS: \(temp2)")
         
-        let temp2 = db.integer(forKey: "Min_Pitch")
-        print("Pitch Min from SS: \(temp2)")
+        let title = sender.currentTitle
         
-//        if valueReceived > Float(temp1) {
-//            print("Flip the visor")
-//        }
+        if title == "Initiate" {
+            print("I am reading from The ILevel")
+            sender.setTitle("Abort", for: .normal)
+            
+        }
+        else {
+            sender.setTitle("Initiate", for: .normal)
+            print("I stopped reading from the Ilevel")
+        }
+        
+        
+        
+        
+        
+       
+       
+     
+        
+    }
+    
+    func readFIL(){
         
         DispatchQueue.global(qos: .background).async {
                
@@ -317,8 +337,6 @@ class Manual_ViewController: UIViewController {
                                        }//while
            
            }
-     
-        
     }
   
 

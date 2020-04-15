@@ -13,7 +13,7 @@ class Manual_ViewController: UIViewController {
     // variables
     var valueReceived: Float = 40
     var temp3 : Float = 0
-    
+    var startReceiver: Int = 0;
     // outlets
     
     @IBOutlet weak var visibilityLabel: UILabel!
@@ -41,7 +41,7 @@ class Manual_ViewController: UIViewController {
               
               let tempS = String(temp3)
               visibilityLabel.text = tempS
-             db.set(temp3, forKey: K.ManualVisibility) 
+              db.set(temp3, forKey: K.ManualVisibility)
         
         
     }
@@ -72,61 +72,65 @@ class Manual_ViewController: UIViewController {
         
         if title == "Initiate" {
             print("I am reading from The ILevel")
-            // readFIL()
+            startReceiver = 10 //while loop for receiving data from AHRS only runs as long as startReceiver stays 10. COMMENT THIS OUT FOR DISABLING THE RECEIVER WHILE LOOP
+            readFIL()
             sender.setTitle("Abort", for: .normal)
             
         }
         else {
             sender.setTitle("Initiate", for: .normal)
+            startReceiver = 0 //if startReceiver is any value other than 10, while loop for receiving AHRS data will not run
             print("I stopped reading from the Ilevel")
         }
-        
-       
+      
+        //sample voltage value receiver based on visibility value STARTS HERE
         let vo = visiblityToVoltage(v: temp3 )
         
         print("Voltage return is \(vo)")
         print("Visiblity = \(db.float(forKey: K.ManualVisibility))")
-        
-        
-        
-        
-       
-       
+        //sample voltage value receiver based on visibility value ENDS HERE
+
      
         
     }
     
     func readFIL(){
         
-        DispatchQueue.global(qos: .background).async {
-               
-                                         //create an instance of Objective C class
-                                         let instanceOfparser: parser = parser()
-                                          //declare variables for use with printing or database comparisons
-                                          var swiftGPS_Lat: Float? = Optional.none
-                                          var swiftGPS_Long:Float? = Optional.none
-                                          var swiftGround_speed:CInt? = Optional.none
-                                          var swiftGPS_VSI:CShort? = Optional.none
-                                          //var swiftGPS_heading:CInt? //Use Yaw value for heading instead of this
-                                          var swiftGeo_Altitude:CInt? = Optional.none
-                                          var swiftMSL_Altitude:CInt? = Optional.none
-                                          var swiftFirmware_version:Float? = Optional.none
-                                          var swiftBattPct:CInt? = Optional.none
-                                          var swiftRoll:Float? = Optional.none
-                                          var swiftPitch:Float? = Optional.none
-                                          var swiftYaw:Float? = Optional.none //yaw = Heading
-                                          var swiftAirspeedKnots:CInt? = Optional.none
-                                          //var swiftAltitudeFeet:CInt? //use Geo Altitude instead of this
-                                          var swiftVsiFtPerMin:CInt? = Optional.none
+            DispatchQueue.global(qos: .background).async {
+                                        
+                                        //create an instance of Objective C class
+                                        let instanceOfparser: parser = parser()
+                                        //declare variables for use with printing or database comparisons
+                                        var swiftGPS_Lat: Float? = Optional.none
+                                        var swiftGPS_Long:Float? = Optional.none
+                                        var swiftGround_speed:CInt? = Optional.none
+                                        var swiftGPS_VSI:CShort? = Optional.none
+                                        //var swiftGPS_heading:CInt? //Use Yaw value for heading instead of this
+                                        var swiftGeo_Altitude:CInt? = Optional.none
+                                        var swiftMSL_Altitude:CInt? = Optional.none
+                                        var swiftFirmware_version:Float? = Optional.none
+                                        var swiftBattPct:CInt? = Optional.none
+                                        var swiftRoll:Float? = Optional.none
+                                        var swiftPitch:Float? = Optional.none
+                                        var swiftYaw:Float? = Optional.none //yaw = Heading
+                                        var swiftAirspeedKnots:CInt? = Optional.none
+                                        //var swiftAltitudeFeet:CInt? //use Geo Altitude instead of this
+                                        var swiftVsiFtPerMin:CInt? = Optional.none
+                                        //variable to check whether to receive data from AHRS device or not
+                                        var continueReceiving : Int = 0
+                                        if (self.startReceiver == 10) //only if Initiate button is pressed, the startReceiver is set to 10.
+                                        {
+                                            continueReceiving  = 10
+                                        }
                                           
                                           //creation of while loop for receiving UDP packets
-                                          var noOfIterations = 10000
-                                   while noOfIterations > 1{
+                                          //var noOfIterations = 10000 Now using startReceiver value of 10 to start receiving
+                                        while (continueReceiving == 10){
                                        //PROBLEM HERE. THIS IS ONLY PRINTING PITCH AND ROLL ONCE. MAY BE BECAUSE ALTERING THE PROEPRTY VALUE OF AN OBJECT IS NOT ALLOWED. EDIT: it was solved through closing of socket at the end of msgReceiver() function in parser.m file.
                                            //print("inside while loop")
                                            instanceOfparser.msgReceiver() // do this as long as app is actively running
                                            //try setting instanceOfparser.pitch value to be new 'instanceOfparser.pitch' here.
-                                           
+                                           print("\nReturned from msgReceiver func\n")
                                            //printing ObjectiveC properties value for test
                                            //print("myPitch:\(instanceOfparser.pitch)") //test
                                            //print("myRoll:\(instanceOfparser.roll)") //test
@@ -346,9 +350,16 @@ class Manual_ViewController: UIViewController {
                                             }
                                             */
                                             //close the socket here
-                                    instanceOfparser.closeUDPsocket()
-                                    close(instanceOfparser.sockfd)
-                                           noOfIterations -= 1
+                                            instanceOfparser.closeUDPsocket()
+                                            //close(instanceOfparser.sockfd)
+                                           //noOfIterations -= 1
+                                            if (self.startReceiver == 10) //If Abort button gets pressed within any run of iteration, startReceiver is set to 0 and thus continueReceiving will not be 10 anymore- which will stop the while loop here
+                                            {
+                                                continueReceiving  = 10
+                                            }
+                                            else{
+                                                continueReceiving = 0;
+                                            }
                                        }//while
            
            }

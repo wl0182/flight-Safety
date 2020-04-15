@@ -188,9 +188,9 @@ uint16_t crc16Table [256];
              
                 crc = (crc<<1)^((crc & 0x8000) ? 0x1021 : 0);
             }
-            NSLog(@"calculated crc (inplace of NSNumber) is %hu \n Now sending it to crcTable\n",crc);
+           // NSLog(@"calculated crc (inplace of NSNumber) is %hu \n Now sending it to crcTable\n",crc);
             crc16Table[i] = crc;
-            NSLog(@"The crcTable has: %hu", crc16Table[i]);
+           // NSLog(@"The crcTable has: %hu", crc16Table[i]);
         }
         
         
@@ -213,7 +213,7 @@ uint16_t crc16Table [256];
       crc2 = crc16Table[crc2>>8]^(crc2<<8)^(unsigned short)data[i]; //see if removing (unsigned short) does anything
 
     }
-    printf("CRC = %hu \n", crc2);
+  //  printf("CRC = %hu \n", crc2);
     //return crc2;
     return crc2;
 }
@@ -502,7 +502,7 @@ uint16_t crc16Table [256];
     struct sockaddr_in testsvr;
     bzero(&testsvr, sizeof(testsvr));
     testsvr.sin_family = AF_INET;
-    testsvr.sin_addr.s_addr = inet_addr("192.168.1.11");
+    testsvr.sin_addr.s_addr = inet_addr("192.168.1.12");
     
     testsvr.sin_port = htons(43211);
     socklen_t len2 = sizeof(testsvr);

@@ -55,6 +55,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="SystemTestPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xOM-eL-KWf"/>
                                                     <segue destination="Zff-Jl-wkS" kind="show" id="FYm-0K-iPx"/>
                                                 </connections>
                                             </button>

@@ -15,7 +15,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
     }
-
+    
+    
+    @IBAction func SystemTestPressed(_ sender: UIButton) {
+        
+        print("System Test Pressed")
+    }
+    
 
 }
 

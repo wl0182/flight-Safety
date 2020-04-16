@@ -16,12 +16,14 @@ class Setup_ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func dayPressed(_ sender: Any) {
+    @IBAction func dayPressed(_ sender: UIButton) {
+          print("Change to Day Mode ")
         
     }
     
-    @IBAction func nightPressed(_ sender: Any) {
+    @IBAction func nightPressed(_ sender: UIButton) {
         
+        print("change to Dark Mode")
     }
     
     @IBAction func safetySetting_dataSent(_ sender: UIButton) {

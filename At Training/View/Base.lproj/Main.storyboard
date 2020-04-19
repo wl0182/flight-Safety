@@ -137,6 +137,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="dayPressed:" destination="Zff-Jl-wkS" eventType="touchUpInside" id="o4n-oc-eBS"/>
+                                                    <segue destination="fak-43-Noc" kind="show" id="yl9-Sb-6Nd"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1311,6 +1312,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z9Q-VD-qJW"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hUk-6g-A0F"/>
                     <connections>
                         <outlet property="picker" destination="wD9-rV-12C" id="Pz7-y6-sLg"/>
                     </connections>

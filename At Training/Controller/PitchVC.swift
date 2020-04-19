@@ -12,7 +12,8 @@ class PitchVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
 
 
     @IBOutlet weak var picker: UIPickerView!
-    
+   
+    let pickerData = [[-15,-20,-25,-30],[15,20,25,30]]
 
    
     override func viewDidLoad() {
@@ -30,8 +31,11 @@ class PitchVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        <#code#>
+        let temp = pickerData[component][row]
+        return String(temp)
     }
+    
+    
     
     
 

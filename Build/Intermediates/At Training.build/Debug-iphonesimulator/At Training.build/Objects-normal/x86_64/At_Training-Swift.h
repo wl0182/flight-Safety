@@ -296,8 +296,8 @@ SWIFT_CLASS("_TtC11At_Training13SceneDelegate")
 SWIFT_CLASS("_TtC11At_Training20Setup_ViewController")
 @interface Setup_ViewController : UIViewController
 - (void)viewDidLoad;
-- (IBAction)dayPressed:(id _Nonnull)sender;
-- (IBAction)nightPressed:(id _Nonnull)sender;
+- (IBAction)dayPressed:(UIButton * _Nonnull)sender;
+- (IBAction)nightPressed:(UIButton * _Nonnull)sender;
 - (IBAction)safetySetting_dataSent:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;

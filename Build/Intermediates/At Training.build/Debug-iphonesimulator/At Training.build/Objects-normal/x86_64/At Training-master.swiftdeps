@@ -1,13 +1,13 @@
 version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
 options: "618175ad4ed0a802cabc0f8c97aff060"
-build_time: [1587052589, 158288000]
+build_time: [1587157910, 39201000]
 inputs:
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/Manual_ViewController.swift": [1587052427, 271650236]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/AccidentScenario_ViewController.swift": [1586975296, 261770772]
-  "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/Setup_ViewController.swift": [1586975296, 265106675]
+  "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/Setup_ViewController.swift": [1587053665, 121148888]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/ViewController.swift": [1587052581, 757032886]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/AppDelegate.swift": [1586975296, 236210892]
-  "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/SafetySettings_ViewController.swift": [1586975296, 264614830]
+  "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/SafetySettings_ViewController.swift": [1587139096, 11466018]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/ProgramPoint_ViewController.swift": [1586975296, 263699170]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/CalibrationVC.swift": [1586975296, 262597375]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/SceneDelegate.swift": [1586975296, 269911680]

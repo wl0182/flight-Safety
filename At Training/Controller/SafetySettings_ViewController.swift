@@ -43,8 +43,21 @@ class SafetySettings_ViewController: UIViewController , UIPickerViewDelegate , U
     
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3
-        
+        if component == 0 {
+            return 3
+        }
+        if component == 1 {
+            return 4
+        }
+        if component == 2 {
+            return 6
+        }
+        if component == 3  {
+            return 8
+        }
+        else {
+            return 0
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -98,10 +111,7 @@ class SafetySettings_ViewController: UIViewController , UIPickerViewDelegate , U
     }
     
     @IBAction func SavePressed(_ sender: UIButton) {
-        db.set(minPitch, forKey: "Min_Pitch")
-        db.set(maxPitch, forKey: "Max_Pitch")
-        db.set(minRoll, forKey: "Min_Roll")
-        db.set(maxRoll, forKey: "Max_Roll")
+      
         
     }
     

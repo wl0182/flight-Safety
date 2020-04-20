@@ -1,19 +1,19 @@
 version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
 options: "618175ad4ed0a802cabc0f8c97aff060"
-build_time: [1587341784, 633550000]
+build_time: [1587353784, 987672000]
 inputs:
-  "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/ROLLVC.swift": [1587341540, 243216015]
+  "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/ROLLVC.swift": [1587343492, 496036053]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/Manual_ViewController.swift": [1587052427, 271650236]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/AccidentScenario_ViewController.swift": [1586975296, 261770772]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/Setup_ViewController.swift": [1587053665, 121148888]
-  "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/AltitudeVC.swift": [1587341722, 232358319]
+  "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/AltitudeVC.swift": [1587353784, 135844219]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/PitchVC.swift": [1587323891, 540161046]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/ViewController.swift": [1587052581, 757032886]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/AppDelegate.swift": [1586975296, 236210892]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/SafetySettings_ViewController.swift": [1587139096, 11466018]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/ProgramPoint_ViewController.swift": [1586975296, 263699170]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/CalibrationVC.swift": [1586975296, 262597375]
-  "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/RateOfDecentVC.swift": [9223372036, 854775807]
+  "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/RateOfDecentVC.swift": [1587344201, 648207155]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/SceneDelegate.swift": [1586975296, 269911680]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/Random_ViewController.swift": [1586975296, 264147902]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Model/constants.swift": [1586978310, 810915709]

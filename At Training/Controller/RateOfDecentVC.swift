@@ -10,22 +10,28 @@ import UIKit
 
 class RateOfDecentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
-
+ let pickerData  = [-500,-1000,-1500,-2000,-2500,-3000]
     @IBOutlet weak var picker: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        picker.delegate = self
 
         // Do any additional setup after loading the view.
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        <#code#>
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        <#code#>
+      return pickerData.count
     }
 
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+         let temp = pickerData[row]
+         return String(temp)
+     }
+     
     
 
    

@@ -181,6 +181,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreGraphics;
 @import UIKit;
 #endif
 
@@ -210,11 +211,17 @@ SWIFT_CLASS("_TtC11At_Training31AccidentScenario_ViewController")
 @end
 
 @class UIPickerView;
+@class UIView;
 
 SWIFT_CLASS("_TtC11At_Training10AltitudeVC")
-@interface AltitudeVC : UIViewController
+@interface AltitudeVC : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 @property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified picker;
 - (void)viewDidLoad;
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView * _Nonnull)pickerView SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)pickerView:(UIPickerView * _Nonnull)pickerView numberOfRowsInComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)pickerView:(UIPickerView * _Nonnull)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)pickerView:(UIPickerView * _Nonnull)pickerView rowHeightForComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
+- (UIView * _Nonnull)pickerView:(UIPickerView * _Nonnull)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView * _Nullable)view SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -257,6 +264,13 @@ SWIFT_CLASS("_TtC11At_Training21Manual_ViewController")
 @end
 
 
+SWIFT_CLASS("_TtC11At_Training7MyLabel")
+@interface MyLabel : UILabel
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC11At_Training7PitchVC")
 @interface PitchVC : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 @property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified picker;
@@ -278,9 +292,12 @@ SWIFT_CLASS("_TtC11At_Training27ProgramPoint_ViewController")
 
 
 SWIFT_CLASS("_TtC11At_Training6ROLLVC")
-@interface ROLLVC : UIViewController
+@interface ROLLVC : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 @property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified picker;
 - (void)viewDidLoad;
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView * _Nonnull)pickerView SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)pickerView:(UIPickerView * _Nonnull)pickerView numberOfRowsInComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)pickerView:(UIPickerView * _Nonnull)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -295,9 +312,12 @@ SWIFT_CLASS("_TtC11At_Training21Random_ViewController")
 
 
 SWIFT_CLASS("_TtC11At_Training14RateOfDecentVC")
-@interface RateOfDecentVC : UIViewController
+@interface RateOfDecentVC : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 @property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified picker;
 - (void)viewDidLoad;
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView * _Nonnull)pickerView SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)pickerView:(UIPickerView * _Nonnull)pickerView numberOfRowsInComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)pickerView:(UIPickerView * _Nonnull)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end

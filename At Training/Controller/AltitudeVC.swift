@@ -8,13 +8,25 @@
 
 import UIKit
 
-class AltitudeVC: UIViewController {
+class AltitudeVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
+  
+    
 
+    
+    @IBOutlet weak var picker: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+          <#code#>
+      }
+      
+      func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+          <#code#>
+      }
     
 
 

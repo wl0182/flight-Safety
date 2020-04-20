@@ -1492,7 +1492,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="FxQ-pg-wV2"/>
                     <connections>
-                        <outlet property="picker" destination="7Bi-OO-glV" id="FUg-EZ-AAe"/>
+                        <outlet property="picker" destination="7Bi-OO-glV" id="URL-XN-kcp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qu2-Nr-Sdg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1547,7 +1547,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="d23-5I-3fQ"/>
                     <connections>
-                        <outlet property="picker" destination="z4U-hc-JMu" id="zGv-my-2Y2"/>
+                        <outlet property="picker" destination="z4U-hc-JMu" id="RY2-9z-tJJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXJ-A6-kyI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1602,7 +1602,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="n6v-91-aRP"/>
                     <connections>
-                        <outlet property="picker" destination="XBb-7f-NzC" id="FCd-Xl-cVB"/>
+                        <outlet property="picker" destination="XBb-7f-NzC" id="hfW-Cx-4dM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wz6-NK-TUs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -209,9 +209,11 @@ SWIFT_CLASS("_TtC11At_Training31AccidentScenario_ViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIPickerView;
 
 SWIFT_CLASS("_TtC11At_Training10AltitudeVC")
 @interface AltitudeVC : UIViewController
+@property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified picker;
 - (void)viewDidLoad;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
@@ -254,7 +256,6 @@ SWIFT_CLASS("_TtC11At_Training21Manual_ViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIPickerView;
 
 SWIFT_CLASS("_TtC11At_Training7PitchVC")
 @interface PitchVC : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
@@ -278,6 +279,7 @@ SWIFT_CLASS("_TtC11At_Training27ProgramPoint_ViewController")
 
 SWIFT_CLASS("_TtC11At_Training6ROLLVC")
 @interface ROLLVC : UIViewController
+@property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified picker;
 - (void)viewDidLoad;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
@@ -294,6 +296,7 @@ SWIFT_CLASS("_TtC11At_Training21Random_ViewController")
 
 SWIFT_CLASS("_TtC11At_Training14RateOfDecentVC")
 @interface RateOfDecentVC : UIViewController
+@property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified picker;
 - (void)viewDidLoad;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;

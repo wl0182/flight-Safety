@@ -31,6 +31,41 @@ class ROLLVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
         return String(temp)
     }
     
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+         return 75.0
+     }
+     
+    
+     
+     
+     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+          let lab : UILabel
+         
+         if let label = view as? UILabel {
+             lab = label
+          
+         } else {
+             lab = MyLabel()
+        
+         }
+         lab.font = UIFont(name: "Times New Roman", size: 35.0)
+         lab.text = String( pickerData[component][row] )
+         lab.textAlignment = .center
+         
+         let value = pickerData[component][row]
+         
+         
+         return lab
+     }
+     
+     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+         let temp = pickerData[component][row]
+         
+         print("value = \(temp)")
+     }
+     
+
+    
     
 
     

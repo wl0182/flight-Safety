@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2256F31B244668C90048CBA0 /* parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2256F31A244668C90048CBA0 /* parser.m */; };
 		FC401F6A244CD8AE001BC009 /* PitchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC401F69244CD8AE001BC009 /* PitchVC.swift */; };
+		FC401F6C244D2039001BC009 /* ROLLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC401F6B244D2039001BC009 /* ROLLVC.swift */; };
 		FC41BBDA2401957500B2F6E7 /* Manual_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41BBD92401957500B2F6E7 /* Manual_ViewController.swift */; };
 		FC41BBDC2401957E00B2F6E7 /* Random_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41BBDB2401957E00B2F6E7 /* Random_ViewController.swift */; };
 		FC41BBDE2401958A00B2F6E7 /* ProgramPoint_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41BBDD2401958A00B2F6E7 /* ProgramPoint_ViewController.swift */; };
@@ -30,6 +31,7 @@
 		2256F319244668C90048CBA0 /* parser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = parser.h; sourceTree = "<group>"; };
 		2256F31A244668C90048CBA0 /* parser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = parser.m; sourceTree = "<group>"; };
 		FC401F69244CD8AE001BC009 /* PitchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchVC.swift; sourceTree = "<group>"; };
+		FC401F6B244D2039001BC009 /* ROLLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROLLVC.swift; sourceTree = "<group>"; };
 		FC41BBD92401957500B2F6E7 /* Manual_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manual_ViewController.swift; sourceTree = "<group>"; };
 		FC41BBDB2401957E00B2F6E7 /* Random_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random_ViewController.swift; sourceTree = "<group>"; };
 		FC41BBDD2401958A00B2F6E7 /* ProgramPoint_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramPoint_ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				FC41BBE1240195DA00B2F6E7 /* Setup_ViewController.swift */,
 				FC41BBE3240195E600B2F6E7 /* SafetySettings_ViewController.swift */,
 				FC401F69244CD8AE001BC009 /* PitchVC.swift */,
+				FC401F6B244D2039001BC009 /* ROLLVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2256F31B244668C90048CBA0 /* parser.m in Sources */,
+				FC401F6C244D2039001BC009 /* ROLLVC.swift in Sources */,
 				FC41BBDA2401957500B2F6E7 /* Manual_ViewController.swift in Sources */,
 				FC41BBE0240195B600B2F6E7 /* AccidentScenario_ViewController.swift in Sources */,
 				FC41BBE2240195DA00B2F6E7 /* Setup_ViewController.swift in Sources */,

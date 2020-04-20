@@ -268,6 +268,14 @@ SWIFT_CLASS("_TtC11At_Training27ProgramPoint_ViewController")
 @end
 
 
+SWIFT_CLASS("_TtC11At_Training6ROLLVC")
+@interface ROLLVC : UIViewController
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC11At_Training21Random_ViewController")
 @interface Random_ViewController : UIViewController
 - (void)viewDidLoad;

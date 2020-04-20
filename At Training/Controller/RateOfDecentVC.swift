@@ -41,6 +41,7 @@ class RateOfDecentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
             let lab : UILabel
            
+           
            if let label = view as? UILabel {
                lab = label
             
@@ -51,9 +52,18 @@ class RateOfDecentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
            lab.font = UIFont(name: "Times New Roman", size: 35.0)
            lab.text = String( pickerData[row] )
            lab.textAlignment = .center
+           lab.adjustsFontSizeToFitWidth = true
            
+        
            return lab
        }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+         let temp = pickerData[row]
+         
+         print("value = \(temp)")
+     }
+     
      
     
 

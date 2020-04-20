@@ -48,6 +48,7 @@ depends-member:
 - ["11At_Training10AltitudeVCC", "picker"]
 - ["11At_Training10AltitudeVCC", "pickerData"]
 - ["11At_Training10AltitudeVCC", "pickerView"]
+- !private ["11At_Training10AltitudeVCC", "print"]
 - ["11At_Training10AltitudeVCC", "viewDidLoad"]
 - !private ["Sa", "count"]
 - !private ["Sa", "subscript"]
@@ -111,6 +112,8 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "String"]
 - !private ["s23CustomStringConvertibleP", "UIFont"]
 - ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "appendInterpolation"]
+- !private ["s23CustomStringConvertibleP", "appendLiteral"]
 - !private ["s23CustomStringConvertibleP", "count"]
 - !private ["s23CustomStringConvertibleP", "delegate"]
 - !private ["s23CustomStringConvertibleP", "font"]
@@ -131,6 +134,8 @@ depends-member:
 - !private ["Se", "delegate"]
 - !private ["Se", "init"]
 - !private ["Se", "subscript"]
+- !private ["s26DefaultStringInterpolationV", "appendInterpolation"]
+- !private ["s26DefaultStringInterpolationV", "appendLiteral"]
 - !private ["SE", "count"]
 - !private ["SE", "delegate"]
 - !private ["SE", "init"]
@@ -216,6 +221,7 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "picker"]
 - !private ["So26NSExtensionRequestHandlingP", "pickerData"]
 - ["So26NSExtensionRequestHandlingP", "pickerView"]
+- !private ["So26NSExtensionRequestHandlingP", "print"]
 - !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
 - ["So8NSObjectC", "CGFloat"]
 - ["So8NSObjectC", "Int"]
@@ -265,7 +271,11 @@ depends-member:
 - !private ["ST", "init"]
 - !private ["ST", "subscript"]
 - !private ["SS", "init"]
+- !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
+- !private ["s27StringInterpolationProtocolP", "appendLiteral"]
 - !private ["Sy", "init"]
+- !private ["s16TextOutputStreamP", "appendInterpolation"]
+- !private ["s16TextOutputStreamP", "appendLiteral"]
 - !private ["s16TextOutputStreamP", "init"]
 - !private ["s20TextOutputStreamableP", "init"]
 - ["So29UIAccessibilityIdentificationP", ""]
@@ -308,6 +318,7 @@ depends-member:
 - !private ["So18UIContentContainerP", "picker"]
 - !private ["So18UIContentContainerP", "pickerData"]
 - ["So18UIContentContainerP", "pickerView"]
+- !private ["So18UIContentContainerP", "print"]
 - !private ["So18UIContentContainerP", "viewDidLoad"]
 - ["So30UIContentSizeCategoryAdjustingP", ""]
 - !private ["So30UIContentSizeCategoryAdjustingP", "font"]
@@ -399,6 +410,7 @@ depends-member:
 - !private ["So22UIPickerViewDataSourceP", "picker"]
 - !private ["So22UIPickerViewDataSourceP", "pickerData"]
 - ["So22UIPickerViewDataSourceP", "pickerView"]
+- !private ["So22UIPickerViewDataSourceP", "print"]
 - !private ["So20UIPickerViewDelegateP", "MyLabel"]
 - !private ["So20UIPickerViewDelegateP", "String"]
 - !private ["So20UIPickerViewDelegateP", "UIFont"]
@@ -408,6 +420,7 @@ depends-member:
 - !private ["So20UIPickerViewDelegateP", "picker"]
 - !private ["So20UIPickerViewDelegateP", "pickerData"]
 - ["So20UIPickerViewDelegateP", "pickerView"]
+- !private ["So20UIPickerViewDelegateP", "print"]
 - ["So11UIResponderC", "CGFloat"]
 - ["So11UIResponderC", "Int"]
 - !private ["So11UIResponderC", "MyLabel"]
@@ -454,6 +467,7 @@ depends-member:
 - !private ["So16UIStateRestoringP", "picker"]
 - !private ["So16UIStateRestoringP", "pickerData"]
 - ["So16UIStateRestoringP", "pickerView"]
+- !private ["So16UIStateRestoringP", "print"]
 - !private ["So16UIStateRestoringP", "viewDidLoad"]
 - !private ["So18UITraitEnvironmentP", "MyLabel"]
 - !private ["So18UITraitEnvironmentP", "String"]
@@ -508,6 +522,7 @@ depends-member:
 - ["So16UIViewControllerC", "picker"]
 - ["So16UIViewControllerC", "pickerData"]
 - ["So16UIViewControllerC", "pickerView"]
+- !private ["So16UIViewControllerC", "print"]
 - ["So16UIViewControllerC", "viewDidLoad"]
 - !private ["s14_ArrayProtocolP", "count"]
 - !private ["s14_ArrayProtocolP", "subscript"]
@@ -579,6 +594,7 @@ depends-nominal:
 - "s23CustomStringConvertibleP"
 - !private "10Foundation12DataProtocolP"
 - !private "Se"
+- !private "s26DefaultStringInterpolationV"
 - !private "SE"
 - "SQ"
 - !private "s25ExpressibleByArrayLiteralP"
@@ -605,6 +621,7 @@ depends-nominal:
 - !private "SY"
 - !private "ST"
 - !private "SS"
+- !private "s27StringInterpolationProtocolP"
 - !private "Sy"
 - !private "s16TextOutputStreamP"
 - !private "s20TextOutputStreamableP"
@@ -687,4 +704,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "c03d494925928669328893d8a8683a93"
+interface-hash: "6f1828f049d30b1812b7af44a0b1c7fa"

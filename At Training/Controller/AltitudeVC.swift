@@ -55,7 +55,16 @@ class AltitudeVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
         lab.text = String( pickerData[row] )
         lab.textAlignment = .center
         
+        let value = pickerData[row]
+        
+        
         return lab
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let temp = pickerData[row]
+        
+        print("value = \(temp)")
     }
     
 
@@ -66,7 +75,7 @@ class AltitudeVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
 }
 class MyLabel : UILabel {
     deinit {
-        print("farewell")
+      
     }
 }
 

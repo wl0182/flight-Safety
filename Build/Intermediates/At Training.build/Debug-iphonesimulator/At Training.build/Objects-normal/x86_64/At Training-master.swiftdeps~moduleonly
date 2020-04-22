@@ -1,9 +1,9 @@
 version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
 options: "b783039b30c2b4f04329620215bc9f47"
-build_time: [1587526165, 477529000]
+build_time: [1587528631, 450394000]
 inputs:
-  "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/ROLLVC.swift": [1587363010, 248644078]
-  "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/Manual_ViewController.swift": [1587402172, 631623612]
+  "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/ROLLVC.swift": [1587528397, 455014603]
+  "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/Manual_ViewController.swift": [1587528631, 200049957]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/AccidentScenario_ViewController.swift": [1586975296, 261770772]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/Setup_ViewController.swift": [1587053665, 121148888]
   "/Users/wassimlagnaoui/flight-Safety-15/At Training/Controller/AltitudeVC.swift": [1587402044, 792527117]

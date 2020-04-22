@@ -1,7 +1,6 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
 - "db"
-- "minPitch"
 - "SafetySettings_ViewController"
 provides-nominal:
 - "11At_Training29SafetySettings_ViewControllerC"
@@ -9,12 +8,10 @@ provides-member:
 - ["11At_Training29SafetySettings_ViewControllerC", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "FloatLiteralType"
 - "SafetySettings_ViewController"
 - "UIViewController"
 - "UserDefaults"
 - "db"
-- "minPitch"
 depends-member:
 - ["s7CVarArgP", ""]
 - !private ["s7CVarArgP", "init"]
@@ -135,4 +132,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "4be8636945f9ce4fd942c63c4f9c7a54"
+interface-hash: "93685912058e6cc3b585b492df6f531d"

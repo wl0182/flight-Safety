@@ -1,11 +1,20 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
+- "K"
 provides-nominal:
+- "11At_Training1KV"
 provides-member:
+- ["11At_Training1KV", ""]
 provides-dynamic-lookup:
 depends-top-level:
+- "K"
+- "StringLiteralType"
 depends-member:
+- ["11At_Training1KV", "ManualVisibility"]
+- ["11At_Training1KV", "batteryPercentage"]
+- ["11At_Training1KV", "init"]
 depends-nominal:
+- "11At_Training1KV"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/ObjectiveC.swiftmodule/x86_64.swiftinterface"
@@ -49,4 +58,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "5bf39d8b5f0094ca83c744a0da4fb204"
+interface-hash: "b06b3b34d107e5e5280842b30531ef4f"

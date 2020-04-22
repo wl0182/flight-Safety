@@ -1,0 +1,271 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "=="
+- "~="
+provides-nominal:
+- "10RealmSwift0A0V5ErrorV"
+provides-member:
+- ["10RealmSwift0A0V", ""]
+- ["10RealmSwift0A0V5ErrorV", ""]
+- ["10RealmSwift0A0V", "Error"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "&&"
+- "=="
+- "AssignmentPrecedence"
+- "Bool"
+- "CastingPrecedence"
+- "Equatable"
+- "Error"
+- "NSError"
+- !private "RLMBackupRealmConfigurationErrorKey"
+- "RLMError"
+- "RLMErrorDomain"
+- "Realm"
+- "_BridgedStoredNSError"
+- "~="
+depends-member:
+- !private ["10RealmSwift0A0V13ConfigurationV", "fromRLMRealmConfiguration"]
+- ["10Foundation13CustomNSErrorP", "=="]
+- ["10Foundation13CustomNSErrorP", "Code"]
+- !private ["10Foundation13CustomNSErrorP", "RLMBackupRealmConfigurationErrorKey"]
+- ["10Foundation13CustomNSErrorP", "RLMError"]
+- ["10Foundation13CustomNSErrorP", "RLMErrorDomain"]
+- !private ["10Foundation13CustomNSErrorP", "Realm"]
+- ["10Foundation13CustomNSErrorP", ""]
+- ["10Foundation13CustomNSErrorP", "_code"]
+- ["10Foundation13CustomNSErrorP", "_domain"]
+- ["10Foundation13CustomNSErrorP", "_getEmbeddedNSError"]
+- ["10Foundation13CustomNSErrorP", "_nsError"]
+- ["10Foundation13CustomNSErrorP", "_rawHashValue"]
+- ["10Foundation13CustomNSErrorP", "_userInfo"]
+- ["10Foundation13CustomNSErrorP", "errorCode"]
+- ["10Foundation13CustomNSErrorP", "errorDomain"]
+- ["10Foundation13CustomNSErrorP", "errorUserInfo"]
+- ["10Foundation13CustomNSErrorP", "hash"]
+- ["10Foundation13CustomNSErrorP", "hashValue"]
+- ["10Foundation13CustomNSErrorP", "init"]
+- !private ["10Foundation13CustomNSErrorP", "userInfo"]
+- !private ["s23CustomStringConvertibleP", "fromRLMRealmConfiguration"]
+- ["SQ", "=="]
+- ["SQ", "Code"]
+- ["SQ", "Configuration"]
+- ["SQ", "Error"]
+- !private ["SQ", "RLMBackupRealmConfigurationErrorKey"]
+- ["SQ", "RLMError"]
+- ["SQ", "RLMErrorDomain"]
+- !private ["SQ", "Realm"]
+- ["SQ", ""]
+- ["SQ", "_code"]
+- ["SQ", "_domain"]
+- ["SQ", "_getEmbeddedNSError"]
+- ["SQ", "_nsError"]
+- ["SQ", "_rawHashValue"]
+- ["SQ", "_userInfo"]
+- ["SQ", "errorCode"]
+- ["SQ", "errorDomain"]
+- ["SQ", "errorUserInfo"]
+- ["SQ", "hash"]
+- ["SQ", "hashValue"]
+- ["SQ", "init"]
+- !private ["SQ", "userInfo"]
+- ["10RealmSwift0A0V5ErrorV", "=="]
+- ["s5ErrorP", "=="]
+- ["10RealmSwift0A0V5ErrorV", "Code"]
+- ["s5ErrorP", "Code"]
+- ["10RealmSwift0A0V5ErrorV", "NSError"]
+- !private ["10RealmSwift0A0V5ErrorV", "RLMBackupRealmConfigurationErrorKey"]
+- !private ["s5ErrorP", "RLMBackupRealmConfigurationErrorKey"]
+- ["10RealmSwift0A0V5ErrorV", "RLMError"]
+- ["s5ErrorP", "RLMError"]
+- ["10RealmSwift0A0V5ErrorV", "RLMErrorDomain"]
+- ["s5ErrorP", "RLMErrorDomain"]
+- ["10RealmSwift0A0V5ErrorV", "Realm"]
+- !private ["s5ErrorP", "Realm"]
+- ["s5ErrorP", ""]
+- ["10RealmSwift0A0V5ErrorV", "_code"]
+- ["s5ErrorP", "_code"]
+- ["10RealmSwift0A0V5ErrorV", "_domain"]
+- ["s5ErrorP", "_domain"]
+- ["10RealmSwift0A0V5ErrorV", "_getEmbeddedNSError"]
+- ["s5ErrorP", "_getEmbeddedNSError"]
+- ["10RealmSwift0A0V5ErrorV", "_nsError"]
+- ["s5ErrorP", "_nsError"]
+- ["10RealmSwift0A0V5ErrorV", "_rawHashValue"]
+- ["s5ErrorP", "_rawHashValue"]
+- ["10RealmSwift0A0V5ErrorV", "_userInfo"]
+- ["s5ErrorP", "_userInfo"]
+- ["10RealmSwift0A0V5ErrorV", "backupConfiguration"]
+- ["10RealmSwift0A0V5ErrorV", "deinit"]
+- ["10RealmSwift0A0V5ErrorV", "errorCode"]
+- ["s5ErrorP", "errorCode"]
+- ["10RealmSwift0A0V5ErrorV", "errorDomain"]
+- ["s5ErrorP", "errorDomain"]
+- ["10RealmSwift0A0V5ErrorV", "errorUserInfo"]
+- ["s5ErrorP", "errorUserInfo"]
+- ["10RealmSwift0A0V5ErrorV", "hash"]
+- ["s5ErrorP", "hash"]
+- ["10RealmSwift0A0V5ErrorV", "hashValue"]
+- ["s5ErrorP", "hashValue"]
+- ["10RealmSwift0A0V5ErrorV", "init"]
+- ["s5ErrorP", "init"]
+- !private ["10RealmSwift0A0V5ErrorV", "userInfo"]
+- !private ["s5ErrorP", "userInfo"]
+- ["SH", "=="]
+- ["SH", "Code"]
+- !private ["SH", "RLMBackupRealmConfigurationErrorKey"]
+- ["SH", "RLMError"]
+- ["SH", "RLMErrorDomain"]
+- !private ["SH", "Realm"]
+- ["SH", ""]
+- ["SH", "_code"]
+- ["SH", "_domain"]
+- ["SH", "_getEmbeddedNSError"]
+- ["SH", "_nsError"]
+- ["SH", "_rawHashValue"]
+- ["SH", "_userInfo"]
+- ["SH", "errorCode"]
+- ["SH", "errorDomain"]
+- ["SH", "errorUserInfo"]
+- ["SH", "hash"]
+- ["SH", "hashValue"]
+- ["SH", "init"]
+- !private ["SH", "userInfo"]
+- ["10RealmSwift0A0V", "Configuration"]
+- ["10RealmSwift0A0V", "Error"]
+- ["10RealmSwift0A0V", "NSError"]
+- !private ["10RealmSwift0A0V", "RLMBackupRealmConfigurationErrorKey"]
+- ["10RealmSwift0A0V", "RLMError"]
+- ["10RealmSwift0A0V", "Realm"]
+- ["10Foundation21_BridgedStoredNSErrorP", "=="]
+- ["10Foundation21_BridgedStoredNSErrorP", "Code"]
+- !private ["10Foundation21_BridgedStoredNSErrorP", "RLMBackupRealmConfigurationErrorKey"]
+- ["10Foundation21_BridgedStoredNSErrorP", "RLMError"]
+- ["10Foundation21_BridgedStoredNSErrorP", "RLMErrorDomain"]
+- !private ["10Foundation21_BridgedStoredNSErrorP", "Realm"]
+- ["10Foundation21_BridgedStoredNSErrorP", ""]
+- ["10Foundation21_BridgedStoredNSErrorP", "_code"]
+- ["10Foundation21_BridgedStoredNSErrorP", "_domain"]
+- ["10Foundation21_BridgedStoredNSErrorP", "_getEmbeddedNSError"]
+- ["10Foundation21_BridgedStoredNSErrorP", "_nsError"]
+- ["10Foundation21_BridgedStoredNSErrorP", "_rawHashValue"]
+- ["10Foundation21_BridgedStoredNSErrorP", "_userInfo"]
+- ["10Foundation21_BridgedStoredNSErrorP", "errorCode"]
+- ["10Foundation21_BridgedStoredNSErrorP", "errorDomain"]
+- ["10Foundation21_BridgedStoredNSErrorP", "errorUserInfo"]
+- ["10Foundation21_BridgedStoredNSErrorP", "hash"]
+- ["10Foundation21_BridgedStoredNSErrorP", "hashValue"]
+- ["10Foundation21_BridgedStoredNSErrorP", "init"]
+- !private ["10Foundation21_BridgedStoredNSErrorP", "userInfo"]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "=="]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "Code"]
+- !private ["10Foundation26_ObjectiveCBridgeableErrorP", "RLMBackupRealmConfigurationErrorKey"]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "RLMError"]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "RLMErrorDomain"]
+- !private ["10Foundation26_ObjectiveCBridgeableErrorP", "Realm"]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", ""]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "_code"]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "_domain"]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "_getEmbeddedNSError"]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "_nsError"]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "_rawHashValue"]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "_userInfo"]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "errorCode"]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "errorDomain"]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "errorUserInfo"]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "hash"]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "hashValue"]
+- ["10Foundation26_ObjectiveCBridgeableErrorP", "init"]
+- !private ["10Foundation26_ObjectiveCBridgeableErrorP", "userInfo"]
+depends-nominal:
+- !private "10RealmSwift0A0V13ConfigurationV"
+- "10Foundation13CustomNSErrorP"
+- !private "s23CustomStringConvertibleP"
+- "SQ"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- !private "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- !private "10RealmSwift0A0V5ErrorV"
+- !private "s5ErrorP"
+- "SH"
+- "10RealmSwift0A0V"
+- "10Foundation21_BridgedStoredNSErrorP"
+- "10Foundation26_ObjectiveCBridgeableErrorP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/ObjectiveC.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/CoreImage.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/QuartzCore.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/Dispatch.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/Metal.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/Darwin.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/Foundation.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/CoreFoundation.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/CoreGraphics.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/Swift.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/UIKit.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/SwiftOnoneSupport.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Combine.framework/Modules/Combine.swiftmodule/x86_64-apple-ios-simulator.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/ObjectiveC.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreImage.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/QuartzCore.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Dispatch.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Metal.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Darwin.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Foundation.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreFoundation.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreGraphics.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Swift.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Users/wassimlagnaoui/flight-Safety-15/Pods/Target Support Files/RealmSwift/RealmSwift-umbrella.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Intermediates/Pods.build/Debug-iphonesimulator/RealmSwift.build/unextended-module.modulemap"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Intermediates/Pods.build/Debug-iphonesimulator/Realm.build/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "030cc17437d87d1785230cd796ac6335"

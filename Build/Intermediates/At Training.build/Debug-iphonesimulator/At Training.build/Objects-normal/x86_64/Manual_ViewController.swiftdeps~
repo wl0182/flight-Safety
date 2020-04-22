@@ -21,7 +21,6 @@ depends-top-level:
 - "AssignmentPrecedence"
 - !private "CInt"
 - !private "CShort"
-- !private "Date"
 - !private "DispatchQueue"
 - "Float"
 - "FloatLiteralType"
@@ -50,7 +49,6 @@ depends-member:
 - !private ["So15CALayerDelegateP", "setTitle"]
 - !private ["So15CALayerDelegateP", "text"]
 - !private ["So15CALayerDelegateP", "value"]
-- !private ["s7CVarArgP", "Date"]
 - !private ["s7CVarArgP", "DispatchQueue"]
 - !private ["s7CVarArgP", "Float"]
 - !private ["s7CVarArgP", "Int"]
@@ -99,7 +97,6 @@ depends-member:
 - !private ["s7CVarArgP", "yaw"]
 - !private ["Sl", "init"]
 - !private ["SL", "init"]
-- !private ["s28CustomDebugStringConvertibleP", "Date"]
 - !private ["s28CustomDebugStringConvertibleP", "DispatchQueue"]
 - !private ["s28CustomDebugStringConvertibleP", "Float"]
 - !private ["s28CustomDebugStringConvertibleP", "Int"]
@@ -150,7 +147,6 @@ depends-member:
 - !private ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "none"]
 - !private ["s17CustomReflectableP", "text"]
-- !private ["s23CustomStringConvertibleP", "Date"]
 - !private ["s23CustomStringConvertibleP", "DispatchQueue"]
 - !private ["s23CustomStringConvertibleP", "Float"]
 - !private ["s23CustomStringConvertibleP", "Int"]
@@ -199,7 +195,6 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "visiblityToVoltage"]
 - !private ["s23CustomStringConvertibleP", "vsiFtPerMin"]
 - !private ["s23CustomStringConvertibleP", "yaw"]
-- !private ["10Foundation4DateV", "init"]
 - !private ["Se", "init"]
 - !private ["Se", "none"]
 - !private ["Se", "text"]
@@ -212,7 +207,6 @@ depends-member:
 - !private ["SE", "init"]
 - !private ["SE", "none"]
 - !private ["SE", "text"]
-- !private ["SQ", "Date"]
 - !private ["SQ", "DispatchQueue"]
 - !private ["SQ", "Float"]
 - !private ["SQ", "Int"]
@@ -274,7 +268,6 @@ depends-member:
 - !private ["s17FixedWidthIntegerP", "init"]
 - !private ["Sf", "init"]
 - !private ["SF", "init"]
-- !private ["SH", "Date"]
 - !private ["SH", "DispatchQueue"]
 - !private ["SH", "Float"]
 - !private ["SH", "Int"]
@@ -328,7 +321,6 @@ depends-member:
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["11At_Training21Manual_ViewControllerC", "CInt"]
 - !private ["11At_Training21Manual_ViewControllerC", "CShort"]
-- !private ["11At_Training21Manual_ViewControllerC", "Date"]
 - !private ["11At_Training21Manual_ViewControllerC", "DispatchQueue"]
 - ["11At_Training21Manual_ViewControllerC", "Float"]
 - ["11At_Training21Manual_ViewControllerC", "InitiatePressed"]
@@ -356,7 +348,6 @@ depends-member:
 - ["11At_Training21Manual_ViewControllerC", "visibilitySlider"]
 - ["11At_Training21Manual_ViewControllerC", "visiblityToVoltage"]
 - !private ["s10MirrorPathP", "init"]
-- !private ["So8NSCodingP", "Date"]
 - !private ["So8NSCodingP", "DispatchQueue"]
 - !private ["So8NSCodingP", "Float"]
 - !private ["So8NSCodingP", "Int"]
@@ -381,7 +372,6 @@ depends-member:
 - !private ["So8NSCodingP", "viewDidLoad"]
 - !private ["So8NSCodingP", "visibilityLabel"]
 - !private ["So8NSCodingP", "visiblityToVoltage"]
-- !private ["So26NSExtensionRequestHandlingP", "Date"]
 - !private ["So26NSExtensionRequestHandlingP", "DispatchQueue"]
 - !private ["So26NSExtensionRequestHandlingP", "Float"]
 - !private ["So26NSExtensionRequestHandlingP", "Int"]
@@ -404,7 +394,6 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "visiblityToVoltage"]
 - !private ["So8NSObjectC", "CInt"]
 - !private ["So8NSObjectC", "CShort"]
-- !private ["So8NSObjectC", "Date"]
 - !private ["So8NSObjectC", "DispatchQueue"]
 - ["So8NSObjectC", "Float"]
 - ["So8NSObjectC", "InitiatePressed"]
@@ -456,7 +445,6 @@ depends-member:
 - ["So8NSObjectC", "visiblityToVoltage"]
 - !private ["So8NSObjectC", "vsiFtPerMin"]
 - !private ["So8NSObjectC", "yaw"]
-- !private ["So8NSObjectP", "Date"]
 - !private ["So8NSObjectP", "DispatchQueue"]
 - !private ["So8NSObjectP", "Float"]
 - !private ["So8NSObjectP", "Int"]
@@ -512,7 +500,6 @@ depends-member:
 - !private ["8Dispatch0A3QoSV0B6SClassO", "background"]
 - !private ["Sm", "init"]
 - !private ["SY", "normal"]
-- !private ["10Foundation20ReferenceConvertibleP", "init"]
 - !private ["s10SIMDScalarP", "init"]
 - !private ["7Combine9SchedulerP", "async"]
 - !private ["7Combine9SchedulerP", "global"]
@@ -540,7 +527,6 @@ depends-member:
 - !private ["So12UIAppearanceP", "setTitle"]
 - !private ["So12UIAppearanceP", "text"]
 - !private ["So12UIAppearanceP", "value"]
-- !private ["So21UIAppearanceContainerP", "Date"]
 - !private ["So21UIAppearanceContainerP", "DispatchQueue"]
 - !private ["So21UIAppearanceContainerP", "Float"]
 - !private ["So21UIAppearanceContainerP", "Int"]
@@ -567,7 +553,6 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "visiblityToVoltage"]
 - !private ["So8UIButtonC", "currentTitle"]
 - !private ["So8UIButtonC", "setTitle"]
-- !private ["So18UIContentContainerP", "Date"]
 - !private ["So18UIContentContainerP", "DispatchQueue"]
 - !private ["So18UIContentContainerP", "Float"]
 - !private ["So18UIContentContainerP", "Int"]
@@ -600,7 +585,6 @@ depends-member:
 - !private ["So13UIDynamicItemP", "setTitle"]
 - !private ["So13UIDynamicItemP", "text"]
 - !private ["So13UIDynamicItemP", "value"]
-- !private ["So18UIFocusEnvironmentP", "Date"]
 - !private ["So18UIFocusEnvironmentP", "DispatchQueue"]
 - !private ["So18UIFocusEnvironmentP", "Float"]
 - !private ["So18UIFocusEnvironmentP", "Int"]
@@ -638,7 +622,6 @@ depends-member:
 - !private ["So24UILargeContentViewerItemP", "setTitle"]
 - !private ["So24UILargeContentViewerItemP", "text"]
 - !private ["So24UILargeContentViewerItemP", "value"]
-- !private ["So30UIPasteConfigurationSupportingP", "Date"]
 - !private ["So30UIPasteConfigurationSupportingP", "DispatchQueue"]
 - !private ["So30UIPasteConfigurationSupportingP", "Float"]
 - !private ["So30UIPasteConfigurationSupportingP", "Int"]
@@ -665,7 +648,6 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "visiblityToVoltage"]
 - !private ["So11UIResponderC", "CInt"]
 - !private ["So11UIResponderC", "CShort"]
-- !private ["So11UIResponderC", "Date"]
 - !private ["So11UIResponderC", "DispatchQueue"]
 - ["So11UIResponderC", "Float"]
 - ["So11UIResponderC", "InitiatePressed"]
@@ -695,7 +677,6 @@ depends-member:
 - ["So11UIResponderC", "visibilityLabel"]
 - ["So11UIResponderC", "visibilitySlider"]
 - ["So11UIResponderC", "visiblityToVoltage"]
-- !private ["So30UIResponderStandardEditActionsP", "Date"]
 - !private ["So30UIResponderStandardEditActionsP", "DispatchQueue"]
 - !private ["So30UIResponderStandardEditActionsP", "Float"]
 - !private ["So30UIResponderStandardEditActionsP", "Int"]
@@ -723,7 +704,6 @@ depends-member:
 - !private ["So8UISliderC", "value"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "currentTitle"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "setTitle"]
-- !private ["So16UIStateRestoringP", "Date"]
 - !private ["So16UIStateRestoringP", "DispatchQueue"]
 - !private ["So16UIStateRestoringP", "Float"]
 - !private ["So16UIStateRestoringP", "Int"]
@@ -744,7 +724,6 @@ depends-member:
 - !private ["So16UIStateRestoringP", "viewDidLoad"]
 - !private ["So16UIStateRestoringP", "visibilityLabel"]
 - !private ["So16UIStateRestoringP", "visiblityToVoltage"]
-- !private ["So18UITraitEnvironmentP", "Date"]
 - !private ["So18UITraitEnvironmentP", "DispatchQueue"]
 - !private ["So18UITraitEnvironmentP", "Float"]
 - !private ["So18UITraitEnvironmentP", "Int"]
@@ -769,7 +748,6 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "viewDidLoad"]
 - !private ["So18UITraitEnvironmentP", "visibilityLabel"]
 - !private ["So18UITraitEnvironmentP", "visiblityToVoltage"]
-- !private ["So23UIUserActivityRestoringP", "Date"]
 - !private ["So23UIUserActivityRestoringP", "DispatchQueue"]
 - !private ["So23UIUserActivityRestoringP", "Float"]
 - !private ["So23UIUserActivityRestoringP", "Int"]
@@ -800,7 +778,6 @@ depends-member:
 - !private ["So6UIViewC", "value"]
 - !private ["So16UIViewControllerC", "CInt"]
 - !private ["So16UIViewControllerC", "CShort"]
-- !private ["So16UIViewControllerC", "Date"]
 - !private ["So16UIViewControllerC", "DispatchQueue"]
 - ["So16UIViewControllerC", "Float"]
 - ["So16UIViewControllerC", "InitiatePressed"]
@@ -840,7 +817,6 @@ depends-member:
 - !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
 - !private ["s19_HasContiguousBytesP", "init"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "Date"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "DispatchQueue"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "Float"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "Int"]
@@ -887,7 +863,6 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "visiblityToVoltage"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "vsiFtPerMin"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "yaw"]
-- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Date"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "DispatchQueue"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Float"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Int"]
@@ -971,7 +946,6 @@ depends-nominal:
 - "s28CustomDebugStringConvertibleP"
 - !private "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
-- !private "10Foundation4DateV"
 - !private "Se"
 - !private "s26DefaultStringInterpolationV"
 - !private "So18OS_dispatch_objectC"
@@ -1006,7 +980,6 @@ depends-nominal:
 - !private "8Dispatch0A3QoSV0B6SClassO"
 - !private "Sm"
 - !private "SY"
-- !private "10Foundation20ReferenceConvertibleP"
 - !private "s10SIMDScalarP"
 - !private "7Combine9SchedulerP"
 - !private "ST"

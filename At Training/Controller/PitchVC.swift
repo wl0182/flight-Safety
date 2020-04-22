@@ -63,9 +63,17 @@ class PitchVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
         }
         
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            let temp = pickerData[component][row]
-            
-            print("value = \(temp)")
+           
+            if component == 0 {
+                     let temp = pickerData[component][row]
+                     db.set(temp, forKey: K.minPitchSS)
+                 }
+                 else{
+                     let temp = pickerData[component][row]
+                     db.set(temp, forKey: K.maxPitchSS)
+                 }
+                        
+          
         }
         
     

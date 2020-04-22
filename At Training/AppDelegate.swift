@@ -18,11 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
        
         print("The app is Launched")
-        let realm = try! Realm()
-        print(Realm.Configuration.defaultConfiguration)
-        
-        
-        
+        print("-------------Values from Last Saved From Safety Settings--------------------")
+        print("\n")
+        print("|             Min Pitch :        \(db.integer(forKey: K.minPitchSS))        ")
+        print("|             Max Pitch :        \(db.integer(forKey: K.maxPitchSS))        ")
+        print("|             Min Roll  :        \(db.integer(forKey: K.minRollSS))         ")
+        print("|             Max Roll  :        \(db.integer(forKey: K.maxPitchSS))        ")
+        print("|             Rate of D :        \(db.integer(forKey: K.rodSS))             ")
+        print("|             Altitude  :        \(db.integer(forKey: K.altitudeSS))        ")
         
         return true
     }

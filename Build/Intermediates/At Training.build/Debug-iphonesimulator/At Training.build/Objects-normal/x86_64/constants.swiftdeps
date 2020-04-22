@@ -11,8 +11,14 @@ depends-top-level:
 - "StringLiteralType"
 depends-member:
 - ["11At_Training1KV", "ManualVisibility"]
+- ["11At_Training1KV", "altitudeSS"]
 - ["11At_Training1KV", "batteryPercentage"]
 - ["11At_Training1KV", "init"]
+- ["11At_Training1KV", "maxPitchSS"]
+- ["11At_Training1KV", "maxRollSS"]
+- ["11At_Training1KV", "minPitchSS"]
+- ["11At_Training1KV", "minRollSS"]
+- ["11At_Training1KV", "rodSS"]
 depends-nominal:
 - "11At_Training1KV"
 depends-dynamic-lookup:
@@ -107,4 +113,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "b06b3b34d107e5e5280842b30531ef4f"
+interface-hash: "1cdc45698f29ec0b738f393caa198471"

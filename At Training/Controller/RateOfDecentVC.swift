@@ -60,8 +60,7 @@ class RateOfDecentVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
          let temp = pickerData[row]
-         
-         print("value = \(temp)")
+         db.set(temp, forKey: K.rodSS)
      }
      
      

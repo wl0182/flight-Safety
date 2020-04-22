@@ -18,6 +18,7 @@ depends-top-level:
 - "FloatLiteralType"
 - "Int"
 - "IntegerLiteralType"
+- !private "K"
 - !private "MyLabel"
 - "RateOfDecentVC"
 - "String"
@@ -29,7 +30,7 @@ depends-top-level:
 - "UIPickerViewDelegate"
 - "UIView"
 - "UIViewController"
-- !private "print"
+- !private "db"
 depends-member:
 - !private ["Sa", "count"]
 - !private ["Sa", "subscript"]
@@ -42,12 +43,14 @@ depends-member:
 - !private ["So15CALayerDelegateP", "init"]
 - !private ["So15CALayerDelegateP", "text"]
 - !private ["So15CALayerDelegateP", "textAlignment"]
+- !private ["s7CVarArgP", "K"]
 - !private ["s7CVarArgP", "MyLabel"]
 - !private ["s7CVarArgP", "String"]
 - !private ["s7CVarArgP", "UIFont"]
 - ["s7CVarArgP", ""]
 - !private ["s7CVarArgP", "adjustsFontSizeToFitWidth"]
 - !private ["s7CVarArgP", "count"]
+- !private ["s7CVarArgP", "db"]
 - !private ["s7CVarArgP", "delegate"]
 - !private ["s7CVarArgP", "font"]
 - !private ["s7CVarArgP", "init"]
@@ -56,7 +59,7 @@ depends-member:
 - !private ["s7CVarArgP", "picker"]
 - !private ["s7CVarArgP", "pickerData"]
 - ["s7CVarArgP", "pickerView"]
-- !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "set"]
 - !private ["s7CVarArgP", "subscript"]
 - !private ["s7CVarArgP", "text"]
 - !private ["s7CVarArgP", "textAlignment"]
@@ -67,12 +70,14 @@ depends-member:
 - !private ["SL", "init"]
 - !private ["10Foundation15ContiguousBytesP", "count"]
 - !private ["10Foundation15ContiguousBytesP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "K"]
 - !private ["s28CustomDebugStringConvertibleP", "MyLabel"]
 - !private ["s28CustomDebugStringConvertibleP", "String"]
 - !private ["s28CustomDebugStringConvertibleP", "UIFont"]
 - ["s28CustomDebugStringConvertibleP", ""]
 - !private ["s28CustomDebugStringConvertibleP", "adjustsFontSizeToFitWidth"]
 - !private ["s28CustomDebugStringConvertibleP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "db"]
 - !private ["s28CustomDebugStringConvertibleP", "delegate"]
 - !private ["s28CustomDebugStringConvertibleP", "font"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
@@ -81,23 +86,24 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "picker"]
 - !private ["s28CustomDebugStringConvertibleP", "pickerData"]
 - ["s28CustomDebugStringConvertibleP", "pickerView"]
-- !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "set"]
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
 - !private ["s28CustomDebugStringConvertibleP", "text"]
 - !private ["s28CustomDebugStringConvertibleP", "textAlignment"]
 - !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
+- !private ["10RealmSwift26CustomObjectiveCBridgeableP", "delegate"]
 - !private ["s17CustomReflectableP", "count"]
 - !private ["s17CustomReflectableP", "delegate"]
 - !private ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "K"]
 - !private ["s23CustomStringConvertibleP", "MyLabel"]
 - !private ["s23CustomStringConvertibleP", "String"]
 - !private ["s23CustomStringConvertibleP", "UIFont"]
 - ["s23CustomStringConvertibleP", ""]
 - !private ["s23CustomStringConvertibleP", "adjustsFontSizeToFitWidth"]
-- !private ["s23CustomStringConvertibleP", "appendInterpolation"]
-- !private ["s23CustomStringConvertibleP", "appendLiteral"]
 - !private ["s23CustomStringConvertibleP", "count"]
+- !private ["s23CustomStringConvertibleP", "db"]
 - !private ["s23CustomStringConvertibleP", "delegate"]
 - !private ["s23CustomStringConvertibleP", "font"]
 - !private ["s23CustomStringConvertibleP", "init"]
@@ -106,7 +112,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "picker"]
 - !private ["s23CustomStringConvertibleP", "pickerData"]
 - ["s23CustomStringConvertibleP", "pickerView"]
-- !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "set"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
 - !private ["s23CustomStringConvertibleP", "text"]
 - !private ["s23CustomStringConvertibleP", "textAlignment"]
@@ -117,12 +123,11 @@ depends-member:
 - !private ["Se", "delegate"]
 - !private ["Se", "init"]
 - !private ["Se", "subscript"]
-- !private ["s26DefaultStringInterpolationV", "appendInterpolation"]
-- !private ["s26DefaultStringInterpolationV", "appendLiteral"]
 - !private ["SE", "count"]
 - !private ["SE", "delegate"]
 - !private ["SE", "init"]
 - !private ["SE", "subscript"]
+- !private ["SQ", "K"]
 - !private ["SQ", "MyLabel"]
 - !private ["SQ", "String"]
 - !private ["SQ", "UIFont"]
@@ -130,6 +135,7 @@ depends-member:
 - !private ["SQ", "adjustsFontSizeToFitWidth"]
 - !private ["SQ", "center"]
 - !private ["SQ", "count"]
+- !private ["SQ", "db"]
 - !private ["SQ", "delegate"]
 - !private ["SQ", "font"]
 - !private ["SQ", "init"]
@@ -138,7 +144,7 @@ depends-member:
 - !private ["SQ", "picker"]
 - !private ["SQ", "pickerData"]
 - ["SQ", "pickerView"]
-- !private ["SQ", "print"]
+- !private ["SQ", "set"]
 - !private ["SQ", "subscript"]
 - !private ["SQ", "text"]
 - !private ["SQ", "textAlignment"]
@@ -150,6 +156,7 @@ depends-member:
 - !private ["s32ExpressibleByStringInterpolationP", "init"]
 - !private ["s26ExpressibleByStringLiteralP", "init"]
 - !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["SH", "K"]
 - !private ["SH", "MyLabel"]
 - !private ["SH", "String"]
 - !private ["SH", "UIFont"]
@@ -157,6 +164,7 @@ depends-member:
 - !private ["SH", "adjustsFontSizeToFitWidth"]
 - !private ["SH", "center"]
 - !private ["SH", "count"]
+- !private ["SH", "db"]
 - !private ["SH", "delegate"]
 - !private ["SH", "font"]
 - !private ["SH", "init"]
@@ -165,11 +173,12 @@ depends-member:
 - !private ["SH", "picker"]
 - !private ["SH", "pickerData"]
 - ["SH", "pickerView"]
-- !private ["SH", "print"]
+- !private ["SH", "set"]
 - !private ["SH", "subscript"]
 - !private ["SH", "text"]
 - !private ["SH", "textAlignment"]
 - !private ["SH", "viewDidLoad"]
+- !private ["11At_Training1KV", "rodSS"]
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s10MirrorPathP", "init"]
 - !private ["SM", "count"]
@@ -178,11 +187,13 @@ depends-member:
 - !private ["10Foundation19MutableDataProtocolP", "subscript"]
 - !private ["11At_Training7MyLabelC", "deinit"]
 - !private ["11At_Training7MyLabelC", "init"]
+- !private ["So8NSCodingP", "K"]
 - !private ["So8NSCodingP", "MyLabel"]
 - !private ["So8NSCodingP", "String"]
 - !private ["So8NSCodingP", "UIFont"]
 - ["So8NSCodingP", ""]
 - !private ["So8NSCodingP", "adjustsFontSizeToFitWidth"]
+- !private ["So8NSCodingP", "db"]
 - !private ["So8NSCodingP", "delegate"]
 - !private ["So8NSCodingP", "font"]
 - !private ["So8NSCodingP", "init"]
@@ -191,25 +202,26 @@ depends-member:
 - !private ["So8NSCodingP", "picker"]
 - !private ["So8NSCodingP", "pickerData"]
 - ["So8NSCodingP", "pickerView"]
-- !private ["So8NSCodingP", "print"]
 - !private ["So8NSCodingP", "text"]
 - !private ["So8NSCodingP", "textAlignment"]
 - !private ["So8NSCodingP", "viewDidLoad"]
 - !private ["So9NSCopyingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "K"]
 - !private ["So26NSExtensionRequestHandlingP", "MyLabel"]
 - !private ["So26NSExtensionRequestHandlingP", "String"]
 - !private ["So26NSExtensionRequestHandlingP", "UIFont"]
 - ["So26NSExtensionRequestHandlingP", ""]
+- !private ["So26NSExtensionRequestHandlingP", "db"]
 - !private ["So26NSExtensionRequestHandlingP", "init"]
 - ["So26NSExtensionRequestHandlingP", "numberOfComponents"]
 - ["So26NSExtensionRequestHandlingP", "numberOfComponentsInPickerView"]
 - !private ["So26NSExtensionRequestHandlingP", "picker"]
 - !private ["So26NSExtensionRequestHandlingP", "pickerData"]
 - ["So26NSExtensionRequestHandlingP", "pickerView"]
-- !private ["So26NSExtensionRequestHandlingP", "print"]
 - !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
 - ["So8NSObjectC", "CGFloat"]
 - ["So8NSObjectC", "Int"]
+- !private ["So8NSObjectC", "K"]
 - !private ["So8NSObjectC", "MyLabel"]
 - ["So8NSObjectC", "String"]
 - !private ["So8NSObjectC", "UIFont"]
@@ -217,6 +229,7 @@ depends-member:
 - ["So8NSObjectC", "UIPickerView"]
 - ["So8NSObjectC", "UIView"]
 - !private ["So8NSObjectC", "adjustsFontSizeToFitWidth"]
+- !private ["So8NSObjectC", "db"]
 - !private ["So8NSObjectC", "delegate"]
 - !private ["So8NSObjectC", "font"]
 - ["So8NSObjectC", "init"]
@@ -225,15 +238,17 @@ depends-member:
 - ["So8NSObjectC", "picker"]
 - ["So8NSObjectC", "pickerData"]
 - ["So8NSObjectC", "pickerView"]
-- !private ["So8NSObjectC", "print"]
+- !private ["So8NSObjectC", "set"]
 - !private ["So8NSObjectC", "text"]
 - !private ["So8NSObjectC", "textAlignment"]
 - ["So8NSObjectC", "viewDidLoad"]
+- !private ["So8NSObjectP", "K"]
 - !private ["So8NSObjectP", "MyLabel"]
 - !private ["So8NSObjectP", "String"]
 - !private ["So8NSObjectP", "UIFont"]
 - ["So8NSObjectP", ""]
 - !private ["So8NSObjectP", "adjustsFontSizeToFitWidth"]
+- !private ["So8NSObjectP", "db"]
 - !private ["So8NSObjectP", "delegate"]
 - !private ["So8NSObjectP", "font"]
 - !private ["So8NSObjectP", "init"]
@@ -242,12 +257,13 @@ depends-member:
 - !private ["So8NSObjectP", "picker"]
 - !private ["So8NSObjectP", "pickerData"]
 - ["So8NSObjectP", "pickerView"]
-- !private ["So8NSObjectP", "print"]
+- !private ["So8NSObjectP", "set"]
 - !private ["So8NSObjectP", "text"]
 - !private ["So8NSObjectP", "textAlignment"]
 - !private ["So8NSObjectP", "viewDidLoad"]
 - !private ["So15NSTextAlignmentV", "center"]
 - !private ["Sq", "delegate"]
+- !private ["10RealmSwift16OptionalProtocolP", "delegate"]
 - !private ["Sk", "count"]
 - !private ["Sk", "subscript"]
 - !private ["Sm", "count"]
@@ -255,12 +271,14 @@ depends-member:
 - !private ["Sm", "subscript"]
 - ["11At_Training14RateOfDecentVCC", "CGFloat"]
 - ["11At_Training14RateOfDecentVCC", "Int"]
+- !private ["11At_Training14RateOfDecentVCC", "K"]
 - !private ["11At_Training14RateOfDecentVCC", "MyLabel"]
 - ["11At_Training14RateOfDecentVCC", "String"]
 - !private ["11At_Training14RateOfDecentVCC", "UIFont"]
 - !private ["11At_Training14RateOfDecentVCC", "UILabel"]
 - ["11At_Training14RateOfDecentVCC", "UIPickerView"]
 - ["11At_Training14RateOfDecentVCC", "UIView"]
+- !private ["11At_Training14RateOfDecentVCC", "db"]
 - ["11At_Training14RateOfDecentVCC", "deinit"]
 - ["11At_Training14RateOfDecentVCC", "init"]
 - ["11At_Training14RateOfDecentVCC", "numberOfComponents"]
@@ -268,18 +286,15 @@ depends-member:
 - ["11At_Training14RateOfDecentVCC", "picker"]
 - ["11At_Training14RateOfDecentVCC", "pickerData"]
 - ["11At_Training14RateOfDecentVCC", "pickerView"]
-- !private ["11At_Training14RateOfDecentVCC", "print"]
 - ["11At_Training14RateOfDecentVCC", "viewDidLoad"]
 - !private ["SY", "center"]
+- !private ["10RealmSwift0A15CollectionValueP", "delegate"]
+- !private ["10RealmSwift0A15CollectionValueP", "init"]
 - !private ["ST", "count"]
 - !private ["ST", "init"]
 - !private ["ST", "subscript"]
 - !private ["SS", "init"]
-- !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
-- !private ["s27StringInterpolationProtocolP", "appendLiteral"]
 - !private ["Sy", "init"]
-- !private ["s16TextOutputStreamP", "appendInterpolation"]
-- !private ["s16TextOutputStreamP", "appendLiteral"]
 - !private ["s16TextOutputStreamP", "init"]
 - !private ["s20TextOutputStreamableP", "init"]
 - !private ["So29UIAccessibilityIdentificationP", "adjustsFontSizeToFitWidth"]
@@ -294,11 +309,13 @@ depends-member:
 - !private ["So12UIAppearanceP", "init"]
 - !private ["So12UIAppearanceP", "text"]
 - !private ["So12UIAppearanceP", "textAlignment"]
+- !private ["So21UIAppearanceContainerP", "K"]
 - !private ["So21UIAppearanceContainerP", "MyLabel"]
 - !private ["So21UIAppearanceContainerP", "String"]
 - !private ["So21UIAppearanceContainerP", "UIFont"]
 - ["So21UIAppearanceContainerP", ""]
 - !private ["So21UIAppearanceContainerP", "adjustsFontSizeToFitWidth"]
+- !private ["So21UIAppearanceContainerP", "db"]
 - !private ["So21UIAppearanceContainerP", "delegate"]
 - !private ["So21UIAppearanceContainerP", "font"]
 - !private ["So21UIAppearanceContainerP", "init"]
@@ -307,21 +324,21 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "picker"]
 - !private ["So21UIAppearanceContainerP", "pickerData"]
 - ["So21UIAppearanceContainerP", "pickerView"]
-- !private ["So21UIAppearanceContainerP", "print"]
 - !private ["So21UIAppearanceContainerP", "text"]
 - !private ["So21UIAppearanceContainerP", "textAlignment"]
 - !private ["So21UIAppearanceContainerP", "viewDidLoad"]
+- !private ["So18UIContentContainerP", "K"]
 - !private ["So18UIContentContainerP", "MyLabel"]
 - !private ["So18UIContentContainerP", "String"]
 - !private ["So18UIContentContainerP", "UIFont"]
 - ["So18UIContentContainerP", ""]
+- !private ["So18UIContentContainerP", "db"]
 - !private ["So18UIContentContainerP", "init"]
 - ["So18UIContentContainerP", "numberOfComponents"]
 - ["So18UIContentContainerP", "numberOfComponentsInPickerView"]
 - !private ["So18UIContentContainerP", "picker"]
 - !private ["So18UIContentContainerP", "pickerData"]
 - ["So18UIContentContainerP", "pickerView"]
-- !private ["So18UIContentContainerP", "print"]
 - !private ["So18UIContentContainerP", "viewDidLoad"]
 - !private ["So30UIContentSizeCategoryAdjustingP", "adjustsFontSizeToFitWidth"]
 - !private ["So30UIContentSizeCategoryAdjustingP", "font"]
@@ -340,11 +357,13 @@ depends-member:
 - !private ["So13UIDynamicItemP", "init"]
 - !private ["So13UIDynamicItemP", "text"]
 - !private ["So13UIDynamicItemP", "textAlignment"]
+- !private ["So18UIFocusEnvironmentP", "K"]
 - !private ["So18UIFocusEnvironmentP", "MyLabel"]
 - !private ["So18UIFocusEnvironmentP", "String"]
 - !private ["So18UIFocusEnvironmentP", "UIFont"]
 - ["So18UIFocusEnvironmentP", ""]
 - !private ["So18UIFocusEnvironmentP", "adjustsFontSizeToFitWidth"]
+- !private ["So18UIFocusEnvironmentP", "db"]
 - !private ["So18UIFocusEnvironmentP", "delegate"]
 - !private ["So18UIFocusEnvironmentP", "font"]
 - !private ["So18UIFocusEnvironmentP", "init"]
@@ -353,7 +372,6 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "picker"]
 - !private ["So18UIFocusEnvironmentP", "pickerData"]
 - ["So18UIFocusEnvironmentP", "pickerView"]
-- !private ["So18UIFocusEnvironmentP", "print"]
 - !private ["So18UIFocusEnvironmentP", "text"]
 - !private ["So18UIFocusEnvironmentP", "textAlignment"]
 - !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
@@ -381,11 +399,13 @@ depends-member:
 - !private ["So24UILargeContentViewerItemP", "init"]
 - !private ["So24UILargeContentViewerItemP", "text"]
 - !private ["So24UILargeContentViewerItemP", "textAlignment"]
+- !private ["So30UIPasteConfigurationSupportingP", "K"]
 - !private ["So30UIPasteConfigurationSupportingP", "MyLabel"]
 - !private ["So30UIPasteConfigurationSupportingP", "String"]
 - !private ["So30UIPasteConfigurationSupportingP", "UIFont"]
 - ["So30UIPasteConfigurationSupportingP", ""]
 - !private ["So30UIPasteConfigurationSupportingP", "adjustsFontSizeToFitWidth"]
+- !private ["So30UIPasteConfigurationSupportingP", "db"]
 - !private ["So30UIPasteConfigurationSupportingP", "delegate"]
 - !private ["So30UIPasteConfigurationSupportingP", "font"]
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
@@ -394,33 +414,35 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "picker"]
 - !private ["So30UIPasteConfigurationSupportingP", "pickerData"]
 - ["So30UIPasteConfigurationSupportingP", "pickerView"]
-- !private ["So30UIPasteConfigurationSupportingP", "print"]
 - !private ["So30UIPasteConfigurationSupportingP", "text"]
 - !private ["So30UIPasteConfigurationSupportingP", "textAlignment"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
 - !private ["So12UIPickerViewC", "delegate"]
+- !private ["So22UIPickerViewDataSourceP", "K"]
 - !private ["So22UIPickerViewDataSourceP", "MyLabel"]
 - !private ["So22UIPickerViewDataSourceP", "String"]
 - !private ["So22UIPickerViewDataSourceP", "UIFont"]
 - ["So22UIPickerViewDataSourceP", ""]
+- !private ["So22UIPickerViewDataSourceP", "db"]
 - ["So22UIPickerViewDataSourceP", "numberOfComponents"]
 - ["So22UIPickerViewDataSourceP", "numberOfComponentsInPickerView"]
 - !private ["So22UIPickerViewDataSourceP", "picker"]
 - !private ["So22UIPickerViewDataSourceP", "pickerData"]
 - ["So22UIPickerViewDataSourceP", "pickerView"]
-- !private ["So22UIPickerViewDataSourceP", "print"]
+- !private ["So20UIPickerViewDelegateP", "K"]
 - !private ["So20UIPickerViewDelegateP", "MyLabel"]
 - !private ["So20UIPickerViewDelegateP", "String"]
 - !private ["So20UIPickerViewDelegateP", "UIFont"]
 - ["So20UIPickerViewDelegateP", ""]
+- !private ["So20UIPickerViewDelegateP", "db"]
 - ["So20UIPickerViewDelegateP", "numberOfComponents"]
 - ["So20UIPickerViewDelegateP", "numberOfComponentsInPickerView"]
 - !private ["So20UIPickerViewDelegateP", "picker"]
 - !private ["So20UIPickerViewDelegateP", "pickerData"]
 - ["So20UIPickerViewDelegateP", "pickerView"]
-- !private ["So20UIPickerViewDelegateP", "print"]
 - ["So11UIResponderC", "CGFloat"]
 - ["So11UIResponderC", "Int"]
+- !private ["So11UIResponderC", "K"]
 - !private ["So11UIResponderC", "MyLabel"]
 - ["So11UIResponderC", "String"]
 - !private ["So11UIResponderC", "UIFont"]
@@ -428,6 +450,7 @@ depends-member:
 - ["So11UIResponderC", "UIPickerView"]
 - ["So11UIResponderC", "UIView"]
 - !private ["So11UIResponderC", "adjustsFontSizeToFitWidth"]
+- !private ["So11UIResponderC", "db"]
 - !private ["So11UIResponderC", "delegate"]
 - !private ["So11UIResponderC", "font"]
 - ["So11UIResponderC", "init"]
@@ -436,15 +459,16 @@ depends-member:
 - ["So11UIResponderC", "picker"]
 - ["So11UIResponderC", "pickerData"]
 - ["So11UIResponderC", "pickerView"]
-- !private ["So11UIResponderC", "print"]
 - !private ["So11UIResponderC", "text"]
 - !private ["So11UIResponderC", "textAlignment"]
 - ["So11UIResponderC", "viewDidLoad"]
+- !private ["So30UIResponderStandardEditActionsP", "K"]
 - !private ["So30UIResponderStandardEditActionsP", "MyLabel"]
 - !private ["So30UIResponderStandardEditActionsP", "String"]
 - !private ["So30UIResponderStandardEditActionsP", "UIFont"]
 - ["So30UIResponderStandardEditActionsP", ""]
 - !private ["So30UIResponderStandardEditActionsP", "adjustsFontSizeToFitWidth"]
+- !private ["So30UIResponderStandardEditActionsP", "db"]
 - !private ["So30UIResponderStandardEditActionsP", "delegate"]
 - !private ["So30UIResponderStandardEditActionsP", "font"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
@@ -453,27 +477,29 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "picker"]
 - !private ["So30UIResponderStandardEditActionsP", "pickerData"]
 - ["So30UIResponderStandardEditActionsP", "pickerView"]
-- !private ["So30UIResponderStandardEditActionsP", "print"]
 - !private ["So30UIResponderStandardEditActionsP", "text"]
 - !private ["So30UIResponderStandardEditActionsP", "textAlignment"]
 - !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
+- !private ["So16UIStateRestoringP", "K"]
 - !private ["So16UIStateRestoringP", "MyLabel"]
 - !private ["So16UIStateRestoringP", "String"]
 - !private ["So16UIStateRestoringP", "UIFont"]
 - ["So16UIStateRestoringP", ""]
+- !private ["So16UIStateRestoringP", "db"]
 - !private ["So16UIStateRestoringP", "init"]
 - ["So16UIStateRestoringP", "numberOfComponents"]
 - ["So16UIStateRestoringP", "numberOfComponentsInPickerView"]
 - !private ["So16UIStateRestoringP", "picker"]
 - !private ["So16UIStateRestoringP", "pickerData"]
 - ["So16UIStateRestoringP", "pickerView"]
-- !private ["So16UIStateRestoringP", "print"]
 - !private ["So16UIStateRestoringP", "viewDidLoad"]
+- !private ["So18UITraitEnvironmentP", "K"]
 - !private ["So18UITraitEnvironmentP", "MyLabel"]
 - !private ["So18UITraitEnvironmentP", "String"]
 - !private ["So18UITraitEnvironmentP", "UIFont"]
 - ["So18UITraitEnvironmentP", ""]
 - !private ["So18UITraitEnvironmentP", "adjustsFontSizeToFitWidth"]
+- !private ["So18UITraitEnvironmentP", "db"]
 - !private ["So18UITraitEnvironmentP", "delegate"]
 - !private ["So18UITraitEnvironmentP", "font"]
 - !private ["So18UITraitEnvironmentP", "init"]
@@ -482,15 +508,16 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "picker"]
 - !private ["So18UITraitEnvironmentP", "pickerData"]
 - ["So18UITraitEnvironmentP", "pickerView"]
-- !private ["So18UITraitEnvironmentP", "print"]
 - !private ["So18UITraitEnvironmentP", "text"]
 - !private ["So18UITraitEnvironmentP", "textAlignment"]
 - !private ["So18UITraitEnvironmentP", "viewDidLoad"]
+- !private ["So23UIUserActivityRestoringP", "K"]
 - !private ["So23UIUserActivityRestoringP", "MyLabel"]
 - !private ["So23UIUserActivityRestoringP", "String"]
 - !private ["So23UIUserActivityRestoringP", "UIFont"]
 - ["So23UIUserActivityRestoringP", ""]
 - !private ["So23UIUserActivityRestoringP", "adjustsFontSizeToFitWidth"]
+- !private ["So23UIUserActivityRestoringP", "db"]
 - !private ["So23UIUserActivityRestoringP", "delegate"]
 - !private ["So23UIUserActivityRestoringP", "font"]
 - !private ["So23UIUserActivityRestoringP", "init"]
@@ -499,7 +526,6 @@ depends-member:
 - !private ["So23UIUserActivityRestoringP", "picker"]
 - !private ["So23UIUserActivityRestoringP", "pickerData"]
 - ["So23UIUserActivityRestoringP", "pickerView"]
-- !private ["So23UIUserActivityRestoringP", "print"]
 - !private ["So23UIUserActivityRestoringP", "text"]
 - !private ["So23UIUserActivityRestoringP", "textAlignment"]
 - !private ["So23UIUserActivityRestoringP", "viewDidLoad"]
@@ -511,6 +537,7 @@ depends-member:
 - !private ["So6UIViewC", "textAlignment"]
 - ["So16UIViewControllerC", "CGFloat"]
 - ["So16UIViewControllerC", "Int"]
+- !private ["So16UIViewControllerC", "K"]
 - !private ["So16UIViewControllerC", "MyLabel"]
 - ["So16UIViewControllerC", "String"]
 - !private ["So16UIViewControllerC", "UIFont"]
@@ -518,14 +545,15 @@ depends-member:
 - ["So16UIViewControllerC", "UIPickerView"]
 - ["So16UIViewControllerC", "UIView"]
 - ["So16UIViewControllerC", ""]
+- !private ["So16UIViewControllerC", "db"]
 - ["So16UIViewControllerC", "init"]
 - ["So16UIViewControllerC", "numberOfComponents"]
 - ["So16UIViewControllerC", "numberOfComponentsInPickerView"]
 - ["So16UIViewControllerC", "picker"]
 - ["So16UIViewControllerC", "pickerData"]
 - ["So16UIViewControllerC", "pickerView"]
-- !private ["So16UIViewControllerC", "print"]
 - ["So16UIViewControllerC", "viewDidLoad"]
+- !private ["So14NSUserDefaultsC", "set"]
 - !private ["s14_ArrayProtocolP", "count"]
 - !private ["s14_ArrayProtocolP", "subscript"]
 - !private ["s30_CustomPlaygroundQuickLookableP", "init"]
@@ -539,11 +567,13 @@ depends-member:
 - !private ["s19_HasContiguousBytesP", "subscript"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "count"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "subscript"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "K"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "MyLabel"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "String"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UIFont"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "adjustsFontSizeToFitWidth"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "db"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "font"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
@@ -552,15 +582,17 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "picker"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "pickerData"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "pickerView"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "set"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "textAlignment"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "K"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "MyLabel"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "String"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "UIFont"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "adjustsFontSizeToFitWidth"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "db"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "delegate"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "font"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
@@ -569,10 +601,12 @@ depends-member:
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "picker"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "pickerData"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "pickerView"]
-- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "print"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "set"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "text"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "textAlignment"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "viewDidLoad"]
+- !private ["10RealmSwift20_ManagedPropertyTypeP", "delegate"]
+- !private ["10RealmSwift20_ManagedPropertyTypeP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "count"]
 - !private ["s21_ObjectiveCBridgeableP", "delegate"]
 - !private ["s21_ObjectiveCBridgeableP", "init"]
@@ -592,11 +626,11 @@ depends-nominal:
 - !private "SL"
 - !private "10Foundation15ContiguousBytesP"
 - "s28CustomDebugStringConvertibleP"
+- !private "10RealmSwift26CustomObjectiveCBridgeableP"
 - !private "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
 - !private "10Foundation12DataProtocolP"
 - !private "Se"
-- !private "s26DefaultStringInterpolationV"
 - !private "SE"
 - "SQ"
 - !private "s25ExpressibleByArrayLiteralP"
@@ -606,6 +640,7 @@ depends-nominal:
 - !private "s26ExpressibleByStringLiteralP"
 - !private "s33ExpressibleByUnicodeScalarLiteralP"
 - "SH"
+- !private "11At_Training1KV"
 - !private "s25LosslessStringConvertibleP"
 - !private "s10MirrorPathP"
 - !private "SM"
@@ -618,13 +653,14 @@ depends-nominal:
 - "So8NSObjectP"
 - !private "So15NSTextAlignmentV"
 - !private "Sq"
+- !private "10RealmSwift16OptionalProtocolP"
 - !private "Sk"
 - !private "Sm"
 - "11At_Training14RateOfDecentVCC"
 - !private "SY"
+- !private "10RealmSwift0A15CollectionValueP"
 - !private "ST"
 - !private "SS"
-- !private "s27StringInterpolationProtocolP"
 - !private "Sy"
 - !private "s16TextOutputStreamP"
 - !private "s20TextOutputStreamableP"
@@ -652,6 +688,7 @@ depends-nominal:
 - "So23UIUserActivityRestoringP"
 - !private "So6UIViewC"
 - "So16UIViewControllerC"
+- !private "So14NSUserDefaultsC"
 - !private "s14_ArrayProtocolP"
 - !private "s30_CustomPlaygroundQuickLookableP"
 - !private "s24_DestructorSafeContainerP"
@@ -662,6 +699,7 @@ depends-nominal:
 - !private "s35_HasCustomAnyHashableRepresentationP"
 - "10Foundation27_KeyValueCodingAndObservingP"
 - "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- !private "10RealmSwift20_ManagedPropertyTypeP"
 - !private "s21_ObjectiveCBridgeableP"
 - !private "s38__DefaultCustomPlaygroundQuickLookableP"
 depends-dynamic-lookup:
@@ -692,8 +730,57 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Modules/RealmSwift.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Headers/RealmSwift-umbrella.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm+Sync.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectBase_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMCollection_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermission.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSubscription.h"
 - "/Users/wassimlagnaoui/flight-Safety-15/At Training/At Training-Bridging-Header.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
 - "/Users/wassimlagnaoui/flight-Safety-15/At Training/parser.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Headers/RealmSwift-Swift.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/objc/ObjectiveC.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"

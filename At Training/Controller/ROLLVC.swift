@@ -9,9 +9,9 @@
 import UIKit
 
 class ROLLVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
-   
+    
     let pickerData = [[-15,-20,-25,-30],[15,20,25,30]]
-
+    
     @IBOutlet weak var picker: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +19,12 @@ class ROLLVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
         // Do any additional setup after loading the view.
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-           return 2
-       }
-       
-       func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-           return 4
-       }
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 4
+    }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let temp = pickerData[component][row]
@@ -32,42 +32,49 @@ class ROLLVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-         return 75.0
-     }
-     
+        return 75.0
+    }
     
-     
-     
-     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-          let lab : UILabel
-         
-         if let label = view as? UILabel {
-             lab = label
-          
-         } else {
-             lab = MyLabel()
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let lab : UILabel
         
-         }
-         lab.font = UIFont(name: "Times New Roman", size: 35.0)
-         lab.text = String( pickerData[component][row] )
-         lab.textAlignment = .center
-         
-         let value = pickerData[component][row]
-         
-         
-         return lab
-     }
-     
-     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-         let temp = pickerData[component][row]
-         
-         print("value = \(temp)")
-     }
-     
-
+        if let label = view as? UILabel {
+            lab = label
+            
+        } else {
+            lab = MyLabel()
+            
+        }
+        lab.font = UIFont(name: "Times New Roman", size: 35.0)
+        lab.text = String( pickerData[component][row] )
+        lab.textAlignment = .center
+        
+        let value = pickerData[component][row]
+        
+        
+        return lab
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if component == 0 {
+            let temp = pickerData[component][row]
+            db.set(temp, forKey: K.minRollSS)        }
+        else{
+            let temp = pickerData[component][row]
+            db.set(temp, forKey: K.maxRollSS)
+            
+        }
+        
+    }
     
     
-
     
-
+    
+    
+    
+    
 }

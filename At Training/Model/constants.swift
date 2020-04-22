@@ -14,5 +14,9 @@ struct K {
     static let ManualVisibility = "Manual_Visibility"
     static let altitudeSS = "Altitude_SS"
     static let rodSS = "Rate_Decent_SS"
+    static let minRollSS = "Min_Roll"
+    static let minPitchSS = "Min_Pitch"
+    static let maxRollSS = "Max_Roll"
+    static let maxPitchSS = "Max_Pitch"
     
 }

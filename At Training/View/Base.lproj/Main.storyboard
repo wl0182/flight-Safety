@@ -110,74 +110,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="vOW-jh-3Xp">
-                                        <rect key="frame" x="30" y="205" width="652" height="123.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3u-hD-C9b">
-                                                <rect key="frame" x="0.0" y="0.0" width="251" height="123.5"/>
-                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
-                                                <color key="tintColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Roll">
-                                                    <color key="titleColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="titleShadowColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="dayPressed:" destination="Zff-Jl-wkS" eventType="touchUpInside" id="JKE-SJ-a7u"/>
-                                                    <segue destination="P9W-kB-gfk" kind="show" id="psE-zL-tA8"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjm-yT-jyY">
-                                                <rect key="frame" x="401" y="0.0" width="251" height="123.5"/>
-                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
-                                                <color key="tintColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Pitch">
-                                                    <color key="titleColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="titleShadowColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="dayPressed:" destination="Zff-Jl-wkS" eventType="touchUpInside" id="o4n-oc-eBS"/>
-                                                    <segue destination="fak-43-Noc" kind="show" id="yl9-Sb-6Nd"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="tpM-xR-2H6">
-                                        <rect key="frame" x="30" y="410.5" width="652" height="123"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c68-6E-a9L">
-                                                <rect key="frame" x="0.0" y="0.0" width="251" height="123"/>
-                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
-                                                <color key="tintColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="ROD">
-                                                    <color key="titleColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="titleShadowColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="dayPressed:" destination="Zff-Jl-wkS" eventType="touchUpInside" id="gX1-4U-Mnl"/>
-                                                    <segue destination="1hO-Lw-Ae9" kind="show" id="WGN-AG-V8b"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-Ol-beM">
-                                                <rect key="frame" x="401" y="0.0" width="251" height="123"/>
-                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
-                                                <color key="tintColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Altitude">
-                                                    <color key="titleColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="titleShadowColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="dayPressed:" destination="Zff-Jl-wkS" eventType="touchUpInside" id="rYw-8f-vbg"/>
-                                                    <segue destination="dus-hb-dQH" kind="show" id="h3E-rT-VOa"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HeN-g3-hnu">
-                                        <rect key="frame" x="50" y="615.5" width="612" height="123.5"/>
+                                        <rect key="frame" x="50" y="205" width="612" height="123.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="106" translatesAutoresizingMaskIntoConstraints="NO" id="AT1-sf-1qb">
                                                 <rect key="frame" x="0.0" y="0.0" width="612" height="42"/>
@@ -218,6 +152,72 @@
                                             <constraint firstItem="AT1-sf-1qb" firstAttribute="leading" secondItem="HeN-g3-hnu" secondAttribute="leading" id="hMU-K8-j6F"/>
                                             <constraint firstAttribute="trailing" secondItem="IKF-Ip-dig" secondAttribute="trailing" id="oqu-kU-U0p"/>
                                         </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="vOW-jh-3Xp">
+                                        <rect key="frame" x="30" y="410.5" width="652" height="123"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3u-hD-C9b">
+                                                <rect key="frame" x="0.0" y="0.0" width="251" height="123"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                                <color key="tintColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Roll">
+                                                    <color key="titleColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dayPressed:" destination="Zff-Jl-wkS" eventType="touchUpInside" id="JKE-SJ-a7u"/>
+                                                    <segue destination="P9W-kB-gfk" kind="show" id="psE-zL-tA8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjm-yT-jyY">
+                                                <rect key="frame" x="401" y="0.0" width="251" height="123"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                                <color key="tintColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Pitch">
+                                                    <color key="titleColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dayPressed:" destination="Zff-Jl-wkS" eventType="touchUpInside" id="o4n-oc-eBS"/>
+                                                    <segue destination="fak-43-Noc" kind="show" id="yl9-Sb-6Nd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="tpM-xR-2H6">
+                                        <rect key="frame" x="30" y="615.5" width="652" height="123.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c68-6E-a9L">
+                                                <rect key="frame" x="0.0" y="0.0" width="251" height="123.5"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                                <color key="tintColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="ROD">
+                                                    <color key="titleColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dayPressed:" destination="Zff-Jl-wkS" eventType="touchUpInside" id="gX1-4U-Mnl"/>
+                                                    <segue destination="1hO-Lw-Ae9" kind="show" id="WGN-AG-V8b"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-Ol-beM">
+                                                <rect key="frame" x="401" y="0.0" width="251" height="123.5"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                                <color key="tintColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Altitude">
+                                                    <color key="titleColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dayPressed:" destination="Zff-Jl-wkS" eventType="touchUpInside" id="rYw-8f-vbg"/>
+                                                    <segue destination="dus-hb-dQH" kind="show" id="h3E-rT-VOa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sj-4I-ukW">
                                         <rect key="frame" x="200" y="821" width="312" height="123"/>
@@ -561,28 +561,28 @@
                                 <rect key="frame" x="20" y="50" width="728" height="924"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="bsd-Qh-skY">
-                                        <rect key="frame" x="137" y="0.0" width="454" height="157"/>
+                                        <rect key="frame" x="135" y="0.0" width="458" height="157"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="ZPG-Tp-nL4">
-                                                <rect key="frame" x="0.0" y="0.0" width="454" height="54"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="458" height="54"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visibility: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHZ-Uz-1mr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="205" height="54"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="207" height="54"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a9H-nV-KRF">
-                                                        <rect key="frame" x="249" y="0.0" width="205" height="54"/>
+                                                        <rect key="frame" x="251" y="0.0" width="207" height="54"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vb-Zc-b6O">
-                                                                <rect key="frame" x="0.0" y="0.0" width="97.5" height="54"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="98.5" height="54"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M13-vl-sHk">
-                                                                <rect key="frame" x="107.5" y="0.0" width="97.5" height="54"/>
+                                                                <rect key="frame" x="108.5" y="0.0" width="98.5" height="54"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -592,7 +592,7 @@
                                                 </subviews>
                                             </stackView>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minValue="0.0" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="iaT-rs-X5r">
-                                                <rect key="frame" x="-2" y="127" width="458" height="31"/>
+                                                <rect key="frame" x="-2" y="127" width="462" height="31"/>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="visibilitySlider:" destination="s6R-tk-7Va" eventType="valueChanged" id="boT-fy-dDv"/>
@@ -601,19 +601,19 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="Cip-GZ-Zwz">
-                                        <rect key="frame" x="159" y="320.5" width="410" height="157"/>
+                                        <rect key="frame" x="157" y="320.5" width="414" height="157"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="LH4-Ln-30V">
-                                                <rect key="frame" x="0.0" y="0.0" width="410" height="54"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ceiling:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0J-YG-zEd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="54"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="185" height="54"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myM-FD-wR0">
-                                                        <rect key="frame" x="227" y="0.0" width="183" height="54"/>
+                                                        <rect key="frame" x="229" y="0.0" width="185" height="54"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -621,7 +621,7 @@
                                                 </subviews>
                                             </stackView>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1200" minValue="200" maxValue="2000" translatesAutoresizingMaskIntoConstraints="NO" id="HCF-Hm-rdT">
-                                                <rect key="frame" x="-2" y="127" width="414" height="31"/>
+                                                <rect key="frame" x="-2" y="127" width="418" height="31"/>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="ceilingSlider:" destination="s6R-tk-7Va" eventType="valueChanged" id="muZ-JK-djj"/>
@@ -1626,7 +1626,6 @@
         <image name="Launch screen" width="1024" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h3E-rT-VOa"/>
         <segue reference="I23-9L-WTb"/>
     </inferredMetricsTieBreakers>
 </document>

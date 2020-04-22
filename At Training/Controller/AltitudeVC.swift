@@ -73,9 +73,16 @@ class AltitudeVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
 
 
 }
+
+
+// A Deinit Class --- Inherit from UILabel
 class MyLabel : UILabel {
     deinit {
       
     }
 }
+ 
+
+
+
 

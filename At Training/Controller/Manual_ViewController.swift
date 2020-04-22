@@ -69,9 +69,14 @@ class Manual_ViewController: UIViewController {
 //        print("Pitch Min from SS: \(temp2)")
         
         let title = sender.currentTitle
+      
+      
+        
         
         if title == "Initiate" {
             print("I am reading from The ILevel")
+            
+            
             startReceiver = 10 //while loop for receiving data from AHRS only runs as long as startReceiver stays 10. COMMENT THIS OUT FOR DISABLING THE RECEIVER WHILE LOOP
             readFIL()
             sender.setTitle("Abort", for: .normal)

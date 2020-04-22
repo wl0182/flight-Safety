@@ -63,8 +63,7 @@ class AltitudeVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let temp = pickerData[row]
-        
-        print("value = \(temp)")
+        db.set(temp, forKey: K.altitudeSS)
     }
     
 

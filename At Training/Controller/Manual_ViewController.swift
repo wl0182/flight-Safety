@@ -14,6 +14,9 @@ class Manual_ViewController: UIViewController {
     var valueReceived: Float = 40
     var temp3 : Float = 0
     var startReceiver: Int = 0;
+    var altitudeFSS = db.integer(forKey: K.altitudeSS)
+
+    
     // outlets
     
     @IBOutlet weak var visibilityLabel: UILabel!

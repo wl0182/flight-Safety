@@ -11,7 +11,18 @@ import UIKit
 
 let db = UserDefaults.standard
 
+var aircraftType = ""
+var tailNumber = ""
+
+
 class SafetySettings_ViewController: UIViewController  {
+    
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            // Do any additional setup after loading the view.
+            
+        }
+    
     
 
 

@@ -335,6 +335,7 @@ SWIFT_CLASS("_TtC11At_Training14RateOfDecentVC")
 
 SWIFT_CLASS("_TtC11At_Training29SafetySettings_ViewController")
 @interface SafetySettings_ViewController : UIViewController
+- (void)viewDidLoad;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end

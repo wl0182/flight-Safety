@@ -1,0 +1,69 @@
+   <view key="view" contentMode="scaleToFill" id="ZMj-8p-JlQ">
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="315-hq-ga0">
+                                <rect key="frame" x="0.0" y="20" width="712" height="944"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Safety Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYO-aC-6Dd">
+                                        <rect key="frame" x="170" y="0.0" width="372.5" height="123"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="vOW-jh-3Xp">
+                                        <rect key="frame" x="30" y="205" width="652" height="123.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3u-hD-C9b">
+                                                <rect key="frame" x="0.0" y="0.0" width="251" height="123.5"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                                <color key="tintColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Roll">
+                                                    <color key="titleColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dayPressed:" destination="Zff-Jl-wkS" eventType="touchUpInside" id="JKE-SJ-a7u"/>
+                                                    <segue destination="P9W-kB-gfk" kind="show" id="psE-zL-tA8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjm-yT-jyY">
+                                                <rect key="frame" x="401" y="0.0" width="251" height="123.5"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                                <color key="tintColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Pitch">
+                                                    <color key="titleColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dayPressed:" destination="Zff-Jl-wkS" eventType="touchUpInside" id="o4n-oc-eBS"/>
+                                                    <segue destination="fak-43-Noc" kind="show" id="yl9-Sb-6Nd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="tpM-xR-2H6">
+                                        <rect key="frame" x="30" y="410.5" width="652" height="123"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c68-6E-a9L">
+                                                <rect key="frame" x="0.0" y="0.0" width="251" height="123"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                                <color key="tintColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="ROD">
+                                                    <color key="titleColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dayPressed:" destination="Zff-Jl-wkS" eventType="touchUpInside" id="gX1-4U-Mnl"/>
+                                                    <segue destination="1hO-Lw-Ae9" kind="show" id="WGN-AG-V8b"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-Ol-beM">
+                                                <rect key="frame" x="401" y="0.0" width="251" height="123"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                                <color key="tintColor" red="0.12939286229999999" green="0.12942266459999999" blue="0.12939092520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Altitude">3

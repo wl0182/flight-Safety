@@ -11,10 +11,14 @@ import UIKit
 class Manual_ViewController: UIViewController {
     
     // variables
-    var valueReceived: Float = 40
+    var valueReceived: Float = 40 //40 is arbitrarily set
+    var valueReceivedasNegative: Int = 10 //10 is arbitrarily set
+    
+    
     var temp3 : Float = 0
     var startReceiver: Int = 0;
-    var altitudeFSS = db.integer(forKey: K.altitudeSS)
+    var altitudeFSS = db.integer(forKey: K.altitudeSS)//this statement will be cut from here and used down inside while loop.
+    
     
     
     // outlets
@@ -55,7 +59,7 @@ class Manual_ViewController: UIViewController {
         let tempI = Int(temp) //use this tempI for both - storing in database AND comparisons in while loop below
         let tempS = String(Int(temp))
         ceilingLabel.text = tempS
-        //write db.set() for ceilingSlider here
+        db.set(tempI, forKey: K.ManualCeiling)//write db.set() for ceilingSlider here
         
     }
     
@@ -85,7 +89,7 @@ class Manual_ViewController: UIViewController {
         print("Voltage return is \(vo)")
         print("Visiblity = \(db.float(forKey: K.ManualVisibility))")
         //sample voltage value receiver based on visibility value ENDS HERE
-
+        
     }
     
     func readFIL(){
@@ -95,9 +99,9 @@ class Manual_ViewController: UIViewController {
             //create an instance of Objective C class
             let instanceOfparser: parser = parser()
             //declare variables for use with printing or database comparisons
-            var swiftGPS_Lat: Float? = Optional.none
-            var swiftGPS_Long:Float? = Optional.none
-            var swiftGround_speed:CInt? = Optional.none
+//            var swiftGPS_Lat: Float? = Optional.none
+//            var swiftGPS_Long:Float? = Optional.none
+//            var swiftGround_speed:CInt? = Optional.none
             var swiftGPS_VSI:CShort? = Optional.none
             //var swiftGPS_heading:CInt? //Use Yaw value for heading instead of this
             var swiftGeo_Altitude:CInt? = Optional.none
@@ -111,17 +115,38 @@ class Manual_ViewController: UIViewController {
             //var swiftAltitudeFeet:CInt? //use Geo Altitude instead of this
             var swiftVsiFtPerMin:CInt? = Optional.none
             
+            var bytesToBeSentArray: [UInt8] = []
+           
+            
+            
             var continueReceiving : Int = 0//variable to check whether to receive data from AHRS device or not
             if (self.startReceiver == 10) //only if 'Initiate' titled button is pressed, the startReceiver is set to 10.
             {
                 continueReceiving  = 10
             }
-            
+            /* just for reference:
+             struct K {
+             static let batteryPercentage = "Battery_Per"
+             static let ManualVisibility = "Manual_Visibility"
+             static let altitudeSS = "Altitude_SS"
+             static let rodSS = "Rate_Decent_SS"
+             static let minRollSS = "Min_Roll"
+             static let minPitchSS = "Min_Pitch"
+             static let maxRollSS = "Max_Roll"
+             static let maxPitchSS = "Max_Pitch"
+             
+             }
+             */
             //creation of while loop for receiving UDP packets
             //var noOfIterations = 10000 Now using startReceiver value of 10 to start receiving
             while (continueReceiving == 10)
             {
                 //append 'IPAD' hex code bytes to the array for microcontroller here.
+                bytesToBeSentArray.append(0x49)//HEX for I
+                bytesToBeSentArray.append(0x50)//HEX for P
+                bytesToBeSentArray.append(0x41)//HEX for A
+                bytesToBeSentArray.append(0x44)//HEX for D
+                
                 
                 
                 //PROBLEM HERE. THIS IS ONLY PRINTING PITCH AND ROLL ONCE. MAY BE BECAUSE ALTERING THE PROEPRTY VALUE OF AN OBJECT IS NOT ALLOWED. EDIT: it was solved through closing of socket at the end of msgReceiver() function in parser.m file.
@@ -135,32 +160,242 @@ class Manual_ViewController: UIViewController {
                 
                 //setting ObjectiveC property values to swift variables for usage with database and application.
                 //Instead of print function, you can call a comparing method on the swift variables
-                swiftGPS_Lat = instanceOfparser.gps_Lat
-                if (swiftGPS_Lat == nil){
+                //                swiftGPS_Lat = instanceOfparser.gps_Lat
+                //                if (swiftGPS_Lat == nil){
+                //                    //do nothing
+                //                }else{
+                //                    print("Lat = \(swiftGPS_Lat!)")
+                //                    //call caliberation display function
+                //                    //call comparing function to database values
+                //                }
+                //                swiftGPS_Long = instanceOfparser.gps_Long
+                //                if (swiftGPS_Long == nil){
+                //                    //do nothing
+                //                }else{
+                //                    print("Long = \(swiftGPS_Long!)")
+                //                }
+                //                swiftGround_speed = instanceOfparser.ground_speed
+                //                if (swiftGround_speed == nil || swiftGround_speed == 4095){
+                //                    //do nothing
+                //                }else{
+                //                    print("Ownship 0x0A Horizontal Velocity = \(swiftGround_speed!)")//this is displayed as Ground Speed under GPS section in iLevil AHRS Utility App
+                //                }
+                
+                /*------------------------------------SAFETY SETTING CHECKING---------------------------------------*/
+                
+                // Roll
+                //1. Bring Roll from iLevil
+                //2. Bring Roll from Database
+                //3. Compare these two
+                //(optional) Test Print what to do based on comparison results
+                //4. Call the emergencyMsgSender() if Roll exceeds limits
+                swiftRoll = instanceOfparser.roll
+                if (swiftRoll == nil){
                     //do nothing
-                }else{
-                    print("Lat = \(swiftGPS_Lat!)")
-                    //call caliberation display function
-                    //call comparing function to database values
-                }
-                swiftGPS_Long = instanceOfparser.gps_Long
-                if (swiftGPS_Long == nil){
+                }else
+                {
+                    print("Roll = \(swiftRoll!)")
+                    let tempFR = swiftRoll! //is this a Float?
+                    let tempSR = Float(tempFR) //if tempF is already a float, we do not need tempS
+                    // DispatchQueue.main.async
+                    //{
+                    self.valueReceived = tempSR
+                    //the following needs to run constantly in a loop as long as Manual Training is in progress
+                    let temp1R = db.integer(forKey: K.maxRollSS)
+                    //var altitudeFSS = db.integer(forKey: K.altitudeSS)
+                    
+                    print("Roll Max from Safety Setting: \(temp1R)")
+                    
+                    let temp2R = db.integer(forKey: K.minRollSS)
+                    print("Roll Min from Safety Setting: \(temp2R)")
+                    
+                    if self.valueReceived > Float(temp1R)
+                    {
+                        print("Flip the visor")
+                        //append 5th byte as ASCII 1 = 31 in HEX
+                        bytesToBeSentArray.insert(0x44,at:5)//HEX 31 = ASCII 1
+                        
+                        //send a string to microcontroller
+                        instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
+                        print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
+                        
+                        instanceOfparser.msgSender()
+                        instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
+                        //abort the training if visor flipped.
+                        
+                        /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
+                         //create a dedicated emergency signal object
+                         let msgForMicroInstanceOfParser: parser = parser()
+                         //fill the emergencyFlipUp property with emergency signal code. ASCI '922'
+                         msgForMicroInstanceOfParser.emergencyFlipUp[0] = 0x39
+                         msgForMicroInstanceOfParser.emergencyFlipUp[1] = 0x32
+                         msgForMicroInstanceOfParser.emergencyFlipUp[2] = 0x32
+                         
+                         msgForMicroInstanceOfParser.emergencyMsgSender()
+                         */
+                    }
+                    else if self.valueReceived < Float(temp2R)
+                    {
+                        print("Flip the visor")
+                        //append 5th byte as ASCII 1 = 31 in HEX
+                        bytesToBeSentArray.insert(0x44,at:4)//HEX 31 = ASCII 1
+                        
+                        //send a string to microcontroller
+                        instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
+                        print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
+                        
+                        instanceOfparser.msgSender()
+                        instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
+                        //abort the training if visor flipped.
+                        
+                        /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
+                         //create a dedicated emergency signal object
+                         let msgForMicroInstanceOfParser: parser = parser()
+                         //fill the emergencyFlipUp property with emergency signal code. ASCI '922'
+                         msgForMicroInstanceOfParser.emergencyFlipUp[0] = 0x39
+                         msgForMicroInstanceOfParser.emergencyFlipUp[1] = 0x32
+                         msgForMicroInstanceOfParser.emergencyFlipUp[2] = 0x32
+                         
+                         msgForMicroInstanceOfParser.emergencyMsgSender()
+                         */
+                    }
+                    else
+                    {
+                        print("Do not Flip the visor")
+                    }
+                    
+                    //}
+                }//else for Roll check
+                
+                //Pitch
+                //1. Bring Pitch from iLevil
+                //2. Bring Pitch from Database
+                //3. Compare these two
+                //(optional) Test Print what to do based on comparison results
+                //4. Call the emergencyMsgSender() if Pitch exceeds limits
+                swiftPitch = instanceOfparser.pitch
+                if (swiftPitch == nil){
                     //do nothing
-                }else{
-                    print("Long = \(swiftGPS_Long!)")
+                }else
+                {
+                    print("\nPitch = \(swiftPitch!)")
+                    let tempFP = swiftPitch! //is this a Float?
+                    let tempSP = Float(tempFP) //if tempF is already a float, we do not need tempS
+                    //  DispatchQueue.main.async
+                    // {
+                    self.valueReceived = tempSP
+                    //the following needs to run constantly in a loop as long as Manual Training is in progress
+                    let temp1P = db.integer(forKey: K.maxPitchSS)
+                    print("Pitch Max from Safety Setting: \(temp1P)")
+                    //var altitudeFSS = db.integer(forKey: K.altitudeSS)
+                    
+                    let temp2P = db.integer(forKey: K.minPitchSS)
+                    print("Pitch Min from Safety Setting: \(temp2P)")
+                    
+                    if self.valueReceived > Float(temp1P)
+                    {
+                        print("Flip the visor")
+                        //append 5th byte as ASCII 1 = 31 in HEX
+                        bytesToBeSentArray.insert(0x44,at:4)//HEX 31 = ASCII 1
+                        //send a string to microcontroller
+                        instanceOfparser.msgForMicrocontroller = 0x45
+                        instanceOfparser.msgSender()
+                        instanceOfparser.msgForMicrocontroller = 0x00//this can be done at the end of each iteration just before while loop bracket close
+                        //abort the training if visor flipped.
+                        
+                        /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
+                         //create a dedicated emergency signal object
+                         let msgForMicroInstanceOfParser: parser = parser()
+                         //fill the emergencyFlipUp property with emergency signal code. ASCI '922'
+                         msgForMicroInstanceOfParser.emergencyFlipUp[0] = 0x39
+                         msgForMicroInstanceOfParser.emergencyFlipUp[1] = 0x32
+                         msgForMicroInstanceOfParser.emergencyFlipUp[2] = 0x32
+                         
+                         msgForMicroInstanceOfParser.emergencyMsgSender()
+                         */
+                    }
+                    else if self.valueReceived < Float(temp2P)
+                    {
+                        print("Flip the visor")
+                        //append 5th byte as ASCII 1 = 31 in HEX
+                        bytesToBeSentArray.insert(0x44,at:4)//HEX 31 = ASCII 1
+                        //send a string to microcontroller
+                        instanceOfparser.msgForMicrocontroller = 0x45
+                        instanceOfparser.msgSender()
+                        instanceOfparser.msgForMicrocontroller = 0x00//this can be done at the end of each iteration just before while loop bracket close
+                        //abort the training if visor flipped.
+                        
+                        /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
+                         //create a dedicated emergency signal object
+                         let msgForMicroInstanceOfParser: parser = parser()
+                         //fill the emergencyFlipUp property with emergency signal code. ASCI '922'
+                         msgForMicroInstanceOfParser.emergencyFlipUp[0] = 0x39
+                         msgForMicroInstanceOfParser.emergencyFlipUp[1] = 0x32
+                         msgForMicroInstanceOfParser.emergencyFlipUp[2] = 0x32
+                         
+                         msgForMicroInstanceOfParser.emergencyMsgSender()
+                         */
+                    }
+                    else
+                    {
+                        print("Do not Flip the visor")
+                    }
+
                 }
-                swiftGround_speed = instanceOfparser.ground_speed
-                if (swiftGround_speed == nil || swiftGround_speed == 4095){
-                    //do nothing
-                }else{
-                    print("Ownship 0x0A Horizontal Velocity = \(swiftGround_speed!)")//this is displayed as Ground Speed under GPS section in iLevil AHRS Utility App
-                }
-                swiftGPS_VSI = instanceOfparser.gps_VSI
+                
+                //Rate of Descent
+                //1. Bring Vertical Speed from iLevil
+                //2. Bring Rate of Descent from Database
+                //3. Compare these two
+                //(optional) Test Print what to do based on comparison results
+                //4. Call the emergencyMsgSender() if Vertical Speed exceeds Rate of Descent limit
+                swiftGPS_VSI = instanceOfparser.gps_VSI //gps_VSI is a short int
                 if (swiftGPS_VSI == nil){
                     //do nothing
                 }else{
                     print("Ownship 0x0A Vertical Velocity = \(swiftGPS_VSI!)") //This is displayed as VSI under GPS section in iLevil AHRS Utility App
+                    let tempFVS = swiftGPS_VSI! //is this a Float?
+                    let tempSVS = Int(tempFVS) //if tempF is already a float, we do not need tempS
+                    // DispatchQueue.main.async
+                    //{
+                    self.valueReceivedasNegative = tempSVS
+                    //the following needs to run constantly in a loop as long as Manual Training is in progress
+                    let temp1VS = db.integer(forKey: K.rodSS)
+                    //var altitudeFSS = db.integer(forKey: K.altitudeSS)
+                    
+                    print("Rate of Descent from Safety Setting: \(temp1VS)")
+
+                    if self.valueReceivedasNegative < Int(temp1VS) // -1500kts is smaller than -1000kts. But -1500kts is consider a higher speed than -1000kts, that's why i have used smaller than sign in this statement.
+                    {
+                        print("Flip the visor")
+                        //append 5th byte as ASCII 1 = 31 in HEX
+                        bytesToBeSentArray.insert(0x44,at:4)//HEX 31 = ASCII 1
+                        //send a string to microcontroller
+                        instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
+                        print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
+                        instanceOfparser.msgSender()
+                        instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
+                        //abort the training if visor flipped.
+                        
+                        /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
+                         //create a dedicated emergency signal object
+                         let msgForMicroInstanceOfParser: parser = parser()
+                         //fill the emergencyFlipUp property with emergency signal code. ASCI '922'
+                         msgForMicroInstanceOfParser.emergencyFlipUp[0] = 0x39
+                         msgForMicroInstanceOfParser.emergencyFlipUp[1] = 0x32
+                         msgForMicroInstanceOfParser.emergencyFlipUp[2] = 0x32
+                         
+                         msgForMicroInstanceOfParser.emergencyMsgSender()
+                         */
+                    }else{
+                        print("Do not Flip the visor")
+                    }
+                    //abort the training if visor flipped.
                 }
+                
+                
+                
+                
                 /* swiftGPS_heading = instanceOfparser.gps_heading //USE YAW VALUE FOR HEADING. DO NOT USE GPS HEADING.
                  if swiftGPS_heading != nil {
                  print("Heading =\(String(describing: swiftGPS_heading))")
@@ -196,111 +431,7 @@ class Manual_ViewController: UIViewController {
                 
                 
                 
-                //1. Bring Roll from iLevil
-                //2. Bring Roll from Database
-                //3. Compare these two
-                //(optional) Test Print what to do based on comparison results
-                //4. Call the emergencyMsgSender() if Roll exceeds limits
-                swiftRoll = instanceOfparser.roll
-                if (swiftRoll == nil){
-                    //do nothing
-                }else
-                {
-                    print("Roll = \(swiftRoll!)")
-                    let tempFR = swiftRoll! //is this a Float?
-                    let tempSR = Float(tempFR) //if tempF is already a float, we do not need tempS
-                    // DispatchQueue.main.async
-                    //{
-                    self.valueReceived = tempSR
-                    //the following needs to run constantly in a loop as long as Manual Training is in progress
-                    let temp1R = db.integer(forKey: "Max_Roll")
-                    //var altitudeFSS = db.integer(forKey: K.altitudeSS)
-                    
-                    print("Roll Max from Safety Setting: \(temp1R)")
-                    
-                    let temp2R = db.integer(forKey: "Min_Roll")
-                    print("Roll Min from Safety Setting: \(temp2R)")
-                    
-                    if self.valueReceived > Float(temp1R)
-                    {
-                        print("Flip the visor")
-                        //send a string to microcontroller
-                        instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
-                        print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
-                        instanceOfparser.msgSender()
-                        instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
-                        
-                        /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
-                         //create a dedicated emergency signal object
-                         let msgForMicroInstanceOfParser: parser = parser()
-                         //fill the emergencyFlipUp property with emergency signal code. ASCI '922'
-                         msgForMicroInstanceOfParser.emergencyFlipUp[0] = 0x39
-                         msgForMicroInstanceOfParser.emergencyFlipUp[1] = 0x32
-                         msgForMicroInstanceOfParser.emergencyFlipUp[2] = 0x32
-                         
-                         msgForMicroInstanceOfParser.emergencyMsgSender()
-                         */
-                    }else{
-                        print("Do not Flip the visor")
-                    }
-                    
-                    //}
-                }//else for Roll check
-                
-                
-                
-                
-                
-                swiftPitch = instanceOfparser.pitch
-                if (swiftPitch == nil){
-                    //do nothing
-                }else{
-                    print("Pitch = \(swiftPitch!)")
-                    let tempFP = swiftPitch! //is this a Float?
-                    let tempSP = Float(tempFP) //if tempF is already a float, we do not need tempS
-                    //  DispatchQueue.main.async
-                    // {
-                    self.valueReceived = tempSP
-                    //the following needs to run constantly in a loop as long as Manual Training is in progress
-                    let temp1P = db.integer(forKey: "Max_Pitch")
-                    print("Pitch Max from Safety Setting: \(temp1P)")
-                    
-                    let temp2P = db.integer(forKey: "Min_Pitch")
-                    print("Pitch Min from Safety Setting: \(temp2P)")
-                    
-                    if self.valueReceived > Float(temp1P)
-                    {
-                        print("Flip the visor")
-                        //send a string to microcontroller
-                        instanceOfparser.msgForMicrocontroller = 0x45
-                        instanceOfparser.msgSender()
-                        instanceOfparser.msgForMicrocontroller = 0x00//this can be done at the end of each iteration just before while loop bracket close
-                        
-                        /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
-                         //create a dedicated emergency signal object
-                         let msgForMicroInstanceOfParser: parser = parser()
-                         //fill the emergencyFlipUp property with emergency signal code. ASCI '922'
-                         msgForMicroInstanceOfParser.emergencyFlipUp[0] = 0x39
-                         msgForMicroInstanceOfParser.emergencyFlipUp[1] = 0x32
-                         msgForMicroInstanceOfParser.emergencyFlipUp[2] = 0x32
-                         
-                         msgForMicroInstanceOfParser.emergencyMsgSender()
-                         */
-                    }else{
-                        print("Do not Flip the visor")
-                    }
-                    
-                    // }
-                    
-                }
-                
-                
-                
-                
-                
-                
-                
-                
+  
                 
                 swiftYaw = instanceOfparser.yaw
                 if (swiftYaw == nil){

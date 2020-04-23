@@ -12,8 +12,8 @@ class Manual_ViewController: UIViewController {
     
     // variables
     var valueReceived: Float = 40 //40 is arbitrarily set
-    var valueReceivedasNegative: Int = 10 //10 is arbitrarily set
-    
+    var valueReceivedasSigned: Int = 10 //10 is arbitrarily set
+    var altitudeSafetyTrigger: Int = 0 //stays 0 until Altitude in SafetySettings is exceeded. Then if MSL altitude comes below SafetySetting Altitude, this trigger's value will allow us to send emg flip up signal to microcontroller
     
     var temp3 : Float = 0
     var startReceiver: Int = 0;
@@ -81,6 +81,7 @@ class Manual_ViewController: UIViewController {
         else {
             sender.setTitle("Initiate", for: .normal)
             startReceiver = 0 //if startReceiver is any value other than 10, while loop for receiving AHRS data will not run
+            altitudeSafetyTrigger = 0 //set the safety altitude trigger to zero when abort is pressed
             print("I stopped reading from the Ilevel")
         }
         
@@ -115,7 +116,7 @@ class Manual_ViewController: UIViewController {
             //var swiftAltitudeFeet:CInt? //use Geo Altitude instead of this
             var swiftVsiFtPerMin:CInt? = Optional.none
             
-            var bytesToBeSentArray: [UInt8] = []
+            var bytesToBeSentArray: [UInt8] = [] //gets elements inserted at the beginning of while loop and EACH ELEMENT MUST BE REMOVED AT THE END OF EACH WHILE ITERATION
            
             
             
@@ -142,12 +143,14 @@ class Manual_ViewController: UIViewController {
             while (continueReceiving == 10)
             {
                 //append 'IPAD' hex code bytes to the array for microcontroller here.
-                bytesToBeSentArray.append(0x49)//HEX for I
-                bytesToBeSentArray.append(0x50)//HEX for P
-                bytesToBeSentArray.append(0x41)//HEX for A
-                bytesToBeSentArray.append(0x44)//HEX for D
-                
-                
+//                bytesToBeSentArray.append(0x49)//HEX for I    These could be used if byteToBeSentArray
+//                bytesToBeSentArray.append(0x50)//HEX for P    was being reset or destroyed at the end of
+//                bytesToBeSentArray.append(0x41)//HEX for A    each while iteration.
+//                bytesToBeSentArray.append(0x44)//HEX for D
+                bytesToBeSentArray.insert(0x49,at:0)
+                bytesToBeSentArray.insert(0x50,at:1)
+                bytesToBeSentArray.insert(0x41,at:2)
+                bytesToBeSentArray.insert(0x44,at:3)
                 
                 //PROBLEM HERE. THIS IS ONLY PRINTING PITCH AND ROLL ONCE. MAY BE BECAUSE ALTERING THE PROEPRTY VALUE OF AN OBJECT IS NOT ALLOWED. EDIT: it was solved through closing of socket at the end of msgReceiver() function in parser.m file.
                 //print("inside while loop")
@@ -213,7 +216,7 @@ class Manual_ViewController: UIViewController {
                     {
                         print("Flip the visor")
                         //append 5th byte as ASCII 1 = 31 in HEX
-                        bytesToBeSentArray.insert(0x44,at:5)//HEX 31 = ASCII 1
+                        bytesToBeSentArray.insert(0x44,at:4)//HEX 31 = ASCII 1
                         
                         //send a string to microcontroller
                         instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
@@ -233,6 +236,7 @@ class Manual_ViewController: UIViewController {
                          
                          msgForMicroInstanceOfParser.emergencyMsgSender()
                          */
+                        bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
                     }
                     else if self.valueReceived < Float(temp2R)
                     {
@@ -258,6 +262,7 @@ class Manual_ViewController: UIViewController {
                          
                          msgForMicroInstanceOfParser.emergencyMsgSender()
                          */
+                         bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
                     }
                     else
                     {
@@ -313,6 +318,7 @@ class Manual_ViewController: UIViewController {
                          
                          msgForMicroInstanceOfParser.emergencyMsgSender()
                          */
+                        bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
                     }
                     else if self.valueReceived < Float(temp2P)
                     {
@@ -335,6 +341,7 @@ class Manual_ViewController: UIViewController {
                          
                          msgForMicroInstanceOfParser.emergencyMsgSender()
                          */
+                        bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
                     }
                     else
                     {
@@ -358,14 +365,19 @@ class Manual_ViewController: UIViewController {
                     let tempSVS = Int(tempFVS) //if tempF is already a float, we do not need tempS
                     // DispatchQueue.main.async
                     //{
-                    self.valueReceivedasNegative = tempSVS
+                    self.valueReceivedasSigned = tempSVS
                     //the following needs to run constantly in a loop as long as Manual Training is in progress
                     let temp1VS = db.integer(forKey: K.rodSS)
                     //var altitudeFSS = db.integer(forKey: K.altitudeSS)
                     
                     print("Rate of Descent from Safety Setting: \(temp1VS)")
-
-                    if self.valueReceivedasNegative < Int(temp1VS) // -1500kts is smaller than -1000kts. But -1500kts is consider a higher speed than -1000kts, that's why i have used smaller than sign in this statement.
+                    
+                    //test statements start below
+                    let tempTest = Int(temp1VS) //just for testing if it prints as a negative number or not when aircraft is going downwards
+                    print("Rate of Descent from Safety Setting as INT is: \(tempTest)")//just for testing
+                    //test statements ended above
+                    
+                    if (self.valueReceivedasSigned < Int(temp1VS)) // -1500kts is smaller than -1000kts. But -1500kts is consider a higher speed than -1000kts, that's why i have used smaller than sign in this statement.
                     {
                         print("Flip the visor")
                         //append 5th byte as ASCII 1 = 31 in HEX
@@ -387,6 +399,7 @@ class Manual_ViewController: UIViewController {
                          
                          msgForMicroInstanceOfParser.emergencyMsgSender()
                          */
+                        bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
                     }else{
                         print("Do not Flip the visor")
                     }
@@ -400,19 +413,50 @@ class Manual_ViewController: UIViewController {
                  if swiftGPS_heading != nil {
                  print("Heading =\(String(describing: swiftGPS_heading))")
                  }*/
-                swiftGeo_Altitude = instanceOfparser.geo_Altitude
-                if (swiftGeo_Altitude == nil || swiftGeo_Altitude == 0){
-                    //do nothing
-                }else{
-                    print("Geo Altitude = \(swiftGeo_Altitude!)")
-                }
-                
+//                swiftGeo_Altitude = instanceOfparser.geo_Altitude
+//                if (swiftGeo_Altitude == nil || swiftGeo_Altitude == 0){
+//                    //do nothing
+//                }else{
+//                    print("Geo Altitude = \(swiftGeo_Altitude!)")
+//                }
+//
                 swiftMSL_Altitude = instanceOfparser.mslAltitude                    //newly added for mslAltitude
                 if(swiftMSL_Altitude == nil || swiftMSL_Altitude == 0 || swiftMSL_Altitude == 4095 || swiftMSL_Altitude == 20475)
                 {
                     //do nothing
-                }else{
+                }else
+                {
                     print("MSL Altitude = \(swiftMSL_Altitude!)")
+                    let altitudeFSS = db.integer(forKey: K.altitudeSS)
+                    if((swiftMSL_Altitude!) > Int(altitudeFSS))
+                    {
+                        self.altitudeSafetyTrigger = 1
+                    }
+                    
+                    if (self.altitudeSafetyTrigger == 1 && (swiftMSL_Altitude!) < Int(altitudeFSS))
+                    {
+                        print("Flip the visor - Aircraft below safe altitude")
+                        //append 5th byte as ASCII 1 = 31 in HEX
+                        bytesToBeSentArray.insert(0x44,at:4)//HEX 31 = ASCII 1
+                        //send a string to microcontroller
+                        instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
+                        print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
+                        instanceOfparser.msgSender()
+                        instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
+                        //abort the training if visor flipped.
+                        
+                        /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
+                         //create a dedicated emergency signal object
+                         let msgForMicroInstanceOfParser: parser = parser()
+                         //fill the emergencyFlipUp property with emergency signal code. ASCI '922'
+                         msgForMicroInstanceOfParser.emergencyFlipUp[0] = 0x39
+                         msgForMicroInstanceOfParser.emergencyFlipUp[1] = 0x32
+                         msgForMicroInstanceOfParser.emergencyFlipUp[2] = 0x32
+                         
+                         msgForMicroInstanceOfParser.emergencyMsgSender()
+                         */
+                        bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
+                    }
                 }
                 
                 
@@ -480,6 +524,7 @@ class Manual_ViewController: UIViewController {
                  
                  }
                  */
+                
                 //close the socket here
                 instanceOfparser.closeUDPsocket()
                 //close(instanceOfparser.sockfd)
@@ -491,6 +536,9 @@ class Manual_ViewController: UIViewController {
                 else{
                     continueReceiving = 0;
                 }
+                //remove all bytes of message from this iteration and get the msg array for microcontroller ready for insertion of new message in next iteration
+                bytesToBeSentArray.removeAll(keepingCapacity: true)
+                
             }//while
             
         }//dispatch queue

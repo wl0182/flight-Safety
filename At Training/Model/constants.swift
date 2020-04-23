@@ -12,6 +12,7 @@ import Foundation
 struct K {
     static let batteryPercentage = "Battery_Per"
     static let ManualVisibility = "Manual_Visibility"
+    static let ManualCeiling = "Manual_Ceiling" //added by MD. remove if any errors are encountered.
     static let altitudeSS = "Altitude_SS"
     static let rodSS = "Rate_Decent_SS"
     static let minRollSS = "Min_Roll"

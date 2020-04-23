@@ -1,0 +1,1296 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "SyncUser"
+- "SyncUserInfo"
+- "SyncUserAccountInfo"
+- "SyncManager"
+- "SyncTimeoutOptions"
+- "SyncSession"
+- "ErrorReportingBlock"
+- "UserCompletionBlock"
+- "SyncError"
+- "SyncAuthError"
+- "SyncLogLevel"
+- "Provider"
+- "ServerValidationPolicy"
+- "SyncConfiguration"
+- "SyncCredentials"
+- "SyncPermission"
+- "SyncAccessLevel"
+- "SyncPermissionResults"
+- "SyncSubscriptionState"
+- "SyncSubscription"
+- "KeyValueObservationNotificationToken"
+- "Permission"
+- "PermissionRole"
+- "PermissionUser"
+- "RealmPermission"
+- "ClassPermission"
+- "RealmPrivileges"
+- "ClassPrivileges"
+- "ObjectPrivileges"
+- "=="
+- "=="
+provides-nominal:
+- "10RealmSwift22ServerValidationPolicyO"
+- "10RealmSwift17SyncConfigurationV"
+- "10RealmSwift15SyncCredentialsV"
+- "10RealmSwift21SyncSubscriptionStateO"
+- "10RealmSwift16SyncSubscriptionV"
+- "10RealmSwift36KeyValueObservationNotificationTokenC"
+- "10RealmSwift10PermissionC"
+- "10RealmSwift14PermissionRoleC"
+- "10RealmSwift14PermissionUserC"
+- "10RealmSwift0A10PermissionC"
+- "10RealmSwift15ClassPermissionC"
+- "10RealmSwift0A10PrivilegesV"
+- "10RealmSwift15ClassPrivilegesV"
+- "10RealmSwift16ObjectPrivilegesV"
+provides-member:
+- ["10RealmSwift22ServerValidationPolicyO", ""]
+- ["10RealmSwift17SyncConfigurationV", ""]
+- ["10RealmSwift15SyncCredentialsV", ""]
+- ["10RealmSwift0A0V", ""]
+- ["10RealmSwift21SyncSubscriptionStateO", ""]
+- ["10RealmSwift16SyncSubscriptionV", ""]
+- ["10RealmSwift7ResultsV", ""]
+- ["10RealmSwift36KeyValueObservationNotificationTokenC", ""]
+- ["10RealmSwift10PermissionC", ""]
+- ["10RealmSwift14PermissionRoleC", ""]
+- ["10RealmSwift14PermissionUserC", ""]
+- ["10RealmSwift0A10PermissionC", ""]
+- ["10RealmSwift15ClassPermissionC", ""]
+- ["10RealmSwift0A10PrivilegesV", ""]
+- ["10RealmSwift15ClassPrivilegesV", ""]
+- ["10RealmSwift16ObjectPrivilegesV", ""]
+- ["10RealmSwift4ListC", ""]
+- ["10RealmSwift0A0V", "subscribe"]
+- ["10RealmSwift0A0V", "syncSession"]
+- ["10RealmSwift7ResultsV", "subscribe"]
+- ["10RealmSwift0A0V", "getPrivileges"]
+- ["10RealmSwift0A0V", "getPrivileges"]
+- ["10RealmSwift0A0V", "getPrivileges"]
+- ["10RealmSwift0A0V", "getPrivileges"]
+- ["10RealmSwift0A0V", "permissions"]
+- ["10RealmSwift0A0V", "permissions"]
+- ["10RealmSwift0A0V", "permissions"]
+- ["10RealmSwift0A0V", "subscriptions"]
+- ["10RealmSwift0A0V", "subscription"]
+- ["10RealmSwift4ListC", "findOrCreate"]
+- ["10RealmSwift4ListC", "findOrCreate"]
+provides-dynamic-lookup:
+- "_realmColumnNames"
+- "_realmObjectName"
+- "canCreate"
+- "canDelete"
+- "canModifySchema"
+- "canQuery"
+- "canRead"
+- "canSetPermissions"
+- "canUpdate"
+- "id"
+- "identity"
+- "name"
+- "primaryKey"
+- "role"
+depends-top-level:
+- !private "!"
+- !private "!="
+- !private "/"
+- "<<"
+- "=="
+- !private ">"
+- !private ">="
+- !private "??"
+- "AssignmentPrecedence"
+- "Bool"
+- "BooleanLiteralType"
+- "CastingPrecedence"
+- "ClassPermission"
+- "ClassPrivileges"
+- "CustomDebugStringConvertible"
+- "CustomObjectiveCBridgeable"
+- "Date"
+- "DispatchQueue"
+- "Double"
+- "Equatable"
+- "Error"
+- "FloatLiteralType"
+- "Int"
+- "IntegerLiteralType"
+- "KeyPath"
+- "KeyValueObservationNotificationToken"
+- "LinkingObjects"
+- "List"
+- "NSKeyValueObservation"
+- "NSKeyValueObservingOptions"
+- "NotificationToken"
+- "Object"
+- "ObjectPrivileges"
+- !private "ObjectiveCSupport"
+- "OptionSet"
+- "Permission"
+- "PermissionRole"
+- "PermissionUser"
+- "Progress"
+- "ProgressDirection"
+- "ProgressMode"
+- "ProgressNotificationToken"
+- "Provider"
+- !private "RLMCastToSyncSubscription"
+- !private "RLMGetComputedPermissions"
+- "RLMIdentityProvider"
+- !private "RLMPermissionForRole"
+- "RLMProgressNotificationToken"
+- !private "RLMResults"
+- "RLMSyncAccessLevel"
+- "RLMSyncAuthError"
+- "RLMSyncConfiguration"
+- "RLMSyncConnectionState"
+- "RLMSyncCredentials"
+- "RLMSyncError"
+- "RLMSyncErrorActionToken"
+- "RLMSyncErrorReportingBlock"
+- "RLMSyncLogLevel"
+- "RLMSyncManager"
+- "RLMSyncPermission"
+- "RLMSyncSession"
+- "RLMSyncSessionState"
+- "RLMSyncStopPolicy"
+- "RLMSyncSubscription"
+- !private "RLMSyncSubscriptionOptions"
+- "RLMSyncTimeoutOptions"
+- "RLMSyncUser"
+- "RLMSyncUserAccountInfo"
+- "RLMSyncUserInfo"
+- "RLMUserCompletionBlock"
+- "RawValue"
+- "Realm"
+- "RealmCollectionValue"
+- "RealmPermission"
+- "RealmPrivileges"
+- "Results"
+- "ServerValidationPolicy"
+- "String"
+- "StringLiteralType"
+- "Swift"
+- "SyncAccessLevel"
+- "SyncAuthError"
+- "SyncConfiguration"
+- "SyncCredentials"
+- "SyncError"
+- "SyncManager"
+- "SyncPermission"
+- "SyncSession"
+- "SyncSubscription"
+- "SyncSubscriptionState"
+- "SyncUser"
+- "TernaryPrecedence"
+- "TimeInterval"
+- "UInt"
+- "UInt8"
+- "URL"
+- !private "UnicodeScalarType"
+- "UserCompletionBlock"
+- "Void"
+- !private "__errorHandler"
+- !private "_nsError"
+- !private "_rlmArray"
+- !private "code"
+- !private "fatalError"
+- !private "kRLMSyncPathOfRealmBackupCopyKey"
+- !private "optionSetDescription"
+- !private "precondition"
+- !private "userInfo"
+depends-member:
+- !private ["10RealmSwift11AddableTypeP", "init"]
+- !private ["s18AdditiveArithmeticP", "init"]
+- !private ["Sa", "filter"]
+- !private ["Sa", "joined"]
+- !private ["Sa", "map"]
+- ["10RealmSwift28AssistedObjectiveCBridgeableP", "LinkingObjects"]
+- ["10RealmSwift28AssistedObjectiveCBridgeableP", "List"]
+- ["10RealmSwift28AssistedObjectiveCBridgeableP", "PermissionRole"]
+- !private ["10RealmSwift28AssistedObjectiveCBridgeableP", "RLMPermissionForRole"]
+- !private ["10RealmSwift28AssistedObjectiveCBridgeableP", "RLMSyncSubscriptionOptions"]
+- !private ["10RealmSwift28AssistedObjectiveCBridgeableP", "SyncSubscription"]
+- !private ["10RealmSwift28AssistedObjectiveCBridgeableP", "UInt"]
+- ["10RealmSwift28AssistedObjectiveCBridgeableP", ""]
+- !private ["10RealmSwift28AssistedObjectiveCBridgeableP", "_realmObjectName"]
+- !private ["10RealmSwift28AssistedObjectiveCBridgeableP", "_rlmArray"]
+- !private ["10RealmSwift28AssistedObjectiveCBridgeableP", "className"]
+- ["10RealmSwift28AssistedObjectiveCBridgeableP", "init"]
+- !private ["10RealmSwift28AssistedObjectiveCBridgeableP", "permissions"]
+- !private ["10RealmSwift28AssistedObjectiveCBridgeableP", "precondition"]
+- !private ["10RealmSwift28AssistedObjectiveCBridgeableP", "realm"]
+- !private ["10RealmSwift28AssistedObjectiveCBridgeableP", "rlmResults"]
+- !private ["SK", "PermissionRole"]
+- !private ["SK", "RLMPermissionForRole"]
+- !private ["SK", "RLMSyncSubscriptionOptions"]
+- !private ["SK", "SyncSubscription"]
+- !private ["SK", "UInt"]
+- !private ["SK", "_rlmArray"]
+- !private ["SK", "filter"]
+- ["SK", "init"]
+- !private ["SK", "joined"]
+- !private ["SK", "map"]
+- !private ["SK", "precondition"]
+- !private ["SK", "realm"]
+- !private ["SK", "rlmResults"]
+- !private ["SB", "init"]
+- !private ["Sz", "init"]
+- !private ["s7CVarArgP", "filter"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "joined"]
+- !private ["s7CVarArgP", "main"]
+- !private ["s7CVarArgP", "map"]
+- ["10RealmSwift15ClassPermissionC", "List"]
+- ["10RealmSwift15ClassPermissionC", "Permission"]
+- ["10RealmSwift15ClassPermissionC", "String"]
+- ["10RealmSwift15ClassPermissionC", "_realmObjectName"]
+- ["10RealmSwift15ClassPermissionC", "init"]
+- ["10RealmSwift15ClassPermissionC", "name"]
+- !private ["10RealmSwift15ClassPermissionC", "permissions"]
+- ["10RealmSwift15ClassPermissionC", "primaryKey"]
+- ["10RealmSwift15ClassPrivilegesV", "=="]
+- ["10RealmSwift15ClassPrivilegesV", "ArrayLiteralElement"]
+- ["10RealmSwift15ClassPrivilegesV", "ClassPrivileges"]
+- ["10RealmSwift15ClassPrivilegesV", "Element"]
+- ["10RealmSwift15ClassPrivilegesV", "RawValue"]
+- ["10RealmSwift15ClassPrivilegesV", "String"]
+- ["10RealmSwift15ClassPrivilegesV", "UInt8"]
+- ["10RealmSwift15ClassPrivilegesV", "_Default_ArrayLiteralElement"]
+- ["10RealmSwift15ClassPrivilegesV", "_Default_Element"]
+- ["10RealmSwift15ClassPrivilegesV", "_Default_RawValue"]
+- ["10RealmSwift15ClassPrivilegesV", "contains"]
+- ["10RealmSwift15ClassPrivilegesV", "create"]
+- ["10RealmSwift15ClassPrivilegesV", "debugDescription"]
+- ["10RealmSwift15ClassPrivilegesV", "deinit"]
+- ["10RealmSwift15ClassPrivilegesV", "formIntersection"]
+- ["10RealmSwift15ClassPrivilegesV", "formSymmetricDifference"]
+- ["10RealmSwift15ClassPrivilegesV", "formUnion"]
+- ["10RealmSwift15ClassPrivilegesV", "init"]
+- ["10RealmSwift15ClassPrivilegesV", "insert"]
+- ["10RealmSwift15ClassPrivilegesV", "intersection"]
+- ["10RealmSwift15ClassPrivilegesV", "isDisjoint"]
+- ["10RealmSwift15ClassPrivilegesV", "isEmpty"]
+- ["10RealmSwift15ClassPrivilegesV", "isSubset"]
+- ["10RealmSwift15ClassPrivilegesV", "isSuperset"]
+- !private ["10RealmSwift15ClassPrivilegesV", "optionSetDescription"]
+- ["10RealmSwift15ClassPrivilegesV", "rawValue"]
+- ["10RealmSwift15ClassPrivilegesV", "read"]
+- ["10RealmSwift15ClassPrivilegesV", "remove"]
+- ["10RealmSwift15ClassPrivilegesV", "setPermissions"]
+- ["10RealmSwift15ClassPrivilegesV", "subscribe"]
+- ["10RealmSwift15ClassPrivilegesV", "subtract"]
+- ["10RealmSwift15ClassPrivilegesV", "subtracting"]
+- ["10RealmSwift15ClassPrivilegesV", "symmetricDifference"]
+- ["10RealmSwift15ClassPrivilegesV", "union"]
+- ["10RealmSwift15ClassPrivilegesV", "update"]
+- !private ["Sl", "PermissionRole"]
+- !private ["Sl", "RLMPermissionForRole"]
+- !private ["Sl", "RLMSyncSubscriptionOptions"]
+- !private ["Sl", "SyncSubscription"]
+- !private ["Sl", "UInt"]
+- !private ["Sl", "_rlmArray"]
+- !private ["Sl", "filter"]
+- ["Sl", "init"]
+- !private ["Sl", "joined"]
+- !private ["Sl", "map"]
+- !private ["Sl", "precondition"]
+- !private ["Sl", "realm"]
+- !private ["Sl", "rlmResults"]
+- !private ["SL", "init"]
+- !private ["10Foundation15ContiguousBytesP", "filter"]
+- !private ["10Foundation15ContiguousBytesP", "joined"]
+- !private ["10Foundation15ContiguousBytesP", "map"]
+- ["s28CustomDebugStringConvertibleP", "=="]
+- ["s28CustomDebugStringConvertibleP", "ArrayLiteralElement"]
+- ["s28CustomDebugStringConvertibleP", "ClassPrivileges"]
+- ["s28CustomDebugStringConvertibleP", "Element"]
+- ["s28CustomDebugStringConvertibleP", "ObjectPrivileges"]
+- ["s28CustomDebugStringConvertibleP", "RawValue"]
+- ["s28CustomDebugStringConvertibleP", "RealmPrivileges"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- ["s28CustomDebugStringConvertibleP", "_Default_ArrayLiteralElement"]
+- ["s28CustomDebugStringConvertibleP", "_Default_Element"]
+- ["s28CustomDebugStringConvertibleP", "_Default_RawValue"]
+- ["s28CustomDebugStringConvertibleP", "contains"]
+- !private ["s28CustomDebugStringConvertibleP", "create"]
+- ["s28CustomDebugStringConvertibleP", "debugDescription"]
+- !private ["s28CustomDebugStringConvertibleP", "delete"]
+- !private ["s28CustomDebugStringConvertibleP", "filter"]
+- ["s28CustomDebugStringConvertibleP", "formIntersection"]
+- ["s28CustomDebugStringConvertibleP", "formSymmetricDifference"]
+- ["s28CustomDebugStringConvertibleP", "formUnion"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "insert"]
+- ["s28CustomDebugStringConvertibleP", "intersection"]
+- ["s28CustomDebugStringConvertibleP", "isDisjoint"]
+- ["s28CustomDebugStringConvertibleP", "isEmpty"]
+- ["s28CustomDebugStringConvertibleP", "isSubset"]
+- ["s28CustomDebugStringConvertibleP", "isSuperset"]
+- !private ["s28CustomDebugStringConvertibleP", "joined"]
+- !private ["s28CustomDebugStringConvertibleP", "main"]
+- !private ["s28CustomDebugStringConvertibleP", "map"]
+- !private ["s28CustomDebugStringConvertibleP", "modifySchema"]
+- !private ["s28CustomDebugStringConvertibleP", "optionSetDescription"]
+- ["s28CustomDebugStringConvertibleP", "rawValue"]
+- !private ["s28CustomDebugStringConvertibleP", "read"]
+- ["s28CustomDebugStringConvertibleP", "remove"]
+- !private ["s28CustomDebugStringConvertibleP", "setPermissions"]
+- !private ["s28CustomDebugStringConvertibleP", "subscribe"]
+- ["s28CustomDebugStringConvertibleP", "subtract"]
+- ["s28CustomDebugStringConvertibleP", "subtracting"]
+- ["s28CustomDebugStringConvertibleP", "symmetricDifference"]
+- ["s28CustomDebugStringConvertibleP", "union"]
+- ["s28CustomDebugStringConvertibleP", "update"]
+- ["10RealmSwift26CustomObjectiveCBridgeableP", "=="]
+- !private ["10RealmSwift26CustomObjectiveCBridgeableP", "ObjectiveCSupport"]
+- !private ["10RealmSwift26CustomObjectiveCBridgeableP", "RLMCastToSyncSubscription"]
+- ["10RealmSwift26CustomObjectiveCBridgeableP", "RLMSyncSubscription"]
+- !private ["10RealmSwift26CustomObjectiveCBridgeableP", "SyncSubscriptionState"]
+- ["10RealmSwift26CustomObjectiveCBridgeableP", ""]
+- ["10RealmSwift26CustomObjectiveCBridgeableP", "_nilValue"]
+- ["10RealmSwift26CustomObjectiveCBridgeableP", "bridging"]
+- !private ["10RealmSwift26CustomObjectiveCBridgeableP", "init"]
+- ["10RealmSwift26CustomObjectiveCBridgeableP", "objCValue"]
+- !private ["10RealmSwift26CustomObjectiveCBridgeableP", "rlmSubscription"]
+- !private ["s17CustomReflectableP", "filter"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "joined"]
+- !private ["s17CustomReflectableP", "map"]
+- !private ["s23CustomStringConvertibleP", "PermissionRole"]
+- !private ["s23CustomStringConvertibleP", "RLMPermissionForRole"]
+- !private ["s23CustomStringConvertibleP", "RLMSyncSubscriptionOptions"]
+- !private ["s23CustomStringConvertibleP", "SyncSubscription"]
+- !private ["s23CustomStringConvertibleP", "UInt"]
+- !private ["s23CustomStringConvertibleP", "_rlmArray"]
+- !private ["s23CustomStringConvertibleP", "appendInterpolation"]
+- !private ["s23CustomStringConvertibleP", "appendLiteral"]
+- !private ["s23CustomStringConvertibleP", "filter"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "joined"]
+- !private ["s23CustomStringConvertibleP", "main"]
+- !private ["s23CustomStringConvertibleP", "map"]
+- !private ["s23CustomStringConvertibleP", "precondition"]
+- !private ["s23CustomStringConvertibleP", "realm"]
+- !private ["s23CustomStringConvertibleP", "rlmResults"]
+- !private ["10Foundation12DataProtocolP", "filter"]
+- !private ["10Foundation12DataProtocolP", "joined"]
+- !private ["10Foundation12DataProtocolP", "map"]
+- !private ["Se", "PermissionRole"]
+- !private ["Se", "RLMPermissionForRole"]
+- !private ["Se", "_rlmArray"]
+- !private ["Se", "filter"]
+- ["Se", "init"]
+- !private ["Se", "joined"]
+- !private ["Se", "map"]
+- !private ["Se", "precondition"]
+- !private ["Se", "realm"]
+- !private ["s26DefaultStringInterpolationV", "appendInterpolation"]
+- !private ["s26DefaultStringInterpolationV", "appendLiteral"]
+- !private ["So18OS_dispatch_objectC", "main"]
+- !private ["So17OS_dispatch_queueC", "main"]
+- !private ["Sd", "deinit"]
+- !private ["Sd", "init"]
+- !private ["SE", "PermissionRole"]
+- !private ["SE", "RLMPermissionForRole"]
+- !private ["SE", "RLMSyncSubscriptionOptions"]
+- !private ["SE", "SyncSubscription"]
+- !private ["SE", "UInt"]
+- !private ["SE", "_rlmArray"]
+- !private ["SE", "filter"]
+- ["SE", "init"]
+- !private ["SE", "joined"]
+- !private ["SE", "map"]
+- !private ["SE", "precondition"]
+- !private ["SE", "realm"]
+- !private ["SE", "rlmResults"]
+- ["SQ", "=="]
+- ["SQ", "ArrayLiteralElement"]
+- !private ["SQ", "ClassPermission"]
+- ["SQ", "ClassPrivileges"]
+- ["SQ", "Configuration"]
+- ["SQ", "Element"]
+- ["SQ", "LinkingObjects"]
+- ["SQ", "List"]
+- ["SQ", "ObjectPrivileges"]
+- !private ["SQ", "ObjectiveCSupport"]
+- ["SQ", "PermissionRole"]
+- !private ["SQ", "RLMCastToSyncSubscription"]
+- !private ["SQ", "RLMGetComputedPermissions"]
+- !private ["SQ", "RLMResults"]
+- ["SQ", "RLMSyncSubscription"]
+- !private ["SQ", "RLMSyncSubscriptionOptions"]
+- ["SQ", "RawValue"]
+- !private ["SQ", "RealmPermission"]
+- ["SQ", "RealmPrivileges"]
+- !private ["SQ", "Results"]
+- !private ["SQ", "SyncSubscription"]
+- !private ["SQ", "SyncSubscriptionState"]
+- !private ["SQ", "UInt"]
+- ["SQ", ""]
+- ["SQ", "_Default_ArrayLiteralElement"]
+- ["SQ", "_Default_Element"]
+- ["SQ", "_Default_RawValue"]
+- ["SQ", "_nilValue"]
+- ["SQ", "_rawHashValue"]
+- !private ["SQ", "_realmObjectName"]
+- ["SQ", "bridging"]
+- !private ["SQ", "className"]
+- ["SQ", "complete"]
+- ["SQ", "contains"]
+- !private ["SQ", "create"]
+- ["SQ", "creating"]
+- ["SQ", "debugDescription"]
+- !private ["SQ", "delete"]
+- ["SQ", "error"]
+- !private ["SQ", "fatalError"]
+- !private ["SQ", "filter"]
+- ["SQ", "formIntersection"]
+- ["SQ", "formSymmetricDifference"]
+- ["SQ", "formUnion"]
+- ["SQ", "hash"]
+- ["SQ", "hashValue"]
+- ["SQ", "init"]
+- ["SQ", "insert"]
+- ["SQ", "intersection"]
+- ["SQ", "invalidated"]
+- ["SQ", "isDisjoint"]
+- ["SQ", "isEmpty"]
+- ["SQ", "isSubset"]
+- ["SQ", "isSuperset"]
+- !private ["SQ", "joined"]
+- !private ["SQ", "main"]
+- !private ["SQ", "map"]
+- !private ["SQ", "modifySchema"]
+- ["SQ", "objCValue"]
+- !private ["SQ", "object"]
+- !private ["SQ", "optionSetDescription"]
+- ["SQ", "pending"]
+- !private ["SQ", "permissions"]
+- ["SQ", "rawValue"]
+- !private ["SQ", "read"]
+- ["SQ", "remove"]
+- !private ["SQ", "rlmRealm"]
+- !private ["SQ", "rlmResults"]
+- !private ["SQ", "rlmSubscription"]
+- !private ["SQ", "setPermissions"]
+- !private ["SQ", "subscribe"]
+- ["SQ", "subtract"]
+- ["SQ", "subtracting"]
+- ["SQ", "symmetricDifference"]
+- ["SQ", "union"]
+- ["SQ", "update"]
+- ["s25ExpressibleByArrayLiteralP", "=="]
+- ["s25ExpressibleByArrayLiteralP", "ArrayLiteralElement"]
+- ["s25ExpressibleByArrayLiteralP", "ClassPrivileges"]
+- ["s25ExpressibleByArrayLiteralP", "Element"]
+- ["s25ExpressibleByArrayLiteralP", "ObjectPrivileges"]
+- ["s25ExpressibleByArrayLiteralP", "RawValue"]
+- ["s25ExpressibleByArrayLiteralP", "RealmPrivileges"]
+- ["s25ExpressibleByArrayLiteralP", ""]
+- ["s25ExpressibleByArrayLiteralP", "_Default_ArrayLiteralElement"]
+- ["s25ExpressibleByArrayLiteralP", "_Default_Element"]
+- ["s25ExpressibleByArrayLiteralP", "_Default_RawValue"]
+- ["s25ExpressibleByArrayLiteralP", "contains"]
+- !private ["s25ExpressibleByArrayLiteralP", "create"]
+- ["s25ExpressibleByArrayLiteralP", "debugDescription"]
+- !private ["s25ExpressibleByArrayLiteralP", "delete"]
+- !private ["s25ExpressibleByArrayLiteralP", "filter"]
+- ["s25ExpressibleByArrayLiteralP", "formIntersection"]
+- ["s25ExpressibleByArrayLiteralP", "formSymmetricDifference"]
+- ["s25ExpressibleByArrayLiteralP", "formUnion"]
+- ["s25ExpressibleByArrayLiteralP", "init"]
+- ["s25ExpressibleByArrayLiteralP", "insert"]
+- ["s25ExpressibleByArrayLiteralP", "intersection"]
+- ["s25ExpressibleByArrayLiteralP", "isDisjoint"]
+- ["s25ExpressibleByArrayLiteralP", "isEmpty"]
+- ["s25ExpressibleByArrayLiteralP", "isSubset"]
+- ["s25ExpressibleByArrayLiteralP", "isSuperset"]
+- !private ["s25ExpressibleByArrayLiteralP", "joined"]
+- !private ["s25ExpressibleByArrayLiteralP", "map"]
+- !private ["s25ExpressibleByArrayLiteralP", "modifySchema"]
+- !private ["s25ExpressibleByArrayLiteralP", "optionSetDescription"]
+- ["s25ExpressibleByArrayLiteralP", "rawValue"]
+- !private ["s25ExpressibleByArrayLiteralP", "read"]
+- ["s25ExpressibleByArrayLiteralP", "remove"]
+- !private ["s25ExpressibleByArrayLiteralP", "setPermissions"]
+- !private ["s25ExpressibleByArrayLiteralP", "subscribe"]
+- ["s25ExpressibleByArrayLiteralP", "subtract"]
+- ["s25ExpressibleByArrayLiteralP", "subtracting"]
+- ["s25ExpressibleByArrayLiteralP", "symmetricDifference"]
+- ["s25ExpressibleByArrayLiteralP", "union"]
+- ["s25ExpressibleByArrayLiteralP", "update"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s32ExpressibleByStringInterpolationP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s17FixedWidthIntegerP", "init"]
+- !private ["SF", "init"]
+- ["SH", "=="]
+- ["SH", ""]
+- ["SH", "_rawHashValue"]
+- !private ["SH", "filter"]
+- ["SH", "hash"]
+- ["SH", "hashValue"]
+- !private ["SH", "init"]
+- !private ["SH", "joined"]
+- !private ["SH", "main"]
+- !private ["SH", "map"]
+- !private ["s6HasherV", "combine"]
+- !private ["Si", "deinit"]
+- !private ["Si", "init"]
+- ["10RealmSwift36KeyValueObservationNotificationTokenC", "NSKeyValueObservation"]
+- ["10RealmSwift36KeyValueObservationNotificationTokenC", "init"]
+- ["10RealmSwift36KeyValueObservationNotificationTokenC", "invalidate"]
+- ["10RealmSwift36KeyValueObservationNotificationTokenC", "observation"]
+- !private ["s22LazyCollectionProtocolP", "PermissionRole"]
+- !private ["s22LazyCollectionProtocolP", "RLMPermissionForRole"]
+- !private ["s22LazyCollectionProtocolP", "RLMSyncSubscriptionOptions"]
+- !private ["s22LazyCollectionProtocolP", "SyncSubscription"]
+- !private ["s22LazyCollectionProtocolP", "UInt"]
+- !private ["s22LazyCollectionProtocolP", "_rlmArray"]
+- ["s22LazyCollectionProtocolP", "init"]
+- !private ["s22LazyCollectionProtocolP", "precondition"]
+- !private ["s22LazyCollectionProtocolP", "realm"]
+- !private ["s22LazyCollectionProtocolP", "rlmResults"]
+- !private ["s20LazySequenceProtocolP", "PermissionRole"]
+- !private ["s20LazySequenceProtocolP", "RLMPermissionForRole"]
+- !private ["s20LazySequenceProtocolP", "RLMSyncSubscriptionOptions"]
+- !private ["s20LazySequenceProtocolP", "SyncSubscription"]
+- !private ["s20LazySequenceProtocolP", "UInt"]
+- !private ["s20LazySequenceProtocolP", "_rlmArray"]
+- ["s20LazySequenceProtocolP", "init"]
+- !private ["s20LazySequenceProtocolP", "precondition"]
+- !private ["s20LazySequenceProtocolP", "realm"]
+- !private ["s20LazySequenceProtocolP", "rlmResults"]
+- ["10RealmSwift14LinkingObjectsV", "init"]
+- ["10RealmSwift4ListC", "Permission"]
+- ["10RealmSwift4ListC", "PermissionRole"]
+- !private ["10RealmSwift4ListC", "RLMPermissionForRole"]
+- ["10RealmSwift4ListC", "String"]
+- !private ["10RealmSwift4ListC", "_rlmArray"]
+- ["10RealmSwift4ListC", "deinit"]
+- ["10RealmSwift4ListC", "findOrCreate"]
+- ["10RealmSwift4ListC", "init"]
+- !private ["10RealmSwift4ListC", "precondition"]
+- !private ["10RealmSwift4ListC", "realm"]
+- ["10RealmSwift8ListBaseC", "Permission"]
+- ["10RealmSwift8ListBaseC", "PermissionRole"]
+- !private ["10RealmSwift8ListBaseC", "RLMPermissionForRole"]
+- ["10RealmSwift8ListBaseC", "String"]
+- !private ["10RealmSwift8ListBaseC", "_rlmArray"]
+- ["10RealmSwift8ListBaseC", "findOrCreate"]
+- ["10RealmSwift8ListBaseC", "init"]
+- !private ["10RealmSwift8ListBaseC", "precondition"]
+- !private ["10RealmSwift8ListBaseC", "realm"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["10RealmSwift10MinMaxTypeP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["SM", "PermissionRole"]
+- !private ["SM", "RLMPermissionForRole"]
+- !private ["SM", "_rlmArray"]
+- !private ["SM", "filter"]
+- ["SM", "init"]
+- !private ["SM", "joined"]
+- !private ["SM", "map"]
+- !private ["SM", "precondition"]
+- !private ["SM", "realm"]
+- !private ["10Foundation19MutableDataProtocolP", "filter"]
+- !private ["10Foundation19MutableDataProtocolP", "joined"]
+- !private ["10Foundation19MutableDataProtocolP", "map"]
+- !private ["So8NSObjectC", "main"]
+- !private ["So8NSObjectP", "main"]
+- !private ["Sj", "init"]
+- !private ["So9OS_objectC", "main"]
+- ["10RealmSwift6ObjectC", "LinkingObjects"]
+- ["10RealmSwift6ObjectC", "List"]
+- ["10RealmSwift6ObjectC", "Permission"]
+- ["10RealmSwift6ObjectC", "PermissionRole"]
+- ["10RealmSwift6ObjectC", "PermissionUser"]
+- ["10RealmSwift6ObjectC", "String"]
+- ["10RealmSwift6ObjectC", ""]
+- ["10RealmSwift6ObjectC", "_realmColumnNames"]
+- ["10RealmSwift6ObjectC", "_realmObjectName"]
+- ["10RealmSwift6ObjectC", "canCreate"]
+- ["10RealmSwift6ObjectC", "canDelete"]
+- ["10RealmSwift6ObjectC", "canModifySchema"]
+- ["10RealmSwift6ObjectC", "canQuery"]
+- ["10RealmSwift6ObjectC", "canRead"]
+- ["10RealmSwift6ObjectC", "canSetPermissions"]
+- ["10RealmSwift6ObjectC", "canUpdate"]
+- !private ["10RealmSwift6ObjectC", "className"]
+- ["10RealmSwift6ObjectC", "id"]
+- ["10RealmSwift6ObjectC", "identity"]
+- ["10RealmSwift6ObjectC", "init"]
+- ["10RealmSwift6ObjectC", "name"]
+- !private ["10RealmSwift6ObjectC", "permissions"]
+- ["10RealmSwift6ObjectC", "primaryKey"]
+- ["10RealmSwift6ObjectC", "role"]
+- ["10RealmSwift6ObjectC", "roles"]
+- ["10RealmSwift16ObjectPrivilegesV", "=="]
+- ["10RealmSwift16ObjectPrivilegesV", "ArrayLiteralElement"]
+- ["10RealmSwift16ObjectPrivilegesV", "Element"]
+- ["10RealmSwift16ObjectPrivilegesV", "ObjectPrivileges"]
+- ["10RealmSwift16ObjectPrivilegesV", "RawValue"]
+- ["10RealmSwift16ObjectPrivilegesV", "String"]
+- ["10RealmSwift16ObjectPrivilegesV", "UInt8"]
+- ["10RealmSwift16ObjectPrivilegesV", "_Default_ArrayLiteralElement"]
+- ["10RealmSwift16ObjectPrivilegesV", "_Default_Element"]
+- ["10RealmSwift16ObjectPrivilegesV", "_Default_RawValue"]
+- ["10RealmSwift16ObjectPrivilegesV", "contains"]
+- ["10RealmSwift16ObjectPrivilegesV", "debugDescription"]
+- ["10RealmSwift16ObjectPrivilegesV", "deinit"]
+- ["10RealmSwift16ObjectPrivilegesV", "delete"]
+- ["10RealmSwift16ObjectPrivilegesV", "formIntersection"]
+- ["10RealmSwift16ObjectPrivilegesV", "formSymmetricDifference"]
+- ["10RealmSwift16ObjectPrivilegesV", "formUnion"]
+- ["10RealmSwift16ObjectPrivilegesV", "init"]
+- ["10RealmSwift16ObjectPrivilegesV", "insert"]
+- ["10RealmSwift16ObjectPrivilegesV", "intersection"]
+- ["10RealmSwift16ObjectPrivilegesV", "isDisjoint"]
+- ["10RealmSwift16ObjectPrivilegesV", "isEmpty"]
+- ["10RealmSwift16ObjectPrivilegesV", "isSubset"]
+- ["10RealmSwift16ObjectPrivilegesV", "isSuperset"]
+- !private ["10RealmSwift16ObjectPrivilegesV", "optionSetDescription"]
+- ["10RealmSwift16ObjectPrivilegesV", "rawValue"]
+- ["10RealmSwift16ObjectPrivilegesV", "read"]
+- ["10RealmSwift16ObjectPrivilegesV", "remove"]
+- ["10RealmSwift16ObjectPrivilegesV", "setPermissions"]
+- ["10RealmSwift16ObjectPrivilegesV", "subtract"]
+- ["10RealmSwift16ObjectPrivilegesV", "subtracting"]
+- ["10RealmSwift16ObjectPrivilegesV", "symmetricDifference"]
+- ["10RealmSwift16ObjectPrivilegesV", "union"]
+- ["10RealmSwift16ObjectPrivilegesV", "update"]
+- !private ["10RealmSwift17ObjectiveCSupportV", "convert"]
+- ["s9OptionSetP", "=="]
+- ["s9OptionSetP", "ArrayLiteralElement"]
+- ["s9OptionSetP", "ClassPrivileges"]
+- ["s9OptionSetP", "Element"]
+- ["s9OptionSetP", "ObjectPrivileges"]
+- ["s9OptionSetP", "RawValue"]
+- ["s9OptionSetP", "RealmPrivileges"]
+- ["s9OptionSetP", ""]
+- ["s9OptionSetP", "_Default_ArrayLiteralElement"]
+- ["s9OptionSetP", "_Default_Element"]
+- ["s9OptionSetP", "_Default_RawValue"]
+- ["s9OptionSetP", "contains"]
+- !private ["s9OptionSetP", "create"]
+- ["s9OptionSetP", "debugDescription"]
+- !private ["s9OptionSetP", "delete"]
+- ["s9OptionSetP", "formIntersection"]
+- ["s9OptionSetP", "formSymmetricDifference"]
+- ["s9OptionSetP", "formUnion"]
+- ["s9OptionSetP", "init"]
+- ["s9OptionSetP", "insert"]
+- ["s9OptionSetP", "intersection"]
+- ["s9OptionSetP", "isDisjoint"]
+- ["s9OptionSetP", "isEmpty"]
+- ["s9OptionSetP", "isSubset"]
+- ["s9OptionSetP", "isSuperset"]
+- !private ["s9OptionSetP", "modifySchema"]
+- !private ["s9OptionSetP", "optionSetDescription"]
+- ["s9OptionSetP", "rawValue"]
+- !private ["s9OptionSetP", "read"]
+- ["s9OptionSetP", "remove"]
+- !private ["s9OptionSetP", "setPermissions"]
+- !private ["s9OptionSetP", "subscribe"]
+- ["s9OptionSetP", "subtract"]
+- ["s9OptionSetP", "subtracting"]
+- ["s9OptionSetP", "symmetricDifference"]
+- ["s9OptionSetP", "union"]
+- ["s9OptionSetP", "update"]
+- ["10RealmSwift10PermissionC", "PermissionRole"]
+- ["10RealmSwift10PermissionC", "String"]
+- ["10RealmSwift10PermissionC", "_realmObjectName"]
+- ["10RealmSwift10PermissionC", "canCreate"]
+- ["10RealmSwift10PermissionC", "canDelete"]
+- ["10RealmSwift10PermissionC", "canModifySchema"]
+- ["10RealmSwift10PermissionC", "canQuery"]
+- ["10RealmSwift10PermissionC", "canRead"]
+- ["10RealmSwift10PermissionC", "canSetPermissions"]
+- ["10RealmSwift10PermissionC", "canUpdate"]
+- ["10RealmSwift10PermissionC", "deinit"]
+- ["10RealmSwift10PermissionC", "init"]
+- ["10RealmSwift10PermissionC", "role"]
+- ["10RealmSwift14PermissionRoleC", "List"]
+- ["10RealmSwift14PermissionRoleC", "PermissionUser"]
+- ["10RealmSwift14PermissionRoleC", "String"]
+- ["10RealmSwift14PermissionRoleC", "_realmColumnNames"]
+- ["10RealmSwift14PermissionRoleC", "_realmObjectName"]
+- ["10RealmSwift14PermissionRoleC", "init"]
+- ["10RealmSwift14PermissionRoleC", "name"]
+- ["10RealmSwift14PermissionRoleC", "primaryKey"]
+- ["10RealmSwift14PermissionUserC", "LinkingObjects"]
+- ["10RealmSwift14PermissionUserC", "PermissionRole"]
+- ["10RealmSwift14PermissionUserC", "String"]
+- ["10RealmSwift14PermissionUserC", "_realmColumnNames"]
+- ["10RealmSwift14PermissionUserC", "_realmObjectName"]
+- ["10RealmSwift14PermissionUserC", "deinit"]
+- ["10RealmSwift14PermissionUserC", "identity"]
+- ["10RealmSwift14PermissionUserC", "init"]
+- ["10RealmSwift14PermissionUserC", "primaryKey"]
+- ["10RealmSwift14PermissionUserC", "role"]
+- ["10RealmSwift14PermissionUserC", "roles"]
+- ["10RealmSwift8ProgressV", "Bool"]
+- ["10RealmSwift8ProgressV", "Double"]
+- ["10RealmSwift8ProgressV", "Int"]
+- ["10RealmSwift8ProgressV", "UInt"]
+- ["10RealmSwift8ProgressV", "fractionTransferred"]
+- ["10RealmSwift8ProgressV", "init"]
+- ["10RealmSwift8ProgressV", "isTransferComplete"]
+- ["10RealmSwift8ProgressV", "transferrableBytes"]
+- ["10RealmSwift8ProgressV", "transferredBytes"]
+- ["10RealmSwift17ProgressDirectionO", "=="]
+- ["10RealmSwift17ProgressDirectionO", "__derived_enum_equals"]
+- ["10RealmSwift17ProgressDirectionO", "_rawHashValue"]
+- ["10RealmSwift17ProgressDirectionO", "deinit"]
+- ["10RealmSwift17ProgressDirectionO", "download"]
+- ["10RealmSwift17ProgressDirectionO", "hash"]
+- ["10RealmSwift17ProgressDirectionO", "hashValue"]
+- ["10RealmSwift17ProgressDirectionO", "upload"]
+- ["10RealmSwift12ProgressModeO", "=="]
+- ["10RealmSwift12ProgressModeO", "__derived_enum_equals"]
+- ["10RealmSwift12ProgressModeO", "_rawHashValue"]
+- ["10RealmSwift12ProgressModeO", "deinit"]
+- ["10RealmSwift12ProgressModeO", "forCurrentlyOutstandingWork"]
+- ["10RealmSwift12ProgressModeO", "hash"]
+- ["10RealmSwift12ProgressModeO", "hashValue"]
+- ["10RealmSwift12ProgressModeO", "reportIndefinitely"]
+- !private ["Sk", "PermissionRole"]
+- !private ["Sk", "RLMPermissionForRole"]
+- !private ["Sk", "RLMSyncSubscriptionOptions"]
+- !private ["Sk", "SyncSubscription"]
+- !private ["Sk", "UInt"]
+- !private ["Sk", "_rlmArray"]
+- !private ["Sk", "filter"]
+- ["Sk", "init"]
+- !private ["Sk", "joined"]
+- !private ["Sk", "map"]
+- !private ["Sk", "precondition"]
+- !private ["Sk", "realm"]
+- !private ["Sk", "rlmResults"]
+- !private ["Sm", "filter"]
+- !private ["Sm", "init"]
+- !private ["Sm", "joined"]
+- !private ["Sm", "map"]
+- ["SY", "=="]
+- ["SY", "ArrayLiteralElement"]
+- ["SY", "ClassPrivileges"]
+- ["SY", "Element"]
+- ["SY", "ObjectPrivileges"]
+- ["SY", "RawValue"]
+- ["SY", "RealmPrivileges"]
+- ["SY", ""]
+- ["SY", "_Default_ArrayLiteralElement"]
+- ["SY", "_Default_Element"]
+- ["SY", "_Default_RawValue"]
+- ["SY", "contains"]
+- !private ["SY", "create"]
+- ["SY", "debugDescription"]
+- !private ["SY", "delete"]
+- ["SY", "formIntersection"]
+- ["SY", "formSymmetricDifference"]
+- ["SY", "formUnion"]
+- ["SY", "init"]
+- ["SY", "insert"]
+- ["SY", "intersection"]
+- ["SY", "isDisjoint"]
+- ["SY", "isEmpty"]
+- ["SY", "isSubset"]
+- ["SY", "isSuperset"]
+- !private ["SY", "modifySchema"]
+- !private ["SY", "optionSetDescription"]
+- ["SY", "rawValue"]
+- !private ["SY", "read"]
+- ["SY", "remove"]
+- !private ["SY", "setPermissions"]
+- !private ["SY", "subscribe"]
+- ["SY", "subtract"]
+- ["SY", "subtracting"]
+- ["SY", "symmetricDifference"]
+- ["SY", "union"]
+- ["SY", "update"]
+- !private ["10RealmSwift0A0V", "ClassPermission"]
+- ["10RealmSwift0A0V", "ClassPrivileges"]
+- ["10RealmSwift0A0V", "Configuration"]
+- ["10RealmSwift0A0V", "List"]
+- ["10RealmSwift0A0V", "Object"]
+- ["10RealmSwift0A0V", "ObjectPrivileges"]
+- ["10RealmSwift0A0V", "Permission"]
+- !private ["10RealmSwift0A0V", "RLMGetComputedPermissions"]
+- !private ["10RealmSwift0A0V", "RLMResults"]
+- !private ["10RealmSwift0A0V", "RealmPermission"]
+- ["10RealmSwift0A0V", "RealmPrivileges"]
+- ["10RealmSwift0A0V", "Results"]
+- ["10RealmSwift0A0V", "String"]
+- ["10RealmSwift0A0V", "Swift"]
+- ["10RealmSwift0A0V", "SyncSession"]
+- ["10RealmSwift0A0V", "SyncSubscription"]
+- ["10RealmSwift0A0V", "Void"]
+- !private ["10RealmSwift0A0V", "deinit"]
+- !private ["10RealmSwift0A0V", "fatalError"]
+- ["10RealmSwift0A0V", "getPrivileges"]
+- !private ["10RealmSwift0A0V", "object"]
+- ["10RealmSwift0A0V", "permissions"]
+- !private ["10RealmSwift0A0V", "rlmRealm"]
+- ["10RealmSwift0A0V", "subscribe"]
+- ["10RealmSwift0A0V", "subscription"]
+- ["10RealmSwift0A0V", "subscriptions"]
+- !private ["10RealmSwift0A10CollectionP", "PermissionRole"]
+- !private ["10RealmSwift0A10CollectionP", "RLMPermissionForRole"]
+- !private ["10RealmSwift0A10CollectionP", "RLMSyncSubscriptionOptions"]
+- !private ["10RealmSwift0A10CollectionP", "SyncSubscription"]
+- !private ["10RealmSwift0A10CollectionP", "UInt"]
+- !private ["10RealmSwift0A10CollectionP", "_rlmArray"]
+- ["10RealmSwift0A10CollectionP", "init"]
+- !private ["10RealmSwift0A10CollectionP", "precondition"]
+- !private ["10RealmSwift0A10CollectionP", "realm"]
+- !private ["10RealmSwift0A10CollectionP", "rlmResults"]
+- !private ["10RealmSwift0A14CollectionBaseP", "PermissionRole"]
+- !private ["10RealmSwift0A14CollectionBaseP", "RLMPermissionForRole"]
+- !private ["10RealmSwift0A14CollectionBaseP", "RLMSyncSubscriptionOptions"]
+- !private ["10RealmSwift0A14CollectionBaseP", "SyncSubscription"]
+- !private ["10RealmSwift0A14CollectionBaseP", "UInt"]
+- !private ["10RealmSwift0A14CollectionBaseP", "_rlmArray"]
+- ["10RealmSwift0A14CollectionBaseP", "init"]
+- !private ["10RealmSwift0A14CollectionBaseP", "precondition"]
+- !private ["10RealmSwift0A14CollectionBaseP", "realm"]
+- !private ["10RealmSwift0A14CollectionBaseP", "rlmResults"]
+- ["10RealmSwift0A15CollectionValueP", "=="]
+- ["10RealmSwift0A15CollectionValueP", "LinkingObjects"]
+- ["10RealmSwift0A15CollectionValueP", "List"]
+- !private ["10RealmSwift0A15CollectionValueP", "ObjectiveCSupport"]
+- ["10RealmSwift0A15CollectionValueP", "PermissionRole"]
+- !private ["10RealmSwift0A15CollectionValueP", "RLMCastToSyncSubscription"]
+- ["10RealmSwift0A15CollectionValueP", "RLMSyncSubscription"]
+- !private ["10RealmSwift0A15CollectionValueP", "SyncSubscriptionState"]
+- ["10RealmSwift0A15CollectionValueP", ""]
+- ["10RealmSwift0A15CollectionValueP", "_nilValue"]
+- !private ["10RealmSwift0A15CollectionValueP", "_realmObjectName"]
+- ["10RealmSwift0A15CollectionValueP", "bridging"]
+- !private ["10RealmSwift0A15CollectionValueP", "className"]
+- !private ["10RealmSwift0A15CollectionValueP", "init"]
+- ["10RealmSwift0A15CollectionValueP", "objCValue"]
+- !private ["10RealmSwift0A15CollectionValueP", "permissions"]
+- !private ["10RealmSwift0A15CollectionValueP", "rlmSubscription"]
+- !private ["10RealmSwift0A12OptionalTypeP", "init"]
+- ["10RealmSwift0A10PermissionC", "List"]
+- ["10RealmSwift0A10PermissionC", "Permission"]
+- ["10RealmSwift0A10PermissionC", "String"]
+- ["10RealmSwift0A10PermissionC", "_realmObjectName"]
+- !private ["10RealmSwift0A10PermissionC", "id"]
+- ["10RealmSwift0A10PermissionC", "init"]
+- !private ["10RealmSwift0A10PermissionC", "permissions"]
+- ["10RealmSwift0A10PermissionC", "primaryKey"]
+- ["10RealmSwift0A10PrivilegesV", "=="]
+- ["10RealmSwift0A10PrivilegesV", "ArrayLiteralElement"]
+- ["10RealmSwift0A10PrivilegesV", "Element"]
+- ["10RealmSwift0A10PrivilegesV", "RawValue"]
+- ["10RealmSwift0A10PrivilegesV", "RealmPrivileges"]
+- ["10RealmSwift0A10PrivilegesV", "String"]
+- ["10RealmSwift0A10PrivilegesV", "UInt8"]
+- ["10RealmSwift0A10PrivilegesV", "_Default_ArrayLiteralElement"]
+- ["10RealmSwift0A10PrivilegesV", "_Default_Element"]
+- ["10RealmSwift0A10PrivilegesV", "_Default_RawValue"]
+- ["10RealmSwift0A10PrivilegesV", "contains"]
+- ["10RealmSwift0A10PrivilegesV", "debugDescription"]
+- ["10RealmSwift0A10PrivilegesV", "deinit"]
+- ["10RealmSwift0A10PrivilegesV", "formIntersection"]
+- ["10RealmSwift0A10PrivilegesV", "formSymmetricDifference"]
+- ["10RealmSwift0A10PrivilegesV", "formUnion"]
+- ["10RealmSwift0A10PrivilegesV", "init"]
+- ["10RealmSwift0A10PrivilegesV", "insert"]
+- ["10RealmSwift0A10PrivilegesV", "intersection"]
+- ["10RealmSwift0A10PrivilegesV", "isDisjoint"]
+- ["10RealmSwift0A10PrivilegesV", "isEmpty"]
+- ["10RealmSwift0A10PrivilegesV", "isSubset"]
+- ["10RealmSwift0A10PrivilegesV", "isSuperset"]
+- ["10RealmSwift0A10PrivilegesV", "modifySchema"]
+- !private ["10RealmSwift0A10PrivilegesV", "optionSetDescription"]
+- ["10RealmSwift0A10PrivilegesV", "rawValue"]
+- ["10RealmSwift0A10PrivilegesV", "read"]
+- ["10RealmSwift0A10PrivilegesV", "remove"]
+- ["10RealmSwift0A10PrivilegesV", "setPermissions"]
+- ["10RealmSwift0A10PrivilegesV", "subtract"]
+- ["10RealmSwift0A10PrivilegesV", "subtracting"]
+- ["10RealmSwift0A10PrivilegesV", "symmetricDifference"]
+- ["10RealmSwift0A10PrivilegesV", "union"]
+- ["10RealmSwift0A10PrivilegesV", "update"]
+- ["10RealmSwift7ResultsV", "Bool"]
+- ["10RealmSwift7ResultsV", "Int"]
+- !private ["10RealmSwift7ResultsV", "RLMSyncSubscriptionOptions"]
+- ["10RealmSwift7ResultsV", "String"]
+- ["10RealmSwift7ResultsV", "SyncSubscription"]
+- ["10RealmSwift7ResultsV", "TimeInterval"]
+- !private ["10RealmSwift7ResultsV", "UInt"]
+- !private ["10RealmSwift7ResultsV", "rlmResults"]
+- ["10RealmSwift7ResultsV", "subscribe"]
+- !private ["s10SIMDScalarP", "init"]
+- !private ["7Combine9SchedulerP", "main"]
+- !private ["ST", "PermissionRole"]
+- !private ["ST", "RLMPermissionForRole"]
+- !private ["ST", "RLMSyncSubscriptionOptions"]
+- !private ["ST", "SyncSubscription"]
+- !private ["ST", "UInt"]
+- !private ["ST", "_rlmArray"]
+- !private ["ST", "filter"]
+- ["ST", "init"]
+- !private ["ST", "joined"]
+- !private ["ST", "map"]
+- !private ["ST", "precondition"]
+- !private ["ST", "realm"]
+- !private ["ST", "rlmResults"]
+- ["10RealmSwift22ServerValidationPolicyO", "URL"]
+- ["10RealmSwift22ServerValidationPolicyO", "none"]
+- ["10RealmSwift22ServerValidationPolicyO", "pinCertificate"]
+- ["10RealmSwift22ServerValidationPolicyO", "system"]
+- ["s10SetAlgebraP", "=="]
+- ["s10SetAlgebraP", "ArrayLiteralElement"]
+- ["s10SetAlgebraP", "ClassPrivileges"]
+- ["s10SetAlgebraP", "Element"]
+- ["s10SetAlgebraP", "ObjectPrivileges"]
+- ["s10SetAlgebraP", "RawValue"]
+- ["s10SetAlgebraP", "RealmPrivileges"]
+- ["s10SetAlgebraP", ""]
+- ["s10SetAlgebraP", "_Default_ArrayLiteralElement"]
+- ["s10SetAlgebraP", "_Default_Element"]
+- ["s10SetAlgebraP", "_Default_RawValue"]
+- ["s10SetAlgebraP", "contains"]
+- !private ["s10SetAlgebraP", "create"]
+- ["s10SetAlgebraP", "debugDescription"]
+- !private ["s10SetAlgebraP", "delete"]
+- ["s10SetAlgebraP", "formIntersection"]
+- ["s10SetAlgebraP", "formSymmetricDifference"]
+- ["s10SetAlgebraP", "formUnion"]
+- ["s10SetAlgebraP", "init"]
+- ["s10SetAlgebraP", "insert"]
+- ["s10SetAlgebraP", "intersection"]
+- ["s10SetAlgebraP", "isDisjoint"]
+- ["s10SetAlgebraP", "isEmpty"]
+- ["s10SetAlgebraP", "isSubset"]
+- ["s10SetAlgebraP", "isSuperset"]
+- !private ["s10SetAlgebraP", "modifySchema"]
+- !private ["s10SetAlgebraP", "optionSetDescription"]
+- ["s10SetAlgebraP", "rawValue"]
+- !private ["s10SetAlgebraP", "read"]
+- ["s10SetAlgebraP", "remove"]
+- !private ["s10SetAlgebraP", "setPermissions"]
+- !private ["s10SetAlgebraP", "subscribe"]
+- ["s10SetAlgebraP", "subtract"]
+- ["s10SetAlgebraP", "subtracting"]
+- ["s10SetAlgebraP", "symmetricDifference"]
+- ["s10SetAlgebraP", "union"]
+- ["s10SetAlgebraP", "update"]
+- !private ["SZ", "init"]
+- !private ["s13SignedNumericP", "init"]
+- !private ["Sx", "init"]
+- !private ["SS", "init"]
+- !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
+- !private ["s27StringInterpolationProtocolP", "appendLiteral"]
+- !private ["Sy", "init"]
+- ["10RealmSwift17SyncConfigurationV", "Bool"]
+- ["10RealmSwift17SyncConfigurationV", "RLMSyncConfiguration"]
+- ["10RealmSwift17SyncConfigurationV", "RLMSyncStopPolicy"]
+- ["10RealmSwift17SyncConfigurationV", "Realm"]
+- ["10RealmSwift17SyncConfigurationV", "ServerValidationPolicy"]
+- ["10RealmSwift17SyncConfigurationV", "String"]
+- ["10RealmSwift17SyncConfigurationV", "SyncUser"]
+- ["10RealmSwift17SyncConfigurationV", "URL"]
+- ["10RealmSwift17SyncConfigurationV", "automatic"]
+- ["10RealmSwift17SyncConfigurationV", "cancelAsyncOpenOnNonFatalErrors"]
+- ["10RealmSwift17SyncConfigurationV", "enableSSLValidation"]
+- !private ["10RealmSwift17SyncConfigurationV", "fatalError"]
+- ["10RealmSwift17SyncConfigurationV", "fullSynchronization"]
+- ["10RealmSwift17SyncConfigurationV", "isPartial"]
+- ["10RealmSwift17SyncConfigurationV", "realmURL"]
+- ["10RealmSwift17SyncConfigurationV", "serverValidationPolicy"]
+- !private ["10RealmSwift17SyncConfigurationV", "stopPolicy"]
+- ["10RealmSwift17SyncConfigurationV", "urlPrefix"]
+- !private ["10RealmSwift17SyncConfigurationV", "user"]
+- ["10RealmSwift15SyncCredentialsV", "Bool"]
+- ["10RealmSwift15SyncCredentialsV", "Provider"]
+- ["10RealmSwift15SyncCredentialsV", "RLMSyncCredentials"]
+- ["10RealmSwift15SyncCredentialsV", "String"]
+- ["10RealmSwift15SyncCredentialsV", "SyncCredentials"]
+- ["10RealmSwift15SyncCredentialsV", "Token"]
+- ["10RealmSwift15SyncCredentialsV", "accessToken"]
+- ["10RealmSwift15SyncCredentialsV", "anonymous"]
+- ["10RealmSwift15SyncCredentialsV", "cloudKit"]
+- ["10RealmSwift15SyncCredentialsV", "customRefreshToken"]
+- ["10RealmSwift15SyncCredentialsV", "facebook"]
+- ["10RealmSwift15SyncCredentialsV", "google"]
+- ["10RealmSwift15SyncCredentialsV", "jwt"]
+- ["10RealmSwift15SyncCredentialsV", "nickname"]
+- !private ["10RealmSwift15SyncCredentialsV", "provider"]
+- ["10RealmSwift15SyncCredentialsV", "token"]
+- ["10RealmSwift15SyncCredentialsV", "userInfo"]
+- ["10RealmSwift15SyncCredentialsV", "usernamePassword"]
+- ["10RealmSwift16SyncSubscriptionV", "=="]
+- ["10RealmSwift16SyncSubscriptionV", "Bool"]
+- ["10RealmSwift16SyncSubscriptionV", "Date"]
+- ["10RealmSwift16SyncSubscriptionV", "KeyPath"]
+- ["10RealmSwift16SyncSubscriptionV", "NSKeyValueObservingOptions"]
+- ["10RealmSwift16SyncSubscriptionV", "NotificationToken"]
+- !private ["10RealmSwift16SyncSubscriptionV", "ObjectiveCSupport"]
+- !private ["10RealmSwift16SyncSubscriptionV", "RLMCastToSyncSubscription"]
+- ["10RealmSwift16SyncSubscriptionV", "RLMSyncSubscription"]
+- ["10RealmSwift16SyncSubscriptionV", "String"]
+- ["10RealmSwift16SyncSubscriptionV", "SyncSubscription"]
+- ["10RealmSwift16SyncSubscriptionV", "SyncSubscriptionState"]
+- ["10RealmSwift16SyncSubscriptionV", "TimeInterval"]
+- ["10RealmSwift16SyncSubscriptionV", "Void"]
+- ["10RealmSwift16SyncSubscriptionV", "_nilValue"]
+- ["10RealmSwift16SyncSubscriptionV", "bridging"]
+- ["10RealmSwift16SyncSubscriptionV", "createdAt"]
+- ["10RealmSwift16SyncSubscriptionV", "deinit"]
+- ["10RealmSwift16SyncSubscriptionV", "expiresAt"]
+- !private ["10RealmSwift16SyncSubscriptionV", "init"]
+- ["10RealmSwift16SyncSubscriptionV", "name"]
+- ["10RealmSwift16SyncSubscriptionV", "objCValue"]
+- ["10RealmSwift16SyncSubscriptionV", "query"]
+- !private ["10RealmSwift16SyncSubscriptionV", "rlmSubscription"]
+- ["10RealmSwift16SyncSubscriptionV", "state"]
+- ["10RealmSwift16SyncSubscriptionV", "timeToLive"]
+- ["10RealmSwift16SyncSubscriptionV", "unsubscribe"]
+- ["10RealmSwift16SyncSubscriptionV", "updatedAt"]
+- ["10RealmSwift21SyncSubscriptionStateO", "=="]
+- ["10RealmSwift21SyncSubscriptionStateO", "Bool"]
+- ["10RealmSwift21SyncSubscriptionStateO", "Error"]
+- ["10RealmSwift21SyncSubscriptionStateO", "RLMSyncSubscription"]
+- ["10RealmSwift21SyncSubscriptionStateO", "SyncSubscriptionState"]
+- ["10RealmSwift21SyncSubscriptionStateO", "complete"]
+- ["10RealmSwift21SyncSubscriptionStateO", "creating"]
+- ["10RealmSwift21SyncSubscriptionStateO", "deinit"]
+- ["10RealmSwift21SyncSubscriptionStateO", "error"]
+- ["10RealmSwift21SyncSubscriptionStateO", "init"]
+- ["10RealmSwift21SyncSubscriptionStateO", "invalidated"]
+- ["10RealmSwift21SyncSubscriptionStateO", "pending"]
+- !private ["s16TextOutputStreamP", "appendInterpolation"]
+- !private ["s16TextOutputStreamP", "appendLiteral"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- ["10RealmSwift14ThreadConfinedP", "LinkingObjects"]
+- ["10RealmSwift14ThreadConfinedP", "List"]
+- ["10RealmSwift14ThreadConfinedP", "PermissionRole"]
+- !private ["10RealmSwift14ThreadConfinedP", "RLMPermissionForRole"]
+- !private ["10RealmSwift14ThreadConfinedP", "RLMSyncSubscriptionOptions"]
+- !private ["10RealmSwift14ThreadConfinedP", "SyncSubscription"]
+- !private ["10RealmSwift14ThreadConfinedP", "UInt"]
+- ["10RealmSwift14ThreadConfinedP", ""]
+- !private ["10RealmSwift14ThreadConfinedP", "_realmObjectName"]
+- !private ["10RealmSwift14ThreadConfinedP", "_rlmArray"]
+- !private ["10RealmSwift14ThreadConfinedP", "className"]
+- ["10RealmSwift14ThreadConfinedP", "init"]
+- !private ["10RealmSwift14ThreadConfinedP", "permissions"]
+- !private ["10RealmSwift14ThreadConfinedP", "precondition"]
+- !private ["10RealmSwift14ThreadConfinedP", "realm"]
+- !private ["10RealmSwift14ThreadConfinedP", "rlmResults"]
+- !private ["s14_ArrayProtocolP", "filter"]
+- !private ["s14_ArrayProtocolP", "joined"]
+- !private ["s14_ArrayProtocolP", "map"]
+- !private ["s15_CVarArgAlignedP", "init"]
+- !private ["s22_CVarArgPassedAsDoubleP", "init"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "init"]
+- !private ["s24_DestructorSafeContainerP", "filter"]
+- !private ["s24_DestructorSafeContainerP", "joined"]
+- !private ["s24_DestructorSafeContainerP", "map"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "init"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s19_HasContiguousBytesP", "filter"]
+- !private ["s19_HasContiguousBytesP", "init"]
+- !private ["s19_HasContiguousBytesP", "joined"]
+- !private ["s19_HasContiguousBytesP", "map"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "filter"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "joined"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "map"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "main"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "main"]
+- ["10RealmSwift20_ManagedPropertyTypeP", "LinkingObjects"]
+- ["10RealmSwift20_ManagedPropertyTypeP", "List"]
+- ["10RealmSwift20_ManagedPropertyTypeP", "PermissionRole"]
+- !private ["10RealmSwift20_ManagedPropertyTypeP", "RLMPermissionForRole"]
+- ["10RealmSwift20_ManagedPropertyTypeP", ""]
+- !private ["10RealmSwift20_ManagedPropertyTypeP", "_realmObjectName"]
+- !private ["10RealmSwift20_ManagedPropertyTypeP", "_rlmArray"]
+- !private ["10RealmSwift20_ManagedPropertyTypeP", "className"]
+- ["10RealmSwift20_ManagedPropertyTypeP", "init"]
+- !private ["10RealmSwift20_ManagedPropertyTypeP", "permissions"]
+- !private ["10RealmSwift20_ManagedPropertyTypeP", "precondition"]
+- !private ["10RealmSwift20_ManagedPropertyTypeP", "realm"]
+- !private ["s21_ObjectiveCBridgeableP", "filter"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "joined"]
+- !private ["s21_ObjectiveCBridgeableP", "map"]
+- !private ["10RealmSwift01_A20CollectionEnumeratorP", "PermissionRole"]
+- !private ["10RealmSwift01_A20CollectionEnumeratorP", "RLMPermissionForRole"]
+- !private ["10RealmSwift01_A20CollectionEnumeratorP", "RLMSyncSubscriptionOptions"]
+- !private ["10RealmSwift01_A20CollectionEnumeratorP", "SyncSubscription"]
+- !private ["10RealmSwift01_A20CollectionEnumeratorP", "UInt"]
+- !private ["10RealmSwift01_A20CollectionEnumeratorP", "_rlmArray"]
+- ["10RealmSwift01_A20CollectionEnumeratorP", "init"]
+- !private ["10RealmSwift01_A20CollectionEnumeratorP", "precondition"]
+- !private ["10RealmSwift01_A20CollectionEnumeratorP", "realm"]
+- !private ["10RealmSwift01_A20CollectionEnumeratorP", "rlmResults"]
+depends-nominal:
+- !private "10RealmSwift11AddableTypeP"
+- !private "s18AdditiveArithmeticP"
+- !private "Sa"
+- "10RealmSwift28AssistedObjectiveCBridgeableP"
+- "SK"
+- !private "SB"
+- !private "Sz"
+- !private "s7CVarArgP"
+- "10RealmSwift15ClassPermissionC"
+- "10RealmSwift15ClassPrivilegesV"
+- "Sl"
+- !private "SL"
+- !private "10Foundation15ContiguousBytesP"
+- "s28CustomDebugStringConvertibleP"
+- "10RealmSwift26CustomObjectiveCBridgeableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "10Foundation12DataProtocolP"
+- "Se"
+- !private "s26DefaultStringInterpolationV"
+- !private "So18OS_dispatch_objectC"
+- !private "So17OS_dispatch_queueC"
+- !private "Sd"
+- "SE"
+- "SQ"
+- "s25ExpressibleByArrayLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s25ExpressibleByFloatLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- !private "s32ExpressibleByStringInterpolationP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "s17FixedWidthIntegerP"
+- !private "SF"
+- "SH"
+- !private "s6HasherV"
+- !private "Si"
+- "10RealmSwift36KeyValueObservationNotificationTokenC"
+- "s22LazyCollectionProtocolP"
+- "s20LazySequenceProtocolP"
+- "10RealmSwift14LinkingObjectsV"
+- "10RealmSwift4ListC"
+- "10RealmSwift8ListBaseC"
+- !private "s25LosslessStringConvertibleP"
+- !private "10RealmSwift10MinMaxTypeP"
+- !private "s10MirrorPathP"
+- "SM"
+- !private "10Foundation19MutableDataProtocolP"
+- !private "So8NSObjectC"
+- !private "So8NSObjectP"
+- !private "Sj"
+- !private "So9OS_objectC"
+- "10RealmSwift6ObjectC"
+- "10RealmSwift16ObjectPrivilegesV"
+- !private "10RealmSwift17ObjectiveCSupportV"
+- "s9OptionSetP"
+- "10RealmSwift10PermissionC"
+- "10RealmSwift14PermissionRoleC"
+- "10RealmSwift14PermissionUserC"
+- "10RealmSwift8ProgressV"
+- "10RealmSwift17ProgressDirectionO"
+- "10RealmSwift12ProgressModeO"
+- "Sk"
+- !private "Sm"
+- "SY"
+- "10RealmSwift0A0V"
+- "10RealmSwift0A10CollectionP"
+- "10RealmSwift0A14CollectionBaseP"
+- "10RealmSwift0A15CollectionValueP"
+- !private "10RealmSwift0A12OptionalTypeP"
+- "10RealmSwift0A10PermissionC"
+- "10RealmSwift0A10PrivilegesV"
+- "10RealmSwift7ResultsV"
+- !private "s10SIMDScalarP"
+- !private "7Combine9SchedulerP"
+- "ST"
+- "10RealmSwift22ServerValidationPolicyO"
+- "s10SetAlgebraP"
+- !private "SZ"
+- !private "s13SignedNumericP"
+- !private "Sx"
+- !private "SS"
+- !private "s27StringInterpolationProtocolP"
+- !private "Sy"
+- "10RealmSwift17SyncConfigurationV"
+- "10RealmSwift15SyncCredentialsV"
+- "10RealmSwift16SyncSubscriptionV"
+- "10RealmSwift21SyncSubscriptionStateO"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- "10RealmSwift14ThreadConfinedP"
+- !private "s14_ArrayProtocolP"
+- !private "s15_CVarArgAlignedP"
+- !private "s22_CVarArgPassedAsDoubleP"
+- !private "s30_CustomPlaygroundQuickLookableP"
+- !private "s24_DestructorSafeContainerP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s33_ExpressibleByBuiltinFloatLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s19_HasContiguousBytesP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- !private "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- "10RealmSwift20_ManagedPropertyTypeP"
+- !private "s21_ObjectiveCBridgeableP"
+- "10RealmSwift01_A20CollectionEnumeratorP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/ObjectiveC.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/CoreImage.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/QuartzCore.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/Dispatch.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/Metal.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/Darwin.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/Foundation.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/CoreFoundation.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/CoreGraphics.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/Swift.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/UIKit.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/SwiftOnoneSupport.swiftmodule/x86_64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Combine.framework/Modules/Combine.swiftmodule/x86_64-apple-ios-simulator.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/ObjectiveC.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreImage.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/QuartzCore.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Dispatch.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Metal.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Darwin.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Foundation.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreFoundation.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/CoreGraphics.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Swift.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Users/wassimlagnaoui/flight-Safety-15/Pods/Target Support Files/RealmSwift/RealmSwift-umbrella.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Intermediates/Pods.build/Debug-iphonesimulator/RealmSwift.build/unextended-module.modulemap"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Intermediates/Pods.build/Debug-iphonesimulator/Realm.build/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "78d55f09fb7642480b44ee7fe8a09635"

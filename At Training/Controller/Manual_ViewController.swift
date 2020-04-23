@@ -17,7 +17,7 @@ class Manual_ViewController: UIViewController {
     
     var temp3 : Float = 0
     var startReceiver: Int = 0;
-    var altitudeFSS = db.integer(forKey: K.altitudeSS)//this statement will be cut from here and used down inside while loop.
+   // var altitudeFSS = db.integer(forKey: K.altitudeSS)//this statement will be cut from here and used down inside while loop.
     
     
     
@@ -26,12 +26,11 @@ class Manual_ViewController: UIViewController {
     @IBOutlet weak var visibilityLabel: UILabel!
     
     @IBOutlet weak var ceilingLabel: UILabel!
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        
-        
-        
-    }//viewdidload()
+  
+    }   //viewdidload()
     
     func visiblityToVoltage(v: Float) -> Float{
         let temp = v/0.25
@@ -88,7 +87,11 @@ class Manual_ViewController: UIViewController {
         //sample voltage value receiver based on visibility value STARTS HERE
         let vo = visiblityToVoltage(v: temp3 )
         print("Voltage return is \(vo)")
+        let volts = Int(vo*10)
+        let hexByte = String(volts, radix:16)
+        print("voltage converted to hex string is: \(hexByte)")
         print("Visiblity = \(db.float(forKey: K.ManualVisibility))")
+        
         //sample voltage value receiver based on visibility value ENDS HERE
         
     }
@@ -216,7 +219,7 @@ class Manual_ViewController: UIViewController {
                     {
                         print("Flip the visor")
                         //append 5th byte as ASCII 1 = 31 in HEX
-                        bytesToBeSentArray.insert(0x44,at:4)//HEX 31 = ASCII 1
+                        bytesToBeSentArray.insert(0x31,at:4)//HEX 31 = ASCII 1
                         
                         //send a string to microcontroller
                         instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
@@ -242,7 +245,7 @@ class Manual_ViewController: UIViewController {
                     {
                         print("Flip the visor")
                         //append 5th byte as ASCII 1 = 31 in HEX
-                        bytesToBeSentArray.insert(0x44,at:4)//HEX 31 = ASCII 1
+                        bytesToBeSentArray.insert(0x31,at:4)//HEX 31 = ASCII 1
                         
                         //send a string to microcontroller
                         instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
@@ -301,7 +304,7 @@ class Manual_ViewController: UIViewController {
                     {
                         print("Flip the visor")
                         //append 5th byte as ASCII 1 = 31 in HEX
-                        bytesToBeSentArray.insert(0x44,at:4)//HEX 31 = ASCII 1
+                        bytesToBeSentArray.insert(0x31,at:4)//HEX 31 = ASCII 1
                         //send a string to microcontroller
                         instanceOfparser.msgForMicrocontroller = 0x45
                         instanceOfparser.msgSender()
@@ -324,7 +327,7 @@ class Manual_ViewController: UIViewController {
                     {
                         print("Flip the visor")
                         //append 5th byte as ASCII 1 = 31 in HEX
-                        bytesToBeSentArray.insert(0x44,at:4)//HEX 31 = ASCII 1
+                        bytesToBeSentArray.insert(0x31,at:4)//HEX 31 = ASCII 1
                         //send a string to microcontroller
                         instanceOfparser.msgForMicrocontroller = 0x45
                         instanceOfparser.msgSender()
@@ -381,7 +384,7 @@ class Manual_ViewController: UIViewController {
                     {
                         print("Flip the visor")
                         //append 5th byte as ASCII 1 = 31 in HEX
-                        bytesToBeSentArray.insert(0x44,at:4)//HEX 31 = ASCII 1
+                        bytesToBeSentArray.insert(0x31,at:4)//HEX 31 = ASCII 1
                         //send a string to microcontroller
                         instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
                         print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
@@ -420,6 +423,13 @@ class Manual_ViewController: UIViewController {
 //                    print("Geo Altitude = \(swiftGeo_Altitude!)")
 //                }
 //
+                //MSL Altitude
+                //1. Bring MSL Altitude from iLevil
+                //2. Bring Altitude limit from Database
+                //3. Check if MSL Altitude had passed above altitude limit and trigger was set to 1
+                //4. See if MSL Altitude has gone below the specified limit after going above the limit
+                //(optional) Test Print what to do based on comparison results
+                //5. Call the emergencyMsgSender() if needed
                 swiftMSL_Altitude = instanceOfparser.mslAltitude                    //newly added for mslAltitude
                 if(swiftMSL_Altitude == nil || swiftMSL_Altitude == 0 || swiftMSL_Altitude == 4095 || swiftMSL_Altitude == 20475)
                 {
@@ -427,7 +437,7 @@ class Manual_ViewController: UIViewController {
                 }else
                 {
                     print("MSL Altitude = \(swiftMSL_Altitude!)")
-                    let altitudeFSS = db.integer(forKey: K.altitudeSS)
+                    let altitudeFSS = db.integer(forKey: K.altitudeSS)//bring safety altitude limit from database
                     if((swiftMSL_Altitude!) > Int(altitudeFSS))
                     {
                         self.altitudeSafetyTrigger = 1
@@ -437,7 +447,7 @@ class Manual_ViewController: UIViewController {
                     {
                         print("Flip the visor - Aircraft below safe altitude")
                         //append 5th byte as ASCII 1 = 31 in HEX
-                        bytesToBeSentArray.insert(0x44,at:4)//HEX 31 = ASCII 1
+                        bytesToBeSentArray.insert(0x31,at:4)//HEX 31 = ASCII 1
                         //send a string to microcontroller
                         instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
                         print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
@@ -459,6 +469,44 @@ class Manual_ViewController: UIViewController {
                     }
                 }
                 
+                //Manual Visiblity and Ceiling implementation. Also checks for MSL Altitude and ceiling distance and reacts according.
+                //1.
+                //2.
+                //3.
+                //(optional)
+                //4.Send the voltage value to microcontroller (append the HEX bytes for voltage value to bytesToBeSentArray)
+                if(swiftMSL_Altitude == nil || swiftMSL_Altitude == 0 || swiftMSL_Altitude == 4095 || swiftMSL_Altitude == 20475)
+                {
+                    //do nothing
+                    print("\nNo Altitude Information received from AHRS device. Cannot run manual visibility and ceiling functionality.\n")
+                }else
+                {
+                    /*
+                     For operation modes:
+                     0-Manual disregards the time to reach input and will immediately set the display to the sent value (The time parameter should still be filled with an ASCII value ie. 0000).
+
+                     1- Is to ramp the current display value to the desired display value over the time to reach the parameter.
+                    */
+                    bytesToBeSentArray.insert(0x31,at:5)//HEX 31 = ASCII 1 = to select mode of opacity change over time instead of sudden change
+                    print("\nMSL Altitude received for manual functionality. Sending simulations now\n")
+                    //bring values from database and manual page sliders
+                    let manualVisFromSlider = db.float(forKey: K.ManualVisibility)
+                    let sliderVis = Float(manualVisFromSlider) //to be used in IF/ELSE statements
+                    let manualCeilFromSlider = db.integer(forKey: K.ManualCeiling)
+                    let sliderCeil = Int(manualCeilFromSlider) //to be used in IF/ELSE statements
+                    let mslAltitude = Int(swiftMSL_Altitude!)
+                    if((sliderCeil - mslAltitude) >= 100)//aircraft not within 100 ft of cloud ceiling
+                    {
+                        let voltsToSend = self.visiblityToVoltage(v: sliderVis )
+                        print("Volts to send are: \(voltsToSend)")
+                        //bytesToBeSentArray.insert(0x31,at:6)
+                        //bytesToBeSentArray.insert(0x31,at:7)  FIND A SOLUTION FOR THIS FIRST. EITHER 49 IF STATEMENTS/SWIFT CASES. OR A float to hex convertor funciton
+                        //bytesToBeSentArray.insert(0x31,at:8)
+                        
+                    }
+                }
+                
+                
                 
                 swiftFirmware_version = instanceOfparser.firmware_version
                 if (swiftFirmware_version == nil || swiftFirmware_version == 0.0){
@@ -472,11 +520,7 @@ class Manual_ViewController: UIViewController {
                 }else{
                     print("Battery Percentage = \(swiftBattPct!)")
                 }
-                
-                
-                
-  
-                
+        
                 swiftYaw = instanceOfparser.yaw
                 if (swiftYaw == nil){
                     //do nothing
@@ -524,7 +568,7 @@ class Manual_ViewController: UIViewController {
                  
                  }
                  */
-                
+                /*------------------------------Cleaning up after each iteration for new messages to be received and sent----------------------*/
                 //close the socket here
                 instanceOfparser.closeUDPsocket()
                 //close(instanceOfparser.sockfd)

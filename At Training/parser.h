@@ -53,7 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property int vsiFtPerMin;
 @property uint8_t msgForMicrocontroller; //for normal simulation msgs
 @property NSData * emergencyFlipUp; //for emergency visor flip up
-@property NSMutableArray * emgMsgBytes;
+@property NSString * emgMsgBytes;
+@property NSString * manualNormalMsgBytes;
 //@property NSMutableArray * testMsg;
 //@property NSMutableArray * CRC16Table;
 
@@ -67,9 +68,10 @@ NS_ASSUME_NONNULL_BEGIN
 -(void) packetParser:(uint8_t *)preCleanedMessage withSize:(ssize_t) n;
 -(void) msgReceiver;
 -(void) msgSender;
+-(void) normalMsgSender: (NSString *) simulationMsgBytes ofSize:(uint8_t)numberOfBytes;
 -(void) scanData: (uint8_t *) RxData_1 ofLength:(uint8_t) BufferLength;
 -(unsigned short) gdl90_CRC_Compute: (uint8_t *) data ofLength: (unsigned long)length;
--(void) emergencyMsgSender:(NSMutableArray *) emgMsgBytes;
+-(void) emergencyMsgSender:(NSString *) emgMsgBytes;
 -(void) closeUDPsocket;
 //-(unsigned short) gdl90_CRC_Compute: (uint8_t *) data ofLength: (unsigned long)length;
 //-(unsigned short) gdl90_CRC_Compute: (NSMutableArray *) data ofLength: (unsigned long)length;

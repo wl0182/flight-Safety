@@ -494,6 +494,7 @@ uint16_t crc16Table [256];
     //close(self.sockfd);//this socket gets created and destroyed once per each function call
 
 }
+//plain string sender testing function for network connection
 - (void) msgSender
 {
     
@@ -502,7 +503,7 @@ uint16_t crc16Table [256];
     struct sockaddr_in testsvr;
     bzero(&testsvr, sizeof(testsvr));
     testsvr.sin_family = AF_INET;
-    testsvr.sin_addr.s_addr = inet_addr("192.168.1.13");
+    testsvr.sin_addr.s_addr = inet_addr("192.168.1.12");
     
     testsvr.sin_port = htons(43211);
     socklen_t len2 = sizeof(testsvr);
@@ -526,7 +527,43 @@ uint16_t crc16Table [256];
     //close(self.sockfd);
     
 }
-- (void) emergencyMsgSender:(NSMutableArray *) emgMsgBytes{
+//new message sender as of april24th, 2020
+- (void) normalMsgSender: (NSString *) simulationMsgBytes ofSize:(uint8_t)numberOfBytes
+{
+        int noOfBytes = (int) numberOfBytes *2;
+        uint8_t * bytesReadyToSend = (uint8_t *)[simulationMsgBytes UTF8String];
+        uint8_t byteArrayForMicro[19] = {0};// OR we can create uint8_t mesgBeingSent[no_of_bytes_being_sent] = {0}; and use 'mesgBeingSent' for the parameter of (const void *) in sendto() function
+    //    int microfd = socket(AF_INET, SOCK_DGRAM, 0);
+        
+        struct sockaddr_in normalSvr;
+        bzero(&normalSvr, sizeof(normalSvr));
+        normalSvr.sin_family = AF_INET;
+        normalSvr.sin_addr.s_addr = inet_addr("192.168.1.12");
+        normalSvr.sin_port = htons(43211);
+        socklen_t len2 = sizeof(normalSvr);
+        byteArrayForMicro[0] = self.msgForMicrocontroller; //i can always fall back on this technique for sending bytes over network.
+        
+        //tester code end
+        printf("\nInside normalMsgSender right now.\nSending the message to Microcontroller\n");
+          //tester code start
+          //test for sending msg to microcontroller
+        //send(microfd, "Hello from IPAD Hello from IPAD Hello from IPAD Hello from IPAD", 60, 0);
+        sendto(self.sockfd, "Hello from IPAD Hello from IPAD Hello from IPAD Hello from IPAD", 63, 0, (struct sockaddr *) &normalSvr, len2);
+        printf("byteArrayForMicro[0] is %hhu", byteArrayForMicro[0]);
+//        if(byteArrayForMicro[0] == 0){
+//            //do nothing
+//            sendto(self.sockfd, "DO NOT FLIP THE VISOR", 21, 0, (struct sockaddr *) &testsvr, len2);
+//        }
+//        else if (byteArrayForMicro[0] == 69)
+//        {
+            sendto(self.sockfd, "RECIEVED VOLTAGE INSTRUCTIONSmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm", 70, 0, (struct sockaddr *) &normalSvr, len2);
+            sendto(self.sockfd, bytesReadyToSend, noOfBytes, 0, (struct sockaddr *) &normalSvr, len2);//third argument is the no of characters to be sent
+       // }
+        printf("MSG SENT TO MICROCONTROLLER!");
+
+        //close(self.sockfd);
+}
+- (void) emergencyMsgSender:(NSString *) emgMsgBytes{
    
     //char byteArrayForMicro[26] = {0};// OR we can create uint8_t mesgBeingSent[no_of_bytes_being_sent] = {0}; and use 'mesgBeingSent' for the parameter of (const void *) in sendto() function
   //  int emergencyfd = socket(AF_INET, SOCK_DGRAM, 0);S
@@ -544,7 +581,7 @@ uint16_t crc16Table [256];
       //test for sending msg to microcontroller
     //send(microfd, "Hello from IPAD Hello from IPAD Hello from IPAD Hello from IPAD", 60, 0);
     sendto(self.sockfd, "922922922922922922922922", 24, 0, (struct sockaddr *) &emergencysvr, len2);
-    sendto(self.sockfd, (__bridge const void *)(self.emergencyFlipUp), 3, 0, (struct sockaddr *) &emergencysvr, len2);
+    sendto(self.sockfd, (__bridge const void *)(emgMsgBytes), 3, 0, (struct sockaddr *) &emergencysvr, len2);
     printf("EMERGENCY MSG SENT TO MICROCONTROLLER!");
     //close(self.sockfd);
     

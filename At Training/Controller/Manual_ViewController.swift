@@ -26,18 +26,18 @@ class Manual_ViewController: UIViewController {
         let action = UIAlertAction(title: "OK", style: .default){
             (action) in
         }
+        
+        
         alert.addAction(action)
         present(alert, animated: true, completion:  nil) //Thread 7: Exception: "Modifications to the layout engine must not be performed from a background thread after it has been accessed from the main thread."
         //self.present(alert, animated: true, completion: nil)
         //let action = UIAlertAction(title: "ok",style: default, handler: nil)
         //let action = UIAlertAction(title: "Ok", style: default, handler: <#T##((UIAlertAction) -> Void)?##((UIAlertAction) -> Void)?##(UIAlertAction) -> Void#>)
-        
-        
+
         //abort training
         
         //set button title to initiate
 
-        
     }
     
     // outlets
@@ -98,6 +98,7 @@ class Manual_ViewController: UIViewController {
         }
         else {
             sender.setTitle("Initiate", for: .normal)
+            
             startReceiver = 0 //if startReceiver is any value other than 10, while loop for receiving AHRS data will not run
             altitudeSafetyTrigger = 0 //set the safety altitude trigger to zero when abort is pressed
             print("I stopped reading from the Ilevel")
@@ -331,7 +332,7 @@ class Manual_ViewController: UIViewController {
                         bytesToBeSentArray.insert("00", at:4)//HEX 00 will mean DO NOT FLIP VISOR
                         
                        // bytesToBeSentArray.insert("00", at:5)//manual immediate adjustment of the display
-                        bytesToBeSentArray.append("00")//manual immediate adjustment of the display
+                        bytesToBeSentArray.append("00")//manual immediate adjustment of the display. can be changed to insert for consistency. this is index 5.
                         print("4th index has:\(bytesToBeSentArray[4])")
                         print("5th index has:\(bytesToBeSentArray[5])")
                         
@@ -526,7 +527,7 @@ class Manual_ViewController: UIViewController {
                         //append 5th byte as 1
                         bytesToBeSentArray.insert("01",at:4)//HEX
                         //send a string to microcontroller
-                        instanceOfparser.msgForMicrocontroller = 0x45 //i can always use this technique for appending bytes to the uint8_t type objective c properties. copying those in a byte array inside msgSender() function and finally send it. So, to use this way, first) i have to create 'no of bytes to be appended and sent to microcontroller' objective c properties. second) set these objective c properties to be equal to a sequential indexes of bytesToBeSentArray. third) i ll then just copy the properties one by one into an objective c byte array[] -which exists inside msgSender(). And then just send that objective c array like normal as i already have been sending 0x45 over to microcontroller. 
+                        instanceOfparser.msgForMicrocontroller = 0x45 //i can always use this technique for appending bytes to the uint8_t type objective c properties. copying those in a byte array inside msgSender() function and finally send it. So, to use this way, first) i have to create 'no of bytes to be appended and sent to microcontroller' objective c properties. second) set these objective c properties to be equal to a sequential indexes of bytesToBeSentArray. third) i ll then just copy the properties one by one into an objective c byte array[] -which exists inside msgSender(). And then just send that objective c array like normal as i already have been sending 0x45 over to microcontroller. EDIT: NOT NEEDED NOW. WE HAVE SUCCESSFULLY STORES A STRING SWIFT ARRAY INTO A NSSTRING OBJECTIVE-C ARRAY
                         print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
                         instanceOfparser.msgSender()
                         instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
@@ -572,7 +573,7 @@ class Manual_ViewController: UIViewController {
                     */
                     
                     //REMEMBER TO REMOVE THE BYTES FROM 5,6,7,and 8th INDEX OF bytesToBeSentArray WHICH ARE APPENDED BELOW. It should not stay at 0x01 in next iteration unless new logic is developed that requires otherwise.
-                    bytesToBeSentArray.insert("01",at:5)//HEX 31 = ASCII 1 = to select mode of opacity change over time instead of sudden change
+                    bytesToBeSentArray.insert("01",at:5)//HEX 01 = Decimal 01 to select mode of opacity change over time instead of sudden change
                     print("\nMSL Altitude received for manual functionality. Sending simulations now\n")
                     //bring values from database and manual page sliders
                     let manualVisFromSlider = db.float(forKey: K.ManualVisibility) //get slider visibility from database
@@ -591,25 +592,50 @@ class Manual_ViewController: UIViewController {
                         bytesToBeSentArray.insert("00",at:6)
                         bytesToBeSentArray.insert("00",at:7)
                         bytesToBeSentArray.insert(voltHexByteUpperCase,at:8)
-//                        //testing the sending of byte array starts here
-//                        var count: Int = 0
-//                        for bytes in bytesToBeSentArray{
-//                            instanceOfparser.emgMsgBytes[count] = 10
-//                            count+=1
-//                            print("Hey")
-//                        }
-//                        count -= 1
-//                        while (count >= 0){
-//                            print("bytesToBeSentArray is \(bytesToBeSentArray[count])")
-//                            print(instanceOfparser.emgMsgBytes[count])
-//                            count -= 1
-//                        }
-//                        //instanceOfparser.emgMsgPtr = (bytesToBeSentArray[0])
-//                        //instanceOfparser.emgMsgPtr[1] = bytesToBeSentArray[1]
-//                        //instanceOfparser.emergencyMsgSender(emgMsgPtr)
-//                        //testing the sending of byte array ends here
-                        
+                        //---------------Appending necessary bytes after voltage byte----------
+                        //append 'time to reach', 'MaxRoll limit', 'MaxPitch limit' bytes at the 9,10,11 indexes
+                        //1.time to reach //since we re sending only 1 second for time to change, probably dont need to convert this to HEX.
+                        bytesToBeSentArray.insert("00", at:9) //9th index
+                        bytesToBeSentArray.insert("00", at:10) //10th index
+                        bytesToBeSentArray.insert("00", at:11) //11th index
+                        bytesToBeSentArray.insert("01", at:12) //12th index take one second to change to given voltage
+                        //2. MaxRoll limit
+                        let rollLimitForMicrocontroller = Int8(db.integer(forKey: K.maxRollSS))
+                        let rollHexByteUpperCase = String(format:"%02X", rollLimitForMicrocontroller)
+                        let stringTypeHexRollLimitForMicrocontroller = String(rollHexByteUpperCase)
+                        bytesToBeSentArray.insert("00", at:13)//13th index
+                        bytesToBeSentArray.insert("00", at:14)//14th index
+                        bytesToBeSentArray.insert(stringTypeHexRollLimitForMicrocontroller, at:15)//15th index
+                        //3. MaxPitch Limit
+                        let pitchLimitForMicrocontroller = Int8(db.integer(forKey: K.maxPitchSS))
+                        let pitchHexByteUpperCase = String(format:"%02X", pitchLimitForMicrocontroller)
+                        let stringTypeHexPitchLimitForMicrocontroller = String(pitchHexByteUpperCase)
+                        bytesToBeSentArray.insert("00", at:16)//16th index
+                        bytesToBeSentArray.insert("00", at:17)//17th index
+                        bytesToBeSentArray.insert(stringTypeHexPitchLimitForMicrocontroller, at:18) //18th index
+                        //--------------Storing swift array into objective-c array
+                        //store the swift array bytes into objective-c NSString array
+                        var count: UInt8 = 0
+                        for bytes in bytesToBeSentArray{
+                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR instanceOfparser.emgMsgBytes.append(bytesToBeSentArray[count])
+                            print(instanceOfparser.manualNormalMsgBytes) //test print
+                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended to emgMsgBytes
+                            print("\nHey\n") //test print
+                        }
+                        count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
+                        print("No of bytes appended = \(count)")
+                        print(instanceOfparser.manualNormalMsgBytes) //print what was stored in the array
+                        //------------------Sending objective-c array as parameter to msgSender() function.
+                        //send the above array to msg sender function and remember to reset it and the end of every while loop iteration
+                        instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:count)
+                    
+                        //clean up msg bytes after sending over network
+                        instanceOfparser.manualNormalMsgBytes.removeAll(keepingCapacity: true)//remove all bytes for storing new oens in next iteration
                     }
+                        
+                        
+                        
+                        
 //reduce vis to 87% of slider visibility
                     else if( (sliderCeil - mslAltitude) < 100 && (sliderCeil - mslAltitude) >= 87)
                     {

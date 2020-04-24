@@ -502,11 +502,11 @@ uint16_t crc16Table [256];
     struct sockaddr_in testsvr;
     bzero(&testsvr, sizeof(testsvr));
     testsvr.sin_family = AF_INET;
-    testsvr.sin_addr.s_addr = inet_addr("192.168.1.12");
+    testsvr.sin_addr.s_addr = inet_addr("192.168.1.13");
     
     testsvr.sin_port = htons(43211);
     socklen_t len2 = sizeof(testsvr);
-    byteArrayForMicro[0] = self.msgForMicrocontroller;
+    byteArrayForMicro[0] = self.msgForMicrocontroller; //i can always fall back on this technique for sending bytes over network.
     //tester code end
     printf("\nInside msgSender right now.\nSending the message to Microcontroller\n");
       //tester code start
@@ -526,8 +526,7 @@ uint16_t crc16Table [256];
     //close(self.sockfd);
     
 }
-- (void) emergencyMsgSender //use this only for sending flip up message. 
-{
+- (void) emergencyMsgSender:(NSMutableArray *) emgMsgBytes{
    
     //char byteArrayForMicro[26] = {0};// OR we can create uint8_t mesgBeingSent[no_of_bytes_being_sent] = {0}; and use 'mesgBeingSent' for the parameter of (const void *) in sendto() function
   //  int emergencyfd = socket(AF_INET, SOCK_DGRAM, 0);S

@@ -14,12 +14,31 @@ class Manual_ViewController: UIViewController {
     var valueReceived: Float = 40 //40 is arbitrarily set
     var valueReceivedasSigned: Int = 10 //10 is arbitrarily set
     var altitudeSafetyTrigger: Int = 0 //stays 0 until Altitude in SafetySettings is exceeded. Then if MSL altitude comes below SafetySetting Altitude, this trigger's value will allow us to send emg flip up signal to microcontroller
+    //var abortOnFlipUp: Bool = false
+    
     
     var temp3 : Float = 0
     var startReceiver: Int = 0;
    // var altitudeFSS = db.integer(forKey: K.altitudeSS)//this statement will be cut from here and used down inside while loop.
     
-    
+    func abortTraining(){
+        let alert = UIAlertController(title: "safetyLimitExceeded", message: "Safety Limit Exceeded-Training Aborted", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default){
+            (action) in
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion:  nil) //Thread 7: Exception: "Modifications to the layout engine must not be performed from a background thread after it has been accessed from the main thread."
+        //self.present(alert, animated: true, completion: nil)
+        //let action = UIAlertAction(title: "ok",style: default, handler: nil)
+        //let action = UIAlertAction(title: "Ok", style: default, handler: <#T##((UIAlertAction) -> Void)?##((UIAlertAction) -> Void)?##(UIAlertAction) -> Void#>)
+        
+        
+        //abort training
+        
+        //set button title to initiate
+
+        
+    }
     
     // outlets
     
@@ -58,7 +77,7 @@ class Manual_ViewController: UIViewController {
         let tempI = Int(temp) //use this tempI for both - storing in database AND comparisons in while loop below
         let tempS = String(Int(temp))
         ceilingLabel.text = tempS
-        db.set(tempI, forKey: K.ManualCeiling)//write db.set() for ceilingSlider here
+        db.set(tempI, forKey: K.ManualCeiling)
         
     }
     
@@ -84,15 +103,41 @@ class Manual_ViewController: UIViewController {
             print("I stopped reading from the Ilevel")
         }
         
-        //sample voltage value receiver based on visibility value STARTS HERE
+//sample voltage value receiver based on visibility value -------STARTS HERE
         let vo = visiblityToVoltage(v: temp3 )
         print("Voltage return is \(vo)")
         let volts = Int(vo*10)
-        let hexByte = String(volts, radix:16)
-        print("voltage converted to hex string is: \(hexByte)")
+//a     let hexByte = String(volts, radix:16) //can use this to convert volt to hex byte of string type as well
+//a     print("voltage converted to hex string is: \(hexByte)") //printing of a procedure
+        let hexByteUpperCase = String(format:"%02X", volts)  //b
+
+        print("voltage converted to hex string UPPER CASE is: \(hexByteUpperCase)") //b
+//c       let hexByteInUInt = UInt8(hexByteUpperCase)
+//c        print("voltage converted to hex UInt8 UPPER CASE is: \(hexByteInUInt)")
         print("Visiblity = \(db.float(forKey: K.ManualVisibility))")
-        
-        //sample voltage value receiver based on visibility value ENDS HERE
+        var hexBytesArray: [String] = []
+        hexBytesArray.append("00")
+        hexBytesArray.append("00")
+        hexBytesArray.append(hexByteUpperCase)
+        print("The string array for hex bytes has:\(hexBytesArray[0])")
+        var count = 0;
+        for bytes in hexBytesArray {
+            print("Byte \(count) is \(hexBytesArray[count]).\n")
+            print("Byte \(count) is \(bytes).\n")
+//            let nonString = __uint8_t(bytes)// doesnt work for us
+//            print("Byte \(count) is \(String(describing: nonString)).\n") print nill whenever hex value is above 9. probably because A,B,C,D,E,F cannot be stored in variable/array of type UInt8
+            count+=1
+            
+        }
+        hexBytesArray.removeAll(keepingCapacity: true)
+        count=0
+        /*
+         let n = 14
+         var st = String(format:"%02X", n)
+         st += " is the hexadecimal representation of \(n)"
+         print(st) //0E is the hexadecimal representation of 14
+         */
+//sample voltage value receiver based on visibility value ---------ENDS HERE
         
     }
     
@@ -119,7 +164,7 @@ class Manual_ViewController: UIViewController {
             //var swiftAltitudeFeet:CInt? //use Geo Altitude instead of this
             var swiftVsiFtPerMin:CInt? = Optional.none
             
-            var bytesToBeSentArray: [UInt8] = [] //gets elements inserted at the beginning of while loop and EACH ELEMENT MUST BE REMOVED AT THE END OF EACH WHILE ITERATION
+            var bytesToBeSentArray: [String] = [] //gets elements inserted at the beginning of while loop and EACH ELEMENT MUST BE REMOVED AT THE END OF EACH WHILE ITERATION
            
             
             
@@ -128,7 +173,7 @@ class Manual_ViewController: UIViewController {
             {
                 continueReceiving  = 10
             }
-            /* just for reference:
+            /* Database structure placed here just for reference:
              struct K {
              static let batteryPercentage = "Battery_Per"
              static let ManualVisibility = "Manual_Visibility"
@@ -138,23 +183,26 @@ class Manual_ViewController: UIViewController {
              static let minPitchSS = "Min_Pitch"
              static let maxRollSS = "Max_Roll"
              static let maxPitchSS = "Max_Pitch"
-             
              }
              */
             //creation of while loop for receiving UDP packets
             //var noOfIterations = 10000 Now using startReceiver value of 10 to start receiving
-            while (continueReceiving == 10)
+            while (continueReceiving == 10) //10 is treated as a true
             {
                 //append 'IPAD' hex code bytes to the array for microcontroller here.
 //                bytesToBeSentArray.append(0x49)//HEX for I    These could be used if byteToBeSentArray
 //                bytesToBeSentArray.append(0x50)//HEX for P    was being reset or destroyed at the end of
 //                bytesToBeSentArray.append(0x41)//HEX for A    each while iteration.
 //                bytesToBeSentArray.append(0x44)//HEX for D
-                bytesToBeSentArray.insert(0x49,at:0)
-                bytesToBeSentArray.insert(0x50,at:1)
-                bytesToBeSentArray.insert(0x41,at:2)
-                bytesToBeSentArray.insert(0x44,at:3)
-                
+               // self.bytesToBeSentArray.insert("0D",at:0) //DCBA is the iPad's identifier
+               // self.bytesToBeSentArray.insert("0C",at:1)
+              //  self.bytesToBeSentArray.insert("0B",at:2)
+              //  self.bytesToBeSentArray.insert("0A",at:3)
+
+                bytesToBeSentArray.insert("0D",at:0) //DCBA is the iPad's identifier
+                bytesToBeSentArray.insert("0C",at:1)
+                bytesToBeSentArray.insert("0B",at:2)
+                bytesToBeSentArray.insert("0A",at:3)
                 //PROBLEM HERE. THIS IS ONLY PRINTING PITCH AND ROLL ONCE. MAY BE BECAUSE ALTERING THE PROEPRTY VALUE OF AN OBJECT IS NOT ALLOWED. EDIT: it was solved through closing of socket at the end of msgReceiver() function in parser.m file.
                 //print("inside while loop")
                 instanceOfparser.msgReceiver() // do this as long as app is actively running
@@ -218,8 +266,18 @@ class Manual_ViewController: UIViewController {
                     if self.valueReceived > Float(temp1R)
                     {
                         print("Flip the visor")
-                        //append 5th byte as ASCII 1 = 31 in HEX
-                        bytesToBeSentArray.insert(0x31,at:4)//HEX 31 = ASCII 1
+                        //append 5th byte as hex
+                        bytesToBeSentArray.insert("01",at:4)//HEX 01 = 1 in decimal
+                
+                        bytesToBeSentArray.insert("00", at: 5)//manual immediate adjustment of the display
+                        
+                        bytesToBeSentArray.insert("00", at: 6)//
+                        bytesToBeSentArray.insert("00", at: 7)//voltage value of MAX for clearing out visor when flipping it up
+                        bytesToBeSentArray.insert("E4", at: 8)//
+                        
+                        //send bytesToBeSentArray to microcontroller
+                       
+                        
                         
                         //send a string to microcontroller
                         instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
@@ -227,25 +285,27 @@ class Manual_ViewController: UIViewController {
                         
                         instanceOfparser.msgSender()
                         instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
-                        //abort the training if visor flipped.
                         
-                        /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
-                         //create a dedicated emergency signal object
-                         let msgForMicroInstanceOfParser: parser = parser()
-                         //fill the emergencyFlipUp property with emergency signal code. ASCI '922'
-                         msgForMicroInstanceOfParser.emergencyFlipUp[0] = 0x39
-                         msgForMicroInstanceOfParser.emergencyFlipUp[1] = 0x32
-                         msgForMicroInstanceOfParser.emergencyFlipUp[2] = 0x32
-                         
-                         msgForMicroInstanceOfParser.emergencyMsgSender()
-                         */
-                        bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
+                        //abort the training if visor flipped.
+                        //Abort the training here instead of removing this byte
+                        //self.abortOnFlipUp = true
+                        //if (self.abortOnFlipUp)
+                       // {
+ //                       self.abortTraining() //when this function is called, Show notification on screen that training has stopped because safety limits exceeded. Also, Change the Initiate/Abort button title to Initiate.
+                       // }
+                        
+                        self.startReceiver = 0//prevents the while loop from running again when it breaks in next line. This is to make sure that now while loop can only run if "Initiate" titled button is pressed again.
+                        
+                        instanceOfparser.closeUDPsocket()//close the network socket otherwise next time even if Initiate button is pressed, we'll get stuck at recvfrom() call in parser.m
+                        break //break while loop.
+                        
+                        //bytesToBeSentArray.remove(at: 4)//This should exist until Abort training function is implemented. That function will append the necessary remaining bytes after the fourth index and send the flip-up message to microcontroller. This statement exists because otherwise anotehr byte will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
                     }
                     else if self.valueReceived < Float(temp2R)
                     {
                         print("Flip the visor")
                         //append 5th byte as ASCII 1 = 31 in HEX
-                        bytesToBeSentArray.insert(0x31,at:4)//HEX 31 = ASCII 1
+                        bytesToBeSentArray.insert("01",at:4)//HEX 31 = ASCII 1
                         
                         //send a string to microcontroller
                         instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
@@ -254,22 +314,27 @@ class Manual_ViewController: UIViewController {
                         instanceOfparser.msgSender()
                         instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
                         //abort the training if visor flipped.
-                        
-                        /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
-                         //create a dedicated emergency signal object
-                         let msgForMicroInstanceOfParser: parser = parser()
-                         //fill the emergencyFlipUp property with emergency signal code. ASCI '922'
-                         msgForMicroInstanceOfParser.emergencyFlipUp[0] = 0x39
-                         msgForMicroInstanceOfParser.emergencyFlipUp[1] = 0x32
-                         msgForMicroInstanceOfParser.emergencyFlipUp[2] = 0x32
-                         
-                         msgForMicroInstanceOfParser.emergencyMsgSender()
-                         */
-                         bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
+ //                       self.abortTraining() //when this function is called, Show notification on screen that training has stopped because safety limits exceeded. Also, Change the Initiate/Abort button title to Initiate.
+                        // }
+
+                        self.startReceiver = 0//prevents the while loop from running again when it breaks in next line. This is to make sure that now while loop can only run if "Initiate" titled button is pressed again.
+                        instanceOfparser.closeUDPsocket()//close the network socket otherwise next time even if Initiate button is pressed, we'll get stuck at recvfrom() call in parser.m
+                        break //break while loop.
+                 
+                        //bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
                     }
                     else
                     {
                         print("Do not Flip the visor")
+                        //this is the first time 4th index and 5th index bytes are being appended. no need to remove pre-existing 4 and 5th index bytes here.
+                        //append 5th byte as hex
+                        bytesToBeSentArray.insert("00", at:4)//HEX 00 will mean DO NOT FLIP VISOR
+                        
+                       // bytesToBeSentArray.insert("00", at:5)//manual immediate adjustment of the display
+                        bytesToBeSentArray.append("00")//manual immediate adjustment of the display
+                        print("4th index has:\(bytesToBeSentArray[4])")
+                        print("5th index has:\(bytesToBeSentArray[5])")
+                        
                     }
                     
                     //}
@@ -304,51 +369,58 @@ class Manual_ViewController: UIViewController {
                     {
                         print("Flip the visor")
                         //append 5th byte as ASCII 1 = 31 in HEX
-                        bytesToBeSentArray.insert(0x31,at:4)//HEX 31 = ASCII 1
+                        bytesToBeSentArray.insert("01",at:4)//HEX 31 = ASCII 1
                         //send a string to microcontroller
                         instanceOfparser.msgForMicrocontroller = 0x45
                         instanceOfparser.msgSender()
                         instanceOfparser.msgForMicrocontroller = 0x00//this can be done at the end of each iteration just before while loop bracket close
                         //abort the training if visor flipped.
-                        
-                        /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
-                         //create a dedicated emergency signal object
-                         let msgForMicroInstanceOfParser: parser = parser()
-                         //fill the emergencyFlipUp property with emergency signal code. ASCI '922'
-                         msgForMicroInstanceOfParser.emergencyFlipUp[0] = 0x39
-                         msgForMicroInstanceOfParser.emergencyFlipUp[1] = 0x32
-                         msgForMicroInstanceOfParser.emergencyFlipUp[2] = 0x32
-                         
-                         msgForMicroInstanceOfParser.emergencyMsgSender()
-                         */
-                        bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
+                        //abort the training if visor flipped.
+  //                      self.abortTraining() //when this function is called, Show notification on screen that training has stopped because safety limits exceeded. Also, Change the Initiate/Abort button title to Initiate.
+                        // }
+
+                        self.startReceiver = 0//prevents the while loop from running again when it breaks in next line. This is to make sure that now while loop can only run if "Initiate" titled button is pressed again.
+                        instanceOfparser.closeUDPsocket()//close the network socket otherwise next time even if Initiate button is pressed, we'll get stuck at recvfrom() call in parser.m
+                        break //break while loop.
+                   
+                       // bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
                     }
                     else if self.valueReceived < Float(temp2P)
                     {
                         print("Flip the visor")
                         //append 5th byte as ASCII 1 = 31 in HEX
-                        bytesToBeSentArray.insert(0x31,at:4)//HEX 31 = ASCII 1
+                        bytesToBeSentArray.insert("01",at:4)//HEX 31 = ASCII 1
                         //send a string to microcontroller
                         instanceOfparser.msgForMicrocontroller = 0x45
                         instanceOfparser.msgSender()
                         instanceOfparser.msgForMicrocontroller = 0x00//this can be done at the end of each iteration just before while loop bracket close
                         //abort the training if visor flipped.
-                        
-                        /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
-                         //create a dedicated emergency signal object
-                         let msgForMicroInstanceOfParser: parser = parser()
-                         //fill the emergencyFlipUp property with emergency signal code. ASCI '922'
-                         msgForMicroInstanceOfParser.emergencyFlipUp[0] = 0x39
-                         msgForMicroInstanceOfParser.emergencyFlipUp[1] = 0x32
-                         msgForMicroInstanceOfParser.emergencyFlipUp[2] = 0x32
-                         
-                         msgForMicroInstanceOfParser.emergencyMsgSender()
-                         */
-                        bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
+                        //abort the training if visor flipped.
+  //                      self.abortTraining() //when this function is called, Show notification on screen that training has stopped because safety limits exceeded. Also, Change the Initiate/Abort button title to Initiate.
+                        // }
+
+                        self.startReceiver = 0//prevents the while loop from running again when it breaks in next line. This is to make sure that now while loop can only run if "Initiate" titled button is pressed again.
+                        instanceOfparser.closeUDPsocket()//close the network socket otherwise next time even if Initiate button is pressed, we'll get stuck at recvfrom() call in parser.m
+                        break //break while loop.
+                     
+                       // bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
                     }
                     else
                     {
                         print("Do not Flip the visor")
+                        //first remove the 4th and 5th index byte and then re-append. This prevents multiple instances of normal functioning bytes in the consecutive array cells.
+                        bytesToBeSentArray.removeSubrange(4...5)
+//                        if (bytesToBeSentArray[4] == "00" && bytesToBeSentArray[5] == "00")
+//                        {
+//                            bytesToBeSentArray.remove(at: 4)
+//                            bytesToBeSentArray.remove(at: 5)
+//                        }
+                        
+                      
+                        //re-append
+                        //append 4 and 5 index byte as hex
+                        bytesToBeSentArray.insert("00",at:4)//HEX 00 will mean DO NOT FLIP VISOR
+                        bytesToBeSentArray.insert("00", at: 5)//manual immediate adjustment of the display
                     }
 
                 }
@@ -384,27 +456,31 @@ class Manual_ViewController: UIViewController {
                     {
                         print("Flip the visor")
                         //append 5th byte as ASCII 1 = 31 in HEX
-                        bytesToBeSentArray.insert(0x31,at:4)//HEX 31 = ASCII 1
+                        bytesToBeSentArray.insert("01",at:4)//HEX 31 = ASCII 1
                         //send a string to microcontroller
                         instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
                         print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
                         instanceOfparser.msgSender()
                         instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
                         //abort the training if visor flipped.
-                        
-                        /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
-                         //create a dedicated emergency signal object
-                         let msgForMicroInstanceOfParser: parser = parser()
-                         //fill the emergencyFlipUp property with emergency signal code. ASCI '922'
-                         msgForMicroInstanceOfParser.emergencyFlipUp[0] = 0x39
-                         msgForMicroInstanceOfParser.emergencyFlipUp[1] = 0x32
-                         msgForMicroInstanceOfParser.emergencyFlipUp[2] = 0x32
-                         
-                         msgForMicroInstanceOfParser.emergencyMsgSender()
-                         */
-                        bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
+                        //abort the training if visor flipped.
+   //                     self.abortTraining() //when this function is called, Show notification on screen that training has stopped because safety limits exceeded. Also, Change the Initiate/Abort button title to Initiate.
+                        // }
+
+                        self.startReceiver = 0//prevents the while loop from running again when it breaks in next line. This is to make sure that now while loop can only run if "Initiate" titled button is pressed again.
+                        instanceOfparser.closeUDPsocket()//close the network socket otherwise next time even if Initiate button is pressed, we'll get stuck at recvfrom() call in parser.m
+                        break //break while loop.
+                    
+                        //bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
                     }else{
                         print("Do not Flip the visor")
+                        //first remove the 4th and 5th index byte and then re-append. This prevents multiple instances of normal functioning bytes in the consecutive array cells.
+                       bytesToBeSentArray.removeSubrange(4...5)
+                        //re-append
+                        //append 4 and 5 index byte as hex
+                        bytesToBeSentArray.insert("00", at:4)//HEX 00 will mean DO NOT FLIP VISOR
+
+                        bytesToBeSentArray.insert("00", at:5)//manual immediate adjustment of the display
                     }
                     //abort the training if visor flipped.
                 }
@@ -437,36 +513,43 @@ class Manual_ViewController: UIViewController {
                 }else
                 {
                     print("MSL Altitude = \(swiftMSL_Altitude!)")
+                    
                     let altitudeFSS = db.integer(forKey: K.altitudeSS)//bring safety altitude limit from database
                     if((swiftMSL_Altitude!) > Int(altitudeFSS))
                     {
                         self.altitudeSafetyTrigger = 1
                     }
                     
-                    if (self.altitudeSafetyTrigger == 1 && (swiftMSL_Altitude!) < Int(altitudeFSS))
+                    if (self.altitudeSafetyTrigger == 1 && (swiftMSL_Altitude!) < Int(altitudeFSS))//subtract a 10 or a 50 from Int(altitudeFSS) inside this check if you want to make sure that the visor does not flip just as it passes over the safety altitude. That will ensure that anomalous flip up due to altitude is avoided. This issue however is unlikely to happen often
                     {
                         print("Flip the visor - Aircraft below safe altitude")
-                        //append 5th byte as ASCII 1 = 31 in HEX
-                        bytesToBeSentArray.insert(0x31,at:4)//HEX 31 = ASCII 1
+                        //append 5th byte as 1
+                        bytesToBeSentArray.insert("01",at:4)//HEX
                         //send a string to microcontroller
-                        instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
+                        instanceOfparser.msgForMicrocontroller = 0x45 //i can always use this technique for appending bytes to the uint8_t type objective c properties. copying those in a byte array inside msgSender() function and finally send it. So, to use this way, first) i have to create 'no of bytes to be appended and sent to microcontroller' objective c properties. second) set these objective c properties to be equal to a sequential indexes of bytesToBeSentArray. third) i ll then just copy the properties one by one into an objective c byte array[] -which exists inside msgSender(). And then just send that objective c array like normal as i already have been sending 0x45 over to microcontroller. 
                         print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
                         instanceOfparser.msgSender()
                         instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
                         //abort the training if visor flipped.
-                        
-                        /* //the following will be a better method once array type for emergencyFlipUp[] is figured out. It has to be an array whose each cell holds 8 bits.
-                         //create a dedicated emergency signal object
-                         let msgForMicroInstanceOfParser: parser = parser()
-                         //fill the emergencyFlipUp property with emergency signal code. ASCI '922'
-                         msgForMicroInstanceOfParser.emergencyFlipUp[0] = 0x39
-                         msgForMicroInstanceOfParser.emergencyFlipUp[1] = 0x32
-                         msgForMicroInstanceOfParser.emergencyFlipUp[2] = 0x32
-                         
-                         msgForMicroInstanceOfParser.emergencyMsgSender()
-                         */
-                        bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
+                        //abort the training if visor flipped.
+   //                     self.abortTraining() //when this function is called, Show notification on screen that training has stopped because safety limits exceeded. Also, Change the Initiate/Abort button title to Initiate.
+                        // }
+
+                        self.startReceiver = 0//prevents the while loop from running again when it breaks in next line. This is to make sure that now while loop can only run if "Initiate" titled button is pressed again.
+                        instanceOfparser.closeUDPsocket()//close the network socket otherwise next time even if Initiate button is pressed, we'll get stuck at recvfrom() call in parser.m
+                        break //break while loop.
+                    
+                        //bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
                     }
+                    
+                    //following statements are for appending normal functioning of aircraft bytes. They not inside an else for a reason. let them stay as is. If put inside else, they might not run even if altitude trigger was normally set to 1 and we didnt need to flip the visor - in which case normal bytes are to be appended.
+                    //first remove the 4th and 5th index byte and then re-append. This prevents multiple instances of normal functioning bytes in the consecutive array cells.
+                    bytesToBeSentArray.removeSubrange(4...5)
+                    //re-append
+                    //append 4 and 5 index byte as hex
+                    bytesToBeSentArray.insert("00", at:4)//HEX 00 will mean DO NOT FLIP VISOR
+                    bytesToBeSentArray.insert("00", at:5)//manual immediate adjustment of the display
+                    
                 }
                 
                 //Manual Visiblity and Ceiling implementation. Also checks for MSL Altitude and ceiling distance and reacts according.
@@ -487,23 +570,169 @@ class Manual_ViewController: UIViewController {
 
                      1- Is to ramp the current display value to the desired display value over the time to reach the parameter.
                     */
-                    bytesToBeSentArray.insert(0x31,at:5)//HEX 31 = ASCII 1 = to select mode of opacity change over time instead of sudden change
+                    
+                    //REMEMBER TO REMOVE THE BYTES FROM 5,6,7,and 8th INDEX OF bytesToBeSentArray WHICH ARE APPENDED BELOW. It should not stay at 0x01 in next iteration unless new logic is developed that requires otherwise.
+                    bytesToBeSentArray.insert("01",at:5)//HEX 31 = ASCII 1 = to select mode of opacity change over time instead of sudden change
                     print("\nMSL Altitude received for manual functionality. Sending simulations now\n")
                     //bring values from database and manual page sliders
-                    let manualVisFromSlider = db.float(forKey: K.ManualVisibility)
+                    let manualVisFromSlider = db.float(forKey: K.ManualVisibility) //get slider visibility from database
                     let sliderVis = Float(manualVisFromSlider) //to be used in IF/ELSE statements
-                    let manualCeilFromSlider = db.integer(forKey: K.ManualCeiling)
+                    let manualCeilFromSlider = db.integer(forKey: K.ManualCeiling) //get slider ceiling from database
                     let sliderCeil = Int(manualCeilFromSlider) //to be used in IF/ELSE statements
-                    let mslAltitude = Int(swiftMSL_Altitude!)
+                    let mslAltitude = Int(swiftMSL_Altitude!) //get current MSL Altitude of aircraft
+//no change in vis
                     if((sliderCeil - mslAltitude) >= 100)//aircraft not within 100 ft of cloud ceiling
                     {
-                        let voltsToSend = self.visiblityToVoltage(v: sliderVis )
-                        print("Volts to send are: \(voltsToSend)")
-                        //bytesToBeSentArray.insert(0x31,at:6)
-                        //bytesToBeSentArray.insert(0x31,at:7)  FIND A SOLUTION FOR THIS FIRST. EITHER 49 IF STATEMENTS/SWIFT CASES. OR A float to hex convertor funciton
-                        //bytesToBeSentArray.insert(0x31,at:8)
+                        let voltsTranslation = self.visiblityToVoltage(v: sliderVis )//sliderVis is sent as is in this case
+                        print("Volts to send are: \(voltsTranslation)")
+                        let voltsToSend = Int(voltsTranslation*10)
+                        let voltHexByteUpperCase = String(format:"%02X", voltsToSend)
+                        
+                        bytesToBeSentArray.insert("00",at:6)
+                        bytesToBeSentArray.insert("00",at:7)
+                        bytesToBeSentArray.insert(voltHexByteUpperCase,at:8)
+//                        //testing the sending of byte array starts here
+//                        var count: Int = 0
+//                        for bytes in bytesToBeSentArray{
+//                            instanceOfparser.emgMsgBytes[count] = 10
+//                            count+=1
+//                            print("Hey")
+//                        }
+//                        count -= 1
+//                        while (count >= 0){
+//                            print("bytesToBeSentArray is \(bytesToBeSentArray[count])")
+//                            print(instanceOfparser.emgMsgBytes[count])
+//                            count -= 1
+//                        }
+//                        //instanceOfparser.emgMsgPtr = (bytesToBeSentArray[0])
+//                        //instanceOfparser.emgMsgPtr[1] = bytesToBeSentArray[1]
+//                        //instanceOfparser.emergencyMsgSender(emgMsgPtr)
+//                        //testing the sending of byte array ends here
                         
                     }
+//reduce vis to 87% of slider visibility
+                    else if( (sliderCeil - mslAltitude) < 100 && (sliderCeil - mslAltitude) >= 87)
+                    {
+                        let decreasedVis = sliderVis * 0.87
+                        let voltsTranslation = self.visiblityToVoltage(v: decreasedVis )//sliderVis is sent as is in this case
+                        print("Volts to send are: \(voltsTranslation)")
+                        let voltsToSend = Int(voltsTranslation*10)
+                        let voltHexByteUpperCase = String(format:"%02X", voltsToSend)
+                        
+                        bytesToBeSentArray.insert("00",at:6)
+                        bytesToBeSentArray.insert("00",at:7)
+                        bytesToBeSentArray.insert(voltHexByteUpperCase,at:8)
+                    }
+//reduce vis to 75% of slider visibility
+                    else if( (sliderCeil - mslAltitude) < 87 && (sliderCeil - mslAltitude) >= 75)
+                    {
+                        let decreasedVis = sliderVis * 0.75
+                        let voltsTranslation = self.visiblityToVoltage(v: decreasedVis )//sliderVis is sent as is in this case
+                        print("Volts to send are: \(voltsTranslation)")
+                        let voltsToSend = Int(voltsTranslation*10)
+                        let voltHexByteUpperCase = String(format:"%02X", voltsToSend)
+                        
+                        bytesToBeSentArray.insert("00",at:6)
+                        bytesToBeSentArray.insert("00",at:7)
+                        bytesToBeSentArray.insert(voltHexByteUpperCase,at:8)
+                    }
+//reduce vis to 62% of slider visibility
+                    else if( (sliderCeil - mslAltitude) < 75 && (sliderCeil - mslAltitude) >= 62)
+                    {
+                        let decreasedVis = sliderVis * 0.62
+                        let voltsTranslation = self.visiblityToVoltage(v: decreasedVis )//sliderVis is sent as is in this case
+                        print("Volts to send are: \(voltsTranslation)")
+                        let voltsToSend = Int(voltsTranslation*10)
+                        let voltHexByteUpperCase = String(format:"%02X", voltsToSend)
+                        
+                        bytesToBeSentArray.insert("00",at:6)
+                        bytesToBeSentArray.insert("00",at:7)
+                        bytesToBeSentArray.insert(voltHexByteUpperCase,at:8)
+                    }
+//reduce vis to 50% of slider visibility
+                    else if( (sliderCeil - mslAltitude) < 62 && (sliderCeil - mslAltitude) >= 50)
+                    {
+                        let decreasedVis = sliderVis * 0.50
+                        let voltsTranslation = self.visiblityToVoltage(v: decreasedVis )//sliderVis is sent as is in this case
+                        print("Volts to send are: \(voltsTranslation)")
+                        let voltsToSend = Int(voltsTranslation*10)
+                        let voltHexByteUpperCase = String(format:"%02X", voltsToSend)
+                        
+                        bytesToBeSentArray.insert("00",at:6)
+                        bytesToBeSentArray.insert("00",at:7)
+                        bytesToBeSentArray.insert(voltHexByteUpperCase,at:8)
+                    }
+//reduce vis to 37% of slider visibility
+                    else if( (sliderCeil - mslAltitude) < 50 && (sliderCeil - mslAltitude) >= 37)
+                    {
+                        let decreasedVis = sliderVis * 0.37
+                        let voltsTranslation = self.visiblityToVoltage(v: decreasedVis )//sliderVis is sent as is in this case
+                        print("Volts to send are: \(voltsTranslation)")
+                        let voltsToSend = Int(voltsTranslation*10)
+                        let voltHexByteUpperCase = String(format:"%02X", voltsToSend)
+                        
+                        bytesToBeSentArray.insert("00",at:6)
+                        bytesToBeSentArray.insert("00",at:7)
+                        bytesToBeSentArray.insert(voltHexByteUpperCase,at:8)
+                    }
+//reduce vis to 25% of slider visibility
+                    else if( (sliderCeil - mslAltitude) < 37 && (sliderCeil - mslAltitude) >= 25)
+                    {
+                        let decreasedVis = sliderVis * 0.25
+                        let voltsTranslation = self.visiblityToVoltage(v: decreasedVis )//sliderVis is sent as is in this case
+                        print("Volts to send are: \(voltsTranslation)")
+                        let voltsToSend = Int(voltsTranslation*10)
+                        let voltHexByteUpperCase = String(format:"%02X", voltsToSend)
+                        
+                        bytesToBeSentArray.insert("00",at:6)
+                        bytesToBeSentArray.insert("00",at:7)
+                        bytesToBeSentArray.insert(voltHexByteUpperCase,at:8)
+                    }
+//reduce vis to 12% of slider visibility
+                    else if( (sliderCeil - mslAltitude) < 25 && (sliderCeil - mslAltitude) >= 12)
+                    {
+                        let decreasedVis = sliderVis * 0.12
+                        let voltsTranslation = self.visiblityToVoltage(v: decreasedVis )//sliderVis is sent as is in this case
+                        print("Volts to send are: \(voltsTranslation)")
+                        let voltsToSend = Int(voltsTranslation*10)
+                        let voltHexByteUpperCase = String(format:"%02X", voltsToSend)
+                        
+                        bytesToBeSentArray.insert("00",at:6)
+                        bytesToBeSentArray.insert("00",at:7)
+                        bytesToBeSentArray.insert(voltHexByteUpperCase,at:8)
+                    }
+//reduce vis to 8% of slider visibility
+                    else if( (sliderCeil - mslAltitude) < 12 && (sliderCeil - mslAltitude) > 0)
+                    {
+                        let decreasedVis = sliderVis * 0.08
+                        let voltsTranslation = self.visiblityToVoltage(v: decreasedVis )//sliderVis is sent as is in this case
+                        print("Volts to send are: \(voltsTranslation)")
+                        let voltsToSend = Int(voltsTranslation*10)
+                        let voltHexByteUpperCase = String(format:"%02X", voltsToSend)
+                        
+                        bytesToBeSentArray.insert("00",at:6)
+                        bytesToBeSentArray.insert("00",at:7)
+                        bytesToBeSentArray.insert(voltHexByteUpperCase,at:8)
+                        
+                    }
+//reduce vis to 0% of slider visibility
+                    else if( (sliderCeil - mslAltitude) < 0)
+                    {
+                        let decreasedVis = sliderVis * 0
+                        let voltsTranslation = self.visiblityToVoltage(v: decreasedVis )//sliderVis is sent as is in this case
+                        print("Volts to send are: \(voltsTranslation)")
+                        let voltsToSend = Int(voltsTranslation*10)
+                        let voltHexByteUpperCase = String(format:"%02X", voltsToSend)
+                        
+                        bytesToBeSentArray.insert("00",at:6)
+                        bytesToBeSentArray.insert("00",at:7)
+                        bytesToBeSentArray.insert(voltHexByteUpperCase,at:8)
+                      
+                    }
+                    else{
+                        print("could not resolve a visibility simulation")
+                    }
+                    
                 }
                 
                 
@@ -564,8 +793,6 @@ class Manual_ViewController: UIViewController {
                  msgForMicroInstanceOfParser.emergencyFlipUp[2] = 0x32
                  
                  msgForMicroInstanceOfParser.emergencyMsgSender()
-                 
-                 
                  }
                  */
                 /*------------------------------Cleaning up after each iteration for new messages to be received and sent----------------------*/

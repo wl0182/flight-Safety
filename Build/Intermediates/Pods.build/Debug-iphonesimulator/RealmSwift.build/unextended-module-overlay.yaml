@@ -3,11 +3,11 @@
   'case-sensitive': 'false',
   'roots': [{
     'type': 'directory',
-    'name': "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Modules"
+    'name': "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Modules"
     'contents': [{
       'type': 'file',
       'name': "module.modulemap",
-      'external-contents': "/Users/wassimlagnaoui/flight-Safety-15/Build/Intermediates/Pods.build/Debug-iphonesimulator/RealmSwift.build/unextended-module.modulemap",
+      'external-contents': "/Users/wassimlagnaoui/flight-Safety-24/Build/Intermediates/Pods.build/Debug-iphonesimulator/RealmSwift.build/unextended-module.modulemap",
     }]
   }]
 }

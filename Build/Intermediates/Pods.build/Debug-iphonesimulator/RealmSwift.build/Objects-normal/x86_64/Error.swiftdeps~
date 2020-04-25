@@ -21,15 +21,29 @@ depends-top-level:
 - !private "RLMBackupRealmConfigurationErrorKey"
 - "RLMError"
 - "RLMErrorDomain"
+- !private "RLMRealmConfiguration"
 - "Realm"
 - "_BridgedStoredNSError"
 - "~="
 depends-member:
+- !private ["s7CVarArgP", "subscript"]
+- ["So8RLMErrorV", "addressSpaceExhausted"]
+- ["So8RLMErrorV", "fail"]
+- ["So8RLMErrorV", "fileAccess"]
+- ["So8RLMErrorV", "fileExists"]
+- ["So8RLMErrorV", "fileFormatUpgradeRequired"]
+- ["So8RLMErrorV", "fileNotFound"]
+- ["So8RLMErrorV", "filePermissionDenied"]
+- ["So8RLMErrorV", "incompatibleLockFile"]
+- ["So8RLMErrorV", "incompatibleSyncedFile"]
+- ["So8RLMErrorV", "schemaMismatch"]
+- !private ["Sl", "subscript"]
 - !private ["10RealmSwift0A0V13ConfigurationV", "fromRLMRealmConfiguration"]
+- !private ["s28CustomDebugStringConvertibleP", "map"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
 - ["10Foundation13CustomNSErrorP", "=="]
 - ["10Foundation13CustomNSErrorP", "Code"]
 - !private ["10Foundation13CustomNSErrorP", "RLMBackupRealmConfigurationErrorKey"]
-- ["10Foundation13CustomNSErrorP", "RLMError"]
 - ["10Foundation13CustomNSErrorP", "RLMErrorDomain"]
 - !private ["10Foundation13CustomNSErrorP", "Realm"]
 - ["10Foundation13CustomNSErrorP", ""]
@@ -39,6 +53,7 @@ depends-member:
 - ["10Foundation13CustomNSErrorP", "_nsError"]
 - ["10Foundation13CustomNSErrorP", "_rawHashValue"]
 - ["10Foundation13CustomNSErrorP", "_userInfo"]
+- !private ["10Foundation13CustomNSErrorP", "code"]
 - ["10Foundation13CustomNSErrorP", "errorCode"]
 - ["10Foundation13CustomNSErrorP", "errorDomain"]
 - ["10Foundation13CustomNSErrorP", "errorUserInfo"]
@@ -46,13 +61,21 @@ depends-member:
 - ["10Foundation13CustomNSErrorP", "hashValue"]
 - ["10Foundation13CustomNSErrorP", "init"]
 - !private ["10Foundation13CustomNSErrorP", "userInfo"]
+- !private ["10RealmSwift26CustomObjectiveCBridgeableP", "map"]
+- !private ["s17CustomReflectableP", "map"]
+- !private ["s17CustomReflectableP", "subscript"]
 - !private ["s23CustomStringConvertibleP", "fromRLMRealmConfiguration"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["Se", "map"]
+- !private ["Se", "subscript"]
+- !private ["SD", "subscript"]
+- !private ["SE", "map"]
+- !private ["SE", "subscript"]
 - ["SQ", "=="]
 - ["SQ", "Code"]
 - ["SQ", "Configuration"]
 - ["SQ", "Error"]
 - !private ["SQ", "RLMBackupRealmConfigurationErrorKey"]
-- ["SQ", "RLMError"]
 - ["SQ", "RLMErrorDomain"]
 - !private ["SQ", "Realm"]
 - ["SQ", ""]
@@ -62,12 +85,25 @@ depends-member:
 - ["SQ", "_nsError"]
 - ["SQ", "_rawHashValue"]
 - ["SQ", "_userInfo"]
+- ["SQ", "addressSpaceExhausted"]
+- !private ["SQ", "code"]
 - ["SQ", "errorCode"]
 - ["SQ", "errorDomain"]
 - ["SQ", "errorUserInfo"]
+- ["SQ", "fail"]
+- ["SQ", "fileAccess"]
+- ["SQ", "fileExists"]
+- ["SQ", "fileFormatUpgradeRequired"]
+- ["SQ", "fileNotFound"]
+- ["SQ", "filePermissionDenied"]
 - ["SQ", "hash"]
 - ["SQ", "hashValue"]
+- ["SQ", "incompatibleLockFile"]
+- ["SQ", "incompatibleSyncedFile"]
 - ["SQ", "init"]
+- !private ["SQ", "map"]
+- ["SQ", "schemaMismatch"]
+- !private ["SQ", "subscript"]
 - !private ["SQ", "userInfo"]
 - ["10RealmSwift0A0V5ErrorV", "=="]
 - ["s5ErrorP", "=="]
@@ -77,9 +113,9 @@ depends-member:
 - !private ["10RealmSwift0A0V5ErrorV", "RLMBackupRealmConfigurationErrorKey"]
 - !private ["s5ErrorP", "RLMBackupRealmConfigurationErrorKey"]
 - ["10RealmSwift0A0V5ErrorV", "RLMError"]
-- ["s5ErrorP", "RLMError"]
 - ["10RealmSwift0A0V5ErrorV", "RLMErrorDomain"]
 - ["s5ErrorP", "RLMErrorDomain"]
+- !private ["10RealmSwift0A0V5ErrorV", "RLMRealmConfiguration"]
 - ["10RealmSwift0A0V5ErrorV", "Realm"]
 - !private ["s5ErrorP", "Realm"]
 - ["s5ErrorP", ""]
@@ -91,11 +127,15 @@ depends-member:
 - ["s5ErrorP", "_getEmbeddedNSError"]
 - ["10RealmSwift0A0V5ErrorV", "_nsError"]
 - ["s5ErrorP", "_nsError"]
+- ["10RealmSwift0A0V5ErrorV", "_nsErrorDomain"]
 - ["10RealmSwift0A0V5ErrorV", "_rawHashValue"]
 - ["s5ErrorP", "_rawHashValue"]
 - ["10RealmSwift0A0V5ErrorV", "_userInfo"]
 - ["s5ErrorP", "_userInfo"]
+- ["10RealmSwift0A0V5ErrorV", "addressSpaceExhausted"]
 - ["10RealmSwift0A0V5ErrorV", "backupConfiguration"]
+- ["10RealmSwift0A0V5ErrorV", "code"]
+- !private ["s5ErrorP", "code"]
 - ["10RealmSwift0A0V5ErrorV", "deinit"]
 - ["10RealmSwift0A0V5ErrorV", "errorCode"]
 - ["s5ErrorP", "errorCode"]
@@ -103,18 +143,28 @@ depends-member:
 - ["s5ErrorP", "errorDomain"]
 - ["10RealmSwift0A0V5ErrorV", "errorUserInfo"]
 - ["s5ErrorP", "errorUserInfo"]
+- ["10RealmSwift0A0V5ErrorV", "fail"]
+- ["10RealmSwift0A0V5ErrorV", "fileAccess"]
+- ["10RealmSwift0A0V5ErrorV", "fileExists"]
+- ["10RealmSwift0A0V5ErrorV", "fileFormatUpgradeRequired"]
+- ["10RealmSwift0A0V5ErrorV", "fileNotFound"]
+- ["10RealmSwift0A0V5ErrorV", "filePermissionDenied"]
 - ["10RealmSwift0A0V5ErrorV", "hash"]
 - ["s5ErrorP", "hash"]
 - ["10RealmSwift0A0V5ErrorV", "hashValue"]
 - ["s5ErrorP", "hashValue"]
+- ["10RealmSwift0A0V5ErrorV", "incompatibleLockFile"]
+- ["10RealmSwift0A0V5ErrorV", "incompatibleSyncedFile"]
 - ["10RealmSwift0A0V5ErrorV", "init"]
 - ["s5ErrorP", "init"]
+- ["10RealmSwift0A0V5ErrorV", "schemaMismatch"]
 - !private ["10RealmSwift0A0V5ErrorV", "userInfo"]
 - !private ["s5ErrorP", "userInfo"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
+- !private ["s23ExpressibleByNilLiteralP", "map"]
 - ["SH", "=="]
 - ["SH", "Code"]
 - !private ["SH", "RLMBackupRealmConfigurationErrorKey"]
-- ["SH", "RLMError"]
 - ["SH", "RLMErrorDomain"]
 - !private ["SH", "Realm"]
 - ["SH", ""]
@@ -124,23 +174,52 @@ depends-member:
 - ["SH", "_nsError"]
 - ["SH", "_rawHashValue"]
 - ["SH", "_userInfo"]
+- ["SH", "addressSpaceExhausted"]
+- !private ["SH", "code"]
 - ["SH", "errorCode"]
 - ["SH", "errorDomain"]
 - ["SH", "errorUserInfo"]
+- ["SH", "fail"]
+- ["SH", "fileAccess"]
+- ["SH", "fileExists"]
+- ["SH", "fileFormatUpgradeRequired"]
+- ["SH", "fileNotFound"]
+- ["SH", "filePermissionDenied"]
 - ["SH", "hash"]
 - ["SH", "hashValue"]
+- ["SH", "incompatibleLockFile"]
+- ["SH", "incompatibleSyncedFile"]
 - ["SH", "init"]
+- !private ["SH", "map"]
+- ["SH", "schemaMismatch"]
+- !private ["SH", "subscript"]
 - !private ["SH", "userInfo"]
+- !private ["Sq", "map"]
+- !private ["10RealmSwift16OptionalProtocolP", "map"]
+- ["SC8RLMErrorLeV", "Code"]
+- !private ["SC8RLMErrorLeV", "code"]
+- ["SY", "addressSpaceExhausted"]
+- ["SY", "fail"]
+- ["SY", "fileAccess"]
+- ["SY", "fileExists"]
+- ["SY", "fileFormatUpgradeRequired"]
+- ["SY", "fileNotFound"]
+- ["SY", "filePermissionDenied"]
+- ["SY", "incompatibleLockFile"]
+- ["SY", "incompatibleSyncedFile"]
+- ["SY", "schemaMismatch"]
 - ["10RealmSwift0A0V", "Configuration"]
 - ["10RealmSwift0A0V", "Error"]
 - ["10RealmSwift0A0V", "NSError"]
 - !private ["10RealmSwift0A0V", "RLMBackupRealmConfigurationErrorKey"]
 - ["10RealmSwift0A0V", "RLMError"]
+- !private ["10RealmSwift0A0V", "RLMRealmConfiguration"]
 - ["10RealmSwift0A0V", "Realm"]
+- !private ["10RealmSwift0A15CollectionValueP", "map"]
+- !private ["ST", "subscript"]
 - ["10Foundation21_BridgedStoredNSErrorP", "=="]
 - ["10Foundation21_BridgedStoredNSErrorP", "Code"]
 - !private ["10Foundation21_BridgedStoredNSErrorP", "RLMBackupRealmConfigurationErrorKey"]
-- ["10Foundation21_BridgedStoredNSErrorP", "RLMError"]
 - ["10Foundation21_BridgedStoredNSErrorP", "RLMErrorDomain"]
 - !private ["10Foundation21_BridgedStoredNSErrorP", "Realm"]
 - ["10Foundation21_BridgedStoredNSErrorP", ""]
@@ -150,6 +229,7 @@ depends-member:
 - ["10Foundation21_BridgedStoredNSErrorP", "_nsError"]
 - ["10Foundation21_BridgedStoredNSErrorP", "_rawHashValue"]
 - ["10Foundation21_BridgedStoredNSErrorP", "_userInfo"]
+- !private ["10Foundation21_BridgedStoredNSErrorP", "code"]
 - ["10Foundation21_BridgedStoredNSErrorP", "errorCode"]
 - ["10Foundation21_BridgedStoredNSErrorP", "errorDomain"]
 - ["10Foundation21_BridgedStoredNSErrorP", "errorUserInfo"]
@@ -157,10 +237,23 @@ depends-member:
 - ["10Foundation21_BridgedStoredNSErrorP", "hashValue"]
 - ["10Foundation21_BridgedStoredNSErrorP", "init"]
 - !private ["10Foundation21_BridgedStoredNSErrorP", "userInfo"]
+- ["10Foundation18_ErrorCodeProtocolP", "addressSpaceExhausted"]
+- ["10Foundation18_ErrorCodeProtocolP", "fail"]
+- ["10Foundation18_ErrorCodeProtocolP", "fileAccess"]
+- ["10Foundation18_ErrorCodeProtocolP", "fileExists"]
+- ["10Foundation18_ErrorCodeProtocolP", "fileFormatUpgradeRequired"]
+- ["10Foundation18_ErrorCodeProtocolP", "fileNotFound"]
+- ["10Foundation18_ErrorCodeProtocolP", "filePermissionDenied"]
+- ["10Foundation18_ErrorCodeProtocolP", "incompatibleLockFile"]
+- ["10Foundation18_ErrorCodeProtocolP", "incompatibleSyncedFile"]
+- ["10Foundation18_ErrorCodeProtocolP", "schemaMismatch"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "subscript"]
+- !private ["10RealmSwift20_ManagedPropertyTypeP", "map"]
+- !private ["s21_ObjectiveCBridgeableP", "map"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
 - ["10Foundation26_ObjectiveCBridgeableErrorP", "=="]
 - ["10Foundation26_ObjectiveCBridgeableErrorP", "Code"]
 - !private ["10Foundation26_ObjectiveCBridgeableErrorP", "RLMBackupRealmConfigurationErrorKey"]
-- ["10Foundation26_ObjectiveCBridgeableErrorP", "RLMError"]
 - ["10Foundation26_ObjectiveCBridgeableErrorP", "RLMErrorDomain"]
 - !private ["10Foundation26_ObjectiveCBridgeableErrorP", "Realm"]
 - ["10Foundation26_ObjectiveCBridgeableErrorP", ""]
@@ -170,6 +263,7 @@ depends-member:
 - ["10Foundation26_ObjectiveCBridgeableErrorP", "_nsError"]
 - ["10Foundation26_ObjectiveCBridgeableErrorP", "_rawHashValue"]
 - ["10Foundation26_ObjectiveCBridgeableErrorP", "_userInfo"]
+- !private ["10Foundation26_ObjectiveCBridgeableErrorP", "code"]
 - ["10Foundation26_ObjectiveCBridgeableErrorP", "errorCode"]
 - ["10Foundation26_ObjectiveCBridgeableErrorP", "errorDomain"]
 - ["10Foundation26_ObjectiveCBridgeableErrorP", "errorUserInfo"]
@@ -178,9 +272,18 @@ depends-member:
 - ["10Foundation26_ObjectiveCBridgeableErrorP", "init"]
 - !private ["10Foundation26_ObjectiveCBridgeableErrorP", "userInfo"]
 depends-nominal:
+- !private "s7CVarArgP"
+- "So8RLMErrorV"
+- !private "Sl"
 - !private "10RealmSwift0A0V13ConfigurationV"
+- !private "s28CustomDebugStringConvertibleP"
 - "10Foundation13CustomNSErrorP"
+- !private "10RealmSwift26CustomObjectiveCBridgeableP"
+- !private "s17CustomReflectableP"
 - !private "s23CustomStringConvertibleP"
+- !private "Se"
+- !private "SD"
+- !private "SE"
 - "SQ"
 - "10RealmSwift0A0V5ErrorV"
 - "s5ErrorP"
@@ -205,24 +308,36 @@ depends-nominal:
 - "10RealmSwift0A0V5ErrorV"
 - "s5ErrorP"
 - "10RealmSwift0A0V5ErrorV"
-- "s5ErrorP"
-- "10RealmSwift0A0V5ErrorV"
-- "s5ErrorP"
-- "10RealmSwift0A0V5ErrorV"
-- "s5ErrorP"
-- "10RealmSwift0A0V5ErrorV"
-- "s5ErrorP"
-- "10RealmSwift0A0V5ErrorV"
-- "s5ErrorP"
-- "10RealmSwift0A0V5ErrorV"
-- "s5ErrorP"
-- "10RealmSwift0A0V5ErrorV"
-- "s5ErrorP"
-- !private "10RealmSwift0A0V5ErrorV"
 - !private "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- "s5ErrorP"
+- "10RealmSwift0A0V5ErrorV"
+- !private "s5ErrorP"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
 - "SH"
+- !private "Sq"
+- !private "10RealmSwift16OptionalProtocolP"
+- "SC8RLMErrorLeV"
+- "SY"
 - "10RealmSwift0A0V"
+- !private "10RealmSwift0A15CollectionValueP"
+- !private "ST"
 - "10Foundation21_BridgedStoredNSErrorP"
+- "10Foundation18_ErrorCodeProtocolP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "10RealmSwift20_ManagedPropertyTypeP"
+- !private "s21_ObjectiveCBridgeableP"
 - "10Foundation26_ObjectiveCBridgeableErrorP"
 depends-dynamic-lookup:
 depends-external:
@@ -253,6 +368,50 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
 - "/Users/wassimlagnaoui/flight-Safety-15/Pods/Target Support Files/RealmSwift/RealmSwift-umbrella.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm+Sync.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectBase_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMCollection_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermission.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSubscription.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
 - "/Users/wassimlagnaoui/flight-Safety-15/Build/Intermediates/Pods.build/Debug-iphonesimulator/RealmSwift.build/unextended-module.modulemap"
 - "/Users/wassimlagnaoui/flight-Safety-15/Build/Intermediates/Pods.build/Debug-iphonesimulator/Realm.build/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/objc/ObjectiveC.apinotes"

@@ -26,9 +26,11 @@ depends-top-level:
 - "TernaryPrecedence"
 - !private "UnicodeScalarType"
 depends-member:
+- !private ["s7CVarArgP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
 - ["s23CustomStringConvertibleP", "=="]
 - ["s23CustomStringConvertibleP", "ExtendedGraphemeClusterLiteralType"]
-- ["s23CustomStringConvertibleP", "RLMSortDescriptor"]
+- !private ["s23CustomStringConvertibleP", "RLMSortDescriptor"]
 - !private ["s23CustomStringConvertibleP", "SortDescriptor"]
 - ["s23CustomStringConvertibleP", "StringLiteralType"]
 - ["s23CustomStringConvertibleP", "UnicodeScalarLiteralType"]
@@ -44,7 +46,7 @@ depends-member:
 - !private ["s26DefaultStringInterpolationV", "appendLiteral"]
 - ["SQ", "=="]
 - ["SQ", "ExtendedGraphemeClusterLiteralType"]
-- ["SQ", "RLMSortDescriptor"]
+- !private ["SQ", "RLMSortDescriptor"]
 - !private ["SQ", "SortDescriptor"]
 - ["SQ", "StringLiteralType"]
 - ["SQ", "UnicodeScalarLiteralType"]
@@ -56,7 +58,7 @@ depends-member:
 - !private ["SQ", "keyPath"]
 - ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "=="]
 - ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "ExtendedGraphemeClusterLiteralType"]
-- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "RLMSortDescriptor"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "RLMSortDescriptor"]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "SortDescriptor"]
 - ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "StringLiteralType"]
 - ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "UnicodeScalarLiteralType"]
@@ -68,7 +70,7 @@ depends-member:
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "keyPath"]
 - ["s26ExpressibleByStringLiteralP", "=="]
 - ["s26ExpressibleByStringLiteralP", "ExtendedGraphemeClusterLiteralType"]
-- ["s26ExpressibleByStringLiteralP", "RLMSortDescriptor"]
+- !private ["s26ExpressibleByStringLiteralP", "RLMSortDescriptor"]
 - !private ["s26ExpressibleByStringLiteralP", "SortDescriptor"]
 - ["s26ExpressibleByStringLiteralP", "StringLiteralType"]
 - ["s26ExpressibleByStringLiteralP", "UnicodeScalarLiteralType"]
@@ -80,7 +82,7 @@ depends-member:
 - !private ["s26ExpressibleByStringLiteralP", "keyPath"]
 - ["s33ExpressibleByUnicodeScalarLiteralP", "=="]
 - ["s33ExpressibleByUnicodeScalarLiteralP", "ExtendedGraphemeClusterLiteralType"]
-- ["s33ExpressibleByUnicodeScalarLiteralP", "RLMSortDescriptor"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "RLMSortDescriptor"]
 - !private ["s33ExpressibleByUnicodeScalarLiteralP", "SortDescriptor"]
 - ["s33ExpressibleByUnicodeScalarLiteralP", "StringLiteralType"]
 - ["s33ExpressibleByUnicodeScalarLiteralP", "UnicodeScalarLiteralType"]
@@ -90,6 +92,10 @@ depends-member:
 - ["s33ExpressibleByUnicodeScalarLiteralP", "description"]
 - ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
 - !private ["s33ExpressibleByUnicodeScalarLiteralP", "keyPath"]
+- !private ["SH", "init"]
+- !private ["So8NSObjectC", "init"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So17RLMSortDescriptorC", "init"]
 - ["10RealmSwift14SortDescriptorV", "=="]
 - ["10RealmSwift14SortDescriptorV", "Bool"]
 - ["10RealmSwift14SortDescriptorV", "ExtendedGraphemeClusterLiteralType"]
@@ -105,20 +111,31 @@ depends-member:
 - ["10RealmSwift14SortDescriptorV", "init"]
 - ["10RealmSwift14SortDescriptorV", "keyPath"]
 - ["10RealmSwift14SortDescriptorV", "reversed"]
+- ["10RealmSwift14SortDescriptorV", "rlmSortDescriptorValue"]
 - !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
 - !private ["s27StringInterpolationProtocolP", "appendLiteral"]
 - !private ["s16TextOutputStreamP", "appendInterpolation"]
 - !private ["s16TextOutputStreamP", "appendLiteral"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
 depends-nominal:
+- !private "s7CVarArgP"
+- !private "s28CustomDebugStringConvertibleP"
 - "s23CustomStringConvertibleP"
 - !private "s26DefaultStringInterpolationV"
 - "SQ"
 - "s43ExpressibleByExtendedGraphemeClusterLiteralP"
 - "s26ExpressibleByStringLiteralP"
 - "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "SH"
+- !private "So8NSObjectC"
+- !private "So8NSObjectP"
+- !private "So17RLMSortDescriptorC"
 - "10RealmSwift14SortDescriptorV"
 - !private "s27StringInterpolationProtocolP"
 - !private "s16TextOutputStreamP"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- !private "10Foundation37_KeyValueCodingAndObservingPublishingP"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/ObjectiveC.swiftmodule/x86_64.swiftinterface"
@@ -148,6 +165,50 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
 - "/Users/wassimlagnaoui/flight-Safety-15/Pods/Target Support Files/RealmSwift/RealmSwift-umbrella.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm+Sync.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectBase_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMCollection_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermission.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSubscription.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
+- "/Users/wassimlagnaoui/flight-Safety-15/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
 - "/Users/wassimlagnaoui/flight-Safety-15/Build/Intermediates/Pods.build/Debug-iphonesimulator/RealmSwift.build/unextended-module.modulemap"
 - "/Users/wassimlagnaoui/flight-Safety-15/Build/Intermediates/Pods.build/Debug-iphonesimulator/Realm.build/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/objc/ObjectiveC.apinotes"

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,8 @@
 		FC41BBE2240195DA00B2F6E7 /* Setup_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41BBE1240195DA00B2F6E7 /* Setup_ViewController.swift */; };
 		FC41BBE4240195E600B2F6E7 /* SafetySettings_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41BBE3240195E600B2F6E7 /* SafetySettings_ViewController.swift */; };
 		FC5DD33323FD98C1003CC429 /* CalibrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5DD33223FD98C1003CC429 /* CalibrationVC.swift */; };
+		FC68D9B82454E43400A0494C /* GuestLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68D9B72454E43400A0494C /* GuestLoginVC.swift */; };
+		FC68D9BA2454E44800A0494C /* AdminLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68D9B92454E44800A0494C /* AdminLoginVC.swift */; };
 		FCD08F8E23EF813400F4C7C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD08F8D23EF813400F4C7C8 /* AppDelegate.swift */; };
 		FCD08F9023EF813400F4C7C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD08F8F23EF813400F4C7C8 /* SceneDelegate.swift */; };
 		FCD08F9223EF813400F4C7C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD08F9123EF813400F4C7C8 /* ViewController.swift */; };
@@ -47,6 +49,8 @@
 		FC41BBE1240195DA00B2F6E7 /* Setup_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setup_ViewController.swift; sourceTree = "<group>"; };
 		FC41BBE3240195E600B2F6E7 /* SafetySettings_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetySettings_ViewController.swift; sourceTree = "<group>"; };
 		FC5DD33223FD98C1003CC429 /* CalibrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationVC.swift; sourceTree = "<group>"; };
+		FC68D9B72454E43400A0494C /* GuestLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestLoginVC.swift; sourceTree = "<group>"; };
+		FC68D9B92454E44800A0494C /* AdminLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginVC.swift; sourceTree = "<group>"; };
 		FCD08F8A23EF813400F4C7C8 /* At Training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "At Training.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD08F8D23EF813400F4C7C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCD08F8F23EF813400F4C7C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +88,6 @@
 				DD02A72B8DF9DD7D76626C6D /* Pods-At Training.debug.xcconfig */,
 				D005AEDB85C771B46B6C9C86 /* Pods-At Training.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -103,6 +106,8 @@
 				FC401F6B244D2039001BC009 /* ROLLVC.swift */,
 				FC401F6D244D2114001BC009 /* AltitudeVC.swift */,
 				FC401F6F244D2157001BC009 /* RateOfDecentVC.swift */,
+				FC68D9B72454E43400A0494C /* GuestLoginVC.swift */,
+				FC68D9B92454E44800A0494C /* AdminLoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -283,8 +288,10 @@
 				FC401F6E244D2114001BC009 /* AltitudeVC.swift in Sources */,
 				FC401F6A244CD8AE001BC009 /* PitchVC.swift in Sources */,
 				FCD08F9223EF813400F4C7C8 /* ViewController.swift in Sources */,
+				FC68D9BA2454E44800A0494C /* AdminLoginVC.swift in Sources */,
 				FCD08F8E23EF813400F4C7C8 /* AppDelegate.swift in Sources */,
 				FC41BBE4240195E600B2F6E7 /* SafetySettings_ViewController.swift in Sources */,
+				FC68D9B82454E43400A0494C /* GuestLoginVC.swift in Sources */,
 				FC41BBDE2401958A00B2F6E7 /* ProgramPoint_ViewController.swift in Sources */,
 				FC5DD33323FD98C1003CC429 /* CalibrationVC.swift in Sources */,
 				FC401F70244D2157001BC009 /* RateOfDecentVC.swift in Sources */,

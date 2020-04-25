@@ -210,6 +210,14 @@ SWIFT_CLASS("_TtC11At_Training31AccidentScenario_ViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+SWIFT_CLASS("_TtC11At_Training12AdminLoginVC")
+@interface AdminLoginVC : UIViewController
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UIPickerView;
 @class UIView;
 
@@ -248,9 +256,23 @@ SWIFT_CLASS("_TtC11At_Training13CalibrationVC")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UITextField;
+@class UIButton;
+
+SWIFT_CLASS("_TtC11At_Training12GuestLoginVC")
+@interface GuestLoginVC : UIViewController <UITextFieldDelegate>
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified userIdTF;
+- (void)viewDidLoad;
+- (BOOL)textFieldShouldEndEditing:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+- (void)textFieldDidEndEditing:(UITextField * _Nonnull)textField;
+- (IBAction)ContinuePressed:(UIButton * _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UILabel;
 @class UISlider;
-@class UIButton;
 
 SWIFT_CLASS("_TtC11At_Training21Manual_ViewController")
 @interface Manual_ViewController : UIViewController

@@ -1,2 +1,2 @@
-dependencies: /Users/wassimlagnaoui/flight-Safety-15/At\ Training/parser.m \
-  /Users/wassimlagnaoui/flight-Safety-15/At\ Training/parser.h
+dependencies: /Users/wassimlagnaoui/flight-Safety-24/At\ Training/parser.m \
+  /Users/wassimlagnaoui/flight-Safety-24/At\ Training/parser.h

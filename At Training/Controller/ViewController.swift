@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var systemTest: UIButton!
     @IBOutlet weak var connectionLabel: UILabel!
     
     @IBOutlet weak var batteryLabel: UILabel!
@@ -18,23 +19,49 @@ class ViewController: UIViewController {
     @IBOutlet weak var firmwareLabel: UILabel!
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print("Home page loaded")
         
     }
-
+    
+  
+    
     
     
     @IBAction func SavePressed(_ sender: UIButton) {
+        let temp = sender.currentTitle
         
-        let temp1 = Int.random(in: 1...100)
-        let temp2 = Int.random(in: 1...100)
-        let temp3 = Int.random(in: 1...100)
+        if temp == "System Test" {
+            
+            
+            //Call your function
+            
+            
+            
+            // run your function
+            let temp1 = Int.random(in: 1...10)
+            let temp2 = Int.random(in: 1...10)
+            let temp3 = Int.random(in: 1...10)
+            
+            //udpate the labels
+            connectionLabel.text = String(temp1)
+            batteryLabel.text    = String(temp2)
+            firmwareLabel.text   = String(temp3)
+            
+            // change the title
+            systemTest.setTitle("Continue", for: .normal)
+        }
         
-        connectionLabel.text = String(temp1)
-        batteryLabel.text = String(temp2)
-        firmwareLabel.text = String(temp3)
+        else {
+            print("going to next page")
+            systemTest.setTitle("System Test", for: .normal)
+            // perform the segue from Home page to User type 
+        }
+        
     }
     
     

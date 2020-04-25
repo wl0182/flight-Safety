@@ -10,10 +10,17 @@ import UIKit
 
 class AdminLoginVC: UIViewController {
 
+    @IBOutlet weak var passwordTF: UITextField!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func continuePressed(_ sender: UIButton) {
+        
     }
     
 

@@ -19,9 +19,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var firmwareLabel: UILabel!
     
     // variables
-    let temp1 = Int.random(in: 1...10)
-    let temp2 = Int.random(in: 1...10)
-    let temp3 = Int.random(in: 1...10)
+    var temp1 : String = ""
+    var temp2 : Int = 0
+    var temp3 : Float = 0
 
     
     
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
             
             //udpate the labels
             connectionLabel.text = String(temp1)
-            batteryLabel.text    = String(temp2)
+            batteryLabel.text    = "\(temp2)% "
             firmwareLabel.text   = String(temp3)
             
             // change the title

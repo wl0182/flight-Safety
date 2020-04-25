@@ -18,7 +18,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var firmwareLabel: UILabel!
     
-    
+    // variables
+    let temp1 = Int.random(in: 1...10)
+    let temp2 = Int.random(in: 1...10)
+    let temp3 = Int.random(in: 1...10)
+
     
     
     override func viewDidLoad() {
@@ -43,9 +47,6 @@ class ViewController: UIViewController {
             
             
             // run your function
-            let temp1 = Int.random(in: 1...10)
-            let temp2 = Int.random(in: 1...10)
-            let temp3 = Int.random(in: 1...10)
             
             //udpate the labels
             connectionLabel.text = String(temp1)

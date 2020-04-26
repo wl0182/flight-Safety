@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/RealmSwift.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		t0ZjDwEh1hxavltgmHjo07F3tEc=
+		Aa6zkvWz7Urm0uaLCZKV5H4YHG4=
 		</data>
 		<key>Modules/RealmSwift.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/RealmSwift.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		t0ZjDwEh1hxavltgmHjo07F3tEc=
+		Aa6zkvWz7Urm0uaLCZKV5H4YHG4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -76,11 +76,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			t0ZjDwEh1hxavltgmHjo07F3tEc=
+			Aa6zkvWz7Urm0uaLCZKV5H4YHG4=
 			</data>
 			<key>hash2</key>
 			<data>
-			7pkp62IUL/ng84xCCNxDDW5NlO2uLuKeouwB5iAIf9Q=
+			Pg+dI/YVXYrgcvnTrCseCQtCU5VK29hH0S6KLikfsEg=
 			</data>
 		</dict>
 		<key>Modules/RealmSwift.swiftmodule/x86_64.swiftdoc</key>
@@ -98,11 +98,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			t0ZjDwEh1hxavltgmHjo07F3tEc=
+			Aa6zkvWz7Urm0uaLCZKV5H4YHG4=
 			</data>
 			<key>hash2</key>
 			<data>
-			7pkp62IUL/ng84xCCNxDDW5NlO2uLuKeouwB5iAIf9Q=
+			Pg+dI/YVXYrgcvnTrCseCQtCU5VK29hH0S6KLikfsEg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

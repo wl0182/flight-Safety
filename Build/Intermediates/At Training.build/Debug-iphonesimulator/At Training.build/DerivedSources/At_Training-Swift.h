@@ -283,6 +283,7 @@ SWIFT_CLASS("_TtC11At_Training21Manual_ViewController")
 - (void)viewDidLoad;
 - (IBAction)visibilitySlider:(UISlider * _Nonnull)sender;
 - (IBAction)ceilingSlider:(UISlider * _Nonnull)sender;
+- (void)viewWillDisappear:(BOOL)animated;
 - (IBAction)InitiatePressed:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
@@ -399,6 +400,7 @@ SWIFT_CLASS("_TtC11At_Training14ViewController")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified firmwareLabel;
 - (void)viewDidLoad;
 - (void)viewDidAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
 - (IBAction)SavePressed:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;

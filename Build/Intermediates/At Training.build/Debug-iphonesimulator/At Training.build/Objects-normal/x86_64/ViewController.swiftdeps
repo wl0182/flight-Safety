@@ -13,401 +13,921 @@ provides-dynamic-lookup:
 - "systemTest"
 - "viewDidAppear"
 - "viewDidLoad"
+- "viewWillDisappear"
 depends-top-level:
+- !private "+="
+- !private "-="
+- !private "=="
 - "AssignmentPrecedence"
 - "Bool"
+- "BooleanLiteralType"
+- !private "CInt"
+- !private "DispatchQueue"
 - "Float"
 - "FloatLiteralType"
 - "Int"
 - "IntegerLiteralType"
+- !private "Optional"
 - "String"
 - "StringLiteralType"
 - "UIButton"
 - "UILabel"
 - "UIViewController"
+- !private "UInt8"
+- "UnicodeScalarType"
 - "ViewController"
+- !private "parser"
 - !private "print"
+- !private "||"
 depends-member:
+- !private ["10RealmSwift11AddableTypeP", "init"]
+- !private ["s18AdditiveArithmeticP", "init"]
+- !private ["Sa", "insert"]
+- !private ["Sa", "removeAll"]
+- !private ["SK", "append"]
 - !private ["SK", "init"]
+- !private ["SK", "insert"]
+- !private ["SK", "removeAll"]
+- !private ["Sz", "init"]
 - !private ["So15CALayerDelegateP", "text"]
+- !private ["s7CVarArgP", "DispatchQueue"]
+- !private ["s7CVarArgP", "Int"]
+- !private ["s7CVarArgP", "Optional"]
 - !private ["s7CVarArgP", "String"]
 - ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "append"]
+- !private ["s7CVarArgP", "async"]
+- !private ["s7CVarArgP", "battPct"]
 - !private ["s7CVarArgP", "batteryLabel"]
+- !private ["s7CVarArgP", "bringValuesForHomePage"]
+- !private ["s7CVarArgP", "bytesToBeSentForSystemTest"]
+- !private ["s7CVarArgP", "closeUDPsocket"]
 - !private ["s7CVarArgP", "connectionLabel"]
+- !private ["s7CVarArgP", "continueNetworkValueBringer"]
+- !private ["s7CVarArgP", "emergencyMsgSender"]
 - !private ["s7CVarArgP", "firmwareLabel"]
+- !private ["s7CVarArgP", "firmware_version"]
+- !private ["s7CVarArgP", "global"]
 - !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "insert"]
+- !private ["s7CVarArgP", "main"]
+- !private ["s7CVarArgP", "msgReceiver"]
+- !private ["s7CVarArgP", "parser"]
 - !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "removeAll"]
+- !private ["s7CVarArgP", "startHomePageReceiver"]
+- !private ["s7CVarArgP", "sync"]
+- !private ["s7CVarArgP", "systemTestBytes"]
+- !private ["s7CVarArgP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["s7CVarArgP", "systemTestMessageBuilder"]
 - !private ["s7CVarArgP", "temp1"]
 - !private ["s7CVarArgP", "temp2"]
 - !private ["s7CVarArgP", "temp3"]
 - !private ["s7CVarArgP", "text"]
+- !private ["s7CVarArgP", "viewDidAppear"]
 - !private ["s7CVarArgP", "viewDidLoad"]
+- !private ["Sl", "append"]
 - !private ["Sl", "init"]
+- !private ["Sl", "insert"]
+- !private ["Sl", "removeAll"]
+- !private ["SL", "append"]
 - !private ["SL", "init"]
+- !private ["10Foundation15ContiguousBytesP", "insert"]
+- !private ["10Foundation15ContiguousBytesP", "removeAll"]
+- !private ["s28CustomDebugStringConvertibleP", "DispatchQueue"]
+- !private ["s28CustomDebugStringConvertibleP", "Int"]
+- !private ["s28CustomDebugStringConvertibleP", "Optional"]
 - !private ["s28CustomDebugStringConvertibleP", "String"]
 - ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "append"]
+- !private ["s28CustomDebugStringConvertibleP", "async"]
+- !private ["s28CustomDebugStringConvertibleP", "battPct"]
 - !private ["s28CustomDebugStringConvertibleP", "batteryLabel"]
+- !private ["s28CustomDebugStringConvertibleP", "bringValuesForHomePage"]
+- !private ["s28CustomDebugStringConvertibleP", "bytesToBeSentForSystemTest"]
+- !private ["s28CustomDebugStringConvertibleP", "closeUDPsocket"]
 - !private ["s28CustomDebugStringConvertibleP", "connectionLabel"]
+- !private ["s28CustomDebugStringConvertibleP", "continueNetworkValueBringer"]
+- !private ["s28CustomDebugStringConvertibleP", "emergencyMsgSender"]
 - !private ["s28CustomDebugStringConvertibleP", "firmwareLabel"]
+- !private ["s28CustomDebugStringConvertibleP", "firmware_version"]
+- !private ["s28CustomDebugStringConvertibleP", "global"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "insert"]
+- !private ["s28CustomDebugStringConvertibleP", "main"]
+- !private ["s28CustomDebugStringConvertibleP", "msgReceiver"]
+- !private ["s28CustomDebugStringConvertibleP", "none"]
+- !private ["s28CustomDebugStringConvertibleP", "parser"]
 - !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "removeAll"]
+- !private ["s28CustomDebugStringConvertibleP", "startHomePageReceiver"]
+- !private ["s28CustomDebugStringConvertibleP", "sync"]
+- !private ["s28CustomDebugStringConvertibleP", "systemTestBytes"]
+- !private ["s28CustomDebugStringConvertibleP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["s28CustomDebugStringConvertibleP", "systemTestMessageBuilder"]
 - !private ["s28CustomDebugStringConvertibleP", "temp1"]
 - !private ["s28CustomDebugStringConvertibleP", "temp2"]
 - !private ["s28CustomDebugStringConvertibleP", "temp3"]
 - !private ["s28CustomDebugStringConvertibleP", "text"]
+- !private ["s28CustomDebugStringConvertibleP", "viewDidAppear"]
 - !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
+- !private ["10RealmSwift26CustomObjectiveCBridgeableP", "none"]
 - !private ["10RealmSwift26CustomObjectiveCBridgeableP", "text"]
+- !private ["s17CustomReflectableP", "append"]
 - !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "insert"]
+- !private ["s17CustomReflectableP", "none"]
+- !private ["s17CustomReflectableP", "removeAll"]
 - !private ["s17CustomReflectableP", "text"]
+- !private ["s23CustomStringConvertibleP", "DispatchQueue"]
+- !private ["s23CustomStringConvertibleP", "Int"]
+- !private ["s23CustomStringConvertibleP", "Optional"]
 - !private ["s23CustomStringConvertibleP", "String"]
 - ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "append"]
 - !private ["s23CustomStringConvertibleP", "appendInterpolation"]
 - !private ["s23CustomStringConvertibleP", "appendLiteral"]
+- !private ["s23CustomStringConvertibleP", "async"]
+- !private ["s23CustomStringConvertibleP", "battPct"]
 - !private ["s23CustomStringConvertibleP", "batteryLabel"]
+- !private ["s23CustomStringConvertibleP", "bringValuesForHomePage"]
+- !private ["s23CustomStringConvertibleP", "bytesToBeSentForSystemTest"]
+- !private ["s23CustomStringConvertibleP", "closeUDPsocket"]
 - !private ["s23CustomStringConvertibleP", "connectionLabel"]
+- !private ["s23CustomStringConvertibleP", "continueNetworkValueBringer"]
+- !private ["s23CustomStringConvertibleP", "emergencyMsgSender"]
 - !private ["s23CustomStringConvertibleP", "firmwareLabel"]
+- !private ["s23CustomStringConvertibleP", "firmware_version"]
+- !private ["s23CustomStringConvertibleP", "global"]
 - !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "insert"]
+- !private ["s23CustomStringConvertibleP", "main"]
+- !private ["s23CustomStringConvertibleP", "msgReceiver"]
+- !private ["s23CustomStringConvertibleP", "parser"]
 - !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "removeAll"]
+- !private ["s23CustomStringConvertibleP", "startHomePageReceiver"]
+- !private ["s23CustomStringConvertibleP", "sync"]
+- !private ["s23CustomStringConvertibleP", "systemTestBytes"]
+- !private ["s23CustomStringConvertibleP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["s23CustomStringConvertibleP", "systemTestMessageBuilder"]
 - !private ["s23CustomStringConvertibleP", "temp1"]
 - !private ["s23CustomStringConvertibleP", "temp2"]
 - !private ["s23CustomStringConvertibleP", "temp3"]
 - !private ["s23CustomStringConvertibleP", "text"]
+- !private ["s23CustomStringConvertibleP", "viewDidAppear"]
 - !private ["s23CustomStringConvertibleP", "viewDidLoad"]
+- !private ["10Foundation12DataProtocolP", "insert"]
+- !private ["10Foundation12DataProtocolP", "removeAll"]
+- !private ["Se", "append"]
 - !private ["Se", "init"]
+- !private ["Se", "insert"]
+- !private ["Se", "none"]
+- !private ["Se", "removeAll"]
 - !private ["Se", "text"]
 - !private ["s26DefaultStringInterpolationV", "appendInterpolation"]
 - !private ["s26DefaultStringInterpolationV", "appendLiteral"]
+- !private ["So18OS_dispatch_objectC", "async"]
+- !private ["So18OS_dispatch_objectC", "global"]
+- !private ["So18OS_dispatch_objectC", "main"]
+- !private ["So18OS_dispatch_objectC", "sync"]
+- !private ["So17OS_dispatch_queueC", "async"]
+- !private ["So17OS_dispatch_queueC", "global"]
+- !private ["So17OS_dispatch_queueC", "main"]
+- !private ["So17OS_dispatch_queueC", "sync"]
+- !private ["SE", "append"]
 - !private ["SE", "init"]
+- !private ["SE", "insert"]
+- !private ["SE", "none"]
+- !private ["SE", "removeAll"]
 - !private ["SE", "text"]
+- !private ["SQ", "DispatchQueue"]
+- !private ["SQ", "Int"]
+- !private ["SQ", "Optional"]
 - !private ["SQ", "String"]
 - ["SQ", ""]
+- !private ["SQ", "append"]
+- !private ["SQ", "async"]
+- !private ["SQ", "background"]
+- !private ["SQ", "battPct"]
 - !private ["SQ", "batteryLabel"]
+- !private ["SQ", "bringValuesForHomePage"]
+- !private ["SQ", "bytesToBeSentForSystemTest"]
+- !private ["SQ", "closeUDPsocket"]
 - !private ["SQ", "connectionLabel"]
+- !private ["SQ", "continueNetworkValueBringer"]
+- !private ["SQ", "emergencyMsgSender"]
 - !private ["SQ", "firmwareLabel"]
+- !private ["SQ", "firmware_version"]
+- !private ["SQ", "global"]
 - !private ["SQ", "init"]
+- !private ["SQ", "insert"]
+- !private ["SQ", "main"]
+- !private ["SQ", "msgReceiver"]
+- !private ["SQ", "none"]
+- !private ["SQ", "parser"]
 - !private ["SQ", "print"]
+- !private ["SQ", "removeAll"]
+- !private ["SQ", "startHomePageReceiver"]
+- !private ["SQ", "sync"]
+- !private ["SQ", "systemTestBytes"]
+- !private ["SQ", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["SQ", "systemTestMessageBuilder"]
 - !private ["SQ", "temp1"]
 - !private ["SQ", "temp2"]
 - !private ["SQ", "temp3"]
 - !private ["SQ", "text"]
+- !private ["SQ", "viewDidAppear"]
 - !private ["SQ", "viewDidLoad"]
+- !private ["s25ExpressibleByArrayLiteralP", "insert"]
+- !private ["s25ExpressibleByArrayLiteralP", "removeAll"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "append"]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s23ExpressibleByNilLiteralP", "none"]
 - !private ["s23ExpressibleByNilLiteralP", "text"]
+- !private ["s32ExpressibleByStringInterpolationP", "append"]
 - !private ["s32ExpressibleByStringInterpolationP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "append"]
 - !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "append"]
 - !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s17FixedWidthIntegerP", "init"]
+- !private ["SH", "DispatchQueue"]
+- !private ["SH", "Int"]
+- !private ["SH", "Optional"]
 - !private ["SH", "String"]
 - ["SH", ""]
+- !private ["SH", "append"]
+- !private ["SH", "async"]
+- !private ["SH", "background"]
+- !private ["SH", "battPct"]
 - !private ["SH", "batteryLabel"]
+- !private ["SH", "bringValuesForHomePage"]
+- !private ["SH", "bytesToBeSentForSystemTest"]
+- !private ["SH", "closeUDPsocket"]
 - !private ["SH", "connectionLabel"]
+- !private ["SH", "continueNetworkValueBringer"]
+- !private ["SH", "emergencyMsgSender"]
 - !private ["SH", "firmwareLabel"]
+- !private ["SH", "firmware_version"]
+- !private ["SH", "global"]
 - !private ["SH", "init"]
+- !private ["SH", "insert"]
+- !private ["SH", "main"]
+- !private ["SH", "msgReceiver"]
+- !private ["SH", "none"]
+- !private ["SH", "parser"]
 - !private ["SH", "print"]
+- !private ["SH", "removeAll"]
+- !private ["SH", "startHomePageReceiver"]
+- !private ["SH", "sync"]
+- !private ["SH", "systemTestBytes"]
+- !private ["SH", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["SH", "systemTestMessageBuilder"]
 - !private ["SH", "temp1"]
 - !private ["SH", "temp2"]
 - !private ["SH", "temp3"]
 - !private ["SH", "text"]
+- !private ["SH", "viewDidAppear"]
 - !private ["SH", "viewDidLoad"]
+- !private ["Si", "init"]
+- !private ["s25LosslessStringConvertibleP", "append"]
 - !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["10RealmSwift10MinMaxTypeP", "init"]
+- !private ["s10MirrorPathP", "append"]
 - !private ["s10MirrorPathP", "init"]
+- !private ["SM", "insert"]
+- !private ["SM", "removeAll"]
+- !private ["10Foundation19MutableDataProtocolP", "insert"]
+- !private ["10Foundation19MutableDataProtocolP", "removeAll"]
+- !private ["So8NSCodingP", "DispatchQueue"]
+- !private ["So8NSCodingP", "Int"]
+- !private ["So8NSCodingP", "Optional"]
 - !private ["So8NSCodingP", "String"]
 - ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "append"]
 - !private ["So8NSCodingP", "batteryLabel"]
+- !private ["So8NSCodingP", "bringValuesForHomePage"]
+- !private ["So8NSCodingP", "bytesToBeSentForSystemTest"]
 - !private ["So8NSCodingP", "connectionLabel"]
+- !private ["So8NSCodingP", "continueNetworkValueBringer"]
 - !private ["So8NSCodingP", "firmwareLabel"]
 - !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "parser"]
 - !private ["So8NSCodingP", "print"]
+- !private ["So8NSCodingP", "startHomePageReceiver"]
+- !private ["So8NSCodingP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["So8NSCodingP", "systemTestMessageBuilder"]
 - !private ["So8NSCodingP", "temp1"]
 - !private ["So8NSCodingP", "temp2"]
 - !private ["So8NSCodingP", "temp3"]
 - !private ["So8NSCodingP", "text"]
+- !private ["So8NSCodingP", "viewDidAppear"]
 - !private ["So8NSCodingP", "viewDidLoad"]
+- !private ["So9NSCopyingP", "append"]
+- !private ["So26NSExtensionRequestHandlingP", "DispatchQueue"]
+- !private ["So26NSExtensionRequestHandlingP", "Int"]
+- !private ["So26NSExtensionRequestHandlingP", "Optional"]
 - !private ["So26NSExtensionRequestHandlingP", "String"]
 - ["So26NSExtensionRequestHandlingP", ""]
 - !private ["So26NSExtensionRequestHandlingP", "batteryLabel"]
+- !private ["So26NSExtensionRequestHandlingP", "bringValuesForHomePage"]
+- !private ["So26NSExtensionRequestHandlingP", "bytesToBeSentForSystemTest"]
 - !private ["So26NSExtensionRequestHandlingP", "connectionLabel"]
+- !private ["So26NSExtensionRequestHandlingP", "continueNetworkValueBringer"]
 - !private ["So26NSExtensionRequestHandlingP", "firmwareLabel"]
 - !private ["So26NSExtensionRequestHandlingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "parser"]
 - !private ["So26NSExtensionRequestHandlingP", "print"]
+- !private ["So26NSExtensionRequestHandlingP", "startHomePageReceiver"]
+- !private ["So26NSExtensionRequestHandlingP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["So26NSExtensionRequestHandlingP", "systemTestMessageBuilder"]
 - !private ["So26NSExtensionRequestHandlingP", "temp1"]
 - !private ["So26NSExtensionRequestHandlingP", "temp2"]
 - !private ["So26NSExtensionRequestHandlingP", "temp3"]
+- !private ["So26NSExtensionRequestHandlingP", "viewDidAppear"]
 - !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
+- !private ["So21NSItemProviderReadingP", "append"]
+- !private ["So21NSItemProviderWritingP", "append"]
+- !private ["So16NSMutableCopyingP", "append"]
 - ["So8NSObjectC", "Bool"]
+- !private ["So8NSObjectC", "CInt"]
+- !private ["So8NSObjectC", "DispatchQueue"]
 - ["So8NSObjectC", "Float"]
 - ["So8NSObjectC", "Int"]
+- !private ["So8NSObjectC", "Optional"]
 - ["So8NSObjectC", "SavePressed"]
 - ["So8NSObjectC", "String"]
 - ["So8NSObjectC", "UIButton"]
 - ["So8NSObjectC", "UILabel"]
+- !private ["So8NSObjectC", "UInt8"]
+- !private ["So8NSObjectC", "append"]
+- !private ["So8NSObjectC", "async"]
+- !private ["So8NSObjectC", "battPct"]
 - ["So8NSObjectC", "batteryLabel"]
+- ["So8NSObjectC", "bringValuesForHomePage"]
+- ["So8NSObjectC", "bytesToBeSentForSystemTest"]
+- !private ["So8NSObjectC", "closeUDPsocket"]
 - ["So8NSObjectC", "connectionLabel"]
+- ["So8NSObjectC", "continueNetworkValueBringer"]
+- !private ["So8NSObjectC", "emergencyMsgSender"]
 - ["So8NSObjectC", "firmwareLabel"]
+- !private ["So8NSObjectC", "firmware_version"]
+- !private ["So8NSObjectC", "global"]
 - ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "main"]
+- !private ["So8NSObjectC", "msgReceiver"]
+- !private ["So8NSObjectC", "parser"]
 - !private ["So8NSObjectC", "print"]
+- ["So8NSObjectC", "startHomePageReceiver"]
+- !private ["So8NSObjectC", "sync"]
 - ["So8NSObjectC", "systemTest"]
+- !private ["So8NSObjectC", "systemTestBytes"]
+- ["So8NSObjectC", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- ["So8NSObjectC", "systemTestMessageBuilder"]
 - ["So8NSObjectC", "temp1"]
 - ["So8NSObjectC", "temp2"]
 - ["So8NSObjectC", "temp3"]
 - !private ["So8NSObjectC", "text"]
-- ["So8NSObjectC", "updateUI"]
 - ["So8NSObjectC", "viewDidAppear"]
 - ["So8NSObjectC", "viewDidLoad"]
+- ["So8NSObjectC", "viewWillDisappear"]
+- !private ["So8NSObjectP", "DispatchQueue"]
+- !private ["So8NSObjectP", "Int"]
+- !private ["So8NSObjectP", "Optional"]
 - !private ["So8NSObjectP", "String"]
 - ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "append"]
+- !private ["So8NSObjectP", "async"]
+- !private ["So8NSObjectP", "battPct"]
 - !private ["So8NSObjectP", "batteryLabel"]
+- !private ["So8NSObjectP", "bringValuesForHomePage"]
+- !private ["So8NSObjectP", "bytesToBeSentForSystemTest"]
+- !private ["So8NSObjectP", "closeUDPsocket"]
 - !private ["So8NSObjectP", "connectionLabel"]
+- !private ["So8NSObjectP", "continueNetworkValueBringer"]
+- !private ["So8NSObjectP", "emergencyMsgSender"]
 - !private ["So8NSObjectP", "firmwareLabel"]
+- !private ["So8NSObjectP", "firmware_version"]
+- !private ["So8NSObjectP", "global"]
 - !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "main"]
+- !private ["So8NSObjectP", "msgReceiver"]
+- !private ["So8NSObjectP", "parser"]
 - !private ["So8NSObjectP", "print"]
+- !private ["So8NSObjectP", "startHomePageReceiver"]
+- !private ["So8NSObjectP", "sync"]
+- !private ["So8NSObjectP", "systemTestBytes"]
+- !private ["So8NSObjectP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["So8NSObjectP", "systemTestMessageBuilder"]
 - !private ["So8NSObjectP", "temp1"]
 - !private ["So8NSObjectP", "temp2"]
 - !private ["So8NSObjectP", "temp3"]
 - !private ["So8NSObjectP", "text"]
+- !private ["So8NSObjectP", "viewDidAppear"]
 - !private ["So8NSObjectP", "viewDidLoad"]
+- !private ["So14NSSecureCodingP", "append"]
+- !private ["So8NSStringC", "append"]
+- !private ["Sj", "init"]
+- !private ["So9OS_objectC", "async"]
+- !private ["So9OS_objectC", "global"]
+- !private ["So9OS_objectC", "main"]
+- !private ["So9OS_objectC", "sync"]
+- !private ["Sq", "none"]
 - !private ["Sq", "text"]
+- !private ["10RealmSwift16OptionalProtocolP", "none"]
 - !private ["10RealmSwift16OptionalProtocolP", "text"]
+- !private ["8Dispatch0A3QoSV0B6SClassO", "background"]
+- !private ["Sk", "insert"]
+- !private ["Sk", "removeAll"]
+- !private ["Sm", "append"]
 - !private ["Sm", "init"]
+- !private ["Sm", "insert"]
+- !private ["Sm", "removeAll"]
+- !private ["10RealmSwift0A15CollectionValueP", "append"]
 - !private ["10RealmSwift0A15CollectionValueP", "init"]
+- !private ["10RealmSwift0A15CollectionValueP", "none"]
 - !private ["10RealmSwift0A15CollectionValueP", "text"]
+- !private ["10RealmSwift0A12OptionalTypeP", "init"]
+- !private ["s10SIMDScalarP", "init"]
+- !private ["7Combine9SchedulerP", "async"]
+- !private ["7Combine9SchedulerP", "global"]
+- !private ["7Combine9SchedulerP", "main"]
+- !private ["7Combine9SchedulerP", "sync"]
+- !private ["ST", "append"]
 - !private ["ST", "init"]
+- !private ["ST", "insert"]
+- !private ["ST", "removeAll"]
+- !private ["SZ", "init"]
+- !private ["s13SignedNumericP", "init"]
+- !private ["Sx", "init"]
+- !private ["SS", "append"]
 - !private ["SS", "init"]
 - !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
 - !private ["s27StringInterpolationProtocolP", "appendLiteral"]
+- !private ["Sy", "append"]
 - !private ["Sy", "init"]
+- !private ["s16TextOutputStreamP", "append"]
 - !private ["s16TextOutputStreamP", "appendInterpolation"]
 - !private ["s16TextOutputStreamP", "appendLiteral"]
 - !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "append"]
 - !private ["s20TextOutputStreamableP", "init"]
 - !private ["So29UIAccessibilityIdentificationP", "text"]
 - !private ["So12UIAppearanceP", "text"]
+- !private ["So21UIAppearanceContainerP", "DispatchQueue"]
+- !private ["So21UIAppearanceContainerP", "Int"]
+- !private ["So21UIAppearanceContainerP", "Optional"]
 - !private ["So21UIAppearanceContainerP", "String"]
 - ["So21UIAppearanceContainerP", ""]
 - !private ["So21UIAppearanceContainerP", "batteryLabel"]
+- !private ["So21UIAppearanceContainerP", "bringValuesForHomePage"]
+- !private ["So21UIAppearanceContainerP", "bytesToBeSentForSystemTest"]
 - !private ["So21UIAppearanceContainerP", "connectionLabel"]
+- !private ["So21UIAppearanceContainerP", "continueNetworkValueBringer"]
 - !private ["So21UIAppearanceContainerP", "firmwareLabel"]
 - !private ["So21UIAppearanceContainerP", "init"]
+- !private ["So21UIAppearanceContainerP", "parser"]
 - !private ["So21UIAppearanceContainerP", "print"]
+- !private ["So21UIAppearanceContainerP", "startHomePageReceiver"]
+- !private ["So21UIAppearanceContainerP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["So21UIAppearanceContainerP", "systemTestMessageBuilder"]
 - !private ["So21UIAppearanceContainerP", "temp1"]
 - !private ["So21UIAppearanceContainerP", "temp2"]
 - !private ["So21UIAppearanceContainerP", "temp3"]
 - !private ["So21UIAppearanceContainerP", "text"]
+- !private ["So21UIAppearanceContainerP", "viewDidAppear"]
 - !private ["So21UIAppearanceContainerP", "viewDidLoad"]
+- !private ["So18UIContentContainerP", "DispatchQueue"]
+- !private ["So18UIContentContainerP", "Int"]
+- !private ["So18UIContentContainerP", "Optional"]
 - !private ["So18UIContentContainerP", "String"]
 - ["So18UIContentContainerP", ""]
 - !private ["So18UIContentContainerP", "batteryLabel"]
+- !private ["So18UIContentContainerP", "bringValuesForHomePage"]
+- !private ["So18UIContentContainerP", "bytesToBeSentForSystemTest"]
 - !private ["So18UIContentContainerP", "connectionLabel"]
+- !private ["So18UIContentContainerP", "continueNetworkValueBringer"]
 - !private ["So18UIContentContainerP", "firmwareLabel"]
 - !private ["So18UIContentContainerP", "init"]
+- !private ["So18UIContentContainerP", "parser"]
 - !private ["So18UIContentContainerP", "print"]
+- !private ["So18UIContentContainerP", "startHomePageReceiver"]
+- !private ["So18UIContentContainerP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["So18UIContentContainerP", "systemTestMessageBuilder"]
 - !private ["So18UIContentContainerP", "temp1"]
 - !private ["So18UIContentContainerP", "temp2"]
 - !private ["So18UIContentContainerP", "temp3"]
+- !private ["So18UIContentContainerP", "viewDidAppear"]
 - !private ["So18UIContentContainerP", "viewDidLoad"]
 - !private ["So30UIContentSizeCategoryAdjustingP", "text"]
 - !private ["So17UICoordinateSpaceP", "text"]
 - !private ["So13UIDynamicItemP", "text"]
+- !private ["So18UIFocusEnvironmentP", "DispatchQueue"]
+- !private ["So18UIFocusEnvironmentP", "Int"]
+- !private ["So18UIFocusEnvironmentP", "Optional"]
 - !private ["So18UIFocusEnvironmentP", "String"]
 - ["So18UIFocusEnvironmentP", ""]
 - !private ["So18UIFocusEnvironmentP", "batteryLabel"]
+- !private ["So18UIFocusEnvironmentP", "bringValuesForHomePage"]
+- !private ["So18UIFocusEnvironmentP", "bytesToBeSentForSystemTest"]
 - !private ["So18UIFocusEnvironmentP", "connectionLabel"]
+- !private ["So18UIFocusEnvironmentP", "continueNetworkValueBringer"]
 - !private ["So18UIFocusEnvironmentP", "firmwareLabel"]
 - !private ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "parser"]
 - !private ["So18UIFocusEnvironmentP", "print"]
+- !private ["So18UIFocusEnvironmentP", "startHomePageReceiver"]
+- !private ["So18UIFocusEnvironmentP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["So18UIFocusEnvironmentP", "systemTestMessageBuilder"]
 - !private ["So18UIFocusEnvironmentP", "temp1"]
 - !private ["So18UIFocusEnvironmentP", "temp2"]
 - !private ["So18UIFocusEnvironmentP", "temp3"]
 - !private ["So18UIFocusEnvironmentP", "text"]
+- !private ["So18UIFocusEnvironmentP", "viewDidAppear"]
 - !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
 - !private ["So11UIFocusItemP", "text"]
 - !private ["So20UIFocusItemContainerP", "text"]
 - !private ["So7UILabelC", "text"]
 - !private ["So24UILargeContentViewerItemP", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "DispatchQueue"]
+- !private ["So30UIPasteConfigurationSupportingP", "Int"]
+- !private ["So30UIPasteConfigurationSupportingP", "Optional"]
 - !private ["So30UIPasteConfigurationSupportingP", "String"]
 - ["So30UIPasteConfigurationSupportingP", ""]
 - !private ["So30UIPasteConfigurationSupportingP", "batteryLabel"]
+- !private ["So30UIPasteConfigurationSupportingP", "bringValuesForHomePage"]
+- !private ["So30UIPasteConfigurationSupportingP", "bytesToBeSentForSystemTest"]
 - !private ["So30UIPasteConfigurationSupportingP", "connectionLabel"]
+- !private ["So30UIPasteConfigurationSupportingP", "continueNetworkValueBringer"]
 - !private ["So30UIPasteConfigurationSupportingP", "firmwareLabel"]
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "parser"]
 - !private ["So30UIPasteConfigurationSupportingP", "print"]
+- !private ["So30UIPasteConfigurationSupportingP", "startHomePageReceiver"]
+- !private ["So30UIPasteConfigurationSupportingP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["So30UIPasteConfigurationSupportingP", "systemTestMessageBuilder"]
 - !private ["So30UIPasteConfigurationSupportingP", "temp1"]
 - !private ["So30UIPasteConfigurationSupportingP", "temp2"]
 - !private ["So30UIPasteConfigurationSupportingP", "temp3"]
 - !private ["So30UIPasteConfigurationSupportingP", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "viewDidAppear"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
 - ["So11UIResponderC", "Bool"]
+- !private ["So11UIResponderC", "CInt"]
+- !private ["So11UIResponderC", "DispatchQueue"]
 - ["So11UIResponderC", "Float"]
 - ["So11UIResponderC", "Int"]
+- !private ["So11UIResponderC", "Optional"]
 - ["So11UIResponderC", "SavePressed"]
 - ["So11UIResponderC", "String"]
 - ["So11UIResponderC", "UIButton"]
 - ["So11UIResponderC", "UILabel"]
+- !private ["So11UIResponderC", "UInt8"]
 - ["So11UIResponderC", "batteryLabel"]
+- ["So11UIResponderC", "bringValuesForHomePage"]
+- ["So11UIResponderC", "bytesToBeSentForSystemTest"]
 - ["So11UIResponderC", "connectionLabel"]
+- ["So11UIResponderC", "continueNetworkValueBringer"]
 - ["So11UIResponderC", "firmwareLabel"]
 - ["So11UIResponderC", "init"]
+- !private ["So11UIResponderC", "parser"]
 - !private ["So11UIResponderC", "print"]
+- ["So11UIResponderC", "startHomePageReceiver"]
 - ["So11UIResponderC", "systemTest"]
+- ["So11UIResponderC", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- ["So11UIResponderC", "systemTestMessageBuilder"]
 - ["So11UIResponderC", "temp1"]
 - ["So11UIResponderC", "temp2"]
 - ["So11UIResponderC", "temp3"]
 - !private ["So11UIResponderC", "text"]
-- ["So11UIResponderC", "updateUI"]
 - ["So11UIResponderC", "viewDidAppear"]
 - ["So11UIResponderC", "viewDidLoad"]
+- ["So11UIResponderC", "viewWillDisappear"]
+- !private ["So30UIResponderStandardEditActionsP", "DispatchQueue"]
+- !private ["So30UIResponderStandardEditActionsP", "Int"]
+- !private ["So30UIResponderStandardEditActionsP", "Optional"]
 - !private ["So30UIResponderStandardEditActionsP", "String"]
 - ["So30UIResponderStandardEditActionsP", ""]
 - !private ["So30UIResponderStandardEditActionsP", "batteryLabel"]
+- !private ["So30UIResponderStandardEditActionsP", "bringValuesForHomePage"]
+- !private ["So30UIResponderStandardEditActionsP", "bytesToBeSentForSystemTest"]
 - !private ["So30UIResponderStandardEditActionsP", "connectionLabel"]
+- !private ["So30UIResponderStandardEditActionsP", "continueNetworkValueBringer"]
 - !private ["So30UIResponderStandardEditActionsP", "firmwareLabel"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "parser"]
 - !private ["So30UIResponderStandardEditActionsP", "print"]
+- !private ["So30UIResponderStandardEditActionsP", "startHomePageReceiver"]
+- !private ["So30UIResponderStandardEditActionsP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["So30UIResponderStandardEditActionsP", "systemTestMessageBuilder"]
 - !private ["So30UIResponderStandardEditActionsP", "temp1"]
 - !private ["So30UIResponderStandardEditActionsP", "temp2"]
 - !private ["So30UIResponderStandardEditActionsP", "temp3"]
 - !private ["So30UIResponderStandardEditActionsP", "text"]
+- !private ["So30UIResponderStandardEditActionsP", "viewDidAppear"]
 - !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
+- !private ["So16UIStateRestoringP", "DispatchQueue"]
+- !private ["So16UIStateRestoringP", "Int"]
+- !private ["So16UIStateRestoringP", "Optional"]
 - !private ["So16UIStateRestoringP", "String"]
 - ["So16UIStateRestoringP", ""]
 - !private ["So16UIStateRestoringP", "batteryLabel"]
+- !private ["So16UIStateRestoringP", "bringValuesForHomePage"]
+- !private ["So16UIStateRestoringP", "bytesToBeSentForSystemTest"]
 - !private ["So16UIStateRestoringP", "connectionLabel"]
+- !private ["So16UIStateRestoringP", "continueNetworkValueBringer"]
 - !private ["So16UIStateRestoringP", "firmwareLabel"]
 - !private ["So16UIStateRestoringP", "init"]
+- !private ["So16UIStateRestoringP", "parser"]
 - !private ["So16UIStateRestoringP", "print"]
+- !private ["So16UIStateRestoringP", "startHomePageReceiver"]
+- !private ["So16UIStateRestoringP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["So16UIStateRestoringP", "systemTestMessageBuilder"]
 - !private ["So16UIStateRestoringP", "temp1"]
 - !private ["So16UIStateRestoringP", "temp2"]
 - !private ["So16UIStateRestoringP", "temp3"]
+- !private ["So16UIStateRestoringP", "viewDidAppear"]
 - !private ["So16UIStateRestoringP", "viewDidLoad"]
+- !private ["So18UITraitEnvironmentP", "DispatchQueue"]
+- !private ["So18UITraitEnvironmentP", "Int"]
+- !private ["So18UITraitEnvironmentP", "Optional"]
 - !private ["So18UITraitEnvironmentP", "String"]
 - ["So18UITraitEnvironmentP", ""]
 - !private ["So18UITraitEnvironmentP", "batteryLabel"]
+- !private ["So18UITraitEnvironmentP", "bringValuesForHomePage"]
+- !private ["So18UITraitEnvironmentP", "bytesToBeSentForSystemTest"]
 - !private ["So18UITraitEnvironmentP", "connectionLabel"]
+- !private ["So18UITraitEnvironmentP", "continueNetworkValueBringer"]
 - !private ["So18UITraitEnvironmentP", "firmwareLabel"]
 - !private ["So18UITraitEnvironmentP", "init"]
+- !private ["So18UITraitEnvironmentP", "parser"]
 - !private ["So18UITraitEnvironmentP", "print"]
+- !private ["So18UITraitEnvironmentP", "startHomePageReceiver"]
+- !private ["So18UITraitEnvironmentP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["So18UITraitEnvironmentP", "systemTestMessageBuilder"]
 - !private ["So18UITraitEnvironmentP", "temp1"]
 - !private ["So18UITraitEnvironmentP", "temp2"]
 - !private ["So18UITraitEnvironmentP", "temp3"]
 - !private ["So18UITraitEnvironmentP", "text"]
+- !private ["So18UITraitEnvironmentP", "viewDidAppear"]
 - !private ["So18UITraitEnvironmentP", "viewDidLoad"]
+- !private ["So23UIUserActivityRestoringP", "DispatchQueue"]
+- !private ["So23UIUserActivityRestoringP", "Int"]
+- !private ["So23UIUserActivityRestoringP", "Optional"]
 - !private ["So23UIUserActivityRestoringP", "String"]
 - ["So23UIUserActivityRestoringP", ""]
 - !private ["So23UIUserActivityRestoringP", "batteryLabel"]
+- !private ["So23UIUserActivityRestoringP", "bringValuesForHomePage"]
+- !private ["So23UIUserActivityRestoringP", "bytesToBeSentForSystemTest"]
 - !private ["So23UIUserActivityRestoringP", "connectionLabel"]
+- !private ["So23UIUserActivityRestoringP", "continueNetworkValueBringer"]
 - !private ["So23UIUserActivityRestoringP", "firmwareLabel"]
 - !private ["So23UIUserActivityRestoringP", "init"]
+- !private ["So23UIUserActivityRestoringP", "parser"]
 - !private ["So23UIUserActivityRestoringP", "print"]
+- !private ["So23UIUserActivityRestoringP", "startHomePageReceiver"]
+- !private ["So23UIUserActivityRestoringP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["So23UIUserActivityRestoringP", "systemTestMessageBuilder"]
 - !private ["So23UIUserActivityRestoringP", "temp1"]
 - !private ["So23UIUserActivityRestoringP", "temp2"]
 - !private ["So23UIUserActivityRestoringP", "temp3"]
 - !private ["So23UIUserActivityRestoringP", "text"]
+- !private ["So23UIUserActivityRestoringP", "viewDidAppear"]
 - !private ["So23UIUserActivityRestoringP", "viewDidLoad"]
 - !private ["So6UIViewC", "text"]
 - ["So16UIViewControllerC", "Bool"]
+- !private ["So16UIViewControllerC", "CInt"]
+- !private ["So16UIViewControllerC", "DispatchQueue"]
 - ["So16UIViewControllerC", "Float"]
 - ["So16UIViewControllerC", "Int"]
+- !private ["So16UIViewControllerC", "Optional"]
 - ["So16UIViewControllerC", "SavePressed"]
 - ["So16UIViewControllerC", "String"]
 - ["So16UIViewControllerC", "UIButton"]
 - ["So16UIViewControllerC", "UILabel"]
+- !private ["So16UIViewControllerC", "UInt8"]
 - ["So16UIViewControllerC", ""]
 - ["So16UIViewControllerC", "batteryLabel"]
+- ["So16UIViewControllerC", "bringValuesForHomePage"]
+- ["So16UIViewControllerC", "bytesToBeSentForSystemTest"]
 - ["So16UIViewControllerC", "connectionLabel"]
+- ["So16UIViewControllerC", "continueNetworkValueBringer"]
 - ["So16UIViewControllerC", "firmwareLabel"]
 - ["So16UIViewControllerC", "init"]
+- !private ["So16UIViewControllerC", "parser"]
 - !private ["So16UIViewControllerC", "print"]
+- ["So16UIViewControllerC", "startHomePageReceiver"]
 - ["So16UIViewControllerC", "systemTest"]
+- ["So16UIViewControllerC", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- ["So16UIViewControllerC", "systemTestMessageBuilder"]
 - ["So16UIViewControllerC", "temp1"]
 - ["So16UIViewControllerC", "temp2"]
 - ["So16UIViewControllerC", "temp3"]
-- ["So16UIViewControllerC", "updateUI"]
 - ["So16UIViewControllerC", "viewDidAppear"]
 - ["So16UIViewControllerC", "viewDidLoad"]
+- ["So16UIViewControllerC", "viewWillDisappear"]
 - ["11At_Training14ViewControllerC", "Bool"]
+- !private ["11At_Training14ViewControllerC", "CInt"]
+- !private ["11At_Training14ViewControllerC", "DispatchQueue"]
 - ["11At_Training14ViewControllerC", "Float"]
 - ["11At_Training14ViewControllerC", "Int"]
+- !private ["11At_Training14ViewControllerC", "Optional"]
 - ["11At_Training14ViewControllerC", "SavePressed"]
 - ["11At_Training14ViewControllerC", "String"]
 - ["11At_Training14ViewControllerC", "UIButton"]
 - ["11At_Training14ViewControllerC", "UILabel"]
+- !private ["11At_Training14ViewControllerC", "UInt8"]
 - ["11At_Training14ViewControllerC", "batteryLabel"]
+- ["11At_Training14ViewControllerC", "bringValuesForHomePage"]
+- ["11At_Training14ViewControllerC", "bytesToBeSentForSystemTest"]
 - ["11At_Training14ViewControllerC", "connectionLabel"]
+- ["11At_Training14ViewControllerC", "continueNetworkValueBringer"]
 - ["11At_Training14ViewControllerC", "deinit"]
 - ["11At_Training14ViewControllerC", "firmwareLabel"]
 - ["11At_Training14ViewControllerC", "init"]
+- !private ["11At_Training14ViewControllerC", "parser"]
 - !private ["11At_Training14ViewControllerC", "print"]
+- ["11At_Training14ViewControllerC", "startHomePageReceiver"]
 - ["11At_Training14ViewControllerC", "systemTest"]
+- ["11At_Training14ViewControllerC", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- ["11At_Training14ViewControllerC", "systemTestMessageBuilder"]
 - ["11At_Training14ViewControllerC", "temp1"]
 - ["11At_Training14ViewControllerC", "temp2"]
 - ["11At_Training14ViewControllerC", "temp3"]
-- ["11At_Training14ViewControllerC", "updateUI"]
 - ["11At_Training14ViewControllerC", "viewDidAppear"]
 - ["11At_Training14ViewControllerC", "viewDidLoad"]
+- ["11At_Training14ViewControllerC", "viewWillDisappear"]
+- !private ["s14_ArrayProtocolP", "insert"]
+- !private ["s14_ArrayProtocolP", "removeAll"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "append"]
 - !private ["s30_CustomPlaygroundQuickLookableP", "init"]
+- !private ["s24_DestructorSafeContainerP", "insert"]
+- !private ["s24_DestructorSafeContainerP", "removeAll"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "append"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "append"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "append"]
 - !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s19_HasContiguousBytesP", "append"]
 - !private ["s19_HasContiguousBytesP", "init"]
+- !private ["s19_HasContiguousBytesP", "insert"]
+- !private ["s19_HasContiguousBytesP", "removeAll"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "append"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "insert"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "removeAll"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "DispatchQueue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Int"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Optional"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "String"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "append"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "async"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "battPct"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "batteryLabel"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "bringValuesForHomePage"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "bytesToBeSentForSystemTest"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "closeUDPsocket"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "connectionLabel"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "continueNetworkValueBringer"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "emergencyMsgSender"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "firmwareLabel"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "firmware_version"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "global"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "main"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "msgReceiver"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "parser"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "startHomePageReceiver"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "sync"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "systemTestBytes"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "systemTestMessageBuilder"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "temp1"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "temp2"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "temp3"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidAppear"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "DispatchQueue"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Int"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Optional"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "String"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "append"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "async"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "battPct"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "batteryLabel"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "bringValuesForHomePage"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "bytesToBeSentForSystemTest"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "closeUDPsocket"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "connectionLabel"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "continueNetworkValueBringer"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "emergencyMsgSender"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "firmwareLabel"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "firmware_version"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "global"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "main"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "msgReceiver"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "parser"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "print"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "startHomePageReceiver"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "sync"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "systemTestBytes"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "systemTestBytesReadyToBeSentToMicrocontroller"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "systemTestMessageBuilder"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "temp1"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "temp2"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "temp3"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "text"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "viewDidAppear"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "viewDidLoad"]
+- !private ["10RealmSwift20_ManagedPropertyTypeP", "append"]
 - !private ["10RealmSwift20_ManagedPropertyTypeP", "init"]
+- !private ["10RealmSwift20_ManagedPropertyTypeP", "none"]
 - !private ["10RealmSwift20_ManagedPropertyTypeP", "text"]
+- !private ["s21_ObjectiveCBridgeableP", "append"]
 - !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "insert"]
+- !private ["s21_ObjectiveCBridgeableP", "none"]
+- !private ["s21_ObjectiveCBridgeableP", "removeAll"]
 - !private ["s21_ObjectiveCBridgeableP", "text"]
 - !private ["s38__DefaultCustomPlaygroundQuickLookableP", "text"]
+- !private ["So6parserC", "battPct"]
+- !private ["So6parserC", "closeUDPsocket"]
+- !private ["So6parserC", "emergencyMsgSender"]
+- !private ["So6parserC", "firmware_version"]
+- !private ["So6parserC", "init"]
+- !private ["So6parserC", "msgReceiver"]
+- !private ["So6parserC", "systemTestBytes"]
 depends-nominal:
+- !private "10RealmSwift11AddableTypeP"
+- !private "s18AdditiveArithmeticP"
+- !private "Sa"
 - !private "SK"
+- !private "Sz"
 - !private "So15CALayerDelegateP"
 - "s7CVarArgP"
 - !private "Sl"
 - !private "SL"
+- !private "10Foundation15ContiguousBytesP"
 - "s28CustomDebugStringConvertibleP"
 - !private "10RealmSwift26CustomObjectiveCBridgeableP"
 - !private "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
+- !private "10Foundation12DataProtocolP"
 - !private "Se"
 - !private "s26DefaultStringInterpolationV"
+- !private "So18OS_dispatch_objectC"
+- !private "So17OS_dispatch_queueC"
 - !private "SE"
 - "SQ"
+- !private "s25ExpressibleByArrayLiteralP"
 - !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
 - !private "s23ExpressibleByNilLiteralP"
 - !private "s32ExpressibleByStringInterpolationP"
 - !private "s26ExpressibleByStringLiteralP"
 - !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "s17FixedWidthIntegerP"
 - "SH"
+- !private "Si"
 - !private "s25LosslessStringConvertibleP"
+- !private "10RealmSwift10MinMaxTypeP"
 - !private "s10MirrorPathP"
+- !private "SM"
+- !private "10Foundation19MutableDataProtocolP"
 - "So8NSCodingP"
+- !private "So9NSCopyingP"
 - "So26NSExtensionRequestHandlingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
 - "So8NSObjectC"
 - "So8NSObjectP"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
+- !private "Sj"
+- !private "So9OS_objectC"
 - !private "Sq"
 - !private "10RealmSwift16OptionalProtocolP"
+- !private "8Dispatch0A3QoSV0B6SClassO"
+- !private "Sk"
 - !private "Sm"
 - !private "10RealmSwift0A15CollectionValueP"
+- !private "10RealmSwift0A12OptionalTypeP"
+- !private "s10SIMDScalarP"
+- !private "7Combine9SchedulerP"
 - !private "ST"
+- !private "SZ"
+- !private "s13SignedNumericP"
+- !private "Sx"
 - !private "SS"
 - !private "s27StringInterpolationProtocolP"
 - !private "Sy"
@@ -434,16 +954,21 @@ depends-nominal:
 - !private "So6UIViewC"
 - "So16UIViewControllerC"
 - "11At_Training14ViewControllerC"
+- !private "s14_ArrayProtocolP"
 - !private "s30_CustomPlaygroundQuickLookableP"
+- !private "s24_DestructorSafeContainerP"
 - !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
 - !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
 - !private "s19_HasContiguousBytesP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
 - "10Foundation27_KeyValueCodingAndObservingP"
 - "10Foundation37_KeyValueCodingAndObservingPublishingP"
 - !private "10RealmSwift20_ManagedPropertyTypeP"
 - !private "s21_ObjectiveCBridgeableP"
 - !private "s38__DefaultCustomPlaygroundQuickLookableP"
+- !private "So6parserC"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/ObjectiveC.swiftmodule/x86_64.swiftinterface"
@@ -472,57 +997,57 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Modules/RealmSwift.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Headers/RealmSwift-umbrella.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm+Sync.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectBase_Private.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMCollection_Private.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermission.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSubscription.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/At Training/At Training-Bridging-Header.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/At Training/parser.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Headers/RealmSwift-Swift.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
-- "/Users/wassimlagnaoui/flight-Safety-24/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Modules/module.modulemap"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Modules/RealmSwift.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Headers/RealmSwift-umbrella.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSchema.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectSchema.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm+Sync.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/NSError+RLMSync.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMOptionalBase.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObjectBase.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMListBase.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObjectBase_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMCollection_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUtil.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/Realm.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealm.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMPlatform.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSession.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncPermission.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMMigration.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMCollection.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncSubscription.h"
+- "/Users/wassimlagnaoui/FS26/At Training/At Training-Bridging-Header.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncManager.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncUser.h"
+- "/Users/wassimlagnaoui/FS26/At Training/parser.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMResults.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMConstants.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMObject.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Headers/RealmSwift-Swift.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMArray.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Headers/RLMProperty.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/Realm/Realm.framework/Modules/module.modulemap"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/objc/ObjectiveC.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
@@ -536,4 +1061,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "85847ad89e1373ec59502ac1d653c25c"
+interface-hash: "be5a9be286e54ba094e0bb29e2051dab"

@@ -670,6 +670,9 @@
                                                 <state key="normal" title="Mark">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="markPressed:" destination="s6R-tk-7Va" eventType="touchUpInside" id="BRT-QW-E6r"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maS-P4-070">
                                                 <rect key="frame" x="448" y="0.0" width="174" height="54"/>
@@ -699,6 +702,7 @@
                     <navigationItem key="navigationItem" id="Y2L-Aw-V9V"/>
                     <connections>
                         <outlet property="ceilingLabel" destination="myM-FD-wR0" id="7Ob-rp-Wts"/>
+                        <outlet property="initiateButton" destination="i67-dM-fSo" id="qwl-Vd-Agg"/>
                         <outlet property="visibilityLabel" destination="9vb-Zc-b6O" id="IFl-HE-QQq"/>
                     </connections>
                 </viewController>

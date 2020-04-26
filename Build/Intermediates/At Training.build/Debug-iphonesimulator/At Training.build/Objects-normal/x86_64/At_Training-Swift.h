@@ -278,6 +278,8 @@ SWIFT_CLASS("_TtC11At_Training12GuestLoginVC")
 
 SWIFT_CLASS("_TtC11At_Training21Manual_ViewController")
 @interface Manual_ViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified initiateButton;
+- (IBAction)markPressed:(UIButton * _Nonnull)sender;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified visibilityLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified ceilingLabel;
 - (void)viewDidLoad;

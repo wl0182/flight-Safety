@@ -9,6 +9,9 @@
 import UIKit
 
 class Manual_ViewController: UIViewController {
+    // IB outlets
+    
+    @IBOutlet weak var initiateButton: UIButton!
     
     // variables
     var valueReceived: Float = 40 //40 is arbitrarily set
@@ -24,24 +27,28 @@ class Manual_ViewController: UIViewController {
     
     func abortTraining()//THREAD error still needs to be fixed. this funciton is supposed to show the pop up notification and change abort button title to initiate. Stopping of AHRS data receival has been already been taken care of
     {
-        let alert = UIAlertController(title: "safetyLimitExceeded", message: "Safety Limit Exceeded-Training Aborted", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Safety Limit Exceeded", message: "Training Aborted", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default)
         {
             (action) in
         }
         
-        
+    
         alert.addAction(action)
         present(alert, animated: true, completion:  nil) //Thread 7: Exception: "Modifications to the layout engine must not be performed from a background thread after it has been accessed from the main thread."
 
         
         //set button title to initiate
-        //...
+        initiateButton.setTitle("Initiate", for: .normal)
         
     }
     
     // outlets
     
+    @IBAction func markPressed(_ sender: UIButton) {
+        abortTraining()
+        
+    }
     @IBOutlet weak var visibilityLabel: UILabel!
     
     @IBOutlet weak var ceilingLabel: UILabel!
@@ -68,8 +75,10 @@ class Manual_ViewController: UIViewController {
         visibilityLabel.text = tempS
         db.set(temp3, forKey: K.ManualVisibility)
         
+       
         
     }
+    
     
     
     @IBAction func ceilingSlider(_ sender: UISlider) {

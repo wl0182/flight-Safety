@@ -55,6 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSData * emergencyFlipUp; //for emergency visor flip up
 @property NSString * emgMsgBytes;
 @property NSString * manualNormalMsgBytes;
+@property NSString * systemTestBytes;
 //@property NSMutableArray * testMsg;
 //@property NSMutableArray * CRC16Table;
 

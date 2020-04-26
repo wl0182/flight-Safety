@@ -140,7 +140,7 @@ class Manual_ViewController: UIViewController {
          */
 //sample voltage value receiver based on visibility value ---------ENDS HERE
         
-    }
+    }//func InitiatePressed()
     
     func readFIL(){
         
@@ -559,7 +559,7 @@ class Manual_ViewController: UIViewController {
                 //3.
                 //(optional)
                 //4.Send the voltage value to microcontroller (append the HEX bytes for voltage value to bytesToBeSentArray)
-                if(swiftMSL_Altitude == nil || swiftMSL_Altitude == 0 || swiftMSL_Altitude == 4095 || swiftMSL_Altitude == 20475)
+                if(swiftMSL_Altitude == nil || swiftMSL_Altitude == 0 || swiftMSL_Altitude == 4095 || swiftMSL_Altitude == 20475) //add a check for negative altitude as well.
                 {
                     //do nothing
                     print("\nNo Altitude Information received from AHRS device. Cannot run manual visibility and ceiling functionality.\n")

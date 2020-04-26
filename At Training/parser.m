@@ -495,7 +495,7 @@ uint16_t crc16Table [256];
 
 }
 //plain string sender testing function for network connection
-- (void) msgSender
+- (void) msgSender //for now, this is being called in flip up conditions during manual training.
 {
     
     uint8_t byteArrayForMicro[26] = {0};// OR we can create uint8_t mesgBeingSent[no_of_bytes_being_sent] = {0}; and use 'mesgBeingSent' for the parameter of (const void *) in sendto() function
@@ -503,7 +503,7 @@ uint16_t crc16Table [256];
     struct sockaddr_in testsvr;
     bzero(&testsvr, sizeof(testsvr));
     testsvr.sin_family = AF_INET;
-    testsvr.sin_addr.s_addr = inet_addr("192.168.1.12");
+    testsvr.sin_addr.s_addr = inet_addr("192.168.1.13");
     
     testsvr.sin_port = htons(43211);
     socklen_t len2 = sizeof(testsvr);
@@ -528,6 +528,7 @@ uint16_t crc16Table [256];
     
 }
 //new message sender as of april24th, 2020
+//this is being called for sending the voltage value based on the ceiling and slider visibility from manual scenario
 - (void) normalMsgSender: (NSString *) simulationMsgBytes ofSize:(uint8_t)numberOfBytes
 {
         int noOfBytes = (int) numberOfBytes *2;
@@ -538,7 +539,7 @@ uint16_t crc16Table [256];
         struct sockaddr_in normalSvr;
         bzero(&normalSvr, sizeof(normalSvr));
         normalSvr.sin_family = AF_INET;
-        normalSvr.sin_addr.s_addr = inet_addr("192.168.1.12");
+        normalSvr.sin_addr.s_addr = inet_addr("192.168.1.13");
         normalSvr.sin_port = htons(43211);
         socklen_t len2 = sizeof(normalSvr);
         byteArrayForMicro[0] = self.msgForMicrocontroller; //i can always fall back on this technique for sending bytes over network.
@@ -563,6 +564,7 @@ uint16_t crc16Table [256];
 
         //close(self.sockfd);
 }
+//for now, this is being called from home page for sending emg trigger for 'system test' functionality
 - (void) emergencyMsgSender:(NSString *) emgMsgBytes{
    
     //char byteArrayForMicro[26] = {0};// OR we can create uint8_t mesgBeingSent[no_of_bytes_being_sent] = {0}; and use 'mesgBeingSent' for the parameter of (const void *) in sendto() function
@@ -570,7 +572,7 @@ uint16_t crc16Table [256];
     struct sockaddr_in emergencysvr;
     bzero(&emergencysvr, sizeof(emergencysvr));
     emergencysvr.sin_family = AF_INET;
-    emergencysvr.sin_addr.s_addr = inet_addr("192.168.1.12"); // SET THIS TO BE THE IP ADDRESS OF MICROCONTROLLER (192.168.1.11). DO NOT FORGET!
+    emergencysvr.sin_addr.s_addr = inet_addr("192.168.1.13"); // SET THIS TO BE THE IP ADDRESS OF MICROCONTROLLER (192.168.1.11). DO NOT FORGET!
     emergencysvr.sin_port = htons(43211);
     socklen_t len2 = sizeof(emergencysvr);
     

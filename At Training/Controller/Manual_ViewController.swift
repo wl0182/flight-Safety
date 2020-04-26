@@ -81,13 +81,22 @@ class Manual_ViewController: UIViewController {
         
     }
     
-    
+    var buttonTitle: String = ""
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        startReceiver = 0 //if startReceiver is any value other than 10, while loop for receiving AHRS data will not run
+        altitudeSafetyTrigger = 0 //set the safety altitude trigger to zero when abort is pressed
+        print("I stopped reading from the AHRS device")
+        buttonTitle = "pressedBackButton"
+        
+    }
     
     
     //
     @IBAction func InitiatePressed(_ sender: UIButton) {
         
         let title = sender.currentTitle
+        buttonTitle = (sender.currentTitle!)
         
         if title == "Initiate" {
             print("I am reading from The ILevel")
@@ -96,8 +105,8 @@ class Manual_ViewController: UIViewController {
             sender.setTitle("Abort", for: .normal)
             
         }
-        else {
-            sender.setTitle("Initiate", for: .normal)
+        else if title == "Abort" || buttonTitle == "pressedBackButton" {
+            sender.setTitle("Initiate", for: .normal)//this should be placed at last line of scope end to stay consistent with if{} behavior
             
             startReceiver = 0 //if startReceiver is any value other than 10, while loop for receiving AHRS data will not run
             altitudeSafetyTrigger = 0 //set the safety altitude trigger to zero when abort is pressed

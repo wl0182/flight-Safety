@@ -28,8 +28,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("Home page loaded")
+     
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("Hello it's me again the home page")
     }
     
   
@@ -37,32 +41,14 @@ class ViewController: UIViewController {
     
     
     @IBAction func SavePressed(_ sender: UIButton) {
-        let temp = sender.currentTitle
         
-        if temp == "System Test" {
-            
-            
-            //Call your function
-            
-            
-            
-            // run your function
-            
-            //udpate the labels
-            connectionLabel.text = String(temp1)
-            batteryLabel.text    = "\(temp2)% "
-            firmwareLabel.text   = String(temp3)
-            
-            // change the title
-            systemTest.setTitle("Continue", for: .normal)
-        }
-        
-        else {
-            print("going to next page")
-            systemTest.setTitle("System Test", for: .normal)
-            // perform the segue from Home page to User type 
-        }
-        
+    }
+    
+    func updateUI()  {
+          //udpate the labels
+                  connectionLabel.text = String(temp1)
+                  batteryLabel.text    = "\(temp2)% "
+                  firmwareLabel.text   = String(temp3)
     }
     
     

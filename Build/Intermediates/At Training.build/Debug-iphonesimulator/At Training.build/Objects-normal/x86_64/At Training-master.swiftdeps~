@@ -1,6 +1,6 @@
 version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
 options: "ea2d1f62dcaa6f9b064dc903f4cfdab3"
-build_time: [1587856550, 446939000]
+build_time: [1587856792, 323721000]
 inputs:
   "/Users/wassimlagnaoui/flight-Safety-24/At Training/Controller/ROLLVC.swift": [1587770741, 473528834]
   "/Users/wassimlagnaoui/flight-Safety-24/At Training/Controller/Manual_ViewController.swift": [1587770741, 471645944]
@@ -8,7 +8,7 @@ inputs:
   "/Users/wassimlagnaoui/flight-Safety-24/At Training/Controller/Setup_ViewController.swift": [1587770741, 474232097]
   "/Users/wassimlagnaoui/flight-Safety-24/At Training/Controller/AltitudeVC.swift": [1587770741, 470326894]
   "/Users/wassimlagnaoui/flight-Safety-24/At Training/Controller/PitchVC.swift": [1587770741, 472154459]
-  "/Users/wassimlagnaoui/flight-Safety-24/At Training/Controller/ViewController.swift": [1587856532, 403584500]
+  "/Users/wassimlagnaoui/flight-Safety-24/At Training/Controller/ViewController.swift": [1587856656, 732495601]
   "/Users/wassimlagnaoui/flight-Safety-24/At Training/Controller/AdminLoginVC.swift": [1587852550, 435421305]
   "/Users/wassimlagnaoui/flight-Safety-24/At Training/AppDelegate.swift": [1587770741, 443579437]
   "/Users/wassimlagnaoui/flight-Safety-24/At Training/Controller/SafetySettings_ViewController.swift": [1587850388, 80753551]

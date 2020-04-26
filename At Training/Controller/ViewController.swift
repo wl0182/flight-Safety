@@ -169,9 +169,9 @@ class ViewController: UIViewController {
                             var count: UInt8 = 0
                             for byte in self.bytesToBeSentForSystemTest
                             {
-                                homePageInstanceOfparser.systemTestBytes.append(byte) // OR instanceOfparser.emgMsgBytes.append(bytesToBeSentArray[count])
+                                homePageInstanceOfparser.systemTestBytes.append(byte) // OR .append(bytesToBeSentArray[count])
                                 print(homePageInstanceOfparser.systemTestBytes) //test print
-                                count+=1 //not needed unless i decide to use or send the number of hex bytes appended to emgMsgBytes
+                                count+=1 //not needed unless i decide to use or send the number of hex bytes appended
                                 print("\nSetting System Test Message Bytes...\n") //test print
                             }
                             count -= 1 //After this statement runs, count will have number of bytes appended. Use if needed
@@ -187,7 +187,7 @@ class ViewController: UIViewController {
                         /*------------------------------Cleaning up after each iteration for new messages to be received and sent----------------------*/
                         
                         //remove all bytes of message from this iteration and get the msg array for microcontroller ready for insertion of new message in next iteration
-                        self.bytesToBeSentForSystemTest.removeAll(keepingCapacity: true)
+                        self.bytesToBeSentForSystemTest.removeAll(keepingCapacity: true) //try moving this inside above if() statement. it should work the same. Benefit of removal: no unnecessary removing of bytes as long as there is nothing to remove.
                         //close the socket here
                         homePageInstanceOfparser.closeUDPsocket()
                         //close(instanceOfparser.sockfd)

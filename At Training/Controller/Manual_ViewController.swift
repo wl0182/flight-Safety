@@ -14,29 +14,29 @@ class Manual_ViewController: UIViewController {
     var valueReceived: Float = 40 //40 is arbitrarily set
     var valueReceivedasSigned: Int = 10 //10 is arbitrarily set
     var altitudeSafetyTrigger: Int = 0 //stays 0 until Altitude in SafetySettings is exceeded. Then if MSL altitude comes below SafetySetting Altitude, this trigger's value will allow us to send emg flip up signal to microcontroller
-    //var abortOnFlipUp: Bool = false
-    
+    var abortOnFlipUp: Bool = false //to be used to call pop up notification function
+ //   var buttonTitleToBeChangedOnFlipUp: Bool = false //set this to true whenever you send flip up message
+ //   var buttonTitleChangerOnPressOfBack: String = ""//this is used for changing the UI button title upon press of '<back'//this could have been a simple bool as well
     
     var temp3 : Float = 0
     var startReceiver: Int = 0;
     // var altitudeFSS = db.integer(forKey: K.altitudeSS)//this statement will be cut from here and used down inside while loop.
     
-    func abortTraining(){
+    func abortTraining()//THREAD error still needs to be fixed. this funciton is supposed to show the pop up notification and change abort button title to initiate. Stopping of AHRS data receival has been already been taken care of
+    {
         let alert = UIAlertController(title: "safetyLimitExceeded", message: "Safety Limit Exceeded-Training Aborted", preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default){
+        let action = UIAlertAction(title: "OK", style: .default)
+        {
             (action) in
         }
         
         
         alert.addAction(action)
         present(alert, animated: true, completion:  nil) //Thread 7: Exception: "Modifications to the layout engine must not be performed from a background thread after it has been accessed from the main thread."
-        //self.present(alert, animated: true, completion: nil)
-        //let action = UIAlertAction(title: "ok",style: default, handler: nil)
-        //let action = UIAlertAction(title: "Ok", style: default, handler: <#T##((UIAlertAction) -> Void)?##((UIAlertAction) -> Void)?##(UIAlertAction) -> Void#>)
-        
-        //abort training
+
         
         //set button title to initiate
+        //...
         
     }
     
@@ -81,13 +81,13 @@ class Manual_ViewController: UIViewController {
         
     }
     
-    var buttonTitle: String = ""//this is used for changing the UI button title upon press of '<back'
+    //var buttonTitleChangerOnPressOfBack: String = ""//this is used for changing the UI button title upon press of '<back'//this could have been a simple bool as well
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         startReceiver = 0 //if startReceiver is any value other than 10, while loop for receiving AHRS data will not run
         altitudeSafetyTrigger = 0 //set the safety altitude trigger to zero when abort is pressed
         print("I stopped reading from the AHRS device")
-        buttonTitle = "pressedBackButton"
+  //      buttonTitleChangerOnPressOfBack = "pressedBackButton"
         
     }
     
@@ -96,16 +96,17 @@ class Manual_ViewController: UIViewController {
     @IBAction func InitiatePressed(_ sender: UIButton) {
         
         let title = sender.currentTitle
-        buttonTitle = (sender.currentTitle!)
+  //      buttonTitleChangerOnPressOfBack = (sender.currentTitle!)
         
         if title == "Initiate" {
             print("I am reading from The ILevel")
             startReceiver = 10 //while loop for receiving data from AHRS only runs as long as startReceiver stays 10. COMMENT THIS OUT FOR DISABLING THE RECEIVER WHILE LOOP
+ //           buttonTitleToBeChangedOnFlipUp = false //may be i dont need this at all because we only come in here when we flip up. so just create a main dispatch thread queue and change the button title inside it.//it was put here so that we re going with a fresh copy of false whenever we initiate training. when it becomes true inside while loop, call the title changer inside Dispatch main sync
             readFIL()
             sender.setTitle("Abort", for: .normal)
             
         }
-        else if title == "Abort" || buttonTitle == "pressedBackButton" {
+        else if title == "Abort" {
             sender.setTitle("Initiate", for: .normal)//this should be placed at last line of scope end to stay consistent with if{} behavior
             
             startReceiver = 0 //if startReceiver is any value other than 10, while loop for receiving AHRS data will not run
@@ -279,22 +280,37 @@ class Manual_ViewController: UIViewController {
                         //append 5th byte as hex
                         bytesToBeSentArray.insert("01",at:4)//HEX 01 = 1 in decimal
                         
-                        bytesToBeSentArray.insert("00", at: 5)//manual immediate adjustment of the display
+                        bytesToBeSentArray.insert("00",at:5)//op mode
+                        bytesToBeSentArray.insert("00",at:6)//volt
+                        bytesToBeSentArray.insert("00",at:7)//volt
+                        bytesToBeSentArray.insert("E4",at:8)//volt
+                        bytesToBeSentArray.insert("00",at:9)//timetoreach
+                        bytesToBeSentArray.insert("00",at:10)//timetoreach
+                        bytesToBeSentArray.insert("00",at:11)//timetoreach
+                        bytesToBeSentArray.insert("00",at:12)//timetoreach
+                        bytesToBeSentArray.insert("00",at:13)//roll  //if microcontroller wants roll and pitch values from last
+                        bytesToBeSentArray.insert("00",at:14)//roll  //use of the app, we can bring values here from database
+                        bytesToBeSentArray.insert("00",at:15)//roll  //and sent them to microcontroller. I have assumed that
+                        bytesToBeSentArray.insert("00",at:16)//pitch //for system test functionality to flip the visor
+                        bytesToBeSentArray.insert("00",at:17)//pitch //microcontroller wont need or care about Roll and Pitch
+                        bytesToBeSentArray.insert("00",at:18)//pitch //values.
                         
-                        bytesToBeSentArray.insert("00", at: 6)//
-                        bytesToBeSentArray.insert("00", at: 7)//voltage value of MAX for clearing out visor when flipping it up
-                        bytesToBeSentArray.insert("E4", at: 8)//
+                        //copy the swift array into an objectiveC property manualEmgMsgBytes
                         
+                        
+                        for bytes in bytesToBeSentArray
+                        {
+                            instanceOfparser.manualEmgMsgBytes.append(bytes)
+                        }
                         //send bytesToBeSentArray to microcontroller
-                        
-                        
+                        instanceOfparser.emergencyMsgSender(instanceOfparser.manualEmgMsgBytes, ofSize: 19)
                         
                         //send a string to microcontroller
-                        instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
-                        print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
+                        //   instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
+                        //   print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
                         
-                        instanceOfparser.msgSender()
-                        instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
+                        
+                        // instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
                         
                         //abort the training if visor flipped.
                         //Abort the training here instead of removing this byte
@@ -305,8 +321,11 @@ class Manual_ViewController: UIViewController {
                         // }
                         
                         self.startReceiver = 0//prevents the while loop from running again when it breaks in next line. This is to make sure that now while loop can only run if "Initiate" titled button is pressed again.
-                        
+                        bytesToBeSentArray.removeAll(keepingCapacity: true)
                         instanceOfparser.closeUDPsocket()//close the network socket otherwise next time even if Initiate button is pressed, we'll get stuck at recvfrom() call in parser.m
+ //                       self.buttonTitleToBeChangedOnFlipUp = true //may be i dont need this at all because we only come in here when we flip up. so just create a main dispatch thread queue and change the button title inside it.
+                        
+                        
                         break //break while loop.
                         
                         //bytesToBeSentArray.remove(at: 4)//This should exist until Abort training function is implemented. That function will append the necessary remaining bytes after the fourth index and send the flip-up message to microcontroller. This statement exists because otherwise anotehr byte will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
@@ -319,18 +338,50 @@ class Manual_ViewController: UIViewController {
                         
                         //send a string to microcontroller
                         instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
-                        print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
+                        bytesToBeSentArray.insert("00",at:5)//op mode
+                        bytesToBeSentArray.insert("00",at:6)//volt
+                        bytesToBeSentArray.insert("00",at:7)//volt
+                        bytesToBeSentArray.insert("E4",at:8)//volt
+                        bytesToBeSentArray.insert("00",at:9)//timetoreach
+                        bytesToBeSentArray.insert("00",at:10)//timetoreach
+                        bytesToBeSentArray.insert("00",at:11)//timetoreach
+                        bytesToBeSentArray.insert("00",at:12)//timetoreach
+                        bytesToBeSentArray.insert("00",at:13)//roll  //if microcontroller wants roll and pitch values from last
+                        bytesToBeSentArray.insert("00",at:14)//roll  //use of the app, we can bring values here from database
+                        bytesToBeSentArray.insert("00",at:15)//roll  //and sent them to microcontroller. I have assumed that
+                        bytesToBeSentArray.insert("00",at:16)//pitch //for system test functionality to flip the visor
+                        bytesToBeSentArray.insert("00",at:17)//pitch //microcontroller wont need or care about Roll and Pitch
+                        bytesToBeSentArray.insert("00",at:18)//pitch //values.
                         
-                        instanceOfparser.msgSender()
-                        instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
+                        //copy the swift array into an objectiveC property manualEmgMsgBytes
+                        
+                        
+                        for bytes in bytesToBeSentArray
+                        {
+                            instanceOfparser.manualEmgMsgBytes.append(bytes)
+                        }
+                        //send bytesToBeSentArray to microcontroller
+                        instanceOfparser.emergencyMsgSender(instanceOfparser.manualEmgMsgBytes, ofSize: 19)
+                        
+                        //send a string to microcontroller
+                        //   instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
+                        //   print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
+                        
+                        
+                        // instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
+                        
                         //abort the training if visor flipped.
+                        //Abort the training here instead of removing this byte
+                        //self.abortOnFlipUp = true
+                        //if (self.abortOnFlipUp)
+                        // {
                         //                       self.abortTraining() //when this function is called, Show notification on screen that training has stopped because safety limits exceeded. Also, Change the Initiate/Abort button title to Initiate.
                         // }
                         
                         self.startReceiver = 0//prevents the while loop from running again when it breaks in next line. This is to make sure that now while loop can only run if "Initiate" titled button is pressed again.
+                        bytesToBeSentArray.removeAll(keepingCapacity: true)
                         instanceOfparser.closeUDPsocket()//close the network socket otherwise next time even if Initiate button is pressed, we'll get stuck at recvfrom() call in parser.m
                         break //break while loop.
-                        
                         //bytesToBeSentArray.remove(at: 4)//to reset the 4th byte. otherwise it will be inserted again and 0x44 from this block will get pushed instead of getting overwritten
                     }
                     else
@@ -380,16 +431,48 @@ class Manual_ViewController: UIViewController {
                         print("Flip the visor")
                         //append 5th byte as ASCII 1 = 31 in HEX
                         bytesToBeSentArray.insert("01",at:4)//HEX 31 = ASCII 1
+                        bytesToBeSentArray.insert("00",at:5)//op mode
+                        bytesToBeSentArray.insert("00",at:6)//volt
+                        bytesToBeSentArray.insert("00",at:7)//volt
+                        bytesToBeSentArray.insert("E4",at:8)//volt
+                        bytesToBeSentArray.insert("00",at:9)//timetoreach
+                        bytesToBeSentArray.insert("00",at:10)//timetoreach
+                        bytesToBeSentArray.insert("00",at:11)//timetoreach
+                        bytesToBeSentArray.insert("00",at:12)//timetoreach
+                        bytesToBeSentArray.insert("00",at:13)//roll  //if microcontroller wants roll and pitch values from last
+                        bytesToBeSentArray.insert("00",at:14)//roll  //use of the app, we can bring values here from database
+                        bytesToBeSentArray.insert("00",at:15)//roll  //and sent them to microcontroller. I have assumed that
+                        bytesToBeSentArray.insert("00",at:16)//pitch //for system test functionality to flip the visor
+                        bytesToBeSentArray.insert("00",at:17)//pitch //microcontroller wont need or care about Roll and Pitch
+                        bytesToBeSentArray.insert("00",at:18)//pitch //values.
+                        
+                        //copy the swift array into an objectiveC property manualEmgMsgBytes
+                        
+                        
+                        for bytes in bytesToBeSentArray
+                        {
+                            instanceOfparser.manualEmgMsgBytes.append(bytes)
+                        }
+                        //send bytesToBeSentArray to microcontroller
+                        instanceOfparser.emergencyMsgSender(instanceOfparser.manualEmgMsgBytes, ofSize: 19)
+                        
                         //send a string to microcontroller
-                        instanceOfparser.msgForMicrocontroller = 0x45
-                        instanceOfparser.msgSender()
-                        instanceOfparser.msgForMicrocontroller = 0x00//this can be done at the end of each iteration just before while loop bracket close
+                        //   instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
+                        //   print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
+                        
+                        
+                        // instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
+                        
                         //abort the training if visor flipped.
-                        //abort the training if visor flipped.
-                        //                      self.abortTraining() //when this function is called, Show notification on screen that training has stopped because safety limits exceeded. Also, Change the Initiate/Abort button title to Initiate.
+                        //Abort the training here instead of removing this byte
+                        //self.abortOnFlipUp = true
+                        //if (self.abortOnFlipUp)
+                        // {
+                        //                       self.abortTraining() //when this function is called, Show notification on screen that training has stopped because safety limits exceeded. Also, Change the Initiate/Abort button title to Initiate.
                         // }
                         
                         self.startReceiver = 0//prevents the while loop from running again when it breaks in next line. This is to make sure that now while loop can only run if "Initiate" titled button is pressed again.
+                        bytesToBeSentArray.removeAll(keepingCapacity: true)
                         instanceOfparser.closeUDPsocket()//close the network socket otherwise next time even if Initiate button is pressed, we'll get stuck at recvfrom() call in parser.m
                         break //break while loop.
                         
@@ -400,16 +483,48 @@ class Manual_ViewController: UIViewController {
                         print("Flip the visor")
                         //append 5th byte as ASCII 1 = 31 in HEX
                         bytesToBeSentArray.insert("01",at:4)//HEX 31 = ASCII 1
+                       bytesToBeSentArray.insert("00",at:5)//op mode
+                        bytesToBeSentArray.insert("00",at:6)//volt
+                        bytesToBeSentArray.insert("00",at:7)//volt
+                        bytesToBeSentArray.insert("E4",at:8)//volt
+                        bytesToBeSentArray.insert("00",at:9)//timetoreach
+                        bytesToBeSentArray.insert("00",at:10)//timetoreach
+                        bytesToBeSentArray.insert("00",at:11)//timetoreach
+                        bytesToBeSentArray.insert("00",at:12)//timetoreach
+                        bytesToBeSentArray.insert("00",at:13)//roll  //if microcontroller wants roll and pitch values from last
+                        bytesToBeSentArray.insert("00",at:14)//roll  //use of the app, we can bring values here from database
+                        bytesToBeSentArray.insert("00",at:15)//roll  //and sent them to microcontroller. I have assumed that
+                        bytesToBeSentArray.insert("00",at:16)//pitch //for system test functionality to flip the visor
+                        bytesToBeSentArray.insert("00",at:17)//pitch //microcontroller wont need or care about Roll and Pitch
+                        bytesToBeSentArray.insert("00",at:18)//pitch //values.
+                        
+                        //copy the swift array into an objectiveC property manualEmgMsgBytes
+                        
+                        
+                        for bytes in bytesToBeSentArray
+                        {
+                            instanceOfparser.manualEmgMsgBytes.append(bytes)
+                        }
+                        //send bytesToBeSentArray to microcontroller
+                        instanceOfparser.emergencyMsgSender(instanceOfparser.manualEmgMsgBytes, ofSize: 19)
+                        
                         //send a string to microcontroller
-                        instanceOfparser.msgForMicrocontroller = 0x45
-                        instanceOfparser.msgSender()
-                        instanceOfparser.msgForMicrocontroller = 0x00//this can be done at the end of each iteration just before while loop bracket close
+                        //   instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
+                        //   print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
+                        
+                        
+                        // instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
+                        
                         //abort the training if visor flipped.
-                        //abort the training if visor flipped.
-                        //                      self.abortTraining() //when this function is called, Show notification on screen that training has stopped because safety limits exceeded. Also, Change the Initiate/Abort button title to Initiate.
+                        //Abort the training here instead of removing this byte
+                        //self.abortOnFlipUp = true
+                        //if (self.abortOnFlipUp)
+                        // {
+                        //                       self.abortTraining() //when this function is called, Show notification on screen that training has stopped because safety limits exceeded. Also, Change the Initiate/Abort button title to Initiate.
                         // }
                         
                         self.startReceiver = 0//prevents the while loop from running again when it breaks in next line. This is to make sure that now while loop can only run if "Initiate" titled button is pressed again.
+                        bytesToBeSentArray.removeAll(keepingCapacity: true)
                         instanceOfparser.closeUDPsocket()//close the network socket otherwise next time even if Initiate button is pressed, we'll get stuck at recvfrom() call in parser.m
                         break //break while loop.
                         
@@ -461,17 +576,48 @@ class Manual_ViewController: UIViewController {
                         print("Flip the visor")
                         //append 5th byte as ASCII 1 = 31 in HEX
                         bytesToBeSentArray.insert("01",at:4)//HEX 31 = ASCII 1
+                       bytesToBeSentArray.insert("00",at:5)//op mode
+                        bytesToBeSentArray.insert("00",at:6)//volt
+                        bytesToBeSentArray.insert("00",at:7)//volt
+                        bytesToBeSentArray.insert("E4",at:8)//volt
+                        bytesToBeSentArray.insert("00",at:9)//timetoreach
+                        bytesToBeSentArray.insert("00",at:10)//timetoreach
+                        bytesToBeSentArray.insert("00",at:11)//timetoreach
+                        bytesToBeSentArray.insert("00",at:12)//timetoreach
+                        bytesToBeSentArray.insert("00",at:13)//roll  //if microcontroller wants roll and pitch values from last
+                        bytesToBeSentArray.insert("00",at:14)//roll  //use of the app, we can bring values here from database
+                        bytesToBeSentArray.insert("00",at:15)//roll  //and sent them to microcontroller. I have assumed that
+                        bytesToBeSentArray.insert("00",at:16)//pitch //for system test functionality to flip the visor
+                        bytesToBeSentArray.insert("00",at:17)//pitch //microcontroller wont need or care about Roll and Pitch
+                        bytesToBeSentArray.insert("00",at:18)//pitch //values.
+                        
+                        //copy the swift array into an objectiveC property manualEmgMsgBytes
+                        
+                        
+                        for bytes in bytesToBeSentArray
+                        {
+                            instanceOfparser.manualEmgMsgBytes.append(bytes)
+                        }
+                        //send bytesToBeSentArray to microcontroller
+                        instanceOfparser.emergencyMsgSender(instanceOfparser.manualEmgMsgBytes, ofSize: 19)
+                        
                         //send a string to microcontroller
-                        instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
-                        print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
-                        instanceOfparser.msgSender()
-                        instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
+                        //   instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
+                        //   print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
+                        
+                        
+                        // instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
+                        
                         //abort the training if visor flipped.
-                        //abort the training if visor flipped.
-                        //                     self.abortTraining() //when this function is called, Show notification on screen that training has stopped because safety limits exceeded. Also, Change the Initiate/Abort button title to Initiate.
+                        //Abort the training here instead of removing this byte
+                        //self.abortOnFlipUp = true
+                        //if (self.abortOnFlipUp)
+                        // {
+                        //                       self.abortTraining() //when this function is called, Show notification on screen that training has stopped because safety limits exceeded. Also, Change the Initiate/Abort button title to Initiate.
                         // }
                         
                         self.startReceiver = 0//prevents the while loop from running again when it breaks in next line. This is to make sure that now while loop can only run if "Initiate" titled button is pressed again.
+                        bytesToBeSentArray.removeAll(keepingCapacity: true)
                         instanceOfparser.closeUDPsocket()//close the network socket otherwise next time even if Initiate button is pressed, we'll get stuck at recvfrom() call in parser.m
                         break //break while loop.
                         
@@ -529,17 +675,48 @@ class Manual_ViewController: UIViewController {
                         print("Flip the visor - Aircraft below safe altitude")
                         //append 5th byte as 1
                         bytesToBeSentArray.insert("01",at:4)//HEX
+                      bytesToBeSentArray.insert("00",at:5)//op mode
+                        bytesToBeSentArray.insert("00",at:6)//volt
+                        bytesToBeSentArray.insert("00",at:7)//volt
+                        bytesToBeSentArray.insert("E4",at:8)//volt
+                        bytesToBeSentArray.insert("00",at:9)//timetoreach
+                        bytesToBeSentArray.insert("00",at:10)//timetoreach
+                        bytesToBeSentArray.insert("00",at:11)//timetoreach
+                        bytesToBeSentArray.insert("00",at:12)//timetoreach
+                        bytesToBeSentArray.insert("00",at:13)//roll  //if microcontroller wants roll and pitch values from last
+                        bytesToBeSentArray.insert("00",at:14)//roll  //use of the app, we can bring values here from database
+                        bytesToBeSentArray.insert("00",at:15)//roll  //and sent them to microcontroller. I have assumed that
+                        bytesToBeSentArray.insert("00",at:16)//pitch //for system test functionality to flip the visor
+                        bytesToBeSentArray.insert("00",at:17)//pitch //microcontroller wont need or care about Roll and Pitch
+                        bytesToBeSentArray.insert("00",at:18)//pitch //values.
+                        
+                        //copy the swift array into an objectiveC property manualEmgMsgBytes
+                        
+                        
+                        for bytes in bytesToBeSentArray
+                        {
+                            instanceOfparser.manualEmgMsgBytes.append(bytes)
+                        }
+                        //send bytesToBeSentArray to microcontroller
+                        instanceOfparser.emergencyMsgSender(instanceOfparser.manualEmgMsgBytes, ofSize: 19)
+                        
                         //send a string to microcontroller
-                        instanceOfparser.msgForMicrocontroller = 0x45 //i can always use this technique for appending bytes to the uint8_t type objective c properties. copying those in a byte array inside msgSender() function and finally send it. So, to use this way, first) i have to create 'no of bytes to be appended and sent to microcontroller' objective c properties. second) set these objective c properties to be equal to a sequential indexes of bytesToBeSentArray. third) i ll then just copy the properties one by one into an objective c byte array[] -which exists inside msgSender(). And then just send that objective c array like normal as i already have been sending 0x45 over to microcontroller. EDIT: NOT NEEDED NOW. WE HAVE SUCCESSFULLY STORES A STRING SWIFT ARRAY INTO A NSSTRING OBJECTIVE-C ARRAY
-                        print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
-                        instanceOfparser.msgSender()
-                        instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
+                        //   instanceOfparser.msgForMicrocontroller = 0x45 //this is to be checked as a 69 decimal
+                        //   print("instanceOfparser.msgForMicrocontroller is: \(instanceOfparser.msgForMicrocontroller)")
+                        
+                        
+                        // instanceOfparser.msgForMicrocontroller = 0x00 //this can be done at the end of each iteration just before while loop bracket close
+                        
                         //abort the training if visor flipped.
-                        //abort the training if visor flipped.
-                        //                     self.abortTraining() //when this function is called, Show notification on screen that training has stopped because safety limits exceeded. Also, Change the Initiate/Abort button title to Initiate.
+                        //Abort the training here instead of removing this byte
+                        //self.abortOnFlipUp = true
+                        //if (self.abortOnFlipUp)
+                        // {
+                        //                       self.abortTraining() //when this function is called, Show notification on screen that training has stopped because safety limits exceeded. Also, Change the Initiate/Abort button title to Initiate.
                         // }
                         
                         self.startReceiver = 0//prevents the while loop from running again when it breaks in next line. This is to make sure that now while loop can only run if "Initiate" titled button is pressed again.
+                        bytesToBeSentArray.removeAll(keepingCapacity: true)
                         instanceOfparser.closeUDPsocket()//close the network socket otherwise next time even if Initiate button is pressed, we'll get stuck at recvfrom() call in parser.m
                         break //break while loop.
                         
@@ -620,9 +797,9 @@ class Manual_ViewController: UIViewController {
                         //store the swift array bytes into objective-c NSString array
                         var count: UInt8 = 0
                         for bytes in bytesToBeSentArray{
-                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR instanceOfparser.emgMsgBytes.append(bytesToBeSentArray[count])
+                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                             print(instanceOfparser.manualNormalMsgBytes) //test print
-                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended to emgMsgBytes
+                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended
                             print("\nHey\n") //test print
                         }
                         count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
@@ -676,9 +853,9 @@ class Manual_ViewController: UIViewController {
                         //store the swift array bytes into objective-c NSString array
                         var count: UInt8 = 0
                         for bytes in bytesToBeSentArray{
-                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR instanceOfparser.emgMsgBytes.append(bytesToBeSentArray[count])
+                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                             print(instanceOfparser.manualNormalMsgBytes) //test print
-                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended to emgMsgBytes
+                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended
                             print("\nHey\n") //test print
                         }
                         count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
@@ -728,9 +905,9 @@ class Manual_ViewController: UIViewController {
                         //store the swift array bytes into objective-c NSString array
                         var count: UInt8 = 0
                         for bytes in bytesToBeSentArray{
-                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR instanceOfparser.emgMsgBytes.append(bytesToBeSentArray[count])
+                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                             print(instanceOfparser.manualNormalMsgBytes) //test print
-                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended to emgMsgBytes
+                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended
                             print("\nHey\n") //test print
                         }
                         count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
@@ -780,9 +957,9 @@ class Manual_ViewController: UIViewController {
                         //store the swift array bytes into objective-c NSString array
                         var count: UInt8 = 0
                         for bytes in bytesToBeSentArray{
-                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR instanceOfparser.emgMsgBytes.append(bytesToBeSentArray[count])
+                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                             print(instanceOfparser.manualNormalMsgBytes) //test print
-                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended to emgMsgBytes
+                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended
                             print("\nHey\n") //test print
                         }
                         count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
@@ -832,9 +1009,9 @@ class Manual_ViewController: UIViewController {
                         //store the swift array bytes into objective-c NSString array
                         var count: UInt8 = 0
                         for bytes in bytesToBeSentArray{
-                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR instanceOfparser.emgMsgBytes.append(bytesToBeSentArray[count])
+                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                             print(instanceOfparser.manualNormalMsgBytes) //test print
-                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended to emgMsgBytes
+                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended
                             print("\nHey\n") //test print
                         }
                         count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
@@ -884,9 +1061,9 @@ class Manual_ViewController: UIViewController {
                         //store the swift array bytes into objective-c NSString array
                         var count: UInt8 = 0
                         for bytes in bytesToBeSentArray{
-                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR instanceOfparser.emgMsgBytes.append(bytesToBeSentArray[count])
+                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                             print(instanceOfparser.manualNormalMsgBytes) //test print
-                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended to emgMsgBytes
+                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended
                             print("\nHey\n") //test print
                         }
                         count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
@@ -936,9 +1113,9 @@ class Manual_ViewController: UIViewController {
                         //store the swift array bytes into objective-c NSString array
                         var count: UInt8 = 0
                         for bytes in bytesToBeSentArray{
-                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR instanceOfparser.emgMsgBytes.append(bytesToBeSentArray[count])
+                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                             print(instanceOfparser.manualNormalMsgBytes) //test print
-                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended to emgMsgBytes
+                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended
                             print("\nHey\n") //test print
                         }
                         count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
@@ -988,9 +1165,9 @@ class Manual_ViewController: UIViewController {
                         //store the swift array bytes into objective-c NSString array
                         var count: UInt8 = 0
                         for bytes in bytesToBeSentArray{
-                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR instanceOfparser.emgMsgBytes.append(bytesToBeSentArray[count])
+                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                             print(instanceOfparser.manualNormalMsgBytes) //test print
-                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended to emgMsgBytes
+                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended
                             print("\nHey\n") //test print
                         }
                         count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
@@ -1040,9 +1217,9 @@ class Manual_ViewController: UIViewController {
                         //store the swift array bytes into objective-c NSString array
                         var count: UInt8 = 0
                         for bytes in bytesToBeSentArray{
-                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR instanceOfparser.emgMsgBytes.append(bytesToBeSentArray[count])
+                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                             print(instanceOfparser.manualNormalMsgBytes) //test print
-                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended to emgMsgBytes
+                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended
                             print("\nHey\n") //test print
                         }
                         count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
@@ -1093,9 +1270,9 @@ class Manual_ViewController: UIViewController {
                         //store the swift array bytes into objective-c NSString array
                         var count: UInt8 = 0
                         for bytes in bytesToBeSentArray{
-                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR instanceOfparser.emgMsgBytes.append(bytesToBeSentArray[count])
+                            instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                             print(instanceOfparser.manualNormalMsgBytes) //test print
-                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended to emgMsgBytes
+                            count+=1 //not needed unless i decide to use or send the number of hex bytes appended
                             print("\nHey\n") //test print
                         }
                         count -= 1 //After this statement run, count will have number of bytes appended. Use if needed

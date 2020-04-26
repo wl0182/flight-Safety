@@ -53,8 +53,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property int vsiFtPerMin;
 @property uint8_t msgForMicrocontroller; //for normal simulation msgs
 @property NSData * emergencyFlipUp; //for emergency visor flip up
-@property NSString * emgMsgBytes;
+//@property NSString * emgMsgBytes;
 @property NSString * manualNormalMsgBytes;
+@property NSString * manualEmgMsgBytes;
 @property NSString * systemTestBytes;
 //@property NSMutableArray * testMsg;
 //@property NSMutableArray * CRC16Table;

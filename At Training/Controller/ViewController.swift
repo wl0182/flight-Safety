@@ -153,6 +153,7 @@ class ViewController: UIViewController {
                             self.temp2 = Int(swiftBattPct!)
                         }
                         
+                        //update the UI Labels in the main thread
                         DispatchQueue.main.sync {
                             //Update UI Labels when values have been set
                                   //udpate the labels

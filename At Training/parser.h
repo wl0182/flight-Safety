@@ -72,7 +72,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void) normalMsgSender: (NSString *) simulationMsgBytes ofSize:(uint8_t)numberOfBytes;
 -(void) scanData: (uint8_t *) RxData_1 ofLength:(uint8_t) BufferLength;
 -(unsigned short) gdl90_CRC_Compute: (uint8_t *) data ofLength: (unsigned long)length;
--(void) emergencyMsgSender:(NSString *) emgMsgBytes;
+//-(void) emergencyMsgSender:(NSString *) emgMsgBytes;
+-(void) emergencyMsgSender:(NSString *) emgMsgBytes ofSize:(uint8_t) noOfBytes;
 -(void) closeUDPsocket;
 //-(unsigned short) gdl90_CRC_Compute: (uint8_t *) data ofLength: (unsigned long)length;
 //-(unsigned short) gdl90_CRC_Compute: (NSMutableArray *) data ofLength: (unsigned long)length;

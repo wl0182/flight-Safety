@@ -174,10 +174,10 @@ class ViewController: UIViewController {
                                 count+=1 //not needed unless i decide to use or send the number of hex bytes appended to emgMsgBytes
                                 print("\nSetting System Test Message Bytes...\n") //test print
                             }
-                            count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
+                            count -= 1 //After this statement runs, count will have number of bytes appended. Use if needed
                             print("No of bytes appended to systemTest msg = \(count)")
                             print(homePageInstanceOfparser.systemTestBytes) //print what was stored in the array
-                            homePageInstanceOfparser.emergencyMsgSender(homePageInstanceOfparser.systemTestBytes)//IT IS NOT SENDING THE CORERCT BYTES AS OF 9PM APRIL 25. THE VALUE DISPLAYED ON MICROCONTROLLER ARE: '8\Xa0\xbf' which is undefined. check emergencyMsgSender function-for one thing, it needs fixing in sendto function. and then bytes will have to be copied inside an objective c array inside that function as well before finally sending it to microcontroller.
+                            homePageInstanceOfparser.emergencyMsgSender(homePageInstanceOfparser.systemTestBytes, ofSize: count)//IT IS NOT SENDING THE CORERCT BYTES AS OF 9PM APRIL 25. THE VALUE DISPLAYED ON MICROCONTROLLER ARE: '8\Xa0\xbf' which is undefined. check emergencyMsgSender function-for one thing, it needs fixing in sendto function. and then bytes will have to be copied inside an objective c array inside that function as well before finally sending it to microcontroller.
                             
                             self.startHomePageReceiver = 0 //stop the while loop from receiving further values
                             self.systemTestBytesReadyToBeSentToMicrocontroller = false //just for reseting for next time
@@ -186,6 +186,8 @@ class ViewController: UIViewController {
                         }
                         /*------------------------------Cleaning up after each iteration for new messages to be received and sent----------------------*/
                         
+                        //remove all bytes of message from this iteration and get the msg array for microcontroller ready for insertion of new message in next iteration
+                        self.bytesToBeSentForSystemTest.removeAll(keepingCapacity: true)
                         //close the socket here
                         homePageInstanceOfparser.closeUDPsocket()
                         //close(instanceOfparser.sockfd)

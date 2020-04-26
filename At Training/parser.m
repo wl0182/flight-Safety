@@ -436,20 +436,11 @@ uint16_t crc16Table [256];
         //variables
         ssize_t n;
         socklen_t len;
-//        int sockfd;//this socket gets created and destroyed once per each function call
+//      int sockfd;//this socket gets created in init function now
         uint8_t mesg[1024] = {0};
-//        int sockfd;
+
         //socket
         struct sockaddr_in servaddr,cliaddr;
-    
-        //tester code begin
-//        struct sockaddr_in testsvr;
-//        bzero(&testsvr, sizeof(testsvr));
-//        testsvr.sin_family = AF_INET;
-//        testsvr.sin_addr.s_addr = inet_addr("192.168.1.11");
-//        testsvr.sin_port = htons(43211);
- //       socklen_t len2 = sizeof(testsvr);
-        //tester code end
     
         self.sockfd = socket(AF_INET, SOCK_DGRAM, 0);//this socket gets created and destroyed once per each function call
         bzero(&servaddr, sizeof(servaddr));
@@ -460,36 +451,24 @@ uint16_t crc16Table [256];
         len = sizeof(cliaddr);
         
         printf("\nabout to recvfrom\n");
-                    //tester code start
-                    //test for sending msg to microcontroller
-                  //send(sockfd, "Hello from IPADmmmmmmmmmmmmmmmmmnnnnnnnnnnnnnnnnnnnnnnnnnnnn", 60, 0);
-                   //sendto(sockfd, "Hello from IPADmmmmmmmmmmmmmmmmmnnnnnnnnnnnnnnnnnnnnnnnnnnnn", 60, 0, (struct sockaddr *) &testsvr, len2);
-                    //tester code end
+                 
         n = recvfrom(self.sockfd, mesg, 1024, 0, (struct sockaddr *) &cliaddr, &len);
-        uint8_t escaped[256] = {0};
-        //printf("\nrecvfrom done \n");
+//        uint8_t escaped[256] = {0};
         if (n>0) //if we have bytes
         {
             printf("Received %zi bytes. About to call scanData function\n", n);
             
-            //printf("Message receied without begin and end flags is:\n");  //
-            printf("Raw Bytes received (escaped[]) :\n");                   //
-            NSLog(@"Raw Bytes received (escaped[]) :\n");                   //this block is not needed
-            for (int u = 0; u < n; u++)                                     //
-            {                                                               //
-                escaped[u]=mesg[u];                                         //
-                printf("%02X ",escaped[u]);                                 //
-            }
-            
+//            //printf("Message receied without begin and end flags is:\n");  //
+//            NSLog(@"Raw Bytes received (escaped[]) :\n");                   //this block is not needed
+//            for (int u = 0; u < n; u++)                                     //
+//            {                                                               //
+//                escaped[u]=mesg[u];                                         //
+//                printf("%02X ",escaped[u]);                                 //
+//            }
             //send mesg and n to scanData function.
             [self scanData:mesg ofLength:n];
                         
-            //you can create new thread here and destroy thread soon as packetParser returns
-            //.....
-            
-            
-            
-            
+
         }//if n>0
     //close(self.sockfd);//this socket gets created and destroyed once per each function call
 
@@ -533,8 +512,9 @@ uint16_t crc16Table [256];
 {
         int noOfBytes = (int) numberOfBytes *2;
         uint8_t * bytesReadyToSend = (uint8_t *)[simulationMsgBytes UTF8String];
+    
         uint8_t byteArrayForMicro[19] = {0};// OR we can create uint8_t mesgBeingSent[no_of_bytes_being_sent] = {0}; and use 'mesgBeingSent' for the parameter of (const void *) in sendto() function
-    //    int microfd = socket(AF_INET, SOCK_DGRAM, 0);
+    //    int microfd = socket(AF_INET, SOCK_DGRAM, 0); //REMOVE THIS
         
         struct sockaddr_in normalSvr;
         bzero(&normalSvr, sizeof(normalSvr));
@@ -542,7 +522,8 @@ uint16_t crc16Table [256];
         normalSvr.sin_addr.s_addr = inet_addr("192.168.1.13");
         normalSvr.sin_port = htons(43211);
         socklen_t len2 = sizeof(normalSvr);
-        byteArrayForMicro[0] = self.msgForMicrocontroller; //i can always fall back on this technique for sending bytes over network.
+    
+        byteArrayForMicro[0] = self.msgForMicrocontroller; //i can always fall back on this technique for sending bytes over network.//REMOVE THIS
         
         //tester code end
         printf("\nInside normalMsgSender right now.\nSending the message to Microcontroller\n");
@@ -557,18 +538,20 @@ uint16_t crc16Table [256];
 //        }
 //        else if (byteArrayForMicro[0] == 69)
 //        {
-            sendto(self.sockfd, "RECIEVED VOLTAGE INSTRUCTIONSmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm", 70, 0, (struct sockaddr *) &normalSvr, len2);
-            sendto(self.sockfd, bytesReadyToSend, noOfBytes, 0, (struct sockaddr *) &normalSvr, len2);//third argument is the no of characters to be sent
+        sendto(self.sockfd, "RECIEVED VOLTAGE INSTRUCTIONSmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm", 70, 0, (struct sockaddr *) &normalSvr, len2);
+        sendto(self.sockfd, bytesReadyToSend, noOfBytes, 0, (struct sockaddr *) &normalSvr, len2);//third argument is the no of characters to be sent
        // }
         printf("MSG SENT TO MICROCONTROLLER!");
 
         //close(self.sockfd);
 }
 //for now, this is being called from home page for sending emg trigger for 'system test' functionality
-- (void) emergencyMsgSender:(NSString *) emgMsgBytes{
+- (void) emergencyMsgSender:(NSString *) emgMsgBytes ofSize:(uint8_t) noOfBytes{
    
-    //char byteArrayForMicro[26] = {0};// OR we can create uint8_t mesgBeingSent[no_of_bytes_being_sent] = {0}; and use 'mesgBeingSent' for the parameter of (const void *) in sendto() function
-  //  int emergencyfd = socket(AF_INET, SOCK_DGRAM, 0);S
+ 
+    int numberOfBytes = (int) noOfBytes *2;
+    uint8_t * emgBytesReadyToSend = (uint8_t *)[emgMsgBytes UTF8String];
+    
     struct sockaddr_in emergencysvr;
     bzero(&emergencysvr, sizeof(emergencysvr));
     emergencysvr.sin_family = AF_INET;
@@ -582,8 +565,8 @@ uint16_t crc16Table [256];
       //tester code start
       //test for sending msg to microcontroller
     //send(microfd, "Hello from IPAD Hello from IPAD Hello from IPAD Hello from IPAD", 60, 0);
-    sendto(self.sockfd, "922922922922922922922922", 24, 0, (struct sockaddr *) &emergencysvr, len2);
-    sendto(self.sockfd, (__bridge const void *)(emgMsgBytes), 3, 0, (struct sockaddr *) &emergencysvr, len2);
+    sendto(self.sockfd, "922922922922922922922922", 24, 0, (struct sockaddr *) &emergencysvr, len2); //just a test string that gets sent over network
+    sendto(self.sockfd, emgBytesReadyToSend, numberOfBytes, 0, (struct sockaddr *) &emergencysvr, len2);
     printf("EMERGENCY MSG SENT TO MICROCONTROLLER!");
     //close(self.sockfd);
     

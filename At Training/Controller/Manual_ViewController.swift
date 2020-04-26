@@ -81,7 +81,7 @@ class Manual_ViewController: UIViewController {
         
     }
     
-    var buttonTitle: String = ""
+    var buttonTitle: String = ""//this is used for changing the UI button title upon press of '<back'
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         startReceiver = 0 //if startReceiver is any value other than 10, while loop for receiving AHRS data will not run
@@ -163,7 +163,7 @@ class Manual_ViewController: UIViewController {
             //            var swiftGround_speed:CInt? = Optional.none
             var swiftGPS_VSI:CShort? = Optional.none
             //var swiftGPS_heading:CInt? //Use Yaw value for heading instead of this
-            var swiftGeo_Altitude:CInt? = Optional.none
+            //var swiftGeo_Altitude:CInt? = Optional.none
             var swiftMSL_Altitude:CInt? = Optional.none
             var swiftFirmware_version:Float? = Optional.none
             var swiftBattPct:CInt? = Optional.none
@@ -420,12 +420,6 @@ class Manual_ViewController: UIViewController {
                         print("Do not Flip the visor")
                         //first remove the 4th and 5th index byte and then re-append. This prevents multiple instances of normal functioning bytes in the consecutive array cells.
                         bytesToBeSentArray.removeSubrange(4...5)
-                        //                        if (bytesToBeSentArray[4] == "00" && bytesToBeSentArray[5] == "00")
-                        //                        {
-                        //                            bytesToBeSentArray.remove(at: 4)
-                        //                            bytesToBeSentArray.remove(at: 5)
-                        //                        }
-                        
                         
                         //re-append
                         //append 4 and 5 index byte as hex

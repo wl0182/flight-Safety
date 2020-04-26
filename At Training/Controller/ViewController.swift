@@ -12,10 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var systemTest: UIButton!
     @IBOutlet weak var connectionLabel: UILabel!
-    
     @IBOutlet weak var batteryLabel: UILabel!
-    
-    
     @IBOutlet weak var firmwareLabel: UILabel!
     
     // variables
@@ -34,7 +31,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        bringValuesForHomePage()
+        //bringValuesForHomePage()
         
     }
     
@@ -45,10 +42,15 @@ class ViewController: UIViewController {
         print("Inside ViewDidAppear")
         startHomePageReceiver = 10
         continueNetworkValueBringer = true
-        
         bringValuesForHomePage()
+           
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        //udpate the labels
+        connectionLabel.text = String(temp1)
+        batteryLabel.text    = "\(temp2)% "
+        firmwareLabel.text   = String(temp3)
+    }
     
     
     
@@ -59,7 +61,7 @@ class ViewController: UIViewController {
         systemTestBytesReadyToBeSentToMicrocontroller = true //will need to go into one more while iteration for sending the built bytes
         
     }
-    
+//
 //    func updateUI()  {
 //        //udpate the labels
 //        connectionLabel.text = String(temp1)
@@ -96,7 +98,7 @@ class ViewController: UIViewController {
         
         DispatchQueue.global(qos: .background).async
             {
-                DispatchQueue.main.sync {
+                
                     print("inside dispatch queue")
                     //create an instance of Objective C class
                     let homePageInstanceOfparser: parser = parser()
@@ -122,8 +124,9 @@ class ViewController: UIViewController {
                      }
                      */
                     //creation of while loop for receiving UDP packets
-                    //var noOfIterations = 10000 Now using startReceiver value of 10 to start receiving
+                    //var noOfIterations = 100 //Now using startReceiver value of 10 to start receiving
                     while (continueHomePageReceiving == 10) //10 is treated as a true
+                    //while(noOfIterations > 1)
                     {
                         
                         //print("inside while loop")
@@ -149,12 +152,15 @@ class ViewController: UIViewController {
                             //set the UI Label to above printed value
                             self.temp2 = Int(swiftBattPct!)
                         }
-                                                                                            //Update UI Labels when values have been set
-                                                                                                  //udpate the labels
-                                                                                            self.connectionLabel.text = String(self.temp1)
-                                                                                            self.batteryLabel.text    = "\(self.temp2)%"
-                                                                                            self.firmwareLabel.text   = String(self.temp3)
-                                                                                                  //self.updateUI()
+                        
+                        DispatchQueue.main.sync {
+                            //Update UI Labels when values have been set
+                                  //udpate the labels
+                            self.connectionLabel.text = String(self.temp1)
+                            self.batteryLabel.text    = "\(self.temp2)%"
+                            self.firmwareLabel.text   = String(self.temp3)
+                                  //self.updateUI()
+                        }
                         
                         if(self.systemTestBytesReadyToBeSentToMicrocontroller == true) //if this Bool is true
                         {
@@ -178,7 +184,7 @@ class ViewController: UIViewController {
                         
                         }
                         /*------------------------------Cleaning up after each iteration for new messages to be received and sent----------------------*/
-                      
+                        
                         //close the socket here
                         homePageInstanceOfparser.closeUDPsocket()
                         //close(instanceOfparser.sockfd)
@@ -196,7 +202,7 @@ class ViewController: UIViewController {
                         }
                         
                     }//while
-                }
+                
                 
                 
         }//dispatch queue

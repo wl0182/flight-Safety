@@ -1,9 +1,9 @@
 version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
 options: "3c5c26cd3b9bd85e8866516aa2534ae7"
-build_time: [1587935001, 763619000]
+build_time: [1587939758, 911866000]
 inputs:
   "/Users/wassimlagnaoui/FS26/At Training/Controller/ROLLVC.swift": [1587930720, 968533732]
-  "/Users/wassimlagnaoui/FS26/At Training/Controller/Manual_ViewController.swift": [1587934999, 500071427]
+  "/Users/wassimlagnaoui/FS26/At Training/Controller/Manual_ViewController.swift": [1587939758, 500274750]
   "/Users/wassimlagnaoui/FS26/At Training/Controller/AccidentScenario_ViewController.swift": [1587930720, 964242029]
   "/Users/wassimlagnaoui/FS26/At Training/Controller/Setup_ViewController.swift": [1587930720, 969016190]
   "/Users/wassimlagnaoui/FS26/At Training/Controller/AltitudeVC.swift": [1587930720, 965312357]

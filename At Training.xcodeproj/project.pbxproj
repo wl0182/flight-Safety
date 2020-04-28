@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2256F31B244668C90048CBA0 /* parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2256F31A244668C90048CBA0 /* parser.m */; };
-		697F39D9FC2B812C6090F3B1 /* Pods_At_Training.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13C0269ED2BA42BD907AFA3 /* Pods_At_Training.framework */; };
 		FC401F6A244CD8AE001BC009 /* PitchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC401F69244CD8AE001BC009 /* PitchVC.swift */; };
 		FC401F6C244D2039001BC009 /* ROLLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC401F6B244D2039001BC009 /* ROLLVC.swift */; };
 		FC401F6E244D2114001BC009 /* AltitudeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC401F6D244D2114001BC009 /* AltitudeVC.swift */; };
@@ -22,6 +21,9 @@
 		FC5DD33323FD98C1003CC429 /* CalibrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5DD33223FD98C1003CC429 /* CalibrationVC.swift */; };
 		FC68D9B82454E43400A0494C /* GuestLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68D9B72454E43400A0494C /* GuestLoginVC.swift */; };
 		FC68D9BA2454E44800A0494C /* AdminLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68D9B92454E44800A0494C /* AdminLoginVC.swift */; };
+		FC68D9C2245646E700A0494C /* Pods_At_Training.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13C0269ED2BA42BD907AFA3 /* Pods_At_Training.framework */; };
+		FC68D9C8245647CE00A0494C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC68D9C5245647CE00A0494C /* RealmSwift.framework */; };
+		FC68D9CA245648B600A0494C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC68D9C4245647CE00A0494C /* Realm.framework */; };
 		FCD08F8E23EF813400F4C7C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD08F8D23EF813400F4C7C8 /* AppDelegate.swift */; };
 		FCD08F9023EF813400F4C7C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD08F8F23EF813400F4C7C8 /* SceneDelegate.swift */; };
 		FCD08F9223EF813400F4C7C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD08F9123EF813400F4C7C8 /* ViewController.swift */; };
@@ -51,6 +53,10 @@
 		FC5DD33223FD98C1003CC429 /* CalibrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationVC.swift; sourceTree = "<group>"; };
 		FC68D9B72454E43400A0494C /* GuestLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestLoginVC.swift; sourceTree = "<group>"; };
 		FC68D9B92454E44800A0494C /* AdminLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginVC.swift; sourceTree = "<group>"; };
+		FC68D9BB245646DC00A0494C /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC68D9BC245646DC00A0494C /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC68D9C4245647CE00A0494C /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC68D9C5245647CE00A0494C /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD08F8A23EF813400F4C7C8 /* At Training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "At Training.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD08F8D23EF813400F4C7C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCD08F8F23EF813400F4C7C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				697F39D9FC2B812C6090F3B1 /* Pods_At_Training.framework in Frameworks */,
+				FC68D9CA245648B600A0494C /* Realm.framework in Frameworks */,
+				FC68D9C2245646E700A0494C /* Pods_At_Training.framework in Frameworks */,
+				FC68D9C8245647CE00A0494C /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +85,10 @@
 		7AD619743AD0029D50479FD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC68D9C4245647CE00A0494C /* Realm.framework */,
+				FC68D9C5245647CE00A0494C /* RealmSwift.framework */,
+				FC68D9BB245646DC00A0494C /* Realm.framework */,
+				FC68D9BC245646DC00A0494C /* RealmSwift.framework */,
 				E13C0269ED2BA42BD907AFA3 /* Pods_At_Training.framework */,
 			);
 			name = Frameworks;
@@ -446,6 +458,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KL2CMCMZHA;
 				INFOPLIST_FILE = "At Training/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,6 +481,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KL2CMCMZHA;
 				INFOPLIST_FILE = "At Training/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

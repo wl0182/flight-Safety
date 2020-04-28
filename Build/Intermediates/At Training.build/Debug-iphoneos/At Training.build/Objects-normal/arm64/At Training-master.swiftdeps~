@@ -1,0 +1,21 @@
+version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+options: "da0e4eae04dcd1a89026ba92dc760f68"
+build_time: [1587939936, 389341000]
+inputs:
+  "/Users/wassimlagnaoui/FS26/At Training/Controller/ROLLVC.swift": [1587930720, 968533732]
+  "/Users/wassimlagnaoui/FS26/At Training/Controller/Manual_ViewController.swift": [1587939758, 500274750]
+  "/Users/wassimlagnaoui/FS26/At Training/Controller/AccidentScenario_ViewController.swift": [1587930720, 964242029]
+  "/Users/wassimlagnaoui/FS26/At Training/Controller/Setup_ViewController.swift": [1587930720, 969016190]
+  "/Users/wassimlagnaoui/FS26/At Training/Controller/AltitudeVC.swift": [1587930720, 965312357]
+  "/Users/wassimlagnaoui/FS26/At Training/Controller/PitchVC.swift": [1587930720, 967552425]
+  "/Users/wassimlagnaoui/FS26/At Training/Controller/ViewController.swift": [1587930720, 969445925]
+  "/Users/wassimlagnaoui/FS26/At Training/Controller/AdminLoginVC.swift": [1587930720, 964985432]
+  "/Users/wassimlagnaoui/FS26/At Training/AppDelegate.swift": [1587930720, 930907304]
+  "/Users/wassimlagnaoui/FS26/At Training/Controller/SafetySettings_ViewController.swift": [1587930720, 968769434]
+  "/Users/wassimlagnaoui/FS26/At Training/Controller/GuestLoginVC.swift": [1587930720, 965776758]
+  "/Users/wassimlagnaoui/FS26/At Training/Controller/ProgramPoint_ViewController.swift": [1587930720, 967826024]
+  "/Users/wassimlagnaoui/FS26/At Training/Controller/CalibrationVC.swift": [1587930720, 965554862]
+  "/Users/wassimlagnaoui/FS26/At Training/Controller/RateOfDecentVC.swift": [1587930720, 968304924]
+  "/Users/wassimlagnaoui/FS26/At Training/SceneDelegate.swift": [1587930720, 971260634]
+  "/Users/wassimlagnaoui/FS26/At Training/Controller/Random_ViewController.swift": [1587930720, 968077434]
+  "/Users/wassimlagnaoui/FS26/At Training/Model/constants.swift": [1587930720, 970307624]

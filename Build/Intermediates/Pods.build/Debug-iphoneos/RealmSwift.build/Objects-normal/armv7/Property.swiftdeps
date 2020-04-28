@@ -1,0 +1,200 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Property"
+- "=="
+provides-nominal:
+- "10RealmSwift8PropertyV"
+provides-member:
+- ["10RealmSwift8PropertyV", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "=="
+- "AssignmentPrecedence"
+- "Bool"
+- "CustomStringConvertible"
+- "Equatable"
+- "Property"
+- "PropertyType"
+- "RLMProperty"
+- "String"
+depends-member:
+- !private ["s7CVarArgP", "array"]
+- !private ["s7CVarArgP", "description"]
+- !private ["s7CVarArgP", "indexed"]
+- !private ["s7CVarArgP", "isEqual"]
+- !private ["s7CVarArgP", "name"]
+- !private ["s7CVarArgP", "objectClassName"]
+- !private ["s7CVarArgP", "optional"]
+- !private ["s7CVarArgP", "type"]
+- !private ["s28CustomDebugStringConvertibleP", "array"]
+- !private ["s28CustomDebugStringConvertibleP", "description"]
+- !private ["s28CustomDebugStringConvertibleP", "indexed"]
+- !private ["s28CustomDebugStringConvertibleP", "isEqual"]
+- !private ["s28CustomDebugStringConvertibleP", "name"]
+- !private ["s28CustomDebugStringConvertibleP", "objectClassName"]
+- !private ["s28CustomDebugStringConvertibleP", "optional"]
+- !private ["s28CustomDebugStringConvertibleP", "type"]
+- ["s23CustomStringConvertibleP", "=="]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "array"]
+- ["s23CustomStringConvertibleP", "description"]
+- !private ["s23CustomStringConvertibleP", "indexed"]
+- !private ["s23CustomStringConvertibleP", "isEqual"]
+- !private ["s23CustomStringConvertibleP", "name"]
+- !private ["s23CustomStringConvertibleP", "objectClassName"]
+- !private ["s23CustomStringConvertibleP", "optional"]
+- !private ["s23CustomStringConvertibleP", "rlmProperty"]
+- !private ["s23CustomStringConvertibleP", "type"]
+- ["SQ", "=="]
+- ["SQ", ""]
+- !private ["SQ", "array"]
+- ["SQ", "description"]
+- !private ["SQ", "indexed"]
+- !private ["SQ", "isEqual"]
+- !private ["SQ", "name"]
+- !private ["SQ", "objectClassName"]
+- !private ["SQ", "optional"]
+- !private ["SQ", "rlmProperty"]
+- !private ["SQ", "type"]
+- !private ["SH", "array"]
+- !private ["SH", "description"]
+- !private ["SH", "indexed"]
+- !private ["SH", "isEqual"]
+- !private ["SH", "name"]
+- !private ["SH", "objectClassName"]
+- !private ["SH", "optional"]
+- !private ["SH", "type"]
+- !private ["So8NSObjectC", "array"]
+- !private ["So8NSObjectC", "description"]
+- !private ["So8NSObjectC", "indexed"]
+- !private ["So8NSObjectC", "isEqual"]
+- !private ["So8NSObjectC", "name"]
+- !private ["So8NSObjectC", "objectClassName"]
+- !private ["So8NSObjectC", "optional"]
+- !private ["So8NSObjectC", "type"]
+- !private ["So8NSObjectP", "array"]
+- !private ["So8NSObjectP", "description"]
+- !private ["So8NSObjectP", "indexed"]
+- !private ["So8NSObjectP", "isEqual"]
+- !private ["So8NSObjectP", "name"]
+- !private ["So8NSObjectP", "objectClassName"]
+- !private ["So8NSObjectP", "optional"]
+- !private ["So8NSObjectP", "type"]
+- ["10RealmSwift8PropertyV", "=="]
+- ["10RealmSwift8PropertyV", "Bool"]
+- ["10RealmSwift8PropertyV", "Property"]
+- ["10RealmSwift8PropertyV", "PropertyType"]
+- ["10RealmSwift8PropertyV", "RLMProperty"]
+- ["10RealmSwift8PropertyV", "String"]
+- ["10RealmSwift8PropertyV", "deinit"]
+- ["10RealmSwift8PropertyV", "description"]
+- ["10RealmSwift8PropertyV", "init"]
+- ["10RealmSwift8PropertyV", "isArray"]
+- ["10RealmSwift8PropertyV", "isIndexed"]
+- ["10RealmSwift8PropertyV", "isOptional"]
+- ["10RealmSwift8PropertyV", "name"]
+- ["10RealmSwift8PropertyV", "objectClassName"]
+- ["10RealmSwift8PropertyV", "rlmProperty"]
+- ["10RealmSwift8PropertyV", "type"]
+- !private ["So11RLMPropertyC", "array"]
+- !private ["So11RLMPropertyC", "description"]
+- !private ["So11RLMPropertyC", "indexed"]
+- !private ["So11RLMPropertyC", "isEqual"]
+- !private ["So11RLMPropertyC", "name"]
+- !private ["So11RLMPropertyC", "objectClassName"]
+- !private ["So11RLMPropertyC", "optional"]
+- !private ["So11RLMPropertyC", "type"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "array"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "description"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "indexed"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "isEqual"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "name"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "objectClassName"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "optional"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "type"]
+depends-nominal:
+- !private "s7CVarArgP"
+- !private "s28CustomDebugStringConvertibleP"
+- "s23CustomStringConvertibleP"
+- "SQ"
+- !private "SH"
+- !private "So8NSObjectC"
+- !private "So8NSObjectP"
+- "10RealmSwift8PropertyV"
+- !private "So11RLMPropertyC"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/ObjectiveC.swiftmodule/armv7.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreImage.swiftmodule/armv7.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/QuartzCore.swiftmodule/armv7.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Dispatch.swiftmodule/armv7.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Metal.swiftmodule/armv7.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Darwin.swiftmodule/armv7.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Foundation.swiftmodule/armv7.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreFoundation.swiftmodule/armv7.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreGraphics.swiftmodule/armv7.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Swift.swiftmodule/armv7.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/UIKit.swiftmodule/armv7.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/SwiftOnoneSupport.swiftmodule/armv7.swiftinterface"
+- "/Users/wassimlagnaoui/FS26/Pods/Target Support Files/RealmSwift/RealmSwift-umbrella.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMSchema.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMObjectSchema.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMObjectBase_Dynamic.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMRealm_Dynamic.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMRealm+Sync.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMRealmConfiguration+Sync.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/NSError+RLMSync.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMThreadSafeReference.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/PrivateHeaders/RLMObjectStore.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMOptionalBase.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMObjectBase.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMListBase.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/PrivateHeaders/RLMSchema_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/PrivateHeaders/RLMObjectSchema_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/PrivateHeaders/RLMObjectBase_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/PrivateHeaders/RLMSyncUtil_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/PrivateHeaders/RLMRealm_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/PrivateHeaders/RLMSyncConfiguration_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/PrivateHeaders/RLMRealmConfiguration_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/PrivateHeaders/RLMCollection_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/PrivateHeaders/RLMResults_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/PrivateHeaders/RLMObject_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/PrivateHeaders/RLMArray_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/PrivateHeaders/RLMProperty_Private.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMSyncUtil.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/Realm.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMRealm.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMPlatform.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMSyncSession.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMSyncPermission.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMMigration.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMSyncConfiguration.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMRealmConfiguration.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMCollection.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMSyncSubscription.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMSyncManager.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMSyncUser.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/PrivateHeaders/RLMAccessor.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMSyncCredentials.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMResults.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMConstants.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMObject.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMArray.h"
+- "/Users/wassimlagnaoui/FS26/Build/Products/Debug-iphoneos/Realm/Realm.framework/Headers/RLMProperty.h"
+- "/Users/wassimlagnaoui/FS26/Build/Intermediates/Pods.build/Debug-iphoneos/RealmSwift.build/unextended-module.modulemap"
+- "/Users/wassimlagnaoui/FS26/Build/Intermediates/Pods.build/Debug-iphoneos/Realm.build/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "d83c1fd48a1ba3801ba24d87141be434"

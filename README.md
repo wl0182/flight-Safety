@@ -1,8 +1,7 @@
-# flight-Safety
-
-List of contributors 
-Wassim 
-Sangita
-Muhammad 
-Manish 
-Roshan 
+# Helo-Flight-Safety
+Team Pentagrammers:
+Wassim,
+Muhammad,
+Sangita,
+Manish, 
+Roshan

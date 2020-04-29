@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var firmwareLabel: UILabel!
     
     // variables
-    var temp1 : String = "" //connection
+    var temp1 : String = "Not Connected" //connection
     var temp2 : Int = 0     //battery percentage
     var temp3 : Float = 0   //firmware version
     
@@ -45,7 +45,8 @@ class ViewController: UIViewController {
         bringValuesForHomePage()
            
     }
-    override func viewWillDisappear(_ animated: Bool) {
+    
+    override func viewWillAppear(_ animated: Bool) {
         //udpate the labels
         connectionLabel.text = String(temp1)
         batteryLabel.text    = "\(temp2)% "
@@ -61,13 +62,7 @@ class ViewController: UIViewController {
         systemTestBytesReadyToBeSentToMicrocontroller = true //will need to go into one more while iteration for sending the built bytes
         
     }
-//
-//    func updateUI()  {
-//        //udpate the labels
-//        connectionLabel.text = String(temp1)
-//        batteryLabel.text    = "\(temp2)% "
-//        firmwareLabel.text   = String(temp3)
-//    }
+
     
     func systemTestMessageBuilder(){
         

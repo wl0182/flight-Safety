@@ -3,7 +3,6 @@
 //  At Training
 //
 //  Created by Muhammad Daniyal on 4/14/20.
-//  Copyright © 2020 WASSIM LAGNAOUI. All rights reserved.
 //
 
 //
@@ -474,7 +473,7 @@ uint16_t crc16Table [256];
 
 }
 //plain string sender testing function for network connection
-- (void) msgSender //for now, this is being called in flip up conditions during manual training.
+- (void) msgSender //not being used
 {
     
     uint8_t byteArrayForMicro[26] = {0};// OR we can create uint8_t mesgBeingSent[no_of_bytes_being_sent] = {0}; and use 'mesgBeingSent' for the parameter of (const void *) in sendto() function
@@ -482,7 +481,7 @@ uint16_t crc16Table [256];
     struct sockaddr_in testsvr;
     bzero(&testsvr, sizeof(testsvr));
     testsvr.sin_family = AF_INET;
-    testsvr.sin_addr.s_addr = inet_addr("192.168.1.13");
+    testsvr.sin_addr.s_addr = inet_addr("192.168.1.12");
     
     testsvr.sin_port = htons(43211);
     socklen_t len2 = sizeof(testsvr);
@@ -498,7 +497,7 @@ uint16_t crc16Table [256];
         //do nothing
         sendto(self.sockfd, "DO NOT FLIP THE VISOR", 21, 0, (struct sockaddr *) &testsvr, len2);
     }else if (byteArrayForMicro[0] == 69){
-        sendto(self.sockfd, "FLIP THE VISORmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm", 60, 0, (struct sockaddr *) &testsvr, len2);
+        sendto(self.sockfd, "FLIP THE VISOR", 13, 0, (struct sockaddr *) &testsvr, len2);
     sendto(self.sockfd, byteArrayForMicro, 40, 0, (struct sockaddr *) &testsvr, len2);//third argument is the no of characters to be sent
     }
     printf("MSG SENT TO MICROCONTROLLER!");
@@ -519,7 +518,7 @@ uint16_t crc16Table [256];
         struct sockaddr_in normalSvr;
         bzero(&normalSvr, sizeof(normalSvr));
         normalSvr.sin_family = AF_INET;
-        normalSvr.sin_addr.s_addr = inet_addr("192.168.1.13");
+        normalSvr.sin_addr.s_addr = inet_addr("192.168.1.12");
         normalSvr.sin_port = htons(43211);
         socklen_t len2 = sizeof(normalSvr);
     
@@ -538,14 +537,14 @@ uint16_t crc16Table [256];
 //        }
 //        else if (byteArrayForMicro[0] == 69)
 //        {
-        sendto(self.sockfd, "RECIEVED VOLTAGE INSTRUCTIONSmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm", 70, 0, (struct sockaddr *) &normalSvr, len2);
+        sendto(self.sockfd, "RECIEVED VOLTAGE INSTRUCTIONS", 30, 0, (struct sockaddr *) &normalSvr, len2);
         sendto(self.sockfd, bytesReadyToSend, noOfBytes, 0, (struct sockaddr *) &normalSvr, len2);//third argument is the no of characters to be sent
        // }
-        printf("MSG SENT TO MICROCONTROLLER!");
+        printf("\nMSG SENT TO MICROCONTROLLER!");
 
         //close(self.sockfd);
 }
-//for now, this is being called from home page for sending emg trigger for 'system test' functionality
+//Used for sending emg trigger for 'system test' as well as safety violation during Manual Training
 - (void) emergencyMsgSender:(NSString *) emgMsgBytes ofSize:(uint8_t) noOfBytes{
    
  
@@ -555,7 +554,7 @@ uint16_t crc16Table [256];
     struct sockaddr_in emergencysvr;
     bzero(&emergencysvr, sizeof(emergencysvr));
     emergencysvr.sin_family = AF_INET;
-    emergencysvr.sin_addr.s_addr = inet_addr("192.168.1.13"); // SET THIS TO BE THE IP ADDRESS OF MICROCONTROLLER (192.168.1.11). DO NOT FORGET!
+    emergencysvr.sin_addr.s_addr = inet_addr("192.168.1.12"); // SET THIS TO BE THE IP ADDRESS OF MICROCONTROLLER (192.168.1.11). DO NOT FORGET!
     emergencysvr.sin_port = htons(43211);
     socklen_t len2 = sizeof(emergencysvr);
     
@@ -565,9 +564,9 @@ uint16_t crc16Table [256];
       //tester code start
       //test for sending msg to microcontroller
     //send(microfd, "Hello from IPAD Hello from IPAD Hello from IPAD Hello from IPAD", 60, 0);
-    sendto(self.sockfd, "922922922922922922922922", 24, 0, (struct sockaddr *) &emergencysvr, len2); //just a test string that gets sent over network
+    sendto(self.sockfd, "Next byte set is an emergency flip-up message", 24, 0, (struct sockaddr *) &emergencysvr, len2); //just a test string that gets sent over network
     sendto(self.sockfd, emgBytesReadyToSend, numberOfBytes, 0, (struct sockaddr *) &emergencysvr, len2);
-    printf("EMERGENCY MSG SENT TO MICROCONTROLLER!");
+    printf("\nEMERGENCY MSG SENT TO MICROCONTROLLER!");
     //close(self.sockfd);
     
 }

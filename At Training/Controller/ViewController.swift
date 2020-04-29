@@ -27,22 +27,44 @@ class ViewController: UIViewController {
     var continueNetworkValueBringer: Bool = true
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //bringValuesForHomePage()
         
     }
-    
+    func showLowBatteryWarning()
+    {
+            let alert = UIAlertController(title: "AHRS Battery Low", message: "AHRS Device Battery Low!\nAHRS Charger Plug-in Requied", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default)
+            {
+                (action) in
+            }
+            alert.addAction(action)
+            present(alert, animated: true, completion:  nil)
+            
+        
+    }
+    func showNoConnectionWarning()
+    {
+            let alert = UIAlertController(title: "AHRS Wifi Connection Needed", message: "Make sure you are connected to AHRS Device before Proceeding", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default)
+            {
+                (action) in
+            }
+            alert.addAction(action)
+            present(alert, animated: true, completion:  nil)
+            
+        
+    }
     override func viewDidAppear(_ animated: Bool) {
         
         super.viewDidAppear(animated) //not sure if this is needed
         print("Hello it's me again the home page")
         print("Inside ViewDidAppear")
-        startHomePageReceiver = 10
-        continueNetworkValueBringer = true
-        bringValuesForHomePage()
+        startHomePageReceiver = 10              //
+        continueNetworkValueBringer = true      //try calling these
+        bringValuesForHomePage()                //inside viewWillAppear. it might bring values quicker upon landing
            
     }
     
@@ -65,7 +87,7 @@ class ViewController: UIViewController {
 
     
     func systemTestMessageBuilder(){
-        
+        if (temp1 == "Connected"){
         bytesToBeSentForSystemTest.insert("0D",at:0) //DCBA is the iPad's identifier
         bytesToBeSentForSystemTest.insert("0C",at:1)
         bytesToBeSentForSystemTest.insert("0B",at:2)
@@ -85,6 +107,7 @@ class ViewController: UIViewController {
         bytesToBeSentForSystemTest.insert("00",at:16)//pitch //for system test functionality to flip the visor
         bytesToBeSentForSystemTest.insert("00",at:17)//pitch //microcontroller wont need or care about Roll and Pitch
         bytesToBeSentForSystemTest.insert("00",at:18)//pitch //values.
+        }
         
     }
     func bringValuesForHomePage()//EXIT THIS FUNCTION WHEN USER HAS LEFT THIS PAGE
@@ -100,7 +123,6 @@ class ViewController: UIViewController {
                     
                     var swiftFirmware_version:Float? = Optional.none
                     var swiftBattPct:CInt? = Optional.none
-                    
                     var continueHomePageReceiving : Int = 0//variable to check whether to receive data from AHRS device or not
                     if (self.startHomePageReceiver == 10) //only if 'Initiate' titled button is pressed, the startReceiver is set to 10.
                     {
@@ -124,11 +146,15 @@ class ViewController: UIViewController {
                     //while(noOfIterations > 1)
                     {
                         
+                        
                         //print("inside while loop")
                         homePageInstanceOfparser.msgReceiver() // do this as long as app is actively running
-                        //try setting instanceOfparser.pitch value to be new 'instanceOfparser.pitch' here.
-                        print("\nOn Home Page, Returned from msgReceiver func\n")
                         
+                        //homePageInstanceOfparser.connectionEstablished = true //this gets set to true when recvfrom returns with bytes
+                        
+                        
+                        print("\nOn Home Page, Returned from msgReceiver func\n")
+                  
                         swiftFirmware_version = homePageInstanceOfparser.firmware_version
                         if (swiftFirmware_version == nil || swiftFirmware_version == 0.0){
                             //do nothing
@@ -142,22 +168,33 @@ class ViewController: UIViewController {
                         swiftBattPct = homePageInstanceOfparser.battPct
                         if (swiftBattPct == nil || swiftBattPct == 0){
                             //do nothing
-                        }else{
+                            
+                        }else
+                        {
                             print("Battery Percentage = \(swiftBattPct!)")
                             //set the UI Label to above printed value
                             self.temp2 = Int(swiftBattPct!)
+                            //update the UI Labels in the main thread
+                             DispatchQueue.main.sync{
+                                     //Update UI Labels when values have been set
+                                           //udpate the labels
+                                     self.connectionLabel.text = String(self.temp1)
+                                     self.batteryLabel.text    = "\(self.temp2)%"
+                                     self.firmwareLabel.text   = String(self.temp3)
+                                     
+                                     if (swiftBattPct! < 10)
+                                     {
+                                         self.showLowBatteryWarning()
+                                     }
+                                       
+                                }
                         }
-                        
-                        //update the UI Labels in the main thread
-                        DispatchQueue.main.sync {
-                            //Update UI Labels when values have been set
-                                  //udpate the labels
-                            self.connectionLabel.text = String(self.temp1)
-                            self.batteryLabel.text    = "\(self.temp2)%"
-                            self.firmwareLabel.text   = String(self.temp3)
-                                  //self.updateUI()
-                        }
-                        
+                     
+                     
+//                        if(batteryLow == true) //if batteryLow was set to true upon discovering battery level < 10, we will not run rest of the code
+//                        {
+//                            continue
+//                        }
                         if(self.systemTestBytesReadyToBeSentToMicrocontroller == true) //if this Bool is true
                         {
                             //store the swift array bytes into objective-c NSString array

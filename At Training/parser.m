@@ -509,7 +509,8 @@ uint16_t crc16Table [256];
 //this is being called for sending the voltage value based on the ceiling and slider visibility from manual scenario
 - (void) normalMsgSender: (NSString *) simulationMsgBytes ofSize:(uint8_t)numberOfBytes
 {
-        int noOfBytes = (int) numberOfBytes *2;
+        //int noOfBytes = (int) numberOfBytes *2;
+        int noOfBytes = 19*2;//we never need to send more than 19*2 bytes. This will take care of unnecessary or erroroneous bytes
         uint8_t * bytesReadyToSend = (uint8_t *)[simulationMsgBytes UTF8String];
     
         uint8_t byteArrayForMicro[19] = {0};// OR we can create uint8_t mesgBeingSent[no_of_bytes_being_sent] = {0}; and use 'mesgBeingSent' for the parameter of (const void *) in sendto() function
@@ -547,8 +548,8 @@ uint16_t crc16Table [256];
 //Used for sending emg trigger for 'system test' as well as safety violation during Manual Training
 - (void) emergencyMsgSender:(NSString *) emgMsgBytes ofSize:(uint8_t) noOfBytes{
    
- 
-    int numberOfBytes = (int) noOfBytes *2;
+ //   int numberOfBytes = (int) noOfBytes * 2;
+    int numberOfBytes = 19*2; //we never need to send more than 19*2 bytes. This will take care of unnecessary or erroroneous bytes
     uint8_t * emgBytesReadyToSend = (uint8_t *)[emgMsgBytes UTF8String];
     
     struct sockaddr_in emergencysvr;

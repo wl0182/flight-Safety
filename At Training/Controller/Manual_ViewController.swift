@@ -13,6 +13,8 @@ class Manual_ViewController: UIViewController {
     
     @IBOutlet weak var initiateButton: UIButton!
     
+    @IBOutlet weak var visbilityOutlet: UISlider!
+    
     // variables
     var valueReceived: Float = 40 //40 is arbitrarily set
     var valueReceivedasSigned: Int = 10 //10 is arbitrarily set
@@ -43,12 +45,14 @@ class Manual_ViewController: UIViewController {
         
     }
     
-    // outlets
+    // mark Pressed
     
     @IBAction func markPressed(_ sender: UIButton) {
         abortTraining()
         
     }
+    
+    // outlets
     @IBOutlet weak var visibilityLabel: UILabel!
     
     @IBOutlet weak var ceilingLabel: UILabel!
@@ -64,6 +68,39 @@ class Manual_ViewController: UIViewController {
         return voltage
         
     }
+  
+    // sliders control
+    
+    
+    @IBAction func addToVisbilityPressed(_ sender: UIButton) {
+        let temp = visbilityOutlet.value
+        // cast to .25
+        let temp1 = temp*4
+        let temp2 = roundf(temp1)
+        temp3 = temp2/4
+        temp3 = temp3 + 0.25
+        db.set(temp3, forKey: K.ManualVisibility)
+        visbilityOutlet.value = temp3
+        visibilityLabel.text = String(temp3)
+        print(temp3)
+        
+    }
+    
+    @IBAction func subtractFromVisibilityPressed(_ sender: UIButton) {
+        let temp = visbilityOutlet.value
+               // cast to .25
+               let temp1 = temp*4
+               let temp2 = roundf(temp1)
+               temp3 = temp2/4
+               temp3 = temp3 - 0.25
+                db.set(temp3, forKey: K.ManualVisibility)
+               visbilityOutlet.value = temp3
+               visibilityLabel.text = String(temp3)
+               print(temp3)
+        
+    }
+    
+    
     
     @IBAction func visibilitySlider(_ sender: UISlider) {
         let temp = sender.value
@@ -74,9 +111,6 @@ class Manual_ViewController: UIViewController {
         let tempS = String(temp3)
         visibilityLabel.text = tempS
         db.set(temp3, forKey: K.ManualVisibility)
-        
-       
-        
     }
     
     
@@ -86,7 +120,7 @@ class Manual_ViewController: UIViewController {
         let tempI = Int(temp) //use this tempI for both - storing in database AND comparisons in while loop below
         let tempS = String(Int(temp))
         ceilingLabel.text = tempS
-        db.set(tempI, forKey: K.ManualCeiling)
+       
         
     }
     

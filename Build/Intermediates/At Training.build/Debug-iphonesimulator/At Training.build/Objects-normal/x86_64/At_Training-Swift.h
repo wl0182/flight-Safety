@@ -273,16 +273,19 @@ SWIFT_CLASS("_TtC11At_Training12GuestLoginVC")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UILabel;
 @class UISlider;
+@class UILabel;
 
 SWIFT_CLASS("_TtC11At_Training21Manual_ViewController")
 @interface Manual_ViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified initiateButton;
+@property (nonatomic, weak) IBOutlet UISlider * _Null_unspecified visbilityOutlet;
 - (IBAction)markPressed:(UIButton * _Nonnull)sender;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified visibilityLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified ceilingLabel;
 - (void)viewDidLoad;
+- (IBAction)addToVisbilityPressed:(UIButton * _Nonnull)sender;
+- (IBAction)subtractFromVisibilityPressed:(UIButton * _Nonnull)sender;
 - (IBAction)visibilitySlider:(UISlider * _Nonnull)sender;
 - (IBAction)ceilingSlider:(UISlider * _Nonnull)sender;
 - (void)viewWillDisappear:(BOOL)animated;

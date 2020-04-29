@@ -280,12 +280,15 @@ SWIFT_CLASS("_TtC11At_Training21Manual_ViewController")
 @interface Manual_ViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified initiateButton;
 @property (nonatomic, weak) IBOutlet UISlider * _Null_unspecified visbilityOutlet;
+@property (nonatomic, weak) IBOutlet UISlider * _Null_unspecified ceilingSliderOutlet;
 - (IBAction)markPressed:(UIButton * _Nonnull)sender;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified visibilityLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified ceilingLabel;
 - (void)viewDidLoad;
 - (IBAction)addToVisbilityPressed:(UIButton * _Nonnull)sender;
 - (IBAction)subtractFromVisibilityPressed:(UIButton * _Nonnull)sender;
+- (IBAction)addToCeilPressed:(UIButton * _Nonnull)sender;
+- (IBAction)subFromCeilingPressed:(UIButton * _Nonnull)sender;
 - (IBAction)visibilitySlider:(UISlider * _Nonnull)sender;
 - (IBAction)ceilingSlider:(UISlider * _Nonnull)sender;
 - (void)viewWillDisappear:(BOOL)animated;

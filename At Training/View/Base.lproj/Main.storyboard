@@ -670,6 +670,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                                         <state key="normal" title="-"/>
+                                                        <connections>
+                                                            <action selector="subFromCeilingPressed:" destination="s6R-tk-7Va" eventType="touchUpInside" id="BPb-YZ-d7F"/>
+                                                        </connections>
                                                     </button>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1200" minValue="200" maxValue="2000" translatesAutoresizingMaskIntoConstraints="NO" id="HCF-Hm-rdT">
                                                         <rect key="frame" x="98" y="0.0" width="532" height="101"/>
@@ -686,6 +689,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                                         <state key="normal" title="+"/>
+                                                        <connections>
+                                                            <action selector="addToCeilPressed:" destination="s6R-tk-7Va" eventType="touchUpInside" id="v4o-ta-RMd"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -769,6 +775,7 @@
                     <navigationItem key="navigationItem" id="Y2L-Aw-V9V"/>
                     <connections>
                         <outlet property="ceilingLabel" destination="myM-FD-wR0" id="7Ob-rp-Wts"/>
+                        <outlet property="ceilingSliderOutlet" destination="HCF-Hm-rdT" id="yMS-yW-NN1"/>
                         <outlet property="initiateButton" destination="i67-dM-fSo" id="qwl-Vd-Agg"/>
                         <outlet property="visbilityOutlet" destination="iaT-rs-X5r" id="Hav-y6-LVj"/>
                         <outlet property="visibilityLabel" destination="9vb-Zc-b6O" id="IFl-HE-QQq"/>

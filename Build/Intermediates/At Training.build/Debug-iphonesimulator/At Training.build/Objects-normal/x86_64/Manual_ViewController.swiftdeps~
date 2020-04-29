@@ -7,11 +7,14 @@ provides-member:
 - ["11At_Training21Manual_ViewControllerC", ""]
 provides-dynamic-lookup:
 - "InitiatePressed"
+- "addToCeilPressed"
 - "addToVisbilityPressed"
 - "ceilingLabel"
 - "ceilingSlider"
+- "ceilingSliderOutlet"
 - "initiateButton"
 - "markPressed"
+- "subFromCeilingPressed"
 - "subtractFromVisibilityPressed"
 - "viewDidLoad"
 - "viewWillDisappear"
@@ -529,10 +532,12 @@ depends-member:
 - !private ["11At_Training21Manual_ViewControllerC", "UInt8"]
 - ["11At_Training21Manual_ViewControllerC", "abortOnFlipUp"]
 - ["11At_Training21Manual_ViewControllerC", "abortTraining"]
+- ["11At_Training21Manual_ViewControllerC", "addToCeilPressed"]
 - ["11At_Training21Manual_ViewControllerC", "addToVisbilityPressed"]
 - ["11At_Training21Manual_ViewControllerC", "altitudeSafetyTrigger"]
 - ["11At_Training21Manual_ViewControllerC", "ceilingLabel"]
 - ["11At_Training21Manual_ViewControllerC", "ceilingSlider"]
+- ["11At_Training21Manual_ViewControllerC", "ceilingSliderOutlet"]
 - !private ["11At_Training21Manual_ViewControllerC", "db"]
 - ["11At_Training21Manual_ViewControllerC", "deinit"]
 - ["11At_Training21Manual_ViewControllerC", "init"]
@@ -544,6 +549,7 @@ depends-member:
 - ["11At_Training21Manual_ViewControllerC", "readFIL"]
 - !private ["11At_Training21Manual_ViewControllerC", "roundf"]
 - ["11At_Training21Manual_ViewControllerC", "startReceiver"]
+- ["11At_Training21Manual_ViewControllerC", "subFromCeilingPressed"]
 - ["11At_Training21Manual_ViewControllerC", "subtractFromVisibilityPressed"]
 - ["11At_Training21Manual_ViewControllerC", "temp3"]
 - ["11At_Training21Manual_ViewControllerC", "valueReceived"]
@@ -665,6 +671,7 @@ depends-member:
 - ["So8NSObjectC", "abortOnFlipUp"]
 - ["So8NSObjectC", "abortTraining"]
 - !private ["So8NSObjectC", "addAction"]
+- ["So8NSObjectC", "addToCeilPressed"]
 - ["So8NSObjectC", "addToVisbilityPressed"]
 - !private ["So8NSObjectC", "airspeedKnots"]
 - ["So8NSObjectC", "altitudeSafetyTrigger"]
@@ -673,6 +680,7 @@ depends-member:
 - !private ["So8NSObjectC", "battPct"]
 - ["So8NSObjectC", "ceilingLabel"]
 - ["So8NSObjectC", "ceilingSlider"]
+- ["So8NSObjectC", "ceilingSliderOutlet"]
 - !private ["So8NSObjectC", "closeUDPsocket"]
 - !private ["So8NSObjectC", "currentTitle"]
 - !private ["So8NSObjectC", "db"]
@@ -703,6 +711,7 @@ depends-member:
 - !private ["So8NSObjectC", "set"]
 - !private ["So8NSObjectC", "setTitle"]
 - ["So8NSObjectC", "startReceiver"]
+- ["So8NSObjectC", "subFromCeilingPressed"]
 - ["So8NSObjectC", "subtractFromVisibilityPressed"]
 - !private ["So8NSObjectC", "sync"]
 - ["So8NSObjectC", "temp3"]
@@ -1050,10 +1059,12 @@ depends-member:
 - ["So11UIResponderC", "abortOnFlipUp"]
 - ["So11UIResponderC", "abortTraining"]
 - !private ["So11UIResponderC", "addAction"]
+- ["So11UIResponderC", "addToCeilPressed"]
 - ["So11UIResponderC", "addToVisbilityPressed"]
 - ["So11UIResponderC", "altitudeSafetyTrigger"]
 - ["So11UIResponderC", "ceilingLabel"]
 - ["So11UIResponderC", "ceilingSlider"]
+- ["So11UIResponderC", "ceilingSliderOutlet"]
 - !private ["So11UIResponderC", "currentTitle"]
 - !private ["So11UIResponderC", "db"]
 - ["So11UIResponderC", "init"]
@@ -1066,6 +1077,7 @@ depends-member:
 - !private ["So11UIResponderC", "roundf"]
 - !private ["So11UIResponderC", "setTitle"]
 - ["So11UIResponderC", "startReceiver"]
+- ["So11UIResponderC", "subFromCeilingPressed"]
 - ["So11UIResponderC", "subtractFromVisibilityPressed"]
 - ["So11UIResponderC", "temp3"]
 - !private ["So11UIResponderC", "text"]
@@ -1245,10 +1257,12 @@ depends-member:
 - ["So16UIViewControllerC", "abortOnFlipUp"]
 - ["So16UIViewControllerC", "abortTraining"]
 - !private ["So16UIViewControllerC", "addAction"]
+- ["So16UIViewControllerC", "addToCeilPressed"]
 - ["So16UIViewControllerC", "addToVisbilityPressed"]
 - ["So16UIViewControllerC", "altitudeSafetyTrigger"]
 - ["So16UIViewControllerC", "ceilingLabel"]
 - ["So16UIViewControllerC", "ceilingSlider"]
+- ["So16UIViewControllerC", "ceilingSliderOutlet"]
 - !private ["So16UIViewControllerC", "db"]
 - ["So16UIViewControllerC", "init"]
 - ["So16UIViewControllerC", "initiateButton"]
@@ -1259,6 +1273,7 @@ depends-member:
 - ["So16UIViewControllerC", "readFIL"]
 - !private ["So16UIViewControllerC", "roundf"]
 - ["So16UIViewControllerC", "startReceiver"]
+- ["So16UIViewControllerC", "subFromCeilingPressed"]
 - ["So16UIViewControllerC", "subtractFromVisibilityPressed"]
 - ["So16UIViewControllerC", "temp3"]
 - ["So16UIViewControllerC", "valueReceived"]
@@ -1687,4 +1702,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "b220d973d0d2d83cfab98834f9b77091"
+interface-hash: "2faf02d1ab21302dbd832933dda1badc"

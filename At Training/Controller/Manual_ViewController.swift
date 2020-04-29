@@ -102,6 +102,7 @@ class Manual_ViewController: UIViewController {
     
     
     
+    
     @IBAction func visibilitySlider(_ sender: UISlider) {
         let temp = sender.value
         let temp1 = temp*4
@@ -116,11 +117,18 @@ class Manual_ViewController: UIViewController {
     
     
     @IBAction func ceilingSlider(_ sender: UISlider) {
-        let temp = sender.value
-        let tempI = Int(temp) //use this tempI for both - storing in database AND comparisons in while loop below
-        let tempS = String(Int(temp))
-        ceilingLabel.text = tempS
-       
+            let temp = sender.value
+              
+              var tempI = Int(temp) //use this tempI for both - storing in database AND comparisons in while loop below
+              tempI = tempI / 100
+              tempI = tempI * 100
+              
+              // send it to db
+              db.set(tempI, forKey: K.ManualCeiling)
+              
+              // UI update
+              let tempS = String(tempI)
+              ceilingLabel.text = tempS
         
     }
 

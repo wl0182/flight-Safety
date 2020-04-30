@@ -49,6 +49,7 @@ class SafetySettings_ViewController: UIViewController, UITextFieldDelegate  {
             if let at = aircratTypeTF.text , let tn = tailNumTF.text {
                 aircraftType = at
                 tailNumber = tn
+                performSegue(withIdentifier: K.safetyToMain, sender: self)
             }
         }
         else {

@@ -22,4 +22,6 @@ struct K {
     static let password = "123qwe"
     static let adminToSetup = "adminToSteup"
     static let safetyToMain = "SStoMM"
+    static let adminToCalibration = "adminToCalibration"
+    
 }

@@ -44,7 +44,7 @@ class AdminLoginVC: UIViewController, UITextFieldDelegate {
         
         if let pw = passwordTF.text {
             if pw == password {
-                performSegue(withIdentifier: K.adminToSetup, sender: self)
+                performSegue(withIdentifier: K.adminToCalibration, sender: self)
                 userID = "1"
             }
             else {

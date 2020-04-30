@@ -177,7 +177,7 @@ depends-member:
 - !private ["SH", "userID"]
 - !private ["SH", "viewDidLoad"]
 - !private ["SH", "wrongPassword"]
-- !private ["11At_Training1KV", "adminToSetup"]
+- !private ["11At_Training1KV", "adminToCalibration"]
 - !private ["So8NSCodingP", "K"]
 - ["So8NSCodingP", ""]
 - !private ["So8NSCodingP", "delegate"]

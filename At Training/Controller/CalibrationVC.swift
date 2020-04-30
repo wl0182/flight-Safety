@@ -31,6 +31,9 @@ class CalibrationVC: UIViewController {
     }
     
 
-   
+    @IBAction func showPressed(_ sender: UIButton) {
+        print("Showing Ilevel info ..")
+    }
+    
 
 }

@@ -6,17 +6,41 @@ provides-nominal:
 provides-member:
 - ["11At_Training13CalibrationVCC", ""]
 provides-dynamic-lookup:
+- "LatitudeLabel"
+- "batteryLabel"
+- "ellipsoidAltLabel"
+- "groundSpeedLabel"
+- "headingLabel"
+- "longitudeLabel"
+- "mslAltLabel"
+- "pitchLabel"
+- "rollLabel"
+- "versionLabel"
 - "viewDidLoad"
+- "vsiLabel"
 depends-top-level:
 - "CalibrationVC"
+- "UILabel"
 - "UIViewController"
 depends-member:
 - ["s7CVarArgP", ""]
 - !private ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "viewDidLoad"]
+- ["11At_Training13CalibrationVCC", "LatitudeLabel"]
+- ["11At_Training13CalibrationVCC", "UILabel"]
+- ["11At_Training13CalibrationVCC", "batteryLabel"]
 - ["11At_Training13CalibrationVCC", "deinit"]
+- ["11At_Training13CalibrationVCC", "ellipsoidAltLabel"]
+- ["11At_Training13CalibrationVCC", "groundSpeedLabel"]
+- ["11At_Training13CalibrationVCC", "headingLabel"]
 - ["11At_Training13CalibrationVCC", "init"]
+- ["11At_Training13CalibrationVCC", "longitudeLabel"]
+- ["11At_Training13CalibrationVCC", "mslAltLabel"]
+- ["11At_Training13CalibrationVCC", "pitchLabel"]
+- ["11At_Training13CalibrationVCC", "rollLabel"]
+- ["11At_Training13CalibrationVCC", "versionLabel"]
 - ["11At_Training13CalibrationVCC", "viewDidLoad"]
+- ["11At_Training13CalibrationVCC", "vsiLabel"]
 - ["s28CustomDebugStringConvertibleP", ""]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
@@ -35,8 +59,20 @@ depends-member:
 - ["So26NSExtensionRequestHandlingP", ""]
 - !private ["So26NSExtensionRequestHandlingP", "init"]
 - !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
+- ["So8NSObjectC", "LatitudeLabel"]
+- ["So8NSObjectC", "UILabel"]
+- ["So8NSObjectC", "batteryLabel"]
+- ["So8NSObjectC", "ellipsoidAltLabel"]
+- ["So8NSObjectC", "groundSpeedLabel"]
+- ["So8NSObjectC", "headingLabel"]
 - ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "longitudeLabel"]
+- ["So8NSObjectC", "mslAltLabel"]
+- ["So8NSObjectC", "pitchLabel"]
+- ["So8NSObjectC", "rollLabel"]
+- ["So8NSObjectC", "versionLabel"]
 - ["So8NSObjectC", "viewDidLoad"]
+- ["So8NSObjectC", "vsiLabel"]
 - ["So8NSObjectP", ""]
 - !private ["So8NSObjectP", "init"]
 - !private ["So8NSObjectP", "viewDidLoad"]
@@ -52,8 +88,20 @@ depends-member:
 - ["So30UIPasteConfigurationSupportingP", ""]
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
+- ["So11UIResponderC", "LatitudeLabel"]
+- ["So11UIResponderC", "UILabel"]
+- ["So11UIResponderC", "batteryLabel"]
+- ["So11UIResponderC", "ellipsoidAltLabel"]
+- ["So11UIResponderC", "groundSpeedLabel"]
+- ["So11UIResponderC", "headingLabel"]
 - ["So11UIResponderC", "init"]
+- ["So11UIResponderC", "longitudeLabel"]
+- ["So11UIResponderC", "mslAltLabel"]
+- ["So11UIResponderC", "pitchLabel"]
+- ["So11UIResponderC", "rollLabel"]
+- ["So11UIResponderC", "versionLabel"]
 - ["So11UIResponderC", "viewDidLoad"]
+- ["So11UIResponderC", "vsiLabel"]
 - ["So30UIResponderStandardEditActionsP", ""]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
 - !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
@@ -66,9 +114,21 @@ depends-member:
 - ["So23UIUserActivityRestoringP", ""]
 - !private ["So23UIUserActivityRestoringP", "init"]
 - !private ["So23UIUserActivityRestoringP", "viewDidLoad"]
+- ["So16UIViewControllerC", "LatitudeLabel"]
+- ["So16UIViewControllerC", "UILabel"]
 - ["So16UIViewControllerC", ""]
+- ["So16UIViewControllerC", "batteryLabel"]
+- ["So16UIViewControllerC", "ellipsoidAltLabel"]
+- ["So16UIViewControllerC", "groundSpeedLabel"]
+- ["So16UIViewControllerC", "headingLabel"]
 - ["So16UIViewControllerC", "init"]
+- ["So16UIViewControllerC", "longitudeLabel"]
+- ["So16UIViewControllerC", "mslAltLabel"]
+- ["So16UIViewControllerC", "pitchLabel"]
+- ["So16UIViewControllerC", "rollLabel"]
+- ["So16UIViewControllerC", "versionLabel"]
 - ["So16UIViewControllerC", "viewDidLoad"]
+- ["So16UIViewControllerC", "vsiLabel"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
@@ -190,4 +250,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "bf32dfa6511b9c145da4b3ffc1f428bc"
+interface-hash: "d2007865123174319cfbc239a9d20b8e"

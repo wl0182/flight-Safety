@@ -1884,6 +1884,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dcn-CT-VlY"/>
                     </view>
+                    <connections>
+                        <outlet property="LatitudeLabel" destination="bSj-DK-keQ" id="wuf-9I-yTz"/>
+                        <outlet property="batteryLabel" destination="zqe-TD-msV" id="vkb-R5-XNK"/>
+                        <outlet property="ellipsoidAltLabel" destination="muE-SU-75D" id="baL-eg-pGn"/>
+                        <outlet property="groundSpeedLabel" destination="3Fv-BE-CVX" id="E8A-fb-cVQ"/>
+                        <outlet property="headingLabel" destination="h1K-xq-Iol" id="2r4-yd-XKh"/>
+                        <outlet property="longitudeLabel" destination="vvz-3F-845" id="gmk-XL-eKX"/>
+                        <outlet property="mslAltLabel" destination="OgY-ch-Mn7" id="Ocu-2f-KmA"/>
+                        <outlet property="pitchLabel" destination="pPQ-I2-QVN" id="NjE-xU-AcT"/>
+                        <outlet property="rollLabel" destination="54c-x8-gZC" id="zMb-q8-7cj"/>
+                        <outlet property="versionLabel" destination="tFr-sW-13C" id="oMC-Li-pJz"/>
+                        <outlet property="vsiLabel" destination="h27-91-Rn3" id="Tw1-E2-07w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bha-B5-seE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

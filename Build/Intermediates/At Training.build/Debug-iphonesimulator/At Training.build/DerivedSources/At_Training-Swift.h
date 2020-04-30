@@ -255,9 +255,21 @@ SWIFT_CLASS("_TtC11At_Training11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UILabel;
 
 SWIFT_CLASS("_TtC11At_Training13CalibrationVC")
 @interface CalibrationVC : UIViewController
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified batteryLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified versionLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified rollLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified pitchLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified headingLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified LatitudeLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified longitudeLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified ellipsoidAltLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified mslAltLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified groundSpeedLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified vsiLabel;
 - (void)viewDidLoad;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
@@ -286,7 +298,6 @@ SWIFT_CLASS("_TtC11At_Training12GuestLoginVC")
 @end
 
 @class UISlider;
-@class UILabel;
 
 SWIFT_CLASS("_TtC11At_Training21Manual_ViewController")
 @interface Manual_ViewController : UIViewController

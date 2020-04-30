@@ -12,6 +12,7 @@ depends-top-level:
 depends-member:
 - ["11At_Training1KV", "ManualCeiling"]
 - ["11At_Training1KV", "ManualVisibility"]
+- ["11At_Training1KV", "adminToSetup"]
 - ["11At_Training1KV", "altitudeSS"]
 - ["11At_Training1KV", "batteryPercentage"]
 - ["11At_Training1KV", "init"]
@@ -115,4 +116,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "5d17e19d1577da853e2e674373b61ea4"
+interface-hash: "1900be3193e3472f6e0e7b0c755c73d1"

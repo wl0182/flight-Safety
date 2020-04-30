@@ -380,8 +380,13 @@ SWIFT_CLASS("_TtC11At_Training14RateOfDecentVC")
 
 
 SWIFT_CLASS("_TtC11At_Training29SafetySettings_ViewController")
-@interface SafetySettings_ViewController : UIViewController
+@interface SafetySettings_ViewController : UIViewController <UITextFieldDelegate>
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified aircratTypeTF;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified tailNumTF;
 - (void)viewDidLoad;
+- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)textFieldShouldEndEditing:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+- (IBAction)SaveAndContinuePressed:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end

@@ -1,6 +1,6 @@
 version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
 options: "d0e8baa8e54fcdc99f12b5e75fa77312"
-build_time: [1588224025, 722406000]
+build_time: [1588227853, 74164000]
 inputs:
   "/Users/wassimlagnaoui/flight-Safety-29-2/At Training/Controller/ROLLVC.swift": [1588190070, 594043306]
   "/Users/wassimlagnaoui/flight-Safety-29-2/At Training/Controller/Manual_ViewController.swift": [1588224024, 143736605]
@@ -12,11 +12,11 @@ inputs:
   "/Users/wassimlagnaoui/flight-Safety-29-2/At Training/Controller/ViewController.swift": [1588212800, 773406874]
   "/Users/wassimlagnaoui/flight-Safety-29-2/At Training/Controller/AdminLoginVC.swift": [1588223037, 657507511]
   "/Users/wassimlagnaoui/flight-Safety-29-2/At Training/AppDelegate.swift": [1588223235, 159757107]
-  "/Users/wassimlagnaoui/flight-Safety-29-2/At Training/Controller/SafetySettings_ViewController.swift": [1588190070, 594426067]
+  "/Users/wassimlagnaoui/flight-Safety-29-2/At Training/Controller/SafetySettings_ViewController.swift": [1588227845, 673340766]
   "/Users/wassimlagnaoui/flight-Safety-29-2/At Training/Controller/GuestLoginVC.swift": [1588221468, 189577583]
   "/Users/wassimlagnaoui/flight-Safety-29-2/At Training/Controller/ProgramPoint_ViewController.swift": [1588190070, 592861440]
   "/Users/wassimlagnaoui/flight-Safety-29-2/At Training/Controller/CalibrationVC.swift": [1588190070, 590201035]
   "/Users/wassimlagnaoui/flight-Safety-29-2/At Training/Controller/RateOfDecentVC.swift": [1588190070, 593675649]
   "/Users/wassimlagnaoui/flight-Safety-29-2/At Training/SceneDelegate.swift": [1588190070, 599015861]
   "/Users/wassimlagnaoui/flight-Safety-29-2/At Training/Controller/Random_ViewController.swift": [1588190070, 593274839]
-  "/Users/wassimlagnaoui/flight-Safety-29-2/At Training/Model/constants.swift": [1588222811, 508781949]
+  "/Users/wassimlagnaoui/flight-Safety-29-2/At Training/Model/constants.swift": [1588227208, 960725590]

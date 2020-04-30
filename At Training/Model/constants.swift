@@ -21,5 +21,5 @@ struct K {
     static let maxPitchSS = "Max_Pitch"
     static let password = "123qwe"
     static let adminToSetup = "adminToSteup"
-    
+    static let safetyToMain = "SStoMM"
 }

@@ -252,7 +252,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="a0I-uf-hPB" kind="show" id="7g2-jD-PhC"/>
+                                            <action selector="SaveAndContinuePressed:" destination="BE9-kv-41b" eventType="touchUpInside" id="4Ro-1B-xkg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -278,6 +278,11 @@
                         <viewLayoutGuide key="safeArea" id="6pq-ax-SVH"/>
                     </view>
                     <navigationItem key="navigationItem" id="yXB-Ea-mVD"/>
+                    <connections>
+                        <outlet property="aircratTypeTF" destination="fjk-aU-T4Q" id="8UP-lL-Iih"/>
+                        <outlet property="tailNumTF" destination="rEi-Gt-gKP" id="LAN-1h-LbE"/>
+                        <segue destination="a0I-uf-hPB" kind="show" identifier="SStoMM" id="uPG-fB-iUb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSs-Ez-ciu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1779,7 +1784,7 @@
         <image name="Launch screen" width="1024" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="v5d-0Q-D6u"/>
+        <segue reference="uPG-fB-iUb"/>
         <segue reference="oMm-hX-tYO"/>
         <segue reference="yPX-ky-WdZ"/>
     </inferredMetricsTieBreakers>

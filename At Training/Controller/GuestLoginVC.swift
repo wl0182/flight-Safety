@@ -8,7 +8,7 @@
 
 import UIKit
 
-var guestID = ""
+var userID = ""
 
 class GuestLoginVC: UIViewController, UITextFieldDelegate {
 
@@ -36,15 +36,14 @@ class GuestLoginVC: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guestID = userIdTF.text!
+        userID = userIdTF.text!
         
     }
     
     
     
     @IBAction func ContinuePressed(_ sender: UIButton) {
-        // searchTextField.endEditing(true)
-        userIdTF.endEditing(true)
+       
         
     }
     

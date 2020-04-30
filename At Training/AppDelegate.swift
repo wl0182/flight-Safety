@@ -17,16 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
        
-        
-        print("Values from Last Saved From Safety Settings")
-        print("\n")
-        print("|             Min Pitch :        \(db.integer(forKey: K.minPitchSS))        ")
-        print("|             Max Pitch :        \(db.integer(forKey: K.maxPitchSS))        ")
-        print("|             Min Roll  :        \(db.integer(forKey: K.minRollSS))         ")
-        print("|             Max Roll  :        \(db.integer(forKey: K.maxPitchSS))        ")
-        print("|             Rate of D :        \(db.integer(forKey: K.rodSS))             ")
-        print("|             Altitude  :        \(db.integer(forKey: K.altitudeSS))        ")
-        print("\n\n")
+        print("The REALM Database Path: \(Realm.Configuration.defaultConfiguration.fileURL)")
+ 
         
         return true
     }

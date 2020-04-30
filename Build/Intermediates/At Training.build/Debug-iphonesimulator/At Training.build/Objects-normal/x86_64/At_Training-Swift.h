@@ -182,6 +182,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreGraphics;
+@import RealmSwift;
 @import UIKit;
 #endif
 
@@ -214,10 +215,12 @@ SWIFT_CLASS("_TtC11At_Training31AccidentScenario_ViewController")
 @class UIButton;
 
 SWIFT_CLASS("_TtC11At_Training12AdminLoginVC")
-@interface AdminLoginVC : UIViewController
+@interface AdminLoginVC : UIViewController <UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified passwordTF;
 - (void)viewDidLoad;
-- (IBAction)continuePressed:(UIButton * _Nonnull)sender;
+- (BOOL)textFieldShouldEndEditing:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+- (IBAction)ContinuePressed:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -258,6 +261,15 @@ SWIFT_CLASS("_TtC11At_Training13CalibrationVC")
 - (void)viewDidLoad;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC11At_Training5Flags")
+@interface Flags : RealmSwiftObject
+@property (nonatomic, copy) NSString * _Nullable User_ID;
+@property (nonatomic, copy) NSString * _Nullable Training_Type;
+@property (nonatomic, copy) NSString * _Nullable Date_and_Time;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 

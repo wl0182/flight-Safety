@@ -810,7 +810,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="5Me-SE-Ry1" kind="show" id="iGi-MO-cpf"/>
+                                            <segue destination="Q4m-iD-7CA" kind="show" id="7eX-cB-ojQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPo-fi-5eG">
@@ -842,67 +842,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJo-Wb-RlN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5885.15625" y="354.4921875"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Afd-jb-uv0">
-            <objects>
-                <viewController id="5Me-SE-Ry1" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="e2n-sk-5g4">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="S57-UF-T3P">
-                                <rect key="frame" x="50" y="50" width="612" height="884"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHC-vf-veI">
-                                        <rect key="frame" x="0.0" y="0.0" width="612" height="198.5"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                        <state key="normal" title="Get Home-itis ">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shw-jb-lLV">
-                                        <rect key="frame" x="0.0" y="228.5" width="612" height="198.5"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                        <state key="normal" title="Bad Weather Call">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ka-wK-tyL">
-                                        <rect key="frame" x="0.0" y="457" width="612" height="198.5"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                        <state key="normal" title="Macho-itis">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZb-jW-xp4">
-                                        <rect key="frame" x="0.0" y="685.5" width="612" height="198.5"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                        <state key="normal" title="Bad Decisions">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="Xt8-6X-L8V" firstAttribute="bottom" secondItem="S57-UF-T3P" secondAttribute="bottom" constant="50" id="4r0-02-4qX"/>
-                            <constraint firstItem="S57-UF-T3P" firstAttribute="top" secondItem="Xt8-6X-L8V" secondAttribute="top" constant="50" id="6py-gi-DOh"/>
-                            <constraint firstItem="S57-UF-T3P" firstAttribute="leading" secondItem="Xt8-6X-L8V" secondAttribute="leading" constant="50" id="bSl-Gz-aXk"/>
-                            <constraint firstItem="Xt8-6X-L8V" firstAttribute="trailing" secondItem="S57-UF-T3P" secondAttribute="trailing" constant="50" id="mcv-V6-P54"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Xt8-6X-L8V"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="SNN-IF-Ro7"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="geA-Xl-ZIk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6671.875" y="353.90625"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JU2-Qy-1oa">
@@ -1711,7 +1650,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y0J-2y-Kzm">
                                                 <rect key="frame" x="0.0" y="0.0" width="668" height="191"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -1723,8 +1662,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="continuePressed:" destination="I41-i3-mc6" eventType="touchUpInside" id="3Tu-f2-MGV"/>
-                                            <segue destination="Zff-Jl-wkS" kind="show" id="G7a-wn-EgH"/>
+                                            <action selector="ContinuePressed:" destination="I41-i3-mc6" eventType="touchUpInside" id="SRn-w9-Cvm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1750,11 +1688,12 @@
                     <navigationItem key="navigationItem" id="XWo-fd-cYg"/>
                     <connections>
                         <outlet property="passwordTF" destination="Y0J-2y-Kzm" id="jTR-Tk-9Cj"/>
+                        <segue destination="Zff-Jl-wkS" kind="show" identifier="adminToSteup" id="oMm-hX-tYO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ol3-wL-Gwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-406" y="936"/>
+            <point key="canvasLocation" x="206" y="1628"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jnH-Qt-Noi">
@@ -1774,13 +1713,74 @@
             </objects>
             <point key="canvasLocation" x="-106" y="-541"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="rPN-FR-jdt">
+            <objects>
+                <viewController id="Q4m-iD-7CA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZAS-0w-021">
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="NC3-NE-PQf">
+                                <rect key="frame" x="50" y="50" width="612" height="884"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bh1-eV-xZg">
+                                        <rect key="frame" x="0.0" y="0.0" width="612" height="198.5"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <state key="normal" title="Get Home-itis ">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHa-bj-HBo">
+                                        <rect key="frame" x="0.0" y="228.5" width="612" height="198.5"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <state key="normal" title="THE FORCAST WAS WRONG">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzR-Rr-6GW">
+                                        <rect key="frame" x="0.0" y="457" width="612" height="198.5"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <state key="normal" title="GIVE IT A SHOT">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfF-fm-riS">
+                                        <rect key="frame" x="0.0" y="685.5" width="612" height="198.5"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <state key="normal" title="Bad Decisions">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="NC3-NE-PQf" firstAttribute="top" secondItem="ihr-TW-mpc" secondAttribute="top" constant="50" id="Djq-GP-13g"/>
+                            <constraint firstItem="ihr-TW-mpc" firstAttribute="trailing" secondItem="NC3-NE-PQf" secondAttribute="trailing" constant="50" id="L72-S2-F1b"/>
+                            <constraint firstItem="ihr-TW-mpc" firstAttribute="bottom" secondItem="NC3-NE-PQf" secondAttribute="bottom" constant="50" id="Po3-gM-h7Q"/>
+                            <constraint firstItem="NC3-NE-PQf" firstAttribute="leading" secondItem="ihr-TW-mpc" secondAttribute="leading" constant="50" id="SjM-5e-nR0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ihr-TW-mpc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Api-1h-kcn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="42G-pa-EQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6838" y="354"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Launch screen" width="1024" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="v5d-0Q-D6u"/>
-        <segue reference="k92-Su-r5B"/>
+        <segue reference="oMm-hX-tYO"/>
         <segue reference="yPX-ky-WdZ"/>
     </inferredMetricsTieBreakers>
 </document>

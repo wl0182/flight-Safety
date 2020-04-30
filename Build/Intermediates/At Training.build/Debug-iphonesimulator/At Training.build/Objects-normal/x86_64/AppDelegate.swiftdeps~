@@ -11,8 +11,6 @@ depends-top-level:
 - "AppDelegate"
 - "Bool"
 - !private "BooleanLiteralType"
-- !private "FloatLiteralType"
-- !private "IntegerLiteralType"
 - !private "K"
 - "Set"
 - !private "StringLiteralType"
@@ -22,9 +20,7 @@ depends-top-level:
 - "UIScene"
 - "UISceneConfiguration"
 - "UISceneSession"
-- !private "UnicodeScalarType"
 - !private "db"
-- !private "print"
 depends-member:
 - ["11At_Training11AppDelegateC", "Bool"]
 - !private ["11At_Training11AppDelegateC", "K"]
@@ -48,7 +44,6 @@ depends-member:
 - !private ["11At_Training11AppDelegateC", "db"]
 - ["11At_Training11AppDelegateC", "deinit"]
 - ["11At_Training11AppDelegateC", "init"]
-- !private ["11At_Training11AppDelegateC", "print"]
 - ["11At_Training11AppDelegateC", "window"]
 - ["s7CVarArgP", "ConnectionOptions"]
 - !private ["s7CVarArgP", "K"]
@@ -69,9 +64,8 @@ depends-member:
 - ["s7CVarArgP", "applicationWillTerminate"]
 - !private ["s7CVarArgP", "db"]
 - !private ["s7CVarArgP", "init"]
-- !private ["s7CVarArgP", "integer"]
-- !private ["s7CVarArgP", "print"]
 - !private ["s7CVarArgP", "role"]
+- !private ["s7CVarArgP", "set"]
 - ["s7CVarArgP", "window"]
 - ["s28CustomDebugStringConvertibleP", "ConnectionOptions"]
 - !private ["s28CustomDebugStringConvertibleP", "K"]
@@ -92,17 +86,14 @@ depends-member:
 - ["s28CustomDebugStringConvertibleP", "applicationWillTerminate"]
 - !private ["s28CustomDebugStringConvertibleP", "db"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
-- !private ["s28CustomDebugStringConvertibleP", "integer"]
-- !private ["s28CustomDebugStringConvertibleP", "print"]
 - !private ["s28CustomDebugStringConvertibleP", "role"]
+- !private ["s28CustomDebugStringConvertibleP", "set"]
 - ["s28CustomDebugStringConvertibleP", "window"]
 - ["s23CustomStringConvertibleP", "ConnectionOptions"]
 - !private ["s23CustomStringConvertibleP", "K"]
 - ["s23CustomStringConvertibleP", "LaunchOptionsKey"]
 - !private ["s23CustomStringConvertibleP", "UISceneConfiguration"]
 - ["s23CustomStringConvertibleP", ""]
-- !private ["s23CustomStringConvertibleP", "appendInterpolation"]
-- !private ["s23CustomStringConvertibleP", "appendLiteral"]
 - ["s23CustomStringConvertibleP", "application"]
 - ["s23CustomStringConvertibleP", "applicationDidBecomeActive"]
 - ["s23CustomStringConvertibleP", "applicationDidEnterBackground"]
@@ -117,12 +108,9 @@ depends-member:
 - ["s23CustomStringConvertibleP", "applicationWillTerminate"]
 - !private ["s23CustomStringConvertibleP", "db"]
 - !private ["s23CustomStringConvertibleP", "init"]
-- !private ["s23CustomStringConvertibleP", "integer"]
-- !private ["s23CustomStringConvertibleP", "print"]
 - !private ["s23CustomStringConvertibleP", "role"]
+- !private ["s23CustomStringConvertibleP", "set"]
 - ["s23CustomStringConvertibleP", "window"]
-- !private ["s26DefaultStringInterpolationV", "appendInterpolation"]
-- !private ["s26DefaultStringInterpolationV", "appendLiteral"]
 - ["SQ", "ConnectionOptions"]
 - !private ["SQ", "K"]
 - ["SQ", "LaunchOptionsKey"]
@@ -142,9 +130,8 @@ depends-member:
 - ["SQ", "applicationWillTerminate"]
 - !private ["SQ", "db"]
 - !private ["SQ", "init"]
-- !private ["SQ", "integer"]
-- !private ["SQ", "print"]
 - !private ["SQ", "role"]
+- !private ["SQ", "set"]
 - ["SQ", "window"]
 - ["SH", "ConnectionOptions"]
 - !private ["SH", "K"]
@@ -165,15 +152,10 @@ depends-member:
 - ["SH", "applicationWillTerminate"]
 - !private ["SH", "db"]
 - !private ["SH", "init"]
-- !private ["SH", "integer"]
-- !private ["SH", "print"]
 - !private ["SH", "role"]
+- !private ["SH", "set"]
 - ["SH", "window"]
-- !private ["11At_Training1KV", "altitudeSS"]
-- !private ["11At_Training1KV", "maxPitchSS"]
-- !private ["11At_Training1KV", "minPitchSS"]
-- !private ["11At_Training1KV", "minRollSS"]
-- !private ["11At_Training1KV", "rodSS"]
+- !private ["11At_Training1KV", "password"]
 - !private ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "role"]
 - !private ["So9NSCopyingP", "init"]
@@ -200,9 +182,8 @@ depends-member:
 - ["So8NSObjectC", "applicationWillTerminate"]
 - !private ["So8NSObjectC", "db"]
 - ["So8NSObjectC", "init"]
-- !private ["So8NSObjectC", "integer"]
-- !private ["So8NSObjectC", "print"]
 - !private ["So8NSObjectC", "role"]
+- !private ["So8NSObjectC", "set"]
 - ["So8NSObjectC", "window"]
 - ["So8NSObjectP", "ConnectionOptions"]
 - !private ["So8NSObjectP", "K"]
@@ -223,16 +204,11 @@ depends-member:
 - ["So8NSObjectP", "applicationWillTerminate"]
 - !private ["So8NSObjectP", "db"]
 - !private ["So8NSObjectP", "init"]
-- !private ["So8NSObjectP", "integer"]
-- !private ["So8NSObjectP", "print"]
 - !private ["So8NSObjectP", "role"]
+- !private ["So8NSObjectP", "set"]
 - ["So8NSObjectP", "window"]
 - !private ["So14NSSecureCodingP", "init"]
 - !private ["So14NSSecureCodingP", "role"]
-- !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
-- !private ["s27StringInterpolationProtocolP", "appendLiteral"]
-- !private ["s16TextOutputStreamP", "appendInterpolation"]
-- !private ["s16TextOutputStreamP", "appendLiteral"]
 - ["So13UIApplicationC", "LaunchOptionsKey"]
 - !private ["So21UIApplicationDelegateP", "K"]
 - !private ["So21UIApplicationDelegateP", "UISceneConfiguration"]
@@ -250,7 +226,6 @@ depends-member:
 - ["So21UIApplicationDelegateP", "applicationWillResignActive"]
 - ["So21UIApplicationDelegateP", "applicationWillTerminate"]
 - !private ["So21UIApplicationDelegateP", "db"]
-- !private ["So21UIApplicationDelegateP", "print"]
 - ["So21UIApplicationDelegateP", "window"]
 - ["So30UIPasteConfigurationSupportingP", "ConnectionOptions"]
 - !private ["So30UIPasteConfigurationSupportingP", "K"]
@@ -271,7 +246,6 @@ depends-member:
 - ["So30UIPasteConfigurationSupportingP", "applicationWillTerminate"]
 - !private ["So30UIPasteConfigurationSupportingP", "db"]
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
-- !private ["So30UIPasteConfigurationSupportingP", "print"]
 - ["So30UIPasteConfigurationSupportingP", "window"]
 - ["So11UIResponderC", "Bool"]
 - ["So11UIResponderC", "ConnectionOptions"]
@@ -297,7 +271,6 @@ depends-member:
 - ["So11UIResponderC", "applicationWillTerminate"]
 - !private ["So11UIResponderC", "db"]
 - ["So11UIResponderC", "init"]
-- !private ["So11UIResponderC", "print"]
 - ["So11UIResponderC", "window"]
 - ["So30UIResponderStandardEditActionsP", "ConnectionOptions"]
 - !private ["So30UIResponderStandardEditActionsP", "K"]
@@ -318,7 +291,6 @@ depends-member:
 - ["So30UIResponderStandardEditActionsP", "applicationWillTerminate"]
 - !private ["So30UIResponderStandardEditActionsP", "db"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
-- !private ["So30UIResponderStandardEditActionsP", "print"]
 - ["So30UIResponderStandardEditActionsP", "window"]
 - ["So7UISceneC", "ConnectionOptions"]
 - !private ["So20UISceneConfigurationC", "init"]
@@ -342,9 +314,8 @@ depends-member:
 - ["So23UIUserActivityRestoringP", "applicationWillTerminate"]
 - !private ["So23UIUserActivityRestoringP", "db"]
 - !private ["So23UIUserActivityRestoringP", "init"]
-- !private ["So23UIUserActivityRestoringP", "print"]
 - ["So23UIUserActivityRestoringP", "window"]
-- !private ["So14NSUserDefaultsC", "integer"]
+- !private ["So14NSUserDefaultsC", "set"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "ConnectionOptions"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "K"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "LaunchOptionsKey"]
@@ -364,9 +335,8 @@ depends-member:
 - ["10Foundation27_KeyValueCodingAndObservingP", "applicationWillTerminate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "db"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "integer"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "role"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "set"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "window"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "ConnectionOptions"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "K"]
@@ -387,16 +357,14 @@ depends-member:
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "applicationWillTerminate"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "db"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
-- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "integer"]
-- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "print"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "role"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "set"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "window"]
 depends-nominal:
 - "11At_Training11AppDelegateC"
 - "s7CVarArgP"
 - "s28CustomDebugStringConvertibleP"
 - "s23CustomStringConvertibleP"
-- !private "s26DefaultStringInterpolationV"
 - "SQ"
 - "SH"
 - !private "11At_Training1KV"
@@ -405,8 +373,6 @@ depends-nominal:
 - "So8NSObjectC"
 - "So8NSObjectP"
 - !private "So14NSSecureCodingP"
-- !private "s27StringInterpolationProtocolP"
-- !private "s16TextOutputStreamP"
 - "So13UIApplicationC"
 - "So21UIApplicationDelegateP"
 - "So30UIPasteConfigurationSupportingP"

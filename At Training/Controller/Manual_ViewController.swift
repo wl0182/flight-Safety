@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RealmSwift
+
+let realm = try! Realm() 
 
 class Manual_ViewController: UIViewController {
     // IB outlets
@@ -49,7 +52,24 @@ class Manual_ViewController: UIViewController {
     // mark Pressed
     
     @IBAction func markPressed(_ sender: UIButton) {
-        abortTraining()
+        print("Saving in the database ........\n")
+        let myTest = Flags()
+        myTest.Training_Type = "IIMC-Manual"
+        myTest.User_ID = userID
+      //date formatting
+        let today = Date()
+       let formatter3 = DateFormatter()
+       formatter3.dateFormat = "HH:mm E, d MMM y"
+       let s = formatter3.string(from: today)
+        myTest.Date_and_Time = s
+        
+      try! realm.write {
+               realm.add(myTest)
+               
+           }
+           
+        
+        
         
     }
     

@@ -19,6 +19,7 @@ depends-member:
 - ["11At_Training1KV", "maxRollSS"]
 - ["11At_Training1KV", "minPitchSS"]
 - ["11At_Training1KV", "minRollSS"]
+- ["11At_Training1KV", "password"]
 - ["11At_Training1KV", "rodSS"]
 depends-nominal:
 - "11At_Training1KV"
@@ -114,4 +115,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "dc67129afdbece360ffc80db4046016b"
+interface-hash: "5d17e19d1577da853e2e674373b61ea4"

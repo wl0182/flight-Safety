@@ -19,5 +19,7 @@ struct K {
     static let minPitchSS = "Min_Pitch"
     static let maxRollSS = "Max_Roll"
     static let maxPitchSS = "Max_Pitch"
+    static let password = "123qwe"
+    static let adminToSetup = "adminToSteup"
     
 }

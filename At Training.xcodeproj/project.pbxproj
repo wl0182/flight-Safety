@@ -12,6 +12,7 @@
 		FC401F6C244D2039001BC009 /* ROLLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC401F6B244D2039001BC009 /* ROLLVC.swift */; };
 		FC401F6E244D2114001BC009 /* AltitudeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC401F6D244D2114001BC009 /* AltitudeVC.swift */; };
 		FC401F70244D2157001BC009 /* RateOfDecentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC401F6F244D2157001BC009 /* RateOfDecentVC.swift */; };
+		FC412A2A245A93EC00B3E0BB /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC412A29245A93EC00B3E0BB /* Entities.swift */; };
 		FC41BBDA2401957500B2F6E7 /* Manual_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41BBD92401957500B2F6E7 /* Manual_ViewController.swift */; };
 		FC41BBDC2401957E00B2F6E7 /* Random_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41BBDB2401957E00B2F6E7 /* Random_ViewController.swift */; };
 		FC41BBDE2401958A00B2F6E7 /* ProgramPoint_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC41BBDD2401958A00B2F6E7 /* ProgramPoint_ViewController.swift */; };
@@ -44,6 +45,7 @@
 		FC401F6B244D2039001BC009 /* ROLLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROLLVC.swift; sourceTree = "<group>"; };
 		FC401F6D244D2114001BC009 /* AltitudeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltitudeVC.swift; sourceTree = "<group>"; };
 		FC401F6F244D2157001BC009 /* RateOfDecentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateOfDecentVC.swift; sourceTree = "<group>"; };
+		FC412A29245A93EC00B3E0BB /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		FC41BBD92401957500B2F6E7 /* Manual_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manual_ViewController.swift; sourceTree = "<group>"; };
 		FC41BBDB2401957E00B2F6E7 /* Random_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random_ViewController.swift; sourceTree = "<group>"; };
 		FC41BBDD2401958A00B2F6E7 /* ProgramPoint_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramPoint_ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				FCFEED3D24479545004AAE09 /* constants.swift */,
+				FC412A29245A93EC00B3E0BB /* Entities.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				FC41BBE2240195DA00B2F6E7 /* Setup_ViewController.swift in Sources */,
 				FC401F6E244D2114001BC009 /* AltitudeVC.swift in Sources */,
 				FC401F6A244CD8AE001BC009 /* PitchVC.swift in Sources */,
+				FC412A2A245A93EC00B3E0BB /* Entities.swift in Sources */,
 				FCD08F9223EF813400F4C7C8 /* ViewController.swift in Sources */,
 				FC68D9BA2454E44800A0494C /* AdminLoginVC.swift in Sources */,
 				FCD08F8E23EF813400F4C7C8 /* AppDelegate.swift in Sources */,

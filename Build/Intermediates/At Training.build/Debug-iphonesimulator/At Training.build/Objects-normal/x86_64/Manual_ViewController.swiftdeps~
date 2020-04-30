@@ -6,6 +6,7 @@ provides-nominal:
 provides-member:
 - ["11At_Training21Manual_ViewControllerC", ""]
 provides-dynamic-lookup:
+- "ClearPressed"
 - "InitiatePressed"
 - "addToCeilPressed"
 - "addToVisbilityPressed"
@@ -57,6 +58,7 @@ depends-top-level:
 - "UISlider"
 - "UIViewController"
 - !private "UInt8"
+- !private "UnicodeScalarType"
 - !private "db"
 - !private "parser"
 - !private "print"
@@ -526,6 +528,7 @@ depends-member:
 - ["11At_Training21Manual_ViewControllerC", "Bool"]
 - !private ["11At_Training21Manual_ViewControllerC", "CInt"]
 - !private ["11At_Training21Manual_ViewControllerC", "CShort"]
+- ["11At_Training21Manual_ViewControllerC", "ClearPressed"]
 - !private ["11At_Training21Manual_ViewControllerC", "DispatchQueue"]
 - ["11At_Training21Manual_ViewControllerC", "Float"]
 - ["11At_Training21Manual_ViewControllerC", "InitiatePressed"]
@@ -669,6 +672,7 @@ depends-member:
 - ["So8NSObjectC", "Bool"]
 - !private ["So8NSObjectC", "CInt"]
 - !private ["So8NSObjectC", "CShort"]
+- ["So8NSObjectC", "ClearPressed"]
 - !private ["So8NSObjectC", "DispatchQueue"]
 - ["So8NSObjectC", "Float"]
 - ["So8NSObjectC", "InitiatePressed"]
@@ -1068,6 +1072,7 @@ depends-member:
 - ["So11UIResponderC", "Bool"]
 - !private ["So11UIResponderC", "CInt"]
 - !private ["So11UIResponderC", "CShort"]
+- ["So11UIResponderC", "ClearPressed"]
 - !private ["So11UIResponderC", "DispatchQueue"]
 - ["So11UIResponderC", "Float"]
 - ["So11UIResponderC", "InitiatePressed"]
@@ -1274,6 +1279,7 @@ depends-member:
 - ["So16UIViewControllerC", "Bool"]
 - !private ["So16UIViewControllerC", "CInt"]
 - !private ["So16UIViewControllerC", "CShort"]
+- ["So16UIViewControllerC", "ClearPressed"]
 - !private ["So16UIViewControllerC", "DispatchQueue"]
 - ["So16UIViewControllerC", "Float"]
 - ["So16UIViewControllerC", "InitiatePressed"]
@@ -1742,4 +1748,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "d94acc2d475ac222d64f1eb26740a5f5"
+interface-hash: "d7efeec188411f7079a364d7e2039a06"

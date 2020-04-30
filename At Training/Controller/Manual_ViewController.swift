@@ -46,6 +46,7 @@ class Manual_ViewController: UIViewController {
         
         //set button title to initiate
         initiateButton.setTitle("Initiate", for: .normal)
+        // call save to db
         
     }
     
@@ -205,6 +206,8 @@ class Manual_ViewController: UIViewController {
             print("I stopped reading from the AHRS device")
       //      buttonTitleChangerOnPressOfBack = "pressedBackButton"
             
+            // call to db 
+            
         }
         
         
@@ -228,6 +231,7 @@ class Manual_ViewController: UIViewController {
                 startReceiver = 0 //if startReceiver is any value other than 10, while loop for receiving AHRS data will not run
                 altitudeSafetyTrigger = 0 //set the safety altitude trigger to zero when abort is pressed
                 print("I stopped reading from the Ilevel")
+                // call to db
             }
             
             //sample voltage value receiver based on visibility value -------STARTS HERE

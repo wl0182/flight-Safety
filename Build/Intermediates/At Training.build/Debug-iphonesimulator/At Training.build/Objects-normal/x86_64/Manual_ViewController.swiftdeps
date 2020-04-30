@@ -6,6 +6,7 @@ provides-nominal:
 provides-member:
 - ["11At_Training21Manual_ViewControllerC", ""]
 provides-dynamic-lookup:
+- "ClearPressed"
 - "InitiatePressed"
 - "addToCeilPressed"
 - "addToVisbilityPressed"
@@ -57,6 +58,7 @@ depends-top-level:
 - "UISlider"
 - "UIViewController"
 - !private "UInt8"
+- !private "UnicodeScalarType"
 - !private "db"
 - !private "parser"
 - !private "print"
@@ -131,6 +133,7 @@ depends-member:
 - !private ["s7CVarArgP", "roundf"]
 - !private ["s7CVarArgP", "set"]
 - !private ["s7CVarArgP", "setTitle"]
+- !private ["s7CVarArgP", "showLowBatteryWarning"]
 - !private ["s7CVarArgP", "startReceiver"]
 - !private ["s7CVarArgP", "subscript"]
 - !private ["s7CVarArgP", "sync"]
@@ -210,6 +213,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "roundf"]
 - !private ["s28CustomDebugStringConvertibleP", "set"]
 - !private ["s28CustomDebugStringConvertibleP", "setTitle"]
+- !private ["s28CustomDebugStringConvertibleP", "showLowBatteryWarning"]
 - !private ["s28CustomDebugStringConvertibleP", "startReceiver"]
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
 - !private ["s28CustomDebugStringConvertibleP", "sync"]
@@ -291,6 +295,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "roundf"]
 - !private ["s23CustomStringConvertibleP", "set"]
 - !private ["s23CustomStringConvertibleP", "setTitle"]
+- !private ["s23CustomStringConvertibleP", "showLowBatteryWarning"]
 - !private ["s23CustomStringConvertibleP", "startReceiver"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
 - !private ["s23CustomStringConvertibleP", "sync"]
@@ -395,6 +400,7 @@ depends-member:
 - !private ["SQ", "roundf"]
 - !private ["SQ", "set"]
 - !private ["SQ", "setTitle"]
+- !private ["SQ", "showLowBatteryWarning"]
 - !private ["SQ", "startReceiver"]
 - !private ["SQ", "subscript"]
 - !private ["SQ", "sync"]
@@ -490,6 +496,7 @@ depends-member:
 - !private ["SH", "roundf"]
 - !private ["SH", "set"]
 - !private ["SH", "setTitle"]
+- !private ["SH", "showLowBatteryWarning"]
 - !private ["SH", "startReceiver"]
 - !private ["SH", "subscript"]
 - !private ["SH", "sync"]
@@ -521,6 +528,7 @@ depends-member:
 - ["11At_Training21Manual_ViewControllerC", "Bool"]
 - !private ["11At_Training21Manual_ViewControllerC", "CInt"]
 - !private ["11At_Training21Manual_ViewControllerC", "CShort"]
+- ["11At_Training21Manual_ViewControllerC", "ClearPressed"]
 - !private ["11At_Training21Manual_ViewControllerC", "DispatchQueue"]
 - ["11At_Training21Manual_ViewControllerC", "Float"]
 - ["11At_Training21Manual_ViewControllerC", "InitiatePressed"]
@@ -553,6 +561,7 @@ depends-member:
 - !private ["11At_Training21Manual_ViewControllerC", "print"]
 - ["11At_Training21Manual_ViewControllerC", "readFIL"]
 - !private ["11At_Training21Manual_ViewControllerC", "roundf"]
+- ["11At_Training21Manual_ViewControllerC", "showLowBatteryWarning"]
 - ["11At_Training21Manual_ViewControllerC", "startReceiver"]
 - ["11At_Training21Manual_ViewControllerC", "subFromCeilingPressed"]
 - ["11At_Training21Manual_ViewControllerC", "subtractFromVisibilityPressed"]
@@ -606,6 +615,7 @@ depends-member:
 - !private ["So8NSCodingP", "removeAll"]
 - !private ["So8NSCodingP", "roundf"]
 - !private ["So8NSCodingP", "setTitle"]
+- !private ["So8NSCodingP", "showLowBatteryWarning"]
 - !private ["So8NSCodingP", "startReceiver"]
 - !private ["So8NSCodingP", "temp3"]
 - !private ["So8NSCodingP", "text"]
@@ -643,6 +653,7 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "print"]
 - !private ["So26NSExtensionRequestHandlingP", "readFIL"]
 - !private ["So26NSExtensionRequestHandlingP", "roundf"]
+- !private ["So26NSExtensionRequestHandlingP", "showLowBatteryWarning"]
 - !private ["So26NSExtensionRequestHandlingP", "startReceiver"]
 - !private ["So26NSExtensionRequestHandlingP", "temp3"]
 - !private ["So26NSExtensionRequestHandlingP", "valueReceived"]
@@ -661,6 +672,7 @@ depends-member:
 - ["So8NSObjectC", "Bool"]
 - !private ["So8NSObjectC", "CInt"]
 - !private ["So8NSObjectC", "CShort"]
+- ["So8NSObjectC", "ClearPressed"]
 - !private ["So8NSObjectC", "DispatchQueue"]
 - ["So8NSObjectC", "Float"]
 - ["So8NSObjectC", "InitiatePressed"]
@@ -717,6 +729,7 @@ depends-member:
 - !private ["So8NSObjectC", "roundf"]
 - !private ["So8NSObjectC", "set"]
 - !private ["So8NSObjectC", "setTitle"]
+- ["So8NSObjectC", "showLowBatteryWarning"]
 - ["So8NSObjectC", "startReceiver"]
 - ["So8NSObjectC", "subFromCeilingPressed"]
 - ["So8NSObjectC", "subtractFromVisibilityPressed"]
@@ -782,6 +795,7 @@ depends-member:
 - !private ["So8NSObjectP", "roundf"]
 - !private ["So8NSObjectP", "set"]
 - !private ["So8NSObjectP", "setTitle"]
+- !private ["So8NSObjectP", "showLowBatteryWarning"]
 - !private ["So8NSObjectP", "startReceiver"]
 - !private ["So8NSObjectP", "sync"]
 - !private ["So8NSObjectP", "temp3"]
@@ -909,6 +923,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "readFIL"]
 - !private ["So21UIAppearanceContainerP", "roundf"]
 - !private ["So21UIAppearanceContainerP", "setTitle"]
+- !private ["So21UIAppearanceContainerP", "showLowBatteryWarning"]
 - !private ["So21UIAppearanceContainerP", "startReceiver"]
 - !private ["So21UIAppearanceContainerP", "temp3"]
 - !private ["So21UIAppearanceContainerP", "text"]
@@ -945,6 +960,7 @@ depends-member:
 - !private ["So18UIContentContainerP", "print"]
 - !private ["So18UIContentContainerP", "readFIL"]
 - !private ["So18UIContentContainerP", "roundf"]
+- !private ["So18UIContentContainerP", "showLowBatteryWarning"]
 - !private ["So18UIContentContainerP", "startReceiver"]
 - !private ["So18UIContentContainerP", "temp3"]
 - !private ["So18UIContentContainerP", "valueReceived"]
@@ -991,6 +1007,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "readFIL"]
 - !private ["So18UIFocusEnvironmentP", "roundf"]
 - !private ["So18UIFocusEnvironmentP", "setTitle"]
+- !private ["So18UIFocusEnvironmentP", "showLowBatteryWarning"]
 - !private ["So18UIFocusEnvironmentP", "startReceiver"]
 - !private ["So18UIFocusEnvironmentP", "temp3"]
 - !private ["So18UIFocusEnvironmentP", "text"]
@@ -1040,6 +1057,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "readFIL"]
 - !private ["So30UIPasteConfigurationSupportingP", "roundf"]
 - !private ["So30UIPasteConfigurationSupportingP", "setTitle"]
+- !private ["So30UIPasteConfigurationSupportingP", "showLowBatteryWarning"]
 - !private ["So30UIPasteConfigurationSupportingP", "startReceiver"]
 - !private ["So30UIPasteConfigurationSupportingP", "temp3"]
 - !private ["So30UIPasteConfigurationSupportingP", "text"]
@@ -1054,6 +1072,7 @@ depends-member:
 - ["So11UIResponderC", "Bool"]
 - !private ["So11UIResponderC", "CInt"]
 - !private ["So11UIResponderC", "CShort"]
+- ["So11UIResponderC", "ClearPressed"]
 - !private ["So11UIResponderC", "DispatchQueue"]
 - ["So11UIResponderC", "Float"]
 - ["So11UIResponderC", "InitiatePressed"]
@@ -1088,6 +1107,7 @@ depends-member:
 - ["So11UIResponderC", "readFIL"]
 - !private ["So11UIResponderC", "roundf"]
 - !private ["So11UIResponderC", "setTitle"]
+- ["So11UIResponderC", "showLowBatteryWarning"]
 - ["So11UIResponderC", "startReceiver"]
 - ["So11UIResponderC", "subFromCeilingPressed"]
 - ["So11UIResponderC", "subtractFromVisibilityPressed"]
@@ -1128,6 +1148,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "readFIL"]
 - !private ["So30UIResponderStandardEditActionsP", "roundf"]
 - !private ["So30UIResponderStandardEditActionsP", "setTitle"]
+- !private ["So30UIResponderStandardEditActionsP", "showLowBatteryWarning"]
 - !private ["So30UIResponderStandardEditActionsP", "startReceiver"]
 - !private ["So30UIResponderStandardEditActionsP", "temp3"]
 - !private ["So30UIResponderStandardEditActionsP", "text"]
@@ -1167,6 +1188,7 @@ depends-member:
 - !private ["So16UIStateRestoringP", "print"]
 - !private ["So16UIStateRestoringP", "readFIL"]
 - !private ["So16UIStateRestoringP", "roundf"]
+- !private ["So16UIStateRestoringP", "showLowBatteryWarning"]
 - !private ["So16UIStateRestoringP", "startReceiver"]
 - !private ["So16UIStateRestoringP", "temp3"]
 - !private ["So16UIStateRestoringP", "valueReceived"]
@@ -1201,6 +1223,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "readFIL"]
 - !private ["So18UITraitEnvironmentP", "roundf"]
 - !private ["So18UITraitEnvironmentP", "setTitle"]
+- !private ["So18UITraitEnvironmentP", "showLowBatteryWarning"]
 - !private ["So18UITraitEnvironmentP", "startReceiver"]
 - !private ["So18UITraitEnvironmentP", "temp3"]
 - !private ["So18UITraitEnvironmentP", "text"]
@@ -1237,6 +1260,7 @@ depends-member:
 - !private ["So23UIUserActivityRestoringP", "readFIL"]
 - !private ["So23UIUserActivityRestoringP", "roundf"]
 - !private ["So23UIUserActivityRestoringP", "setTitle"]
+- !private ["So23UIUserActivityRestoringP", "showLowBatteryWarning"]
 - !private ["So23UIUserActivityRestoringP", "startReceiver"]
 - !private ["So23UIUserActivityRestoringP", "temp3"]
 - !private ["So23UIUserActivityRestoringP", "text"]
@@ -1255,6 +1279,7 @@ depends-member:
 - ["So16UIViewControllerC", "Bool"]
 - !private ["So16UIViewControllerC", "CInt"]
 - !private ["So16UIViewControllerC", "CShort"]
+- ["So16UIViewControllerC", "ClearPressed"]
 - !private ["So16UIViewControllerC", "DispatchQueue"]
 - ["So16UIViewControllerC", "Float"]
 - ["So16UIViewControllerC", "InitiatePressed"]
@@ -1288,6 +1313,7 @@ depends-member:
 - !private ["So16UIViewControllerC", "print"]
 - ["So16UIViewControllerC", "readFIL"]
 - !private ["So16UIViewControllerC", "roundf"]
+- ["So16UIViewControllerC", "showLowBatteryWarning"]
 - ["So16UIViewControllerC", "startReceiver"]
 - ["So16UIViewControllerC", "subFromCeilingPressed"]
 - ["So16UIViewControllerC", "subtractFromVisibilityPressed"]
@@ -1389,6 +1415,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "roundf"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "set"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "setTitle"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "showLowBatteryWarning"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "startReceiver"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "sync"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "temp3"]
@@ -1450,6 +1477,7 @@ depends-member:
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "roundf"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "set"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "setTitle"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "showLowBatteryWarning"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "startReceiver"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "sync"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "temp3"]
@@ -1720,4 +1748,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "2faf02d1ab21302dbd832933dda1badc"
+interface-hash: "d7efeec188411f7079a364d7e2039a06"

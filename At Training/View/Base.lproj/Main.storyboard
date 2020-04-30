@@ -729,6 +729,9 @@
                                                 <state key="normal" title="Clear">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="ClearPressed:" destination="s6R-tk-7Va" eventType="touchUpInside" id="kb6-l2-u8m"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3C-bS-l4O">
                                                 <rect key="frame" x="259.5" y="0.0" width="209" height="54"/>
@@ -748,6 +751,9 @@
                                                 <state key="normal" title="Main Menu">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="a0I-uf-hPB" kind="show" id="v5d-0Q-D6u"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1773,6 +1779,7 @@
         <image name="Launch screen" width="1024" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="v5d-0Q-D6u"/>
         <segue reference="k92-Su-r5B"/>
         <segue reference="yPX-ky-WdZ"/>
     </inferredMetricsTieBreakers>

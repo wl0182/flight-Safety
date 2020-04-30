@@ -242,6 +242,18 @@ class Manual_ViewController: UIViewController {
             //sample voltage value receiver based on visibility value ---------ENDS HERE
             
         }//func InitiatePressed()
+        
+    @IBAction func ClearPressed(_ sender: UIButton) {
+        visbilityOutlet.value = 4
+        ceilingSliderOutlet.value = 1200
+        
+        //update UI
+        visibilityLabel.text = "4"
+        ceilingLabel.text = "1200"
+    } 
+    
+        
+      
         func showLowBatteryWarning()
         {
                 let alert = UIAlertController(title: "AHRS Battery Low", message: "AHRS Device Battery Low!\nAHRS Charger Plug-in Requied", preferredStyle: .alert)

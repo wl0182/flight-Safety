@@ -293,6 +293,7 @@ SWIFT_CLASS("_TtC11At_Training21Manual_ViewController")
 - (IBAction)ceilingSlider:(UISlider * _Nonnull)sender;
 - (void)viewWillDisappear:(BOOL)animated;
 - (IBAction)InitiatePressed:(UIButton * _Nonnull)sender;
+- (IBAction)ClearPressed:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end

@@ -47,10 +47,17 @@ class ViewController: UIViewController {
     }
     func showNoConnectionWarning()
     {
-            let alert = UIAlertController(title: "AHRS Wifi Connection Needed", message: "Make sure you are connected to AHRS Device before Proceeding", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Not Connected to AHRS Wi-fi/Poor Connection", message: "Strong Connection with AHRS Device Required. Go to Settings>Wi-Fi>(select your AHRS device)", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .default)
             {
                 (action) in
+               /* print("Ok pressed")
+                self.startHomePageReceiver = 10
+                self.bringValuesForHomePage()
+                 
+                 AFTER COPYING THE PARSER.H AND PARSER.M FILE FROM APRIL29 PROJECT TO THIS PROJECT, UNCOMMENT THIS BLOCK FOR ENABLING NO-CONNECTION HANDLER- CODE 111 functionality
+                 */
+                
             }
             alert.addAction(action)
             present(alert, animated: true, completion:  nil)
@@ -62,17 +69,20 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated) //not sure if this is needed
         print("Hello it's me again the home page")
         print("Inside ViewDidAppear")
-        startHomePageReceiver = 10              //
-        continueNetworkValueBringer = true      //try calling these
-        bringValuesForHomePage()                //inside viewWillAppear. it might bring values quicker upon landing
+        
            
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //udpate the labels
-        connectionLabel.text = String(temp1)
-        batteryLabel.text    = "\(temp2)% "
-        firmwareLabel.text   = String(temp3)
+        
+            startHomePageReceiver = 10              //
+            continueNetworkValueBringer = true      //try calling these
+            bringValuesForHomePage()                //inside viewWillAppear. it might bring values quicker upon landing
+            //udpate the labels
+            connectionLabel.text = String(temp1)
+            batteryLabel.text    = "\(temp2)% "
+            firmwareLabel.text   = String(temp3)
+    
     }
     
     
@@ -112,7 +122,7 @@ class ViewController: UIViewController {
     }
     func bringValuesForHomePage()//EXIT THIS FUNCTION WHEN USER HAS LEFT THIS PAGE
     {
-        print("function was called")
+        print("Home Page value bringer function was called")
         
         DispatchQueue.global(qos: .background).async
             {
@@ -149,8 +159,27 @@ class ViewController: UIViewController {
                         
                         //print("inside while loop")
                         homePageInstanceOfparser.msgReceiver() // do this as long as app is actively running
-                        
-                        //homePageInstanceOfparser.connectionEstablished = true //this gets set to true when recvfrom returns with bytes
+                        /* if (homePageInstanceOfparser.errorInReceiving == true)
+                                               {
+                                                   print("no Connection found")
+                                                   self.temp1 = "Not Connected"
+                                                   self.temp2 = 0
+                                                   self.temp3 = 0.0
+                                                   DispatchQueue.main.sync{
+                                                   self.showNoConnectionWarning()
+                                                   self.connectionLabel.text = String(self.temp1)
+                                                   self.batteryLabel.text    = "\(self.temp2)%"
+                                                   self.firmwareLabel.text   = String(self.temp3)
+                                                   }
+                                                   //close the socket here
+                                                   homePageInstanceOfparser.closeUDPsocket()
+                                                   continueHomePageReceiving = 0//stop the while loop from receiving further values
+                                                   return
+                                                   
+                                               }
+                         AFTER COPYING THE PARSER.H AND PARSER.M FILE FROM APRIL29 PROJECT TO THIS PROJECT, UNCOMMENT THIS BLOCK FOR ENABLING NO-CONNECTION HANDLER- CODE 111
+                         */
+                   
                         
                         
                         print("\nOn Home Page, Returned from msgReceiver func\n")
@@ -182,7 +211,7 @@ class ViewController: UIViewController {
                                      self.batteryLabel.text    = "\(self.temp2)%"
                                      self.firmwareLabel.text   = String(self.temp3)
                                      
-                                     if (swiftBattPct! < 10)
+                                     if (swiftBattPct! < 15)
                                      {
                                          self.showLowBatteryWarning()
                                      }
@@ -198,7 +227,7 @@ class ViewController: UIViewController {
                         if(self.systemTestBytesReadyToBeSentToMicrocontroller == true) //if this Bool is true
                         {
                             //store the swift array bytes into objective-c NSString array
-                            var count: UInt8 = 0
+                            var count: Int = 0
                             for byte in self.bytesToBeSentForSystemTest
                             {
                                 homePageInstanceOfparser.systemTestBytes.append(byte) // OR .append(bytesToBeSentArray[count])
@@ -207,9 +236,12 @@ class ViewController: UIViewController {
                                 print("\nSetting System Test Message Bytes...\n") //test print
                             }
                             count -= 1 //After this statement runs, count will have number of bytes appended. Use if needed
+                            if count < 0{
+                                count = count * -1
+                            }
                             print("No of bytes appended to systemTest msg = \(count)")
                             print(homePageInstanceOfparser.systemTestBytes) //print what was stored in the array
-                            homePageInstanceOfparser.emergencyMsgSender(homePageInstanceOfparser.systemTestBytes, ofSize: count)//IT IS NOT SENDING THE CORERCT BYTES AS OF 9PM APRIL 25. THE VALUE DISPLAYED ON MICROCONTROLLER ARE: '8\Xa0\xbf' which is undefined. check emergencyMsgSender function-for one thing, it needs fixing in sendto function. and then bytes will have to be copied inside an objective c array inside that function as well before finally sending it to microcontroller.
+                            homePageInstanceOfparser.emergencyMsgSender(homePageInstanceOfparser.systemTestBytes, ofSize:UInt8(count))
                             
                             self.startHomePageReceiver = 0 //stop the while loop from receiving further values
                             self.systemTestBytesReadyToBeSentToMicrocontroller = false //just for reseting for next time
@@ -235,7 +267,7 @@ class ViewController: UIViewController {
                         {
                             return
                         }
-                        
+                        print("next while iteration")
                     }//while
                 
                 

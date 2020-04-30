@@ -481,7 +481,7 @@ uint16_t crc16Table [256];
     struct sockaddr_in testsvr;
     bzero(&testsvr, sizeof(testsvr));
     testsvr.sin_family = AF_INET;
-    testsvr.sin_addr.s_addr = inet_addr("192.168.1.12");
+    testsvr.sin_addr.s_addr = inet_addr("192.168.1.13");
     
     testsvr.sin_port = htons(43211);
     socklen_t len2 = sizeof(testsvr);
@@ -519,7 +519,7 @@ uint16_t crc16Table [256];
         struct sockaddr_in normalSvr;
         bzero(&normalSvr, sizeof(normalSvr));
         normalSvr.sin_family = AF_INET;
-        normalSvr.sin_addr.s_addr = inet_addr("192.168.1.12");
+        normalSvr.sin_addr.s_addr = inet_addr("192.168.1.13");
         normalSvr.sin_port = htons(43211);
         socklen_t len2 = sizeof(normalSvr);
     
@@ -555,7 +555,7 @@ uint16_t crc16Table [256];
     struct sockaddr_in emergencysvr;
     bzero(&emergencysvr, sizeof(emergencysvr));
     emergencysvr.sin_family = AF_INET;
-    emergencysvr.sin_addr.s_addr = inet_addr("192.168.1.12"); // SET THIS TO BE THE IP ADDRESS OF MICROCONTROLLER (192.168.1.11). DO NOT FORGET!
+    emergencysvr.sin_addr.s_addr = inet_addr("192.168.1.13"); // SET THIS TO BE THE IP ADDRESS OF MICROCONTROLLER (192.168.1.11). DO NOT FORGET!
     emergencysvr.sin_port = htons(43211);
     socklen_t len2 = sizeof(emergencysvr);
     

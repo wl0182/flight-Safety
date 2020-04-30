@@ -323,7 +323,7 @@ class Manual_ViewController: UIViewController {
       
         func showLowBatteryWarning()
         {
-                let alert = UIAlertController(title: "AHRS Battery Low", message: "AHRS Device Battery Low!\nAHRS Charger Plug-in Requied", preferredStyle: .alert)
+                let alert = UIAlertController(title: "AHRS Battery Low", message: "Plug-in AHRS Device Charger before Continuing", preferredStyle: .alert)
                 let action = UIAlertAction(title: "OK", style: .default)
                 {
                     (action) in
@@ -988,7 +988,7 @@ class Manual_ViewController: UIViewController {
                             bytesToBeSentArray.insert(stringTypeHexPitchLimitForMicrocontroller, at:18) //18th index
                             //--------------Storing swift array into objective-c array
                             //store the swift array bytes into objective-c NSString array
-                            var count: UInt8 = 0
+                            var count: Int = 0
                             for bytes in bytesToBeSentArray{
                                 instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                                 print(instanceOfparser.manualNormalMsgBytes) //test print
@@ -996,11 +996,14 @@ class Manual_ViewController: UIViewController {
                                 print("\nHey\n") //test print
                             }
                             count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
+                            if count < 0{
+                                count = count * -1
+                            }
                             print("No of bytes appended = \(count)")
                             print(instanceOfparser.manualNormalMsgBytes) //print what was stored in the array
                             //------------------Sending objective-c array as parameter to msgSender() function.
                             //send the above array to msg sender function and remember to reset it and the end of every while loop iteration
-                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:count)
+                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize: UInt8(count))
                             
                             //clean up msg bytes after sending over network
                             instanceOfparser.manualNormalMsgBytes.removeAll(keepingCapacity: true)//remove all bytes for storing new oens in next iteration
@@ -1044,7 +1047,7 @@ class Manual_ViewController: UIViewController {
                             bytesToBeSentArray.insert(stringTypeHexPitchLimitForMicrocontroller, at:18) //18th index
                             //--------------Storing swift array into objective-c array
                             //store the swift array bytes into objective-c NSString array
-                            var count: UInt8 = 0
+                            var count: Int = 0
                             for bytes in bytesToBeSentArray{
                                 instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                                 print(instanceOfparser.manualNormalMsgBytes) //test print
@@ -1052,11 +1055,14 @@ class Manual_ViewController: UIViewController {
                                 print("\nHey\n") //test print
                             }
                             count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
+                            if count < 0{
+                                count = count * -1
+                            }
                             print("No of bytes appended = \(count)")
                             print(instanceOfparser.manualNormalMsgBytes) //print what was stored in the array
                             //------------------Sending objective-c array as parameter to msgSender() function.
                             //send the above array to msg sender function and remember to reset it and the end of every while loop iteration
-                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:count)
+                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:UInt8(count))
                             
                             //clean up msg bytes after sending over network
                             instanceOfparser.manualNormalMsgBytes.removeAll(keepingCapacity: true)//remove all bytes for storing new oens in next iteration
@@ -1096,7 +1102,7 @@ class Manual_ViewController: UIViewController {
                             bytesToBeSentArray.insert(stringTypeHexPitchLimitForMicrocontroller, at:18) //18th index
                             //--------------Storing swift array into objective-c array
                             //store the swift array bytes into objective-c NSString array
-                            var count: UInt8 = 0
+                            var count: Int = 0
                             for bytes in bytesToBeSentArray{
                                 instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                                 print(instanceOfparser.manualNormalMsgBytes) //test print
@@ -1104,11 +1110,15 @@ class Manual_ViewController: UIViewController {
                                 print("\nHey\n") //test print
                             }
                             count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
+                            if count < 0{
+                                count = count * -1
+                            }
+                            
                             print("No of bytes appended = \(count)")
                             print(instanceOfparser.manualNormalMsgBytes) //print what was stored in the array
                             //------------------Sending objective-c array as parameter to msgSender() function.
                             //send the above array to msg sender function and remember to reset it and the end of every while loop iteration
-                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:count)
+                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:UInt8(count))
                             
                             //clean up msg bytes after sending over network
                             instanceOfparser.manualNormalMsgBytes.removeAll(keepingCapacity: true)//remove all bytes for storing new oens in next iteration
@@ -1148,7 +1158,7 @@ class Manual_ViewController: UIViewController {
                             bytesToBeSentArray.insert(stringTypeHexPitchLimitForMicrocontroller, at:18) //18th index
                             //--------------Storing swift array into objective-c array
                             //store the swift array bytes into objective-c NSString array
-                            var count: UInt8 = 0
+                            var count: Int = 0
                             for bytes in bytesToBeSentArray{
                                 instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                                 print(instanceOfparser.manualNormalMsgBytes) //test print
@@ -1156,11 +1166,14 @@ class Manual_ViewController: UIViewController {
                                 print("\nHey\n") //test print
                             }
                             count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
+                            if count < 0{
+                                count = count * -1
+                            }
                             print("No of bytes appended = \(count)")
                             print(instanceOfparser.manualNormalMsgBytes) //print what was stored in the array
                             //------------------Sending objective-c array as parameter to msgSender() function.
                             //send the above array to msg sender function and remember to reset it and the end of every while loop iteration
-                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:count)
+                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:UInt8(count))
                             
                             //clean up msg bytes after sending over network
                             instanceOfparser.manualNormalMsgBytes.removeAll(keepingCapacity: true)//remove all bytes for storing new oens in next iteration
@@ -1200,7 +1213,7 @@ class Manual_ViewController: UIViewController {
                             bytesToBeSentArray.insert(stringTypeHexPitchLimitForMicrocontroller, at:18) //18th index
                             //--------------Storing swift array into objective-c array
                             //store the swift array bytes into objective-c NSString array
-                            var count: UInt8 = 0
+                            var count: Int = 0
                             for bytes in bytesToBeSentArray{
                                 instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                                 print(instanceOfparser.manualNormalMsgBytes) //test print
@@ -1208,11 +1221,14 @@ class Manual_ViewController: UIViewController {
                                 print("\nHey\n") //test print
                             }
                             count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
+                            if count < 0{
+                                count = count * -1
+                            }
                             print("No of bytes appended = \(count)")
                             print(instanceOfparser.manualNormalMsgBytes) //print what was stored in the array
                             //------------------Sending objective-c array as parameter to msgSender() function.
                             //send the above array to msg sender function and remember to reset it and the end of every while loop iteration
-                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:count)
+                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:UInt8(count))
                             
                             //clean up msg bytes after sending over network
                             instanceOfparser.manualNormalMsgBytes.removeAll(keepingCapacity: true)//remove all bytes for storing new oens in next iteration
@@ -1252,7 +1268,7 @@ class Manual_ViewController: UIViewController {
                             bytesToBeSentArray.insert(stringTypeHexPitchLimitForMicrocontroller, at:18) //18th index
                             //--------------Storing swift array into objective-c array
                             //store the swift array bytes into objective-c NSString array
-                            var count: UInt8 = 0
+                            var count: Int = 0
                             for bytes in bytesToBeSentArray{
                                 instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                                 print(instanceOfparser.manualNormalMsgBytes) //test print
@@ -1260,11 +1276,14 @@ class Manual_ViewController: UIViewController {
                                 print("\nHey\n") //test print
                             }
                             count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
+                            if count < 0{
+                                count = count * -1
+                            }
                             print("No of bytes appended = \(count)")
                             print(instanceOfparser.manualNormalMsgBytes) //print what was stored in the array
                             //------------------Sending objective-c array as parameter to msgSender() function.
                             //send the above array to msg sender function and remember to reset it and the end of every while loop iteration
-                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:count)
+                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:UInt8(count))
                             
                             //clean up msg bytes after sending over network
                             instanceOfparser.manualNormalMsgBytes.removeAll(keepingCapacity: true)//remove all bytes for storing new oens in next iteration
@@ -1304,7 +1323,7 @@ class Manual_ViewController: UIViewController {
                             bytesToBeSentArray.insert(stringTypeHexPitchLimitForMicrocontroller, at:18) //18th index
                             //--------------Storing swift array into objective-c array
                             //store the swift array bytes into objective-c NSString array
-                            var count: UInt8 = 0
+                            var count: Int = 0
                             for bytes in bytesToBeSentArray{
                                 instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                                 print(instanceOfparser.manualNormalMsgBytes) //test print
@@ -1312,11 +1331,14 @@ class Manual_ViewController: UIViewController {
                                 print("\nHey\n") //test print
                             }
                             count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
+                            if count < 0{
+                                count = count * -1
+                            }
                             print("No of bytes appended = \(count)")
                             print(instanceOfparser.manualNormalMsgBytes) //print what was stored in the array
                             //------------------Sending objective-c array as parameter to msgSender() function.
                             //send the above array to msg sender function and remember to reset it and the end of every while loop iteration
-                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:count)
+                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:UInt8(count))
                             
                             //clean up msg bytes after sending over network
                             instanceOfparser.manualNormalMsgBytes.removeAll(keepingCapacity: true)//remove all bytes for storing new oens in next iteration
@@ -1356,7 +1378,7 @@ class Manual_ViewController: UIViewController {
                             bytesToBeSentArray.insert(stringTypeHexPitchLimitForMicrocontroller, at:18) //18th index
                             //--------------Storing swift array into objective-c array
                             //store the swift array bytes into objective-c NSString array
-                            var count: UInt8 = 0
+                            var count: Int = 0
                             for bytes in bytesToBeSentArray{
                                 instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                                 print(instanceOfparser.manualNormalMsgBytes) //test print
@@ -1364,11 +1386,14 @@ class Manual_ViewController: UIViewController {
                                 print("\nHey\n") //test print
                             }
                             count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
+                            if count < 0{
+                                count = count * -1
+                            }
                             print("No of bytes appended = \(count)")
                             print(instanceOfparser.manualNormalMsgBytes) //print what was stored in the array
                             //------------------Sending objective-c array as parameter to msgSender() function.
                             //send the above array to msg sender function and remember to reset it and the end of every while loop iteration
-                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:count)
+                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:UInt8(count))
                             
                             //clean up msg bytes after sending over network
                             instanceOfparser.manualNormalMsgBytes.removeAll(keepingCapacity: true)//remove all bytes for storing new oens in next iteration
@@ -1408,7 +1433,7 @@ class Manual_ViewController: UIViewController {
                             bytesToBeSentArray.insert(stringTypeHexPitchLimitForMicrocontroller, at:18) //18th index
                             //--------------Storing swift array into objective-c array
                             //store the swift array bytes into objective-c NSString array
-                            var count: UInt8 = 0
+                            var count: Int = 0
                             for bytes in bytesToBeSentArray{
                                 instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                                 print(instanceOfparser.manualNormalMsgBytes) //test print
@@ -1416,11 +1441,14 @@ class Manual_ViewController: UIViewController {
                                 print("\nHey\n") //test print
                             }
                             count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
+                            if count < 0{
+                                count = count * -1
+                            }
                             print("No of bytes appended = \(count)")
                             print(instanceOfparser.manualNormalMsgBytes) //print what was stored in the array
                             //------------------Sending objective-c array as parameter to msgSender() function.
                             //send the above array to msg sender function and remember to reset it and the end of every while loop iteration
-                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:count)
+                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:UInt8(count))
                             
                             //clean up msg bytes after sending over network
                             instanceOfparser.manualNormalMsgBytes.removeAll(keepingCapacity: true)//remove all bytes for storing new oens in next iteration
@@ -1461,7 +1489,7 @@ class Manual_ViewController: UIViewController {
                             bytesToBeSentArray.insert(stringTypeHexPitchLimitForMicrocontroller, at:18) //18th index
                             //--------------Storing swift array into objective-c array
                             //store the swift array bytes into objective-c NSString array
-                            var count: UInt8 = 0
+                            var count: Int = 0
                             for bytes in bytesToBeSentArray{
                                 instanceOfparser.manualNormalMsgBytes.append(bytes) // OR .append(bytesToBeSentArray[count])
                                 print(instanceOfparser.manualNormalMsgBytes) //test print
@@ -1469,11 +1497,14 @@ class Manual_ViewController: UIViewController {
                                 print("\nHey\n") //test print
                             }
                             count -= 1 //After this statement run, count will have number of bytes appended. Use if needed
+                            if count < 0{
+                                count = count * -1
+                            }
                             print("No of bytes appended = \(count)")
                             print(instanceOfparser.manualNormalMsgBytes) //print what was stored in the array
                             //------------------Sending objective-c array as parameter to msgSender() function.
                             //send the above array to msg sender function and remember to reset it and the end of every while loop iteration
-                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:count)
+                            instanceOfparser.normalMsgSender(instanceOfparser.manualNormalMsgBytes, ofSize:UInt8(count))
                             
                             //clean up msg bytes after sending over network
                             instanceOfparser.manualNormalMsgBytes.removeAll(keepingCapacity: true)//remove all bytes for storing new oens in next iteration

@@ -182,6 +182,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreGraphics;
+@import RealmSwift;
 @import UIKit;
 #endif
 
@@ -214,10 +215,12 @@ SWIFT_CLASS("_TtC11At_Training31AccidentScenario_ViewController")
 @class UIButton;
 
 SWIFT_CLASS("_TtC11At_Training12AdminLoginVC")
-@interface AdminLoginVC : UIViewController
+@interface AdminLoginVC : UIViewController <UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified passwordTF;
 - (void)viewDidLoad;
-- (IBAction)continuePressed:(UIButton * _Nonnull)sender;
+- (BOOL)textFieldShouldEndEditing:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+- (IBAction)ContinuePressed:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -252,12 +255,34 @@ SWIFT_CLASS("_TtC11At_Training11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UILabel;
 
 SWIFT_CLASS("_TtC11At_Training13CalibrationVC")
 @interface CalibrationVC : UIViewController
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified batteryLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified versionLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified rollLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified pitchLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified headingLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified LatitudeLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified longitudeLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified ellipsoidAltLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified mslAltLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified groundSpeedLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified vsiLabel;
 - (void)viewDidLoad;
+- (IBAction)showPressed:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC11At_Training5Flags")
+@interface Flags : RealmSwiftObject
+@property (nonatomic, copy) NSString * _Nullable User_ID;
+@property (nonatomic, copy) NSString * _Nullable Training_Type;
+@property (nonatomic, copy) NSString * _Nullable Date_and_Time;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -273,20 +298,26 @@ SWIFT_CLASS("_TtC11At_Training12GuestLoginVC")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UILabel;
 @class UISlider;
 
 SWIFT_CLASS("_TtC11At_Training21Manual_ViewController")
 @interface Manual_ViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified initiateButton;
+@property (nonatomic, weak) IBOutlet UISlider * _Null_unspecified visbilityOutlet;
+@property (nonatomic, weak) IBOutlet UISlider * _Null_unspecified ceilingSliderOutlet;
 - (IBAction)markPressed:(UIButton * _Nonnull)sender;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified visibilityLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified ceilingLabel;
 - (void)viewDidLoad;
+- (IBAction)addToVisbilityPressed:(UIButton * _Nonnull)sender;
+- (IBAction)subtractFromVisibilityPressed:(UIButton * _Nonnull)sender;
+- (IBAction)addToCeilPressed:(UIButton * _Nonnull)sender;
+- (IBAction)subFromCeilingPressed:(UIButton * _Nonnull)sender;
 - (IBAction)visibilitySlider:(UISlider * _Nonnull)sender;
 - (IBAction)ceilingSlider:(UISlider * _Nonnull)sender;
 - (void)viewWillDisappear:(BOOL)animated;
 - (IBAction)InitiatePressed:(UIButton * _Nonnull)sender;
+- (IBAction)ClearPressed:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -361,8 +392,13 @@ SWIFT_CLASS("_TtC11At_Training14RateOfDecentVC")
 
 
 SWIFT_CLASS("_TtC11At_Training29SafetySettings_ViewController")
-@interface SafetySettings_ViewController : UIViewController
+@interface SafetySettings_ViewController : UIViewController <UITextFieldDelegate>
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified aircratTypeTF;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified tailNumTF;
 - (void)viewDidLoad;
+- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)textFieldShouldEndEditing:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+- (IBAction)SaveAndContinuePressed:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -402,7 +438,7 @@ SWIFT_CLASS("_TtC11At_Training14ViewController")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified firmwareLabel;
 - (void)viewDidLoad;
 - (void)viewDidAppear:(BOOL)animated;
-- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewWillAppear:(BOOL)animated;
 - (IBAction)SavePressed:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;

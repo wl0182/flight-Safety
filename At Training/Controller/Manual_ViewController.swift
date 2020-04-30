@@ -20,6 +20,8 @@ class Manual_ViewController: UIViewController {
     
     @IBOutlet weak var ceilingSliderOutlet: UISlider!
     // variables
+    var startDate = ""
+    var endDate = ""
     var valueReceived: Float = 40 //40 is arbitrarily set
     var valueReceivedasSigned: Int = 10 //10 is arbitrarily set
     var altitudeSafetyTrigger: Int = 0 //stays 0 until Altitude in SafetySettings is exceeded. Then if MSL altitude comes below SafetySetting Altitude, this trigger's value will allow us to send emg flip up signal to microcontroller
@@ -47,6 +49,40 @@ class Manual_ViewController: UIViewController {
         //set button title to initiate
         initiateButton.setTitle("Initiate", for: .normal)
         // call save to db
+        saveUserRecord()
+        
+    }
+    
+    // save to database
+    func saveUserRecord(){
+        let myTest = User_Record()
+        // clock it
+        let today = Date()
+        let formatter3 = DateFormatter()
+        formatter3.dateFormat = "HH:mm E, d MMM y"
+        let s = formatter3.string(from: today)
+        endDate = s
+        
+        //
+        myTest.User_ID = userID
+        myTest.Training_Type = "IIMC-Manual"
+        myTest.Start_Time = startDate
+        myTest.End_Time = endDate
+       // from UserDefault
+        myTest.Altitude = db.integer(forKey: K.altitudeSS)
+        myTest.Rate_of_Descent = db.integer(forKey: K.rodSS)
+        myTest.Min_Pitch = db.float(forKey: K.minPitchSS)
+        myTest.Min_Roll = db.float(forKey: K.minRollSS)
+        myTest.Max_Pitch = db.float(forKey: K.maxPitchSS)
+        myTest.Max_Roll = db.float(forKey: K.maxRollSS)
+        
+        
+
+        try! realm.write {
+                 realm.add(myTest)
+                 
+             }
+             
         
     }
     
@@ -206,14 +242,20 @@ class Manual_ViewController: UIViewController {
             print("I stopped reading from the AHRS device")
       //      buttonTitleChangerOnPressOfBack = "pressedBackButton"
             
-            // call to db 
+            // call to db
+            saveUserRecord()
             
         }
         
         
         //
         @IBAction func InitiatePressed(_ sender: UIButton) {
-            
+             // start of the scenario
+             let today = Date()
+              let formatter3 = DateFormatter()
+              formatter3.dateFormat = "HH:mm E, d MMM y"
+              let s = formatter3.string(from: today)
+             startDate = s
             let title = sender.currentTitle
       //      buttonTitleChangerOnPressOfBack = (sender.currentTitle!)
             
@@ -232,6 +274,7 @@ class Manual_ViewController: UIViewController {
                 altitudeSafetyTrigger = 0 //set the safety altitude trigger to zero when abort is pressed
                 print("I stopped reading from the Ilevel")
                 // call to db
+                saveUserRecord()
             }
             
             //sample voltage value receiver based on visibility value -------STARTS HERE

@@ -54,8 +54,7 @@ class AltitudeVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
         lab.font = UIFont(name: "Times New Roman", size: 35.0)
         lab.text = String( pickerData[row] )
         lab.textAlignment = .center
-        
-        let value = pickerData[row]
+       
         
         
         return lab

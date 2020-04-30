@@ -1,11 +1,82 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
+- "Flags"
 provides-nominal:
+- "11At_Training5FlagsC"
 provides-member:
+- ["11At_Training5FlagsC", ""]
 provides-dynamic-lookup:
+- "Date_and_Time"
+- "Training_Type"
+- "User_ID"
 depends-top-level:
+- "Flags"
+- "Object"
+- "String"
 depends-member:
+- ["10RealmSwift28AssistedObjectiveCBridgeableP", ""]
+- !private ["10RealmSwift28AssistedObjectiveCBridgeableP", "init"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "init"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "init"]
+- ["SQ", ""]
+- !private ["SQ", "init"]
+- ["11At_Training5FlagsC", "Date_and_Time"]
+- ["11At_Training5FlagsC", "String"]
+- ["11At_Training5FlagsC", "Training_Type"]
+- ["11At_Training5FlagsC", "User_ID"]
+- ["11At_Training5FlagsC", "deinit"]
+- ["11At_Training5FlagsC", "init"]
+- ["SH", ""]
+- !private ["SH", "init"]
+- ["So8NSObjectC", "Date_and_Time"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", "Training_Type"]
+- ["So8NSObjectC", "User_ID"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "init"]
+- ["10RealmSwift6ObjectC", "Date_and_Time"]
+- ["10RealmSwift6ObjectC", "String"]
+- ["10RealmSwift6ObjectC", "Training_Type"]
+- ["10RealmSwift6ObjectC", "User_ID"]
+- ["10RealmSwift6ObjectC", ""]
+- ["10RealmSwift6ObjectC", "init"]
+- ["So13RLMObjectBaseC", "Date_and_Time"]
+- ["So13RLMObjectBaseC", "String"]
+- ["So13RLMObjectBaseC", "Training_Type"]
+- ["So13RLMObjectBaseC", "User_ID"]
+- ["So13RLMObjectBaseC", "init"]
+- ["10RealmSwift0A15CollectionValueP", ""]
+- !private ["10RealmSwift0A15CollectionValueP", "init"]
+- ["10RealmSwift14ThreadConfinedP", ""]
+- !private ["10RealmSwift14ThreadConfinedP", "init"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- ["10RealmSwift20_ManagedPropertyTypeP", ""]
+- !private ["10RealmSwift20_ManagedPropertyTypeP", "init"]
 depends-nominal:
+- "10RealmSwift28AssistedObjectiveCBridgeableP"
+- "s7CVarArgP"
+- "s28CustomDebugStringConvertibleP"
+- "s23CustomStringConvertibleP"
+- "SQ"
+- "11At_Training5FlagsC"
+- "SH"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- "10RealmSwift6ObjectC"
+- "So13RLMObjectBaseC"
+- "10RealmSwift0A15CollectionValueP"
+- "10RealmSwift14ThreadConfinedP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- "10RealmSwift20_ManagedPropertyTypeP"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/ObjectiveC.swiftmodule/x86_64.swiftinterface"
@@ -98,4 +169,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "5bf39d8b5f0094ca83c744a0da4fb204"
+interface-hash: "3bd68b47c3ab4f13595aacb99eef156a"

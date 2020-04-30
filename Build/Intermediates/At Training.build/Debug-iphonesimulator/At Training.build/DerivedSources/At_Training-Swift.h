@@ -430,6 +430,22 @@ SWIFT_CLASS("_TtC11At_Training20Setup_ViewController")
 @end
 
 
+SWIFT_CLASS("_TtC11At_Training11User_Record")
+@interface User_Record : RealmSwiftObject
+@property (nonatomic, copy) NSString * _Nonnull User_ID;
+@property (nonatomic, copy) NSString * _Nonnull Training_Type;
+@property (nonatomic, copy) NSString * _Nonnull Start_Time;
+@property (nonatomic, copy) NSString * _Nonnull End_Time;
+@property (nonatomic) NSInteger Rate_of_Descent;
+@property (nonatomic) NSInteger Altitude;
+@property (nonatomic) float Min_Roll;
+@property (nonatomic) float Min_Pitch;
+@property (nonatomic) float Max_Roll;
+@property (nonatomic) float Max_Pitch;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC11At_Training14ViewController")
 @interface ViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified systemTest;

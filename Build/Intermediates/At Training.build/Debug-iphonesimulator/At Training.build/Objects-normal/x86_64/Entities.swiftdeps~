@@ -1,18 +1,34 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
 - "Flags"
+- "User_Record"
 provides-nominal:
 - "11At_Training5FlagsC"
+- "11At_Training11User_RecordC"
 provides-member:
 - ["11At_Training5FlagsC", ""]
+- ["11At_Training11User_RecordC", ""]
 provides-dynamic-lookup:
+- "Altitude"
 - "Date_and_Time"
+- "End_Time"
+- "Max_Pitch"
+- "Max_Roll"
+- "Min_Pitch"
+- "Min_Roll"
+- "Rate_of_Descent"
+- "Start_Time"
 - "Training_Type"
 - "User_ID"
 depends-top-level:
 - "Flags"
+- "Float"
+- "FloatLiteralType"
+- "IntegerLiteralType"
 - "Object"
 - "String"
+- "StringLiteralType"
+- "User_Record"
 depends-member:
 - ["10RealmSwift28AssistedObjectiveCBridgeableP", ""]
 - !private ["10RealmSwift28AssistedObjectiveCBridgeableP", "init"]
@@ -32,20 +48,47 @@ depends-member:
 - ["11At_Training5FlagsC", "init"]
 - ["SH", ""]
 - !private ["SH", "init"]
+- ["So8NSObjectC", "Altitude"]
 - ["So8NSObjectC", "Date_and_Time"]
+- ["So8NSObjectC", "End_Time"]
+- ["So8NSObjectC", "Float"]
+- ["So8NSObjectC", "Max_Pitch"]
+- ["So8NSObjectC", "Max_Roll"]
+- ["So8NSObjectC", "Min_Pitch"]
+- ["So8NSObjectC", "Min_Roll"]
+- ["So8NSObjectC", "Rate_of_Descent"]
+- ["So8NSObjectC", "Start_Time"]
 - ["So8NSObjectC", "String"]
 - ["So8NSObjectC", "Training_Type"]
 - ["So8NSObjectC", "User_ID"]
 - ["So8NSObjectC", "init"]
 - ["So8NSObjectP", ""]
 - !private ["So8NSObjectP", "init"]
+- ["10RealmSwift6ObjectC", "Altitude"]
 - ["10RealmSwift6ObjectC", "Date_and_Time"]
+- ["10RealmSwift6ObjectC", "End_Time"]
+- ["10RealmSwift6ObjectC", "Float"]
+- ["10RealmSwift6ObjectC", "Max_Pitch"]
+- ["10RealmSwift6ObjectC", "Max_Roll"]
+- ["10RealmSwift6ObjectC", "Min_Pitch"]
+- ["10RealmSwift6ObjectC", "Min_Roll"]
+- ["10RealmSwift6ObjectC", "Rate_of_Descent"]
+- ["10RealmSwift6ObjectC", "Start_Time"]
 - ["10RealmSwift6ObjectC", "String"]
 - ["10RealmSwift6ObjectC", "Training_Type"]
 - ["10RealmSwift6ObjectC", "User_ID"]
 - ["10RealmSwift6ObjectC", ""]
 - ["10RealmSwift6ObjectC", "init"]
+- ["So13RLMObjectBaseC", "Altitude"]
 - ["So13RLMObjectBaseC", "Date_and_Time"]
+- ["So13RLMObjectBaseC", "End_Time"]
+- ["So13RLMObjectBaseC", "Float"]
+- ["So13RLMObjectBaseC", "Max_Pitch"]
+- ["So13RLMObjectBaseC", "Max_Roll"]
+- ["So13RLMObjectBaseC", "Min_Pitch"]
+- ["So13RLMObjectBaseC", "Min_Roll"]
+- ["So13RLMObjectBaseC", "Rate_of_Descent"]
+- ["So13RLMObjectBaseC", "Start_Time"]
 - ["So13RLMObjectBaseC", "String"]
 - ["So13RLMObjectBaseC", "Training_Type"]
 - ["So13RLMObjectBaseC", "User_ID"]
@@ -54,6 +97,19 @@ depends-member:
 - !private ["10RealmSwift0A15CollectionValueP", "init"]
 - ["10RealmSwift14ThreadConfinedP", ""]
 - !private ["10RealmSwift14ThreadConfinedP", "init"]
+- ["11At_Training11User_RecordC", "Altitude"]
+- ["11At_Training11User_RecordC", "End_Time"]
+- ["11At_Training11User_RecordC", "Float"]
+- ["11At_Training11User_RecordC", "Max_Pitch"]
+- ["11At_Training11User_RecordC", "Max_Roll"]
+- ["11At_Training11User_RecordC", "Min_Pitch"]
+- ["11At_Training11User_RecordC", "Min_Roll"]
+- ["11At_Training11User_RecordC", "Rate_of_Descent"]
+- ["11At_Training11User_RecordC", "Start_Time"]
+- ["11At_Training11User_RecordC", "Training_Type"]
+- ["11At_Training11User_RecordC", "User_ID"]
+- ["11At_Training11User_RecordC", "deinit"]
+- ["11At_Training11User_RecordC", "init"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
@@ -74,6 +130,7 @@ depends-nominal:
 - "So13RLMObjectBaseC"
 - "10RealmSwift0A15CollectionValueP"
 - "10RealmSwift14ThreadConfinedP"
+- "11At_Training11User_RecordC"
 - "10Foundation27_KeyValueCodingAndObservingP"
 - "10Foundation37_KeyValueCodingAndObservingPublishingP"
 - "10RealmSwift20_ManagedPropertyTypeP"
@@ -169,4 +226,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "3bd68b47c3ab4f13595aacb99eef156a"
+interface-hash: "5467c0509ad3a46722750ba58996cdac"

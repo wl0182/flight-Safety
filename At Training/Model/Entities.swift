@@ -34,3 +34,18 @@ class User_Record: Object {
 
 }
 
+class Use_Record : Object {
+    @objc dynamic var User_ID = ""
+    @objc dynamic var Aircraft_Type = ""
+    @objc dynamic var Tail_Number = ""
+    @objc dynamic var Training_Type = ""
+    @objc dynamic var  Start_Time = ""
+    @objc dynamic var End_Time = ""
+    @objc dynamic var Rate_of_Descent = 0
+    @objc dynamic var Altitude = 0
+    @objc dynamic var  Min_Roll : Float = 0
+    @objc dynamic var  Min_Pitch : Float = 0
+    @objc dynamic var  Max_Roll : Float = 0
+    @objc dynamic var  Max_Pitch : Float = 0
+}
+

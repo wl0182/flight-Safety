@@ -271,6 +271,8 @@ SWIFT_CLASS("_TtC11At_Training13CalibrationVC")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified groundSpeedLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified vsiLabel;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
 - (IBAction)showPressed:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
@@ -427,6 +429,22 @@ SWIFT_CLASS("_TtC11At_Training20Setup_ViewController")
 - (IBAction)safetySetting_dataSent:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC11At_Training11User_Record")
+@interface User_Record : RealmSwiftObject
+@property (nonatomic, copy) NSString * _Nonnull User_ID;
+@property (nonatomic, copy) NSString * _Nonnull Training_Type;
+@property (nonatomic, copy) NSString * _Nonnull Start_Time;
+@property (nonatomic, copy) NSString * _Nonnull End_Time;
+@property (nonatomic) NSInteger Rate_of_Descent;
+@property (nonatomic) NSInteger Altitude;
+@property (nonatomic) float Min_Roll;
+@property (nonatomic) float Min_Pitch;
+@property (nonatomic) float Max_Roll;
+@property (nonatomic) float Max_Pitch;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 

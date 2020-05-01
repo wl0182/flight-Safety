@@ -1,6 +1,6 @@
 version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
 options: "c72c22bc0546300a44fa28eb9def67af"
-build_time: [1588190663, 654400000]
+build_time: [1588303987, 371580000]
 inputs:
   "/Users/wassimlagnaoui/flight-Safety-29-2/Pods/RealmSwift/RealmSwift/Aliases.swift": [1588190080, 264147863]
   "/Users/wassimlagnaoui/flight-Safety-29-2/Pods/RealmSwift/RealmSwift/Error.swift": [1588190080, 264384871]

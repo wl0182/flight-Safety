@@ -55,7 +55,7 @@ class Manual_ViewController: UIViewController {
     
     // save to database
     func saveUserRecord(){
-        let myTest = User_Record()
+        let myTest = Use_Record()
         // clock it
         let today = Date()
         let formatter3 = DateFormatter()
@@ -66,6 +66,8 @@ class Manual_ViewController: UIViewController {
         //
         myTest.User_ID = userID
         myTest.Training_Type = "IIMC-Manual"
+        myTest.Aircraft_Type = aircraftType
+        myTest.Tail_Number = tailNumber
         myTest.Start_Time = startDate
         myTest.End_Time = endDate
        // from UserDefault

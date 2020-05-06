@@ -1,0 +1,38 @@
+<!--Rate of Decent-->
+<subviews>
+        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="DRO-Id-SGp">
+                                <rect key="frame" x="20" y="20" width="672" height="944"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate Of Decent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIA-D5-Qx0">
+                                        <rect key="frame" x="161.5" y="0.0" width="349" height="181.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+
+
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBb-7f-NzC">
+                                        <rect key="frame" x="0.0" y="381.5" width="672" height="181"/>
+                                    </pickerView>
+
+
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agR-ux-R5G">
+                                        <rect key="frame" x="150" y="762.5" width="372" height="181.5"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+
+                                </subviews>
+
+
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="agR-ux-R5G" secondAttribute="trailing" constant="150" id="FWY-XB-Day"/>
+                                    <constraint firstItem="agR-ux-R5G" firstAttribute="leading" secondItem="DRO-Id-SGp" secondAttribute="leading" constant="150" id="LJZ-ca-VHd"/>
+                                    <constraint firstAttribute="trailing" secondItem="XBb-7f-NzC" secondAttribute="trailing" id="d2m-xF-jML"/>
+                                    <constraint firstItem="XBb-7f-NzC" firstAttribute="leading" secondItem="DRO-Id-SGp" secondAttribute="leading" id="fB8-pS-Mli"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
